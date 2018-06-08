@@ -1,0 +1,6 @@
+/index.php
+/index-test.php
+/robots.txt
+/.htaccess
+# assets for temporary use in dev mode to render web based extensions like yii2-debug or gii
+/assets
