@@ -4,13 +4,13 @@ use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
-/* @var $model backend\models\Presentador */
+/* @var $model backend\models\Catalogo */
 
-$this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Presentadors', 'url' => ['index']];
+$this->title = $model->name;
+$this->params['breadcrumbs'][] = ['label' => 'Catalogos', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="presentador-view">
+<div class="catalogo-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
@@ -29,12 +29,8 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
-            'afiliacion_id',
-            'Nombre',
-            'Apellido',
-            'Telefono',
-            'Correo',
-            'Descripcion:ntext',
+            'presentador_id',
+            'name',
         ],
     ]) ?>
 

@@ -14,8 +14,8 @@ use Yii;
  * @property string $Telefono
  * @property string $Correo
  * @property string $Descripcion
- * @property string $Perfil
  *
+ * @property Catalogo[] $catalogos
  * @property Afiliacion $afiliacion
  * @property PresentadorAreaEspecializacion[] $presentadorAreaEspecializacions
  * @property AreaEspecializacion[] $areaEspecializacions
@@ -48,7 +48,6 @@ class Presentador extends \yii\db\ActiveRecord
             [['Nombre', 'Apellido'], 'string', 'max' => 50],
             [['Telefono'], 'string', 'max' => 20],
             [['Correo'], 'string', 'max' => 100],
-            [['Perfil'], 'string', 'max' => 255],
             [['afiliacion_id'], 'exist', 'skipOnError' => true, 'targetClass' => Afiliacion::className(), 'targetAttribute' => ['afiliacion_id' => 'id']],
         ];
     }
@@ -66,8 +65,15 @@ class Presentador extends \yii\db\ActiveRecord
             'Telefono' => 'Telefono',
             'Correo' => 'Correo',
             'Descripcion' => 'Descripcion',
-            'Perfil' => 'Perfil',
         ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getCatalogos()
+    {
+        return $this->hasMany(Catalogo::className(), ['presentador_id' => 'id']);
     }
 
     /**
