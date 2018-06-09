@@ -38,10 +38,10 @@ return [
         ],
         
         'urlManager' => [
-            'enablePrettyUrl' => false,
-            'showScriptName' => false,
+            'enablePrettyUrl' => true,
+            'showScriptName' => true,
             'rules' => [
-                //'<alias:\w+>' => 'site/<alias>',
+                '<alias:\w+>' => 'site/<alias>',
             ],
         ],
         

@@ -95,4 +95,10 @@ class SiteController extends Controller
 
         return $this->goHome();
     }
+
+    public function actionSay($message = 'Hello')
+    {
+        return $this->render('say', ['message' => $message]);
+    }
+    
 }
