@@ -5,20 +5,19 @@ namespace backend\models;
 use Yii;
 
 /**
- * This is the model class for table "horario".
+ * This is the model class for table "grado_academico".
  *
  * @property int $id
- * @property string $Fecha_Inicio
- * @property string $Fecha_Final
+ * @property string $Grado
  */
-class Horario extends \yii\db\ActiveRecord
+class GradoAcademico extends \yii\db\ActiveRecord
 {
     /**
      * {@inheritdoc}
      */
     public static function tableName()
     {
-        return 'horario';
+        return 'grado_academico';
     }
 
     /**
@@ -27,8 +26,7 @@ class Horario extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['Fecha_Inicio', 'Fecha_Final'], 'required'],
-            [['Fecha_Inicio', 'Fecha_Final'], 'safe'],
+            [['Grado'], 'string', 'max' => 50],
         ];
     }
 
@@ -39,8 +37,7 @@ class Horario extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'Fecha_Inicio' => 'Fecha Inicio',
-            'Fecha_Final' => 'Fecha Final',
+            'Grado' => 'Grado',
         ];
     }
 }

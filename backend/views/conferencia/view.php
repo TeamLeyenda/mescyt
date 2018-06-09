@@ -4,13 +4,13 @@ use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
-/* @var $model backend\models\Ubicacion */
+/* @var $model backend\models\Conferencia */
 
 $this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Ubicacions', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Conferencias', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="ubicacion-view">
+<div class="conferencia-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
@@ -30,8 +30,8 @@ $this->params['breadcrumbs'][] = $this->title;
         'attributes' => [
             'id',
             'congreso_id',
-            'Pais',
-            'Provincia',
+            'horario_id',
+            'Tema',
         ],
     ]) ?>
 

@@ -4,13 +4,13 @@ use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
-/* @var $model backend\models\Ubicacion */
+/* @var $model backend\models\Horario */
 
 $this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Ubicacions', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Horarios', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="ubicacion-view">
+<div class="horario-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
@@ -29,9 +29,8 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
-            'congreso_id',
-            'Pais',
-            'Provincia',
+            'Fecha_Inicio',
+            'Fecha_Final',
         ],
     ]) ?>
 

@@ -4,19 +4,17 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
-/* @var $model backend\models\Ubicacion */
+/* @var $model backend\models\Horario */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="ubicacion-form">
+<div class="horario-form">
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'congreso_id')->textInput() ?>
+    <?= $form->field($model, 'Fecha_Inicio')->textInput() ?>
 
-    <?= $form->field($model, 'Pais')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'Provincia')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'Fecha_Final')->textInput() ?>
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>

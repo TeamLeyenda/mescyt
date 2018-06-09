@@ -7,11 +7,10 @@ use Yii;
 /**
  * This is the model class for table "conferencia".
  *
- * @property int $id_conferencia
- * @property int $id_presentador
+ * @property int $id
+ * @property int $congreso_id
+ * @property int $horario_id
  * @property string $Tema
- * @property string $Hora_Inicial
- * @property string $Hora_Final
  */
 class Conferencia extends \yii\db\ActiveRecord
 {
@@ -29,9 +28,8 @@ class Conferencia extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id_conferencia', 'id_presentador', 'Tema', 'Hora_Inicial', 'Hora_Final'], 'required'],
-            [['id_conferencia', 'id_presentador'], 'integer'],
-            [['Hora_Inicial', 'Hora_Final'], 'safe'],
+            [['congreso_id', 'horario_id', 'Tema'], 'required'],
+            [['congreso_id', 'horario_id'], 'integer'],
             [['Tema'], 'string', 'max' => 100],
         ];
     }
@@ -42,11 +40,10 @@ class Conferencia extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id_conferencia' => 'Id Conferencia',
-            'id_presentador' => 'Id Presentador',
+            'id' => 'ID',
+            'congreso_id' => 'Congreso ID',
+            'horario_id' => 'Horario ID',
             'Tema' => 'Tema',
-            'Hora_Inicial' => 'Hora Inicial',
-            'Hora_Final' => 'Hora Final',
         ];
     }
 }

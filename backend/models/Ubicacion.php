@@ -8,8 +8,9 @@ use Yii;
  * This is the model class for table "ubicacion".
  *
  * @property int $id
- * @property string $pais
- * @property string $provincia
+ * @property int $congreso_id
+ * @property string $Pais
+ * @property string $Provincia
  */
 class Ubicacion extends \yii\db\ActiveRecord
 {
@@ -27,8 +28,9 @@ class Ubicacion extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['pais', 'provincia'], 'required'],
-            [['pais', 'provincia'], 'string', 'max' => 50],
+            [['congreso_id', 'Pais', 'Provincia'], 'required'],
+            [['congreso_id'], 'integer'],
+            [['Pais', 'Provincia'], 'string', 'max' => 50],
         ];
     }
 
@@ -39,8 +41,9 @@ class Ubicacion extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'pais' => 'Pais',
-            'provincia' => 'Provincia',
+            'congreso_id' => 'Congreso ID',
+            'Pais' => 'Pais',
+            'Provincia' => 'Provincia',
         ];
     }
 }
