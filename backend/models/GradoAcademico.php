@@ -9,6 +9,9 @@ use Yii;
  *
  * @property int $id
  * @property string $Grado
+ *
+ * @property PresentadorGradoAcademico[] $presentadorGradoAcademicos
+ * @property Presentador[] $presentadors
  */
 class GradoAcademico extends \yii\db\ActiveRecord
 {
@@ -39,5 +42,21 @@ class GradoAcademico extends \yii\db\ActiveRecord
             'id' => 'ID',
             'Grado' => 'Grado',
         ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getPresentadorGradoAcademicos()
+    {
+        return $this->hasMany(PresentadorGradoAcademico::className(), ['grado_academico_id' => 'id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getPresentadors()
+    {
+        return $this->hasMany(Presentador::className(), ['id' => 'presentador_id'])->viaTable('presentador_grado_academico', ['grado_academico_id' => 'id']);
     }
 }

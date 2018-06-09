@@ -10,6 +10,9 @@ use Yii;
  * @property int $id
  * @property string $Fecha_Inicio
  * @property string $Fecha_Final
+ *
+ * @property Conferencia[] $conferencias
+ * @property Congreso[] $congresos
  */
 class Horario extends \yii\db\ActiveRecord
 {
@@ -42,5 +45,21 @@ class Horario extends \yii\db\ActiveRecord
             'Fecha_Inicio' => 'Fecha Inicio',
             'Fecha_Final' => 'Fecha Final',
         ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getConferencias()
+    {
+        return $this->hasMany(Conferencia::className(), ['horario_id' => 'id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getCongresos()
+    {
+        return $this->hasMany(Congreso::className(), ['horario_id' => 'id']);
     }
 }

@@ -9,6 +9,9 @@ use Yii;
  *
  * @property int $id
  * @property string $area
+ *
+ * @property PresentadorAreaEspecializacion[] $presentadorAreaEspecializacions
+ * @property Presentador[] $presentadors
  */
 class AreaEspecializacion extends \yii\db\ActiveRecord
 {
@@ -40,5 +43,21 @@ class AreaEspecializacion extends \yii\db\ActiveRecord
             'id' => 'ID',
             'area' => 'Area',
         ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getPresentadorAreaEspecializacions()
+    {
+        return $this->hasMany(PresentadorAreaEspecializacion::className(), ['area_especializacion_id' => 'id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getPresentadors()
+    {
+        return $this->hasMany(Presentador::className(), ['id' => 'presentador_id'])->viaTable('presentador_area_especializacion', ['area_especializacion_id' => 'id']);
     }
 }

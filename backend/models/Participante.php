@@ -5,24 +5,25 @@ namespace backend\models;
 use Yii;
 
 /**
- * This is the model class for table "moderador".
+ * This is the model class for table "participante".
  *
  * @property int $id
+ * @property int $afiliacion_id
  * @property string $Nombre
  * @property string $Apellido
  * @property string $Telefono
  * @property string $Correo
  *
- * @property Sala[] $salas
+ * @property Afiliacion $afiliacion
  */
-class Moderador extends \yii\db\ActiveRecord
+class Participante extends \yii\db\ActiveRecord
 {
     /**
      * {@inheritdoc}
      */
     public static function tableName()
     {
-        return 'moderador';
+        return 'participante';
     }
 
     /**
@@ -31,10 +32,12 @@ class Moderador extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['Nombre', 'Correo'], 'required'],
+            [['afiliacion_id', 'Nombre', 'Correo'], 'required'],
+            [['afiliacion_id'], 'integer'],
             [['Nombre', 'Apellido'], 'string', 'max' => 50],
             [['Telefono'], 'string', 'max' => 20],
             [['Correo'], 'string', 'max' => 100],
+            [['afiliacion_id'], 'exist', 'skipOnError' => true, 'targetClass' => Afiliacion::className(), 'targetAttribute' => ['afiliacion_id' => 'id']],
         ];
     }
 
@@ -45,6 +48,7 @@ class Moderador extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
+            'afiliacion_id' => 'Afiliacion ID',
             'Nombre' => 'Nombre',
             'Apellido' => 'Apellido',
             'Telefono' => 'Telefono',
@@ -55,8 +59,8 @@ class Moderador extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getSalas()
+    public function getAfiliacion()
     {
-        return $this->hasMany(Sala::className(), ['moderador_id' => 'id']);
+        return $this->hasOne(Afiliacion::className(), ['id' => 'afiliacion_id']);
     }
 }

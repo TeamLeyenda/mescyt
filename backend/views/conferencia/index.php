@@ -25,7 +25,10 @@ $this->params['breadcrumbs'][] = $this->title;
             'id',
             'congreso_id',
             'horario_id',
-            'Tema',
+            'titulo',
+            'institucion',
+            //'area_tematica',
+            //'modalidad_presentacion',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

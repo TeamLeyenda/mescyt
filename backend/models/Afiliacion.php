@@ -9,6 +9,9 @@ use Yii;
  *
  * @property int $id
  * @property string $Afiliacion
+ *
+ * @property Participante[] $participantes
+ * @property Presentador[] $presentadors
  */
 class Afiliacion extends \yii\db\ActiveRecord
 {
@@ -39,5 +42,21 @@ class Afiliacion extends \yii\db\ActiveRecord
             'id' => 'ID',
             'Afiliacion' => 'Afiliacion',
         ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getParticipantes()
+    {
+        return $this->hasMany(Participante::className(), ['afiliacion_id' => 'id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getPresentadors()
+    {
+        return $this->hasMany(Presentador::className(), ['afiliacion_id' => 'id']);
     }
 }
