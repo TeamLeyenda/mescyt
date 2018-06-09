@@ -31,10 +31,10 @@ $this->params['breadcrumbs'][] = $this->title;
             'id',
             'congreso_id',
             'horario_id',
-            'titulo',
-            'institucion',
-            'area_tematica',
-            'modalidad_presentacion',
+            'Titulo',
+            'Institucion',
+            'Area_Tematica',
+            'Modalidad_Presentacion',
         ],
     ]) ?>
 

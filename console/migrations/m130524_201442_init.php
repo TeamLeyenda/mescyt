@@ -41,7 +41,7 @@ class m130524_201442_init extends Migration
          'username' =>'admin',
          'auth_key' =>'0kbz5NBDNr50ysOb4pEGtjbV5-KuK_Se',
          'password_hash' =>'$2y$13$q4PYUvlSvRa6I1cuzcZ.BOEhPc21o/qquVjIzywV5HELpm9uH8rqi',
-         'password_reset_token' =>'NULL',
+         'password_reset_token' =>NULL,
          'email' =>'crisflowbg11@gmail.com',
          'status' =>10,
          'created_at' =>1528492219,

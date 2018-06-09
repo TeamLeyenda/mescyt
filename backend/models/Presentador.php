@@ -13,10 +13,14 @@ use Yii;
  * @property string $Apellido
  * @property string $Telefono
  * @property string $Correo
+ * @property string $Descripcion
+ * @property string $Perfil
  *
  * @property Afiliacion $afiliacion
  * @property PresentadorAreaEspecializacion[] $presentadorAreaEspecializacions
  * @property AreaEspecializacion[] $areaEspecializacions
+ * @property PresentadorConferencia[] $presentadorConferencias
+ * @property Conferencia[] $conferencias
  * @property PresentadorGradoAcademico[] $presentadorGradoAcademicos
  * @property GradoAcademico[] $gradoAcademicos
  * @property PresentadorSala[] $presentadorSalas
@@ -38,11 +42,13 @@ class Presentador extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['afiliacion_id', 'Nombre', 'Correo'], 'required'],
+            [['afiliacion_id', 'Nombre', 'Correo', 'Descripcion'], 'required'],
             [['afiliacion_id'], 'integer'],
+            [['Descripcion'], 'string'],
             [['Nombre', 'Apellido'], 'string', 'max' => 50],
             [['Telefono'], 'string', 'max' => 20],
             [['Correo'], 'string', 'max' => 100],
+            [['Perfil'], 'string', 'max' => 255],
             [['afiliacion_id'], 'exist', 'skipOnError' => true, 'targetClass' => Afiliacion::className(), 'targetAttribute' => ['afiliacion_id' => 'id']],
         ];
     }
@@ -59,6 +65,8 @@ class Presentador extends \yii\db\ActiveRecord
             'Apellido' => 'Apellido',
             'Telefono' => 'Telefono',
             'Correo' => 'Correo',
+            'Descripcion' => 'Descripcion',
+            'Perfil' => 'Perfil',
         ];
     }
 
@@ -84,6 +92,22 @@ class Presentador extends \yii\db\ActiveRecord
     public function getAreaEspecializacions()
     {
         return $this->hasMany(AreaEspecializacion::className(), ['id' => 'area_especializacion_id'])->viaTable('presentador_area_especializacion', ['presentador_id' => 'id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getPresentadorConferencias()
+    {
+        return $this->hasMany(PresentadorConferencia::className(), ['presentador_id' => 'id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getConferencias()
+    {
+        return $this->hasMany(Conferencia::className(), ['id' => 'conferencia_id'])->viaTable('presentador_conferencia', ['presentador_id' => 'id']);
     }
 
     /**

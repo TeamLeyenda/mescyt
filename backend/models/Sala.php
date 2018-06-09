@@ -33,7 +33,7 @@ class Sala extends \yii\db\ActiveRecord
         return [
             [['moderador_id', 'Nombre_Sala'], 'required'],
             [['moderador_id'], 'integer'],
-            [['Nombre_Sala'], 'string', 'max' => 50],
+            [['Nombre_Sala'], 'string', 'max' => 20],
             [['moderador_id'], 'exist', 'skipOnError' => true, 'targetClass' => Moderador::className(), 'targetAttribute' => ['moderador_id' => 'id']],
         ];
     }

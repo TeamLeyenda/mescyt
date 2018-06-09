@@ -16,13 +16,13 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'horario_id')->textInput() ?>
 
-    <?= $form->field($model, 'titulo')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'Titulo')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'institucion')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'Institucion')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'area_tematica')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'Area_Tematica')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'modalidad_presentacion')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'Modalidad_Presentacion')->textInput(['maxlength' => true]) ?>
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
