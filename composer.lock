@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "39ea50484161511cc48448cb2a94980f",
+    "content-hash": "f891048e37436be54cc87e4f8fa853bc",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
@@ -2609,6 +2609,50 @@
                 "yii2"
             ],
             "time": "2018-04-16T11:14:16+00:00"
+        },
+        {
+            "name": "meysampg/yii2-treeview",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/meysampg/yii2-treeview.git",
+                "reference": "5e26bfed55bcae2e57f3a7be768fc2a7d026e077"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/meysampg/yii2-treeview/zipball/5e26bfed55bcae2e57f3a7be768fc2a7d026e077",
+                "reference": "5e26bfed55bcae2e57f3a7be768fc2a7d026e077",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2-bootstrap": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "meysampg\\treeview\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Meysam P.G.",
+                    "email": "p.g.meysam@gmail.com"
+                }
+            ],
+            "description": "A Bootstrap Treeview Generator for AdminLte Sidebar",
+            "keywords": [
+                "AdminLTE",
+                "extension",
+                "generator",
+                "sidebar",
+                "treeview",
+                "yii2"
+            ],
+            "time": "2016-10-24T08:25:19+00:00"
         },
         {
             "name": "mootensai/yii2-enhanced-gii",

@@ -19,12 +19,13 @@
         "dmstr/yii2-adminlte-asset": "2.4",
         "dixonsatit/yii2-agency-theme": "dev-master",
         "wbraganca/yii2-dynamicform": "*",
-        "meysampg/yii2-formbuilder": "*",
         "kartik-v/yii2-widget-select2": "dev-master",
         "mootensai/yii2-enhanced-gii": "dev-master",
         "mootensai/yii2-relation-trait": "dev-master",
         "kartik-v/yii2-mpdf": "dev-master",
-        "deesoft/yii2-gii": "*"
+        "deesoft/yii2-gii": "*",
+        "meysampg/yii2-treeview": "*",
+        "meysampg/yii2-formbuilder": "*"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",
