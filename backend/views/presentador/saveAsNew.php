@@ -6,16 +6,19 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model backend\models\Presentador */
 
-$this->title = Yii::t('app', 'Create Presentador');
+$this->title = Yii::t('app', 'Save As New {modelClass}: ', [
+    'modelClass' => 'Presentador',
+]). ' ' . $model->id;
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Presentadors'), 'url' => ['index']];
-$this->params['breadcrumbs'][] = $this->title;
+$this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
+$this->params['breadcrumbs'][] = Yii::t('app', 'Save As New');
 ?>
 <div class="presentador-create">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
     <?= $this->render('_form', [
-        'model' => $model,
+    'model' => $model,
     ]) ?>
 
 </div>
