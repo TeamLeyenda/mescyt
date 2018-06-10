@@ -19,7 +19,8 @@
         "dmstr/yii2-adminlte-asset": "2.4",
         "dixonsatit/yii2-agency-theme": "dev-master",
         "wbraganca/yii2-dynamicform": "*",
-        "meysampg/yii2-formbuilder": "*"
+        "meysampg/yii2-formbuilder": "*",
+        "mootensai/yii2-enhanced-gii": "@dev"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",

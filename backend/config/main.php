@@ -15,6 +15,9 @@ return [
         'build' => [
             'class' => 'backend\models\FormBuilder',
         ],
+        'gridview' => [
+            'class' => '\kartik\grid\Module',
+        ],
     ],
     'components' => [
         'request' => [
