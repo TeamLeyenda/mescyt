@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "30d5c41592c5294fe63482f10e932e82",
+    "content-hash": "39ea50484161511cc48448cb2a94980f",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
@@ -493,6 +493,52 @@
                 "zikula"
             ],
             "time": "2017-12-29T09:13:20+00:00"
+        },
+        {
+            "name": "deesoft/yii2-gii",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/deesoft/yii2-gii.git",
+                "reference": "e1e57cc1b3a6dc219b9d4a253522ddce6e35a213"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/deesoft/yii2-gii/zipball/e1e57cc1b3a6dc219b9d4a253522ddce6e35a213",
+                "reference": "e1e57cc1b3a6dc219b9d4a253522ddce6e35a213",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": ">=2.0.6",
+                "yiisoft/yii2-gii": "~2.0"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "dee\\gii\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Misbahul Munir",
+                    "email": "misbahuldmunir@gmail.com"
+                }
+            ],
+            "description": "Yii2 custom generator for gii",
+            "keywords": [
+                "gii",
+                "yii2"
+            ],
+            "time": "2016-05-26T03:34:13+00:00"
         },
         {
             "name": "dixonsatit/yii2-agency-theme",
@@ -6381,7 +6427,10 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "dixonsatit/yii2-agency-theme": 20,
-        "mootensai/yii2-enhanced-gii": 20
+        "kartik-v/yii2-widget-select2": 20,
+        "mootensai/yii2-enhanced-gii": 20,
+        "mootensai/yii2-relation-trait": 20,
+        "kartik-v/yii2-mpdf": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

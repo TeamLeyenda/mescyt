@@ -18,6 +18,15 @@ return [
         'gridview' => [
             'class' => '\kartik\grid\Module',
         ],
+        'datecontrol' => [
+            'class' => '\kartik\datecontrol\Module',
+            // see settings on http://demos.krajee.com/datecontrol#module
+        ],
+        // If you use tree table
+        'treemanager' =>  [
+            'class' => '\kartik\tree\Module',
+            // see settings on http://demos.krajee.com/tree-manager#module
+        ]
     ],
     'components' => [
         'request' => [
