@@ -25,7 +25,8 @@
         "kartik-v/yii2-mpdf": "dev-master",
         "deesoft/yii2-gii": "*",
         "meysampg/yii2-treeview": "*",
-        "meysampg/yii2-formbuilder": "*"
+        "meysampg/yii2-formbuilder": "*",
+        "yiisoft/yii2-jui": "^2.0@dev"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",

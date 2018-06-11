@@ -19,13 +19,9 @@ use meysampg\formbuilder\FormBuilder;
         "style" => "warning",
     ],
 ],
-'language' => 'en',
+'language' => 'es-MX',
 'elementType' => 'div',
 'dataType' => 'xml',
 'accessVariableName' => 'formBuilderJsVariable' 
 
 ]); ?>
-
-
-
-

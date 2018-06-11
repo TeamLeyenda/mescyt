@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f891048e37436be54cc87e4f8fa853bc",
+    "content-hash": "64e021a3638ee39556844f398700ef32",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
@@ -6474,7 +6474,8 @@
         "kartik-v/yii2-widget-select2": 20,
         "mootensai/yii2-enhanced-gii": 20,
         "mootensai/yii2-relation-trait": 20,
-        "kartik-v/yii2-mpdf": 20
+        "kartik-v/yii2-mpdf": 20,
+        "yiisoft/yii2-jui": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
