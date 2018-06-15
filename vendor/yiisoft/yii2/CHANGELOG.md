@@ -5,6 +5,7 @@ Yii Framework 2 Change Log
 ------------------------
 
 - Enh #9133: Added `yii\behaviors\OptimisticLockBehavior` (tunecino)
+- Bug #16104: Fixed `yii\db\pgsql\QueryBuilder::dropIndex()` to prepend index name with schema name (wapmorgan)
 - Bug #16193: Fixed `yii\filters\Cors` to not reflect origin header value when configured to wildcard origins (Jianjun Chen)
 - Bug #16068: Fixed `yii\web\CookieCollection::has` when an expiration param is set to 'until the browser is closed' (OndrejVasicek)
 - Bug #16006: Handle case when `X-Forwarded-Host` header have multiple hosts separated with a comma (pgaultier)
@@ -27,10 +28,13 @@ Yii Framework 2 Change Log
 - Bug #16277: Fixed `yii\db\Query::from()` to respect `yii\db\ExpressionInterface` (noname007)
 - Bug #16280: Fixed `yii\base\Model::getActiveValidators()` to return correct validators for attribute on scenario (paweljankowiak06)
 - Enh #16191: Enhanced `yii\helpers\Inflector` to work correctly with UTF-8 (silverfire)
-- Bug: Fixed bad instnaceof check in `yii\db\Schema::getTableMetadata()` (samdark)
+- Bug #16252: Fixed `yii\base\DynamicModel` for checking exist property (vuongxuongminh)
+- Bug: Fixed bad instanceof check in `yii\db\Schema::getTableMetadata()` (samdark)
 - Bug #16292: Fixed misconfigured CORS filter exception throwing. Now it throws `InvalidConfigException` in Debug mode (khvalov)
 - Bug #16301: Fixed `yii\web\User::setIdentity()` to clear access check cache while setting identity object to `null` (Izumi-kun)
-
+- Bug #16322: Fixed strings were not were not compared using timing attack resistant approach while CSRF token validation (samdark, Felix Wiedemann)
+- Chg #16192: `yii\db\Command::logQuery()` is now protected (drlibra)
+- Bug #16377: Fixed `yii\base\Event:off()` undefined index error when event handler does not match (razvanphp)
 
 2.0.15.1 March 21, 2018
 -----------------------

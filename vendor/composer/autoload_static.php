@@ -194,7 +194,7 @@ class ComposerStaticInitf8aa444fadf5e861a9b2931a0751dc85
         ),
         'wbraganca\\dynamicform\\' => 
         array (
-            0 => __DIR__ . '/..' . '/wbraganca/yii2-dynamicform',
+            0 => __DIR__ . '/..' . '/wbraganca/yii2-dynamicform/src',
         ),
         'tunecino\\builder\\' => 
         array (

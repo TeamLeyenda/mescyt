@@ -2,11 +2,12 @@
 
 All notable changes are documented in this file using the [Keep a CHANGELOG](http://keepachangelog.com/) principles.
 
-## [3.0.1] - 2018-MM-DD
+## [3.0.1] - 2018-06-14
 
 ### Fixed
 
 * Fixed [#53](https://github.com/sebastianbergmann/comparator/pull/53): `DOMNodeComparator` ignores `$ignoreCase` parameter
+* Fixed [#58](https://github.com/sebastianbergmann/comparator/pull/58): `ScalarComparator` does not handle extremely ugly string comparison edge cases
 
 ## [3.0.0] - 2018-04-18
 
