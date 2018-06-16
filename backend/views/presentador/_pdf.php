@@ -42,21 +42,25 @@ $this->params['breadcrumbs'][] = $this->title;
     
     <div class="row">
 <?php
-if($providerCatalogo->totalCount){
-    $gridColumnCatalogo = [
+if($providerImagen->totalCount){
+    $gridColumnImagen = [
         ['class' => 'yii\grid\SerialColumn'],
         ['attribute' => 'id', 'visible' => false],
-                'name',
+                'Perfil',
+        'Nombre_Imagen',
+        'Tamano',
+        'Tipo',
+        'Ruta',
     ];
     echo Gridview::widget([
-        'dataProvider' => $providerCatalogo,
+        'dataProvider' => $providerImagen,
         'panel' => [
             'type' => GridView::TYPE_PRIMARY,
-            'heading' => Html::encode(Yii::t('app', 'Catalogo')),
+            'heading' => Html::encode(Yii::t('app', 'Imagen')),
         ],
         'panelHeadingTemplate' => '<h4>{heading}</h4>{summary}',
         'toggleData' => false,
-        'columns' => $gridColumnCatalogo
+        'columns' => $gridColumnImagen
     ]);
 }
 ?>

@@ -12,6 +12,8 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
+    <?= $form->field($model, 'presentador_id')->textInput() ?>
+
     <?= $form->field($model, 'Perfil')->textInput() ?>
 
     <?= $form->field($model, 'Nombre_Imagen')->textInput(['maxlength' => true]) ?>

@@ -6,8 +6,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model backend\models\Presentador */
 
-$this->title = 'Create Presentador';
-$this->params['breadcrumbs'][] = ['label' => 'Presentadors', 'url' => ['index']];
+$this->title = Yii::t('app', 'Create Presentador');
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Presentadors'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="presentador-create">
