@@ -5,9 +5,9 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model backend\models\Imagen */
 
-$this->title = 'Update Imagen: ' . $model->name;
+$this->title = 'Update Imagen: ' . $model->id;
 $this->params['breadcrumbs'][] = ['label' => 'Imagens', 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => $model->name, 'url' => ['view', 'id' => $model->id]];
+$this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Update';
 ?>
 <div class="imagen-update">

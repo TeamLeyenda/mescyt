@@ -8,11 +8,13 @@ use Yii;
  * This is the model class for table "imagen".
  *
  * @property int $id
- * @property string $path
- * @property string $type
- * @property int $size
- * @property string $name
- * @property int $sort_order
+ * @property resource $Perfil
+ * @property string $Nombre_Imagen
+ * @property int $Tamano
+ * @property string $Tipo
+ * @property string $Ruta
+ *
+ * @property Presentador[] $presentadors
  */
 class Imagen extends \yii\db\ActiveRecord
 {
@@ -30,9 +32,10 @@ class Imagen extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['size', 'sort_order'], 'integer'],
-            [['path'], 'string', 'max' => 1024],
-            [['type', 'name'], 'string', 'max' => 255],
+            [['Perfil'], 'string'],
+            [['Tamano'], 'integer'],
+            [['Nombre_Imagen', 'Ruta'], 'string', 'max' => 255],
+            [['Tipo'], 'string', 'max' => 8],
         ];
     }
 
@@ -43,11 +46,19 @@ class Imagen extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'path' => 'Path',
-            'type' => 'Type',
-            'size' => 'Size',
-            'name' => 'Name',
-            'sort_order' => 'Sort Order',
+            'Perfil' => 'Perfil',
+            'Nombre_Imagen' => 'Nombre Imagen',
+            'Tamano' => 'Tamano',
+            'Tipo' => 'Tipo',
+            'Ruta' => 'Ruta',
         ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getPresentadors()
+    {
+        return $this->hasMany(Presentador::className(), ['imagen_id' => 'id']);
     }
 }
