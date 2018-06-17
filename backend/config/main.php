@@ -16,12 +16,7 @@ return [
             'class' => 'mdm\admin\Module',
             'layout' => 'left-menu', // defaults to null, using the application's layout without the menu
             // other available values are 'right-menu' and 'top-menu'
-            'menus' => [
-                'assignment' => [
-                    'label' => 'Grant Access' // change label
-                ],
-                'route' => null, // disable menu
-            ],
+            'mainLayout' => '@app/views/layouts/main.php',
             'controllerMap' => [
                 'assignment' => [
                    'class' => 'mdm\admin\controllers\AssignmentController',
