@@ -7,7 +7,6 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-
 namespace SebastianBergmann\Comparator;
 
 use DateTime;
@@ -15,14 +14,22 @@ use DateTimeImmutable;
 use DateTimeZone;
 
 /**
- * @coversDefaultClass SebastianBergmann\Comparator\DateTimeComparator
+ * @covers \SebastianBergmann\Comparator\DateTimeComparator
  *
+<<<<<<< HEAD
  */
 class DateTimeComparatorTest extends \PHPUnit_Framework_TestCase
+=======
+ * @uses \SebastianBergmann\Comparator\Comparator
+ * @uses \SebastianBergmann\Comparator\Factory
+ * @uses \SebastianBergmann\Comparator\ComparisonFailure
+ */
+final class DateTimeComparatorTest extends TestCase
+>>>>>>> 791c95b33641ee77fe8b19f6f2bc800d9dbd5b7f
 {
     private $comparator;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->comparator = new DateTimeComparator;
     }
@@ -31,11 +38,19 @@ class DateTimeComparatorTest extends \PHPUnit_Framework_TestCase
     {
         $datetime = new DateTime;
 
+<<<<<<< HEAD
         return array(
           array($datetime, null),
           array(null, $datetime),
           array(null, null)
         );
+=======
+        return [
+            [$datetime, null],
+            [null, $datetime],
+            [null, null]
+        ];
+>>>>>>> 791c95b33641ee77fe8b19f6f2bc800d9dbd5b7f
     }
 
     public function assertEqualsSucceedsProvider()
@@ -138,10 +153,7 @@ class DateTimeComparatorTest extends \PHPUnit_Framework_TestCase
         );
     }
 
-    /**
-     * @covers  ::accepts
-     */
-    public function testAcceptsSucceeds()
+    public function testAcceptsSucceeds(): void
     {
         $this->assertTrue(
           $this->comparator->accepts(
@@ -152,10 +164,9 @@ class DateTimeComparatorTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers       ::accepts
      * @dataProvider acceptsFailsProvider
      */
-    public function testAcceptsFails($expected, $actual)
+    public function testAcceptsFails($expected, $actual): void
     {
         $this->assertFalse(
           $this->comparator->accepts($expected, $actual)
@@ -163,10 +174,9 @@ class DateTimeComparatorTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers       ::assertEquals
      * @dataProvider assertEqualsSucceedsProvider
      */
-    public function testAssertEqualsSucceeds($expected, $actual, $delta = 0.0)
+    public function testAssertEqualsSucceeds($expected, $actual, $delta = 0.0): void
     {
         $exception = null;
 
@@ -181,10 +191,9 @@ class DateTimeComparatorTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers       ::assertEquals
      * @dataProvider assertEqualsFailsProvider
      */
-    public function testAssertEqualsFails($expected, $actual, $delta = 0.0)
+    public function testAssertEqualsFails($expected, $actual, $delta = 0.0): void
     {
         $this->setExpectedException(
           'SebastianBergmann\\Comparator\\ComparisonFailure',
@@ -193,20 +202,12 @@ class DateTimeComparatorTest extends \PHPUnit_Framework_TestCase
         $this->comparator->assertEquals($expected, $actual, $delta);
     }
 
-    /**
-     * @requires PHP 5.5
-     * @covers   ::accepts
-     */
-    public function testAcceptsDateTimeInterface()
+    public function testAcceptsDateTimeInterface(): void
     {
         $this->assertTrue($this->comparator->accepts(new DateTime, new DateTimeImmutable));
     }
 
-    /**
-     * @requires PHP 5.5
-     * @covers   ::assertEquals
-     */
-    public function testSupportsDateTimeInterface()
+    public function testSupportsDateTimeInterface(): void
     {
         $this->comparator->assertEquals(
           new DateTime('2013-03-29 04:13:35', new DateTimeZone('America/New_York')),

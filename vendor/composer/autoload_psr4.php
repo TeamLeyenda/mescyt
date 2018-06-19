@@ -25,6 +25,7 @@ return array(
     'mootensai\\behaviors\\' => array($vendorDir . '/mootensai/yii2-uuid-behavior'),
     'meysampg\\treeview\\' => array($vendorDir . '/meysampg/yii2-treeview'),
     'meysampg\\formbuilder\\' => array($vendorDir . '/meysampg/yii2-formbuilder'),
+    'mdm\\admin\\' => array($vendorDir . '/mdmsoft/yii2-admin'),
     'kartik\\widgets\\' => array($vendorDir . '/kartik-v/yii2-widgets'),
     'kartik\\typeahead\\' => array($vendorDir . '/kartik-v/yii2-widget-typeahead'),
     'kartik\\touchspin\\' => array($vendorDir . '/kartik-v/yii2-widget-touchspin'),

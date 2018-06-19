@@ -7,7 +7,7 @@ use kartik\grid\GridView;
 /* @var $this yii\web\View */
 /* @var $model backend\models\Presentador */
 
-$this->title = $model->id;
+$this->title = $model->Nombre;
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Presentadors'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -46,7 +46,7 @@ $this->params['breadcrumbs'][] = $this->title;
     $gridColumn = [
         ['attribute' => 'id', 'visible' => false],
         [
-            'attribute' => 'afiliacion.id',
+            'attribute' => 'afiliacion.Afiliacion',
             'label' => Yii::t('app', 'Afiliacion'),
         ],
         'Nombre',
@@ -64,21 +64,25 @@ $this->params['breadcrumbs'][] = $this->title;
     
     <div class="row">
 <?php
-if($providerCatalogo->totalCount){
-    $gridColumnCatalogo = [
+if($providerImagen->totalCount){
+    $gridColumnImagen = [
         ['class' => 'yii\grid\SerialColumn'],
             ['attribute' => 'id', 'visible' => false],
-                        'name',
+                        'Perfil',
+            'Nombre_Imagen',
+            'Tamano',
+            'Tipo',
+            'Ruta',
     ];
     echo Gridview::widget([
-        'dataProvider' => $providerCatalogo,
+        'dataProvider' => $providerImagen,
         'pjax' => true,
-        'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-catalogo']],
+        'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-imagen']],
         'panel' => [
             'type' => GridView::TYPE_PRIMARY,
-            'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode(Yii::t('app', 'Catalogo')),
+            'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode(Yii::t('app', 'Imagen')),
         ],
-        'columns' => $gridColumnCatalogo
+        'columns' => $gridColumnImagen
     ]);
 }
 ?>

@@ -1,7 +1,7 @@
 <?php
 
 /* @var $this yii\web\View */
-/* @var $searchModel backend\models\CongresoSearch */
+/* @var $searchModel backend\models\PresentadorSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 use yii\helpers\Html;
@@ -48,14 +48,14 @@ $this->registerJs($search);
                 'attribute' => 'afiliacion_id',
                 'label' => Yii::t('app', 'Afiliacion'),
                 'value' => function($model){                   
-                    return $model->afiliacion->id;                   
+                    return $model->afiliacion->Afiliacion;                   
                 },
                 'filterType' => GridView::FILTER_SELECT2,
-                'filter' => \yii\helpers\ArrayHelper::map(\backend\models\Afiliacion::find()->asArray()->all(), 'id', 'id'),
+                'filter' => \yii\helpers\ArrayHelper::map(\backend\models\Afiliacion::find()->asArray()->all(), 'id', 'Afiliacion'),
                 'filterWidgetOptions' => [
                     'pluginOptions' => ['allowClear' => true],
                 ],
-                'filterInputOptions' => ['placeholder' => 'Afiliacion', 'id' => 'grid-congreso-search-afiliacion_id']
+                'filterInputOptions' => ['placeholder' => 'Afiliacion', 'id' => 'grid-presentador-search-afiliacion_id']
             ],
         'Nombre',
         'Apellido',

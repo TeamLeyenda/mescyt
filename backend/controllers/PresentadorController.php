@@ -4,7 +4,7 @@ namespace backend\controllers;
 
 use Yii;
 use backend\models\Presentador;
-use backend\models\CongresoSearch;
+use backend\models\PresentadorSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -28,7 +28,7 @@ class PresentadorController extends Controller
                 'rules' => [
                     [
                         'allow' => true,
-                        'actions' => ['index', 'view', 'create', 'update', 'delete', 'pdf', 'save-as-new', 'add-catalogo', 'add-presentador-area-especializacion', 'add-presentador-conferencia', 'add-presentador-grado-academico', 'add-presentador-sala'],
+                        'actions' => ['index', 'view', 'create', 'update', 'delete', 'pdf', 'save-as-new', 'add-imagen', 'add-presentador-area-especializacion', 'add-presentador-conferencia', 'add-presentador-grado-academico', 'add-presentador-sala'],
                         'roles' => ['@']
                     ],
                     [
@@ -45,7 +45,7 @@ class PresentadorController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new CongresoSearch();
+        $searchModel = new PresentadorSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -62,8 +62,8 @@ class PresentadorController extends Controller
     public function actionView($id)
     {
         $model = $this->findModel($id);
-        $providerCatalogo = new \yii\data\ArrayDataProvider([
-            'allModels' => $model->catalogos,
+        $providerImagen = new \yii\data\ArrayDataProvider([
+            'allModels' => $model->imagens,
         ]);
         $providerPresentadorAreaEspecializacion = new \yii\data\ArrayDataProvider([
             'allModels' => $model->presentadorAreaEspecializacions,
@@ -79,7 +79,7 @@ class PresentadorController extends Controller
         ]);
         return $this->render('view', [
             'model' => $this->findModel($id),
-            'providerCatalogo' => $providerCatalogo,
+            'providerImagen' => $providerImagen,
             'providerPresentadorAreaEspecializacion' => $providerPresentadorAreaEspecializacion,
             'providerPresentadorConferencia' => $providerPresentadorConferencia,
             'providerPresentadorGradoAcademico' => $providerPresentadorGradoAcademico,
@@ -149,8 +149,8 @@ class PresentadorController extends Controller
      */
     public function actionPdf($id) {
         $model = $this->findModel($id);
-        $providerCatalogo = new \yii\data\ArrayDataProvider([
-            'allModels' => $model->catalogos,
+        $providerImagen = new \yii\data\ArrayDataProvider([
+            'allModels' => $model->imagens,
         ]);
         $providerPresentadorAreaEspecializacion = new \yii\data\ArrayDataProvider([
             'allModels' => $model->presentadorAreaEspecializacions,
@@ -167,7 +167,7 @@ class PresentadorController extends Controller
 
         $content = $this->renderAjax('_pdf', [
             'model' => $model,
-            'providerCatalogo' => $providerCatalogo,
+            'providerImagen' => $providerImagen,
             'providerPresentadorAreaEspecializacion' => $providerPresentadorAreaEspecializacion,
             'providerPresentadorConferencia' => $providerPresentadorConferencia,
             'providerPresentadorGradoAcademico' => $providerPresentadorGradoAcademico,
@@ -234,19 +234,19 @@ class PresentadorController extends Controller
     
     /**
     * Action to load a tabular form grid
-    * for Catalogo
+    * for Imagen
     * @author Yohanes Candrajaya <moo.tensai@gmail.com>
     * @author Jiwantoro Ndaru <jiwanndaru@gmail.com>
     *
     * @return mixed
     */
-    public function actionAddCatalogo()
+    public function actionAddImagen()
     {
         if (Yii::$app->request->isAjax) {
-            $row = Yii::$app->request->post('Catalogo');
+            $row = Yii::$app->request->post('Imagen');
             if((Yii::$app->request->post('isNewRecord') && Yii::$app->request->post('_action') == 'load' && empty($row)) || Yii::$app->request->post('_action') == 'add')
                 $row[] = [];
-            return $this->renderAjax('_formCatalogo', ['row' => $row]);
+            return $this->renderAjax('_formImagen', ['row' => $row]);
         } else {
             throw new NotFoundHttpException(Yii::t('app', 'The requested page does not exist.'));
         }

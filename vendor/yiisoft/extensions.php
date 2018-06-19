@@ -12,6 +12,18 @@ return array (
       '@yii/bootstrap' => $vendorDir . '/yiisoft/yii2-bootstrap/src',
     ),
   ),
+<<<<<<< HEAD
+=======
+  'yiisoft/yii2-swiftmailer' => 
+  array (
+    'name' => 'yiisoft/yii2-swiftmailer',
+    'version' => '9999999-dev',
+    'alias' => 
+    array (
+      '@yii/swiftmailer' => $vendorDir . '/yiisoft/yii2-swiftmailer/src',
+    ),
+  ),
+>>>>>>> 791c95b33641ee77fe8b19f6f2bc800d9dbd5b7f
   'yii2tech/filedb' => 
   array (
     'name' => 'yii2tech/filedb',
@@ -418,6 +430,7 @@ return array (
       '@meysampg/formbuilder' => $vendorDir . '/meysampg/yii2-formbuilder',
     ),
   ),
+<<<<<<< HEAD
   'yiisoft/yii2-swiftmailer' => 
   array (
     'name' => 'yiisoft/yii2-swiftmailer',
@@ -427,6 +440,8 @@ return array (
       '@yii/swiftmailer' => $vendorDir . '/yiisoft/yii2-swiftmailer',
     ),
   ),
+=======
+>>>>>>> 791c95b33641ee77fe8b19f6f2bc800d9dbd5b7f
   'wbraganca/yii2-dynamicform' => 
   array (
     'name' => 'wbraganca/yii2-dynamicform',
@@ -445,4 +460,16 @@ return array (
       '@yii/gii' => $vendorDir . '/yiisoft/yii2-gii/src',
     ),
   ),
+<<<<<<< HEAD
+=======
+  'mdmsoft/yii2-admin' => 
+  array (
+    'name' => 'mdmsoft/yii2-admin',
+    'version' => '9999999-dev',
+    'alias' => 
+    array (
+      '@mdm/admin' => $vendorDir . '/mdmsoft/yii2-admin',
+    ),
+  ),
+>>>>>>> 791c95b33641ee77fe8b19f6f2bc800d9dbd5b7f
 );

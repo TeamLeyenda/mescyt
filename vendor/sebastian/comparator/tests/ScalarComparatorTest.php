@@ -7,24 +7,35 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-
 namespace SebastianBergmann\Comparator;
 
 /**
- * @coversDefaultClass SebastianBergmann\Comparator\ScalarComparator
+ * @covers \SebastianBergmann\Comparator\ScalarComparator
  *
+<<<<<<< HEAD
  */
 class ScalarComparatorTest extends \PHPUnit_Framework_TestCase
+=======
+ * @uses \SebastianBergmann\Comparator\Comparator
+ * @uses \SebastianBergmann\Comparator\Factory
+ * @uses \SebastianBergmann\Comparator\ComparisonFailure
+ */
+final class ScalarComparatorTest extends TestCase
+>>>>>>> 791c95b33641ee77fe8b19f6f2bc800d9dbd5b7f
 {
+    /**
+     * @var ScalarComparator
+     */
     private $comparator;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->comparator = new ScalarComparator;
     }
 
     public function acceptsSucceedsProvider()
     {
+<<<<<<< HEAD
         return array(
           array("string", "string"),
           array(new ClassWithToString, "string"),
@@ -41,10 +52,29 @@ class ScalarComparatorTest extends \PHPUnit_Framework_TestCase
           array(0, false),
           array(0.1, "0.1")
         );
+=======
+        return [
+            ['string', 'string'],
+            [new ClassWithToString, 'string'],
+            ['string', new ClassWithToString],
+            ['string', null],
+            [false, 'string'],
+            [false, true],
+            [null, false],
+            [null, null],
+            ['10', 10],
+            ['', false],
+            ['1', true],
+            [1, true],
+            [0, false],
+            [0.1, '0.1']
+        ];
+>>>>>>> 791c95b33641ee77fe8b19f6f2bc800d9dbd5b7f
     }
 
     public function acceptsFailsProvider()
     {
+<<<<<<< HEAD
         return array(
           array(array(), array()),
           array("string", array()),
@@ -52,10 +82,20 @@ class ScalarComparatorTest extends \PHPUnit_Framework_TestCase
           array(false, new ClassWithToString),
           array(tmpfile(), tmpfile())
         );
+=======
+        return [
+            [[], []],
+            ['string', []],
+            [new ClassWithToString, new ClassWithToString],
+            [false, new ClassWithToString],
+            [\tmpfile(), \tmpfile()]
+        ];
+>>>>>>> 791c95b33641ee77fe8b19f6f2bc800d9dbd5b7f
     }
 
     public function assertEqualsSucceedsProvider()
     {
+<<<<<<< HEAD
         return array(
           array("string", "string"),
           array(new ClassWithToString, new ClassWithToString),
@@ -76,6 +116,28 @@ class ScalarComparatorTest extends \PHPUnit_Framework_TestCase
           array(true, true),
           array(null, null)
         );
+=======
+        return [
+            ['string', 'string'],
+            [new ClassWithToString, new ClassWithToString],
+            ['string representation', new ClassWithToString],
+            [new ClassWithToString, 'string representation'],
+            ['string', 'STRING', true],
+            ['STRING', 'string', true],
+            ['String Representation', new ClassWithToString, true],
+            [new ClassWithToString, 'String Representation', true],
+            ['10', 10],
+            ['', false],
+            ['1', true],
+            [1, true],
+            [0, false],
+            [0.1, '0.1'],
+            [false, null],
+            [false, false],
+            [true, true],
+            [null, null]
+        ];
+>>>>>>> 791c95b33641ee77fe8b19f6f2bc800d9dbd5b7f
     }
 
     public function assertEqualsFailsProvider()
@@ -83,6 +145,7 @@ class ScalarComparatorTest extends \PHPUnit_Framework_TestCase
         $stringException = 'Failed asserting that two strings are equal.';
         $otherException = 'matches expected';
 
+<<<<<<< HEAD
         return array(
           array("string", "other string", $stringException),
           array("string", "STRING", $stringException),
@@ -102,13 +165,38 @@ class ScalarComparatorTest extends \PHPUnit_Framework_TestCase
           array(null, true, $otherException),
           array(0, true, $otherException)
         );
+=======
+        return [
+            ['string', 'other string', $stringException],
+            ['string', 'STRING', $stringException],
+            ['STRING', 'string', $stringException],
+            ['string', 'other string', $stringException],
+            // https://github.com/sebastianbergmann/phpunit/issues/1023
+            ['9E6666666', '9E7777777', $stringException],
+            [new ClassWithToString, 'does not match', $otherException],
+            ['does not match', new ClassWithToString, $otherException],
+            [0, 'Foobar', $otherException],
+            ['Foobar', 0, $otherException],
+            ['10', 25, $otherException],
+            ['1', false, $otherException],
+            ['', true, $otherException],
+            [false, true, $otherException],
+            [true, false, $otherException],
+            [null, true, $otherException],
+            [0, true, $otherException],
+            ['0', '0.0', $stringException],
+            ['0.', '0.0', $stringException],
+            ['0e1', '0e2', $stringException],
+            ["\n\n\n0.0", '                   0.', $stringException],
+            ['0.0', '25e-10000', $stringException],
+        ];
+>>>>>>> 791c95b33641ee77fe8b19f6f2bc800d9dbd5b7f
     }
 
     /**
-     * @covers       ::accepts
      * @dataProvider acceptsSucceedsProvider
      */
-    public function testAcceptsSucceeds($expected, $actual)
+    public function testAcceptsSucceeds($expected, $actual): void
     {
         $this->assertTrue(
           $this->comparator->accepts($expected, $actual)
@@ -116,10 +204,9 @@ class ScalarComparatorTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers       ::accepts
      * @dataProvider acceptsFailsProvider
      */
-    public function testAcceptsFails($expected, $actual)
+    public function testAcceptsFails($expected, $actual): void
     {
         $this->assertFalse(
           $this->comparator->accepts($expected, $actual)
@@ -127,10 +214,9 @@ class ScalarComparatorTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers       ::assertEquals
      * @dataProvider assertEqualsSucceedsProvider
      */
-    public function testAssertEqualsSucceeds($expected, $actual, $ignoreCase = false)
+    public function testAssertEqualsSucceeds($expected, $actual, $ignoreCase = false): void
     {
         $exception = null;
 
@@ -145,10 +231,9 @@ class ScalarComparatorTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers       ::assertEquals
      * @dataProvider assertEqualsFailsProvider
      */
-    public function testAssertEqualsFails($expected, $actual, $message)
+    public function testAssertEqualsFails($expected, $actual, $message): void
     {
         $this->setExpectedException(
           'SebastianBergmann\\Comparator\\ComparisonFailure', $message

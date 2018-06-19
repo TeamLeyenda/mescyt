@@ -7,7 +7,6 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-
 namespace SebastianBergmann\Comparator;
 
 /**
@@ -18,7 +17,11 @@ class Factory
     /**
      * @var Comparator[]
      */
+<<<<<<< HEAD
     private $comparators = array();
+=======
+    private static $instance;
+>>>>>>> 791c95b33641ee77fe8b19f6f2bc800d9dbd5b7f
 
     /**
      * @var Factory

@@ -7,20 +7,30 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-
 namespace SebastianBergmann\Comparator;
 
 use stdClass;
 
 /**
- * @coversDefaultClass SebastianBergmann\Comparator\ObjectComparator
+ * @covers \SebastianBergmann\Comparator\ObjectComparator
  *
+<<<<<<< HEAD
  */
 class ObjectComparatorTest extends \PHPUnit_Framework_TestCase
+=======
+ * @uses \SebastianBergmann\Comparator\Comparator
+ * @uses \SebastianBergmann\Comparator\Factory
+ * @uses \SebastianBergmann\Comparator\ComparisonFailure
+ */
+final class ObjectComparatorTest extends TestCase
+>>>>>>> 791c95b33641ee77fe8b19f6f2bc800d9dbd5b7f
 {
+    /**
+     * @var ObjectComparator
+     */
     private $comparator;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->comparator = new ObjectComparator;
         $this->comparator->setFactory(new Factory);
@@ -28,20 +38,36 @@ class ObjectComparatorTest extends \PHPUnit_Framework_TestCase
 
     public function acceptsSucceedsProvider()
     {
+<<<<<<< HEAD
         return array(
           array(new TestClass, new TestClass),
           array(new stdClass, new stdClass),
           array(new stdClass, new TestClass)
         );
+=======
+        return [
+            [new TestClass, new TestClass],
+            [new stdClass, new stdClass],
+            [new stdClass, new TestClass]
+        ];
+>>>>>>> 791c95b33641ee77fe8b19f6f2bc800d9dbd5b7f
     }
 
     public function acceptsFailsProvider()
     {
+<<<<<<< HEAD
         return array(
           array(new stdClass, null),
           array(null, new stdClass),
           array(null, null)
         );
+=======
+        return [
+            [new stdClass, null],
+            [null, new stdClass],
+            [null, null]
+        ];
+>>>>>>> 791c95b33641ee77fe8b19f6f2bc800d9dbd5b7f
     }
 
     public function assertEqualsSucceedsProvider()
@@ -57,6 +83,7 @@ class ObjectComparatorTest extends \PHPUnit_Framework_TestCase
         $object1 = new SampleClass(4, 8, 15);
         $object2 = new SampleClass(4, 8, 15);
 
+<<<<<<< HEAD
         return array(
           array($object1, $object1),
           array($object1, $object2),
@@ -64,6 +91,15 @@ class ObjectComparatorTest extends \PHPUnit_Framework_TestCase
           array($book1, $book2),
           array(new Struct(2.3), new Struct(2.5), 0.5)
         );
+=======
+        return [
+            [$object1, $object1],
+            [$object1, $object2],
+            [$book1, $book1],
+            [$book1, $book2],
+            [new Struct(2.3), new Struct(2.5), 0.5]
+        ];
+>>>>>>> 791c95b33641ee77fe8b19f6f2bc800d9dbd5b7f
     }
 
     public function assertEqualsFailsProvider()
@@ -87,6 +123,7 @@ class ObjectComparatorTest extends \PHPUnit_Framework_TestCase
         $object1 = new SampleClass( 4,  8, 15);
         $object2 = new SampleClass(16, 23, 42);
 
+<<<<<<< HEAD
         return array(
           array(new SampleClass(4, 8, 15), new SampleClass(16, 23, 42), $equalMessage),
           array($object1, $object2, $equalMessage),
@@ -94,13 +131,21 @@ class ObjectComparatorTest extends \PHPUnit_Framework_TestCase
           array($book3, $book4, $typeMessage),
           array(new Struct(2.3), new Struct(4.2), $equalMessage, 0.5)
         );
+=======
+        return [
+            [new SampleClass(4, 8, 15), new SampleClass(16, 23, 42), $equalMessage],
+            [$object1, $object2, $equalMessage],
+            [$book1, $book2, $equalMessage],
+            [$book3, $book4, $typeMessage],
+            [new Struct(2.3), new Struct(4.2), $equalMessage, 0.5]
+        ];
+>>>>>>> 791c95b33641ee77fe8b19f6f2bc800d9dbd5b7f
     }
 
     /**
-     * @covers       ::accepts
      * @dataProvider acceptsSucceedsProvider
      */
-    public function testAcceptsSucceeds($expected, $actual)
+    public function testAcceptsSucceeds($expected, $actual): void
     {
         $this->assertTrue(
           $this->comparator->accepts($expected, $actual)
@@ -108,10 +153,9 @@ class ObjectComparatorTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers       ::accepts
      * @dataProvider acceptsFailsProvider
      */
-    public function testAcceptsFails($expected, $actual)
+    public function testAcceptsFails($expected, $actual): void
     {
         $this->assertFalse(
           $this->comparator->accepts($expected, $actual)
@@ -119,10 +163,9 @@ class ObjectComparatorTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers       ::assertEquals
      * @dataProvider assertEqualsSucceedsProvider
      */
-    public function testAssertEqualsSucceeds($expected, $actual, $delta = 0.0)
+    public function testAssertEqualsSucceeds($expected, $actual, $delta = 0.0): void
     {
         $exception = null;
 
@@ -137,10 +180,9 @@ class ObjectComparatorTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers       ::assertEquals
      * @dataProvider assertEqualsFailsProvider
      */
-    public function testAssertEqualsFails($expected, $actual, $message, $delta = 0.0)
+    public function testAssertEqualsFails($expected, $actual, $message, $delta = 0.0): void
     {
         $this->setExpectedException(
           'SebastianBergmann\\Comparator\\ComparisonFailure', $message

@@ -16,7 +16,7 @@ use mootensai\behaviors\UUIDBehavior;
  * @property string $Correo
  * @property string $Descripcion
  *
- * @property \backend\models\Catalogo[] $catalogos
+ * @property \backend\models\Imagen[] $imagens
  * @property \backend\models\Afiliacion $afiliacion
  * @property \backend\models\PresentadorAreaEspecializacion[] $presentadorAreaEspecializacions
  * @property \backend\models\AreaEspecializacion[] $areaEspecializacions
@@ -39,7 +39,7 @@ class Presentador extends \yii\db\ActiveRecord
     public function relationNames()
     {
         return [
-            'catalogos',
+            'imagens',
             'afiliacion',
             'presentadorAreaEspecializacions',
             'areaEspecializacions',
@@ -107,9 +107,9 @@ class Presentador extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getCatalogos()
+    public function getImagens()
     {
-        return $this->hasMany(\backend\models\Catalogo::className(), ['presentador_id' => 'id'])->inverseOf('presentador');
+        return $this->hasMany(\backend\models\Imagen::className(), ['presentador_id' => 'id'])->inverseOf('presentador');
     }
         
     /**

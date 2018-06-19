@@ -10,10 +10,10 @@ $items = [
         ]),
     ],
         [
-        'label' => '<i class="glyphicon glyphicon-book"></i> '. Html::encode(Yii::t('app', 'Catalogo')),
-        'content' => $this->render('_dataCatalogo', [
+        'label' => '<i class="glyphicon glyphicon-book"></i> '. Html::encode(Yii::t('app', 'Imagen')),
+        'content' => $this->render('_dataImagen', [
             'model' => $model,
-            'row' => $model->catalogos,
+            'row' => $model->imagens,
         ]),
     ],
                 [

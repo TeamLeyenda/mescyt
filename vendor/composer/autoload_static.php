@@ -55,6 +55,7 @@ class ComposerStaticInitf8aa444fadf5e861a9b2931a0751dc85
             'mootensai\\behaviors\\' => 20,
             'meysampg\\treeview\\' => 18,
             'meysampg\\formbuilder\\' => 21,
+            'mdm\\admin\\' => 10,
         ),
         'k' => 
         array (
@@ -230,6 +231,10 @@ class ComposerStaticInitf8aa444fadf5e861a9b2931a0751dc85
         'meysampg\\formbuilder\\' => 
         array (
             0 => __DIR__ . '/..' . '/meysampg/yii2-formbuilder',
+        ),
+        'mdm\\admin\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/mdmsoft/yii2-admin',
         ),
         'kartik\\widgets\\' => 
         array (

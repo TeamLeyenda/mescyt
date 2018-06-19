@@ -7,14 +7,21 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-
 namespace SebastianBergmann\Comparator;
 
 /**
- * @coversDefaultClass SebastianBergmann\Comparator\Factory
+ * @covers \SebastianBergmann\Comparator\Factory
  *
+<<<<<<< HEAD
  */
 class FactoryTest extends \PHPUnit_Framework_TestCase
+=======
+ * @uses \SebastianBergmann\Comparator\Comparator
+ * @uses \SebastianBergmann\Comparator\Factory
+ * @uses \SebastianBergmann\Comparator\ComparisonFailure
+ */
+final class FactoryTest extends TestCase
+>>>>>>> 791c95b33641ee77fe8b19f6f2bc800d9dbd5b7f
 {
     public function instanceProvider()
     {
@@ -65,20 +72,20 @@ class FactoryTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @dataProvider instanceProvider
+<<<<<<< HEAD
      * @covers       ::getComparatorFor
      * @covers       ::__construct
+=======
+>>>>>>> 791c95b33641ee77fe8b19f6f2bc800d9dbd5b7f
      */
-    public function testGetComparatorFor($a, $b, $expected)
+    public function testGetComparatorFor($a, $b, $expected): void
     {
         $factory = new Factory;
         $actual = $factory->getComparatorFor($a, $b);
         $this->assertInstanceOf($expected, $actual);
     }
 
-    /**
-     * @covers ::register
-     */
-    public function testRegister()
+    public function testRegister(): void
     {
         $comparator = new TestClassComparator;
 
@@ -94,10 +101,7 @@ class FactoryTest extends \PHPUnit_Framework_TestCase
         $this->assertInstanceOf($expected, $actual);
     }
 
-    /**
-     * @covers ::unregister
-     */
-    public function testUnregister()
+    public function testUnregister(): void
     {
         $comparator = new TestClassComparator;
 
@@ -112,4 +116,13 @@ class FactoryTest extends \PHPUnit_Framework_TestCase
 
         $this->assertInstanceOf($expected, $actual);
     }
+<<<<<<< HEAD
+=======
+
+    public function testIsSingleton(): void
+    {
+        $f = Factory::getInstance();
+        $this->assertSame($f, Factory::getInstance());
+    }
+>>>>>>> 791c95b33641ee77fe8b19f6f2bc800d9dbd5b7f
 }

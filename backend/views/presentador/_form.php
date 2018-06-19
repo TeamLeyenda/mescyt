@@ -9,9 +9,9 @@ use yii\widgets\ActiveForm;
 
 \mootensai\components\JsBlock::widget(['viewFile' => '_script', 'pos'=> \yii\web\View::POS_END, 
     'viewParams' => [
-        'class' => 'Catalogo', 
-        'relID' => 'catalogo', 
-        'value' => \yii\helpers\Json::encode($model->catalogos),
+        'class' => 'Imagen', 
+        'relID' => 'imagen', 
+        'value' => \yii\helpers\Json::encode($model->imagens),
         'isNewRecord' => ($model->isNewRecord) ? 1 : 0
     ]
 ]);
@@ -58,7 +58,7 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'id', ['template' => '{input}'])->textInput(['style' => 'display:none']); ?>
 
     <?= $form->field($model, 'afiliacion_id')->widget(\kartik\widgets\Select2::classname(), [
-        'data' => \yii\helpers\ArrayHelper::map(\backend\models\Afiliacion::find()->orderBy('id')->asArray()->all(), 'id', 'id'),
+        'data' => \yii\helpers\ArrayHelper::map(\backend\models\Afiliacion::find()->orderBy('id')->asArray()->all(), 'id', 'Afiliacion'),
         'options' => ['placeholder' => Yii::t('app', 'Choose Afiliacion')],
         'pluginOptions' => [
             'allowClear' => true
@@ -78,9 +78,9 @@ use yii\widgets\ActiveForm;
     <?php
     $forms = [
         [
-            'label' => '<i class="glyphicon glyphicon-book"></i> ' . Html::encode(Yii::t('app', 'Catalogo')),
-            'content' => $this->render('_formCatalogo', [
-                'row' => \yii\helpers\ArrayHelper::toArray($model->catalogos),
+            'label' => '<i class="glyphicon glyphicon-book"></i> ' . Html::encode(Yii::t('app', 'Imagen')),
+            'content' => $this->render('_formImagen', [
+                'row' => \yii\helpers\ArrayHelper::toArray($model->imagens),
             ]),
         ],
         [
