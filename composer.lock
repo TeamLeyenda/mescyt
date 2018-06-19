@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "331d92bafe2057e982fc33fcd3a2e0f0",
+    "content-hash": "6799a73c4ef3a9774a564ea629f56184",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
@@ -2511,50 +2511,6 @@
             "time": "2017-11-18T13:27:11+00:00"
         },
         {
-            "name": "meysampg/yii2-formbuilder",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/meysampg/yii2-formbuilder.git",
-                "reference": "0ad1ad447edf8f2bfa04e0243bd43a7b737958db"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/meysampg/yii2-formbuilder/zipball/0ad1ad447edf8f2bfa04e0243bd43a7b737958db",
-                "reference": "0ad1ad447edf8f2bfa04e0243bd43a7b737958db",
-                "shasum": ""
-            },
-            "require": {
-                "yiisoft/yii2": "*",
-                "yiisoft/yii2-jui": "*"
-            },
-            "type": "yii2-extension",
-            "autoload": {
-                "psr-4": {
-                    "meysampg\\formbuilder\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Meysam P.G.",
-                    "email": "p.g.meysam@gmail.com"
-                }
-            ],
-            "description": "A drag and drop form builder with jQuery for Yii2",
-            "keywords": [
-                "JS",
-                "extension",
-                "form",
-                "form-builder",
-                "yii2"
-            ],
-            "time": "2018-04-16T11:14:16+00:00"
-        },
-        {
             "name": "meysampg/yii2-treeview",
             "version": "dev-master",
             "source": {
@@ -4570,6 +4526,50 @@
                 "url"
             ],
             "time": "2018-06-08T08:55:26+00:00"
+        },
+        {
+            "name": "meysampg/yii2-formbuilder",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/meysampg/yii2-formbuilder.git",
+                "reference": "0ad1ad447edf8f2bfa04e0243bd43a7b737958db"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/meysampg/yii2-formbuilder/zipball/0ad1ad447edf8f2bfa04e0243bd43a7b737958db",
+                "reference": "0ad1ad447edf8f2bfa04e0243bd43a7b737958db",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": "*",
+                "yiisoft/yii2-jui": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "meysampg\\formbuilder\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Meysam P.G.",
+                    "email": "p.g.meysam@gmail.com"
+                }
+            ],
+            "description": "A drag and drop form builder with jQuery for Yii2",
+            "keywords": [
+                "JS",
+                "extension",
+                "form",
+                "form-builder",
+                "yii2"
+            ],
+            "time": "2018-04-16T11:14:16+00:00"
         },
         {
             "name": "phpdocumentor/reflection-common",
