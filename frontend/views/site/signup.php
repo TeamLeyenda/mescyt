@@ -8,12 +8,12 @@ use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 
 $this->title = 'Signup';
-$this->params['breadcrumbs'][] = $this->title;
+$this->params['breadcrumbs'][] = $this->title='Registro de Usuario';
 ?>
 <div class="site-signup">
     <h1><?= Html::encode($this->title) ?></h1>
 
-    <p>Please fill out the following fields to signup:</p>
+    <p>Por favor, llene todos los campos para registrar a su cuenta.</p>
 
     <div class="row">
         <div class="col-lg-5">

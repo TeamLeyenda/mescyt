@@ -1,8 +1,12 @@
 <?php
 
+use yii\helpers\Html;
+use yii\bootstrap\ActiveForm;
+
 /* @var $this yii\web\View */
 
 $this->title = 'My Yii Application';
+$this->title = 'Inicio - MESCyT';
 ?>
 <div class="site-index">
 
