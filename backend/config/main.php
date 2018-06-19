@@ -11,6 +11,7 @@ return [
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
+    'homeUrl' => '/administrator',
     'modules' => [
         /*
         'admin' => [
@@ -75,6 +76,7 @@ return [
         
         'request' => [
             'csrfParam' => '_csrf-backend',
+            'baseUrl' => '/administrator'
         ],
         /*
         'assignment' => [
