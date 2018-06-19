@@ -12,16 +12,8 @@ namespace SebastianBergmann\Comparator;
 /**
  * @covers \SebastianBergmann\Comparator\MockObjectComparator
  *
-<<<<<<< HEAD
  */
 class MockObjectComparatorTest extends \PHPUnit_Framework_TestCase
-=======
- * @uses \SebastianBergmann\Comparator\Comparator
- * @uses \SebastianBergmann\Comparator\Factory
- * @uses \SebastianBergmann\Comparator\ComparisonFailure
- */
-final class MockObjectComparatorTest extends TestCase
->>>>>>> 791c95b33641ee77fe8b19f6f2bc800d9dbd5b7f
 {
     /**
      * @var MockObjectComparator
@@ -36,7 +28,6 @@ final class MockObjectComparatorTest extends TestCase
 
     public function acceptsSucceedsProvider()
     {
-<<<<<<< HEAD
         $testmock = $this->getMock('SebastianBergmann\\Comparator\\TestClass');
         $stdmock = $this->getMock('stdClass');
 
@@ -45,35 +36,17 @@ final class MockObjectComparatorTest extends TestCase
           array($stdmock, $stdmock),
           array($stdmock, $testmock)
         );
-=======
-        $testmock = $this->createMock(TestClass::class);
-        $stdmock  = $this->createMock(stdClass::class);
-
-        return [
-            [$testmock, $testmock],
-            [$stdmock, $stdmock],
-            [$stdmock, $testmock]
-        ];
->>>>>>> 791c95b33641ee77fe8b19f6f2bc800d9dbd5b7f
     }
 
     public function acceptsFailsProvider()
     {
         $stdmock = $this->getMock('stdClass');
 
-<<<<<<< HEAD
         return array(
           array($stdmock, null),
           array(null, $stdmock),
           array(null, null)
         );
-=======
-        return [
-            [$stdmock, null],
-            [null, $stdmock],
-            [null, null]
-        ];
->>>>>>> 791c95b33641ee77fe8b19f6f2bc800d9dbd5b7f
     }
 
     public function assertEqualsSucceedsProvider()
@@ -86,7 +59,6 @@ final class MockObjectComparatorTest extends TestCase
         $book2->author = $this->getMock('SebastianBergmann\\Comparator\\Author', null, array('Terry Pratchett'));
         $book2->author->books[] = $book2;
 
-<<<<<<< HEAD
         $object1 = $this->getMock('SebastianBergmann\\Comparator\\SampleClass', null, array(4, 8, 15));
         $object2 = $this->getMock('SebastianBergmann\\Comparator\\SampleClass', null, array(4, 8, 15));
 
@@ -101,22 +73,6 @@ final class MockObjectComparatorTest extends TestCase
             0.5
           )
         );
-=======
-        $object1 = $this->getMockBuilder(SampleClass::class)->setMethods(null)->setConstructorArgs([4, 8, 15])->getMock();
-        $object2 = $this->getMockBuilder(SampleClass::class)->setMethods(null)->setConstructorArgs([4, 8, 15])->getMock();
-
-        return [
-            [$object1, $object1],
-            [$object1, $object2],
-            [$book1, $book1],
-            [$book1, $book2],
-            [
-                $this->getMockBuilder(Struct::class)->setMethods(null)->setConstructorArgs([2.3])->getMock(),
-                $this->getMockBuilder(Struct::class)->setMethods(null)->setConstructorArgs([2.5])->getMock(),
-                0.5
-            ]
-        ];
->>>>>>> 791c95b33641ee77fe8b19f6f2bc800d9dbd5b7f
     }
 
     public function assertEqualsFailsProvider()
@@ -140,7 +96,6 @@ final class MockObjectComparatorTest extends TestCase
         $object1 = $this->getMock('SebastianBergmann\\Comparator\\SampleClass', null, array(4, 8, 15));
         $object2 = $this->getMock('SebastianBergmann\\Comparator\\SampleClass', null, array(16, 23, 42));
 
-<<<<<<< HEAD
         return array(
           array(
             $this->getMock('SebastianBergmann\\Comparator\\SampleClass', null, array(4, 8, 15)),
@@ -157,24 +112,6 @@ final class MockObjectComparatorTest extends TestCase
             0.5
           )
         );
-=======
-        return [
-            [
-                $this->getMockBuilder(SampleClass::class)->setMethods(null)->setConstructorArgs([4, 8, 15])->getMock(),
-                $this->getMockBuilder(SampleClass::class)->setMethods(null)->setConstructorArgs([16, 23, 42])->getMock(),
-                $equalMessage
-            ],
-            [$object1, $object2, $equalMessage],
-            [$book1, $book2, $equalMessage],
-            [$book3, $book4, $typeMessage],
-            [
-                $this->getMockBuilder(Struct::class)->setMethods(null)->setConstructorArgs([2.3])->getMock(),
-                $this->getMockBuilder(Struct::class)->setMethods(null)->setConstructorArgs([4.2])->getMock(),
-                $equalMessage,
-                0.5
-            ]
-        ];
->>>>>>> 791c95b33641ee77fe8b19f6f2bc800d9dbd5b7f
     }
 
     /**

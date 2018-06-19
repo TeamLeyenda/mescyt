@@ -15,16 +15,8 @@ use \RuntimeException;
 /**
  * @covers \SebastianBergmann\Comparator\ExceptionComparator
  *
-<<<<<<< HEAD
  */
 class ExceptionComparatorTest extends \PHPUnit_Framework_TestCase
-=======
- * @uses \SebastianBergmann\Comparator\Comparator
- * @uses \SebastianBergmann\Comparator\Factory
- * @uses \SebastianBergmann\Comparator\ComparisonFailure
- */
-final class ExceptionComparatorTest extends TestCase
->>>>>>> 791c95b33641ee77fe8b19f6f2bc800d9dbd5b7f
 {
     /**
      * @var ExceptionComparator
@@ -39,36 +31,21 @@ final class ExceptionComparatorTest extends TestCase
 
     public function acceptsSucceedsProvider()
     {
-<<<<<<< HEAD
         return array(
           array(new Exception, new Exception),
           array(new RuntimeException, new RuntimeException),
           array(new Exception, new RuntimeException)
         );
-=======
-        return [
-            [new Exception, new Exception],
-            [new RuntimeException, new RuntimeException],
-            [new Exception, new RuntimeException]
-        ];
->>>>>>> 791c95b33641ee77fe8b19f6f2bc800d9dbd5b7f
     }
 
     public function acceptsFailsProvider()
     {
-<<<<<<< HEAD
+
         return array(
           array(new Exception, null),
           array(null, new Exception),
           array(null, null)
         );
-=======
-        return [
-            [new Exception, null],
-            [null, new Exception],
-            [null, null]
-        ];
->>>>>>> 791c95b33641ee77fe8b19f6f2bc800d9dbd5b7f
     }
 
     public function assertEqualsSucceedsProvider()
@@ -79,21 +56,12 @@ final class ExceptionComparatorTest extends TestCase
         $exception3 = new RunTimeException('Error', 100);
         $exception4 = new RunTimeException('Error', 100);
 
-<<<<<<< HEAD
         return array(
           array($exception1, $exception1),
           array($exception1, $exception2),
           array($exception3, $exception3),
           array($exception3, $exception4)
         );
-=======
-        return [
-            [$exception1, $exception1],
-            [$exception1, $exception2],
-            [$exception3, $exception3],
-            [$exception3, $exception4]
-        ];
->>>>>>> 791c95b33641ee77fe8b19f6f2bc800d9dbd5b7f
     }
 
     public function assertEqualsFailsProvider()
@@ -108,7 +76,6 @@ final class ExceptionComparatorTest extends TestCase
         $exception4 = new RunTimeException('Error', 100);
         $exception5 = new RunTimeException('Error', 101);
 
-<<<<<<< HEAD
         return array(
           array($exception1, $exception2, $equalMessage),
           array($exception1, $exception3, $equalMessage),
@@ -116,15 +83,6 @@ final class ExceptionComparatorTest extends TestCase
           array($exception2, $exception3, $equalMessage),
           array($exception4, $exception5, $equalMessage)
         );
-=======
-        return [
-            [$exception1, $exception2, $equalMessage],
-            [$exception1, $exception3, $equalMessage],
-            [$exception1, $exception4, $typeMessage],
-            [$exception2, $exception3, $equalMessage],
-            [$exception4, $exception5, $equalMessage]
-        ];
->>>>>>> 791c95b33641ee77fe8b19f6f2bc800d9dbd5b7f
     }
 
     /**

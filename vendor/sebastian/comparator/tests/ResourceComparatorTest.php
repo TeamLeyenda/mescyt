@@ -12,16 +12,8 @@ namespace SebastianBergmann\Comparator;
 /**
  * @covers \SebastianBergmann\Comparator\ResourceComparator
  *
-<<<<<<< HEAD
  */
 class ResourceComparatorTest extends \PHPUnit_Framework_TestCase
-=======
- * @uses \SebastianBergmann\Comparator\Comparator
- * @uses \SebastianBergmann\Comparator\Factory
- * @uses \SebastianBergmann\Comparator\ComparisonFailure
- */
-final class ResourceComparatorTest extends TestCase
->>>>>>> 791c95b33641ee77fe8b19f6f2bc800d9dbd5b7f
 {
     /**
      * @var ResourceComparator
@@ -35,7 +27,6 @@ final class ResourceComparatorTest extends TestCase
 
     public function acceptsSucceedsProvider()
     {
-<<<<<<< HEAD
         $tmpfile1 = tmpfile();
         $tmpfile2 = tmpfile();
 
@@ -44,35 +35,17 @@ final class ResourceComparatorTest extends TestCase
           array($tmpfile2, $tmpfile2),
           array($tmpfile1, $tmpfile2)
         );
-=======
-        $tmpfile1 = \tmpfile();
-        $tmpfile2 = \tmpfile();
-
-        return [
-            [$tmpfile1, $tmpfile1],
-            [$tmpfile2, $tmpfile2],
-            [$tmpfile1, $tmpfile2]
-        ];
->>>>>>> 791c95b33641ee77fe8b19f6f2bc800d9dbd5b7f
     }
 
     public function acceptsFailsProvider()
     {
         $tmpfile1 = tmpfile();
 
-<<<<<<< HEAD
         return array(
           array($tmpfile1, null),
           array(null, $tmpfile1),
           array(null, null)
         );
-=======
-        return [
-            [$tmpfile1, null],
-            [null, $tmpfile1],
-            [null, null]
-        ];
->>>>>>> 791c95b33641ee77fe8b19f6f2bc800d9dbd5b7f
     }
 
     public function assertEqualsSucceedsProvider()
@@ -80,17 +53,10 @@ final class ResourceComparatorTest extends TestCase
         $tmpfile1 = tmpfile();
         $tmpfile2 = tmpfile();
 
-<<<<<<< HEAD
         return array(
           array($tmpfile1, $tmpfile1),
           array($tmpfile2, $tmpfile2)
         );
-=======
-        return [
-            [$tmpfile1, $tmpfile1],
-            [$tmpfile2, $tmpfile2]
-        ];
->>>>>>> 791c95b33641ee77fe8b19f6f2bc800d9dbd5b7f
     }
 
     public function assertEqualsFailsProvider()
@@ -98,17 +64,10 @@ final class ResourceComparatorTest extends TestCase
         $tmpfile1 = tmpfile();
         $tmpfile2 = tmpfile();
 
-<<<<<<< HEAD
         return array(
           array($tmpfile1, $tmpfile2),
           array($tmpfile2, $tmpfile1)
         );
-=======
-        return [
-            [$tmpfile1, $tmpfile2],
-            [$tmpfile2, $tmpfile1]
-        ];
->>>>>>> 791c95b33641ee77fe8b19f6f2bc800d9dbd5b7f
     }
 
     /**

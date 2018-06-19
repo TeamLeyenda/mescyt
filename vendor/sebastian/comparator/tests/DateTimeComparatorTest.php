@@ -16,16 +16,8 @@ use DateTimeZone;
 /**
  * @covers \SebastianBergmann\Comparator\DateTimeComparator
  *
-<<<<<<< HEAD
  */
 class DateTimeComparatorTest extends \PHPUnit_Framework_TestCase
-=======
- * @uses \SebastianBergmann\Comparator\Comparator
- * @uses \SebastianBergmann\Comparator\Factory
- * @uses \SebastianBergmann\Comparator\ComparisonFailure
- */
-final class DateTimeComparatorTest extends TestCase
->>>>>>> 791c95b33641ee77fe8b19f6f2bc800d9dbd5b7f
 {
     private $comparator;
 
@@ -38,19 +30,11 @@ final class DateTimeComparatorTest extends TestCase
     {
         $datetime = new DateTime;
 
-<<<<<<< HEAD
         return array(
           array($datetime, null),
           array(null, $datetime),
           array(null, null)
         );
-=======
-        return [
-            [$datetime, null],
-            [null, $datetime],
-            [null, null]
-        ];
->>>>>>> 791c95b33641ee77fe8b19f6f2bc800d9dbd5b7f
     }
 
     public function assertEqualsSucceedsProvider()

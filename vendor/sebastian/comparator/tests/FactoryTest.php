@@ -12,16 +12,8 @@ namespace SebastianBergmann\Comparator;
 /**
  * @covers \SebastianBergmann\Comparator\Factory
  *
-<<<<<<< HEAD
  */
 class FactoryTest extends \PHPUnit_Framework_TestCase
-=======
- * @uses \SebastianBergmann\Comparator\Comparator
- * @uses \SebastianBergmann\Comparator\Factory
- * @uses \SebastianBergmann\Comparator\ComparisonFailure
- */
-final class FactoryTest extends TestCase
->>>>>>> 791c95b33641ee77fe8b19f6f2bc800d9dbd5b7f
 {
     public function instanceProvider()
     {
@@ -72,11 +64,8 @@ final class FactoryTest extends TestCase
 
     /**
      * @dataProvider instanceProvider
-<<<<<<< HEAD
      * @covers       ::getComparatorFor
      * @covers       ::__construct
-=======
->>>>>>> 791c95b33641ee77fe8b19f6f2bc800d9dbd5b7f
      */
     public function testGetComparatorFor($a, $b, $expected): void
     {
@@ -116,13 +105,4 @@ final class FactoryTest extends TestCase
 
         $this->assertInstanceOf($expected, $actual);
     }
-<<<<<<< HEAD
-=======
-
-    public function testIsSingleton(): void
-    {
-        $f = Factory::getInstance();
-        $this->assertSame($f, Factory::getInstance());
-    }
->>>>>>> 791c95b33641ee77fe8b19f6f2bc800d9dbd5b7f
 }

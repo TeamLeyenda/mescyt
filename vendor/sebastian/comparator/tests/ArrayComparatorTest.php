@@ -12,16 +12,9 @@ namespace SebastianBergmann\Comparator;
 /**
  * @covers \SebastianBergmann\Comparator\ArrayComparator
  *
-<<<<<<< HEAD
  */
 class ArrayComparatorTest extends \PHPUnit_Framework_TestCase
-=======
- * @uses \SebastianBergmann\Comparator\Comparator
- * @uses \SebastianBergmann\Comparator\Factory
- * @uses \SebastianBergmann\Comparator\ComparisonFailure
- */
-final class ArrayComparatorTest extends TestCase
->>>>>>> 791c95b33641ee77fe8b19f6f2bc800d9dbd5b7f
+
 {
     private $comparator;
 
@@ -33,24 +26,15 @@ final class ArrayComparatorTest extends TestCase
 
     public function acceptsFailsProvider()
     {
-<<<<<<< HEAD
         return array(
           array(array(), null),
           array(null, array()),
           array(null, null)
         );
-=======
-        return [
-            [[], null],
-            [null, []],
-            [null, null]
-        ];
->>>>>>> 791c95b33641ee77fe8b19f6f2bc800d9dbd5b7f
     }
 
     public function assertEqualsSucceedsProvider()
     {
-<<<<<<< HEAD
         return array(
           array(
             array('a' => 1, 'b' => 2),
@@ -82,44 +66,10 @@ final class ArrayComparatorTest extends TestCase
             0.5
           ),
         );
-=======
-        return [
-            [
-                ['a' => 1, 'b' => 2],
-                ['b' => 2, 'a' => 1]
-            ],
-            [
-                [1],
-                ['1']
-            ],
-            [
-                [3, 2, 1],
-                [2, 3, 1],
-                0,
-                true
-            ],
-            [
-                [2.3],
-                [2.5],
-                0.5
-            ],
-            [
-                [[2.3]],
-                [[2.5]],
-                0.5
-            ],
-            [
-                [new Struct(2.3)],
-                [new Struct(2.5)],
-                0.5
-            ],
-        ];
->>>>>>> 791c95b33641ee77fe8b19f6f2bc800d9dbd5b7f
     }
 
     public function assertEqualsFailsProvider()
     {
-<<<<<<< HEAD
         return array(
           array(
             array(),
@@ -157,45 +107,6 @@ final class ArrayComparatorTest extends TestCase
             0.5
           )
         );
-=======
-        return [
-            [
-                [],
-                [0 => 1]
-            ],
-            [
-                [0 => 1],
-                []
-            ],
-            [
-                [0 => null],
-                []
-            ],
-            [
-                [0 => 1, 1 => 2],
-                [0 => 1, 1 => 3]
-            ],
-            [
-                ['a', 'b' => [1, 2]],
-                ['a', 'b' => [2, 1]]
-            ],
-            [
-                [2.3],
-                [4.2],
-                0.5
-            ],
-            [
-                [[2.3]],
-                [[4.2]],
-                0.5
-            ],
-            [
-                [new Struct(2.3)],
-                [new Struct(4.2)],
-                0.5
-            ]
-        ];
->>>>>>> 791c95b33641ee77fe8b19f6f2bc800d9dbd5b7f
     }
 
     public function testAcceptsSucceeds(): void
@@ -235,11 +146,8 @@ final class ArrayComparatorTest extends TestCase
     /**
      * @dataProvider assertEqualsFailsProvider
      */
-<<<<<<< HEAD
     public function testAssertEqualsFails($expected, $actual,$delta = 0.0, $canonicalize = false)
-=======
-    public function testAssertEqualsFails($expected, $actual, $delta = 0.0, $canonicalize = false): void
->>>>>>> 791c95b33641ee77fe8b19f6f2bc800d9dbd5b7f
+
     {
         $this->setExpectedException(
           'SebastianBergmann\\Comparator\\ComparisonFailure',

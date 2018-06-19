@@ -59,7 +59,6 @@ class ScalarComparator extends Comparator
             }
         }
 
-<<<<<<< HEAD
         if ($expectedToCompare != $actualToCompare) {
             if (is_string($expected) && is_string($actual)) {
                 throw new ComparisonFailure(
@@ -71,18 +70,7 @@ class ScalarComparator extends Comparator
                     'Failed asserting that two strings are equal.'
                 );
             }
-=======
-        if ($expectedToCompare !== $actualToCompare && \is_string($expected) && \is_string($actual)) {
-            throw new ComparisonFailure(
-                $expected,
-                $actual,
-                $this->exporter->export($expected),
-                $this->exporter->export($actual),
-                false,
-                'Failed asserting that two strings are equal.'
-            );
-        }
->>>>>>> 791c95b33641ee77fe8b19f6f2bc800d9dbd5b7f
+
 
         if ($expectedToCompare != $actualToCompare) {
             throw new ComparisonFailure(
