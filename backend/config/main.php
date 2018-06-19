@@ -12,6 +12,7 @@ return [
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
     'modules' => [
+        /*
         'admin' => [
             'class' => 'mdm\admin\Module',
             'layout' => 'left-menu', // defaults to null, using the application's layout without the menu
@@ -23,6 +24,7 @@ return [
                    //'userClassName' => 'backend\models\User', 
                    'idField' => 'user_id',
                    'usernameField' => 'username',
+                   /*
                    'fullnameField' => 'profile.full_name',
                    'extraColumns' => [
                        [
@@ -47,10 +49,12 @@ return [
                            },
                        ],
                    ],
+                   
                    'searchClass' => 'backend\models\UserSearch'
                ],
            ],
         ],
+        */
         'build' => [
             'class' => 'backend\models\FormBuilder',
         ],
@@ -68,17 +72,17 @@ return [
         ]
     ],
     'components' => [
-        'authManager' => [
-            'class' => 'yii\rbac\DbManager', // or use 'yii\rbac\PhpManager'
-        ],
+        
         'request' => [
             'csrfParam' => '_csrf-backend',
         ],
+        /*
         'assignment' => [
             'class' => 'mdm\admin\controllers\AssignmentController',
             'userClassName' => 'app\models\User',
             'idField' => 'user_id'
         ],
+        */
         'user' => [
             //'identityClass' => 'common\models\User',
             'identityClass' => 'mdm\admin\models\User',
