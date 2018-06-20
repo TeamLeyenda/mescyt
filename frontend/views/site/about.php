@@ -42,29 +42,26 @@ $this->params['breadcrumbs'][] = $this->title;
                 <!-- Heading & Description -->
                 <div class="wow fadeIn">
                     <!--Section heading-->
-                    <h2 class="h1 text-center mb-5">What is MDB?</h2>
+                    <h2 class="h1 text-center mb-5">Que es  CEICYT?</h2>
                     <!--Section description-->
-                    <p class="text-center">MDB is world's most popular Material Design framework for building responsive, mobile-first websites
-                        and apps. </p>
-                    <p class="text-center mb-5 pb-5">Trusted by over
-                        <strong>400 000</strong> developers and designers. Easy to use & customize. 400+ material UI elements, templates
-                        & tutorials.</p>
+                    <p class="text-center">El Congreso Estudiantil de Investigación Científica y Tecnológica (CEICYT) </p>
+                    <p class="text-center mb-5 pb-5">El Congreso Estudiantil de Investigación Científica y Tecnológica (CEICYT) es un espacio para dar a conocer las iniciativas de investigación de estudiantes universitarios de las áreas vinculadas a las ciencias básicas y aplicadas. .</p>
                 </div>
                 <!-- Heading & Description -->
 
                 <!--Grid row-->
                 <div class="row wow fadeIn">
                 </div>
-                <!--Grid row-->
+                <!--Grid row--
 
                 <hr class="mb-5">
 
-                <!--Grid row-->
+                <!--Grid row--
                 <div class="row mt-3 wow fadeIn">
 
-                    <!--Grid column-->
+                    <!--Grid column--
                     <div class="col-lg-5 col-xl-4 mb-4">
-                        <!--Featured image-->
+                        <!--Featured image--
                         <div class="view overlay rounded z-depth-1">
                             <img src="https://mdbootstrap.com/wp-content/uploads/2017/11/brandflow-tutorial-fb.jpg" class="img-fluid" alt="">
                             <a href="https://mdbootstrap.com/automated-app-start/" target="_blank">
@@ -74,7 +71,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     </div>
                     <!--Grid column-->
 
-                    <!--Grid column-->
+                    <!--Grid column--
                     <div class="col-lg-7 col-xl-7 ml-xl-4 mb-4">
                         <h3 class="mb-3 font-weight-bold dark-grey-text">
                             <strong>Bootstrap Automation</strong>
@@ -84,19 +81,19 @@ $this->params['breadcrumbs'][] = $this->title;
                             <i class="fa fa-play ml-2"></i>
                         </a>
                     </div>
-                    <!--Grid column-->
+                    <!--Grid column--
 
                 </div>
-                <!--Grid row-->
+                <!--Grid row--
 
                 <hr class="mb-5">
 
-                <!--Grid row-->
+                <!--Grid row--
                 <div class="row wow fadeIn">
 
-                    <!--Grid column-->
+                    <!--Grid column--
                     <div class="col-lg-5 col-xl-4 mb-4">
-                        <!--Featured image-->
+                        <!--Featured image--
                         <div class="view overlay rounded z-depth-1">
                             <img src="https://mdbootstrap.com/wp-content/uploads/2018/01/push-fb.jpg" class="img-fluid" alt="">
                             <a href="#" target="_blank">
@@ -106,7 +103,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     </div>
                     <!--Grid column-->
 
-                    <!--Grid column-->
+                    <!--Grid column--
                     <div class="col-lg-7 col-xl-7 ml-xl-4 mb-4">
                         <h3 class="mb-3 font-weight-bold dark-grey-text">
                             <strong>Web Push notifications</strong>
@@ -117,7 +114,7 @@ $this->params['breadcrumbs'][] = $this->title;
                             <i class="fa fa-play ml-2"></i>
                         </a>
                     </div>
-                    <!--Grid column-->
+                    <!--Grid column--
 
                 </div>
                 <!--Grid row-->
