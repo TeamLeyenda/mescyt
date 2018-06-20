@@ -5,11 +5,16 @@
         "This file is @generated automatically"
     ],
 <<<<<<< HEAD
+<<<<<<< HEAD
     "content-hash": "6799a73c4ef3a9774a564ea629f56184",
 =======
     "hash": "5ce90621dee7bf02bee7756bea008348",
     "content-hash": "4c1870d38264d5abf9dfd40c116ba2bb",
 >>>>>>> 0eb417bb73a138d92bad0e510801da290c6ea245
+=======
+    "hash": "01947f8b70ca77d7184119b3de3d2484",
+    "content-hash": "14e81eb49460798893816fe06ea9f87b",
+>>>>>>> f0540e322ab780095728fa1daed200cf8dff13fa
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
@@ -6807,6 +6812,7 @@
         "mootensai/yii2-relation-trait": 20,
         "kartik-v/yii2-mpdf": 20,
         "yiisoft/yii2-jui": 20,
+        "mdmsoft/yii2-admin": 20,
         "kartik-v/yii2-tree-manager": 20
     },
     "prefer-stable": false,
