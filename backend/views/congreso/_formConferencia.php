@@ -22,20 +22,38 @@ echo TabularForm::widget([
     ],
     'attributes' => [
         "id" => ['type' => TabularForm::INPUT_HIDDEN, 'columnOptions' => ['hidden'=>true]],
-        'horario_id' => [
-            'label' => 'Horario',
-            'type' => TabularForm::INPUT_WIDGET,
-            'widgetClass' => \kartik\widgets\Select2::className(),
-            'options' => [
-                'data' => \yii\helpers\ArrayHelper::map(\backend\models\Horario::find()->orderBy('id')->asArray()->all(), 'id', 'id'),
-                'options' => ['placeholder' => Yii::t('app', 'Choose Horario')],
-            ],
-            'columnOptions' => ['width' => '200px']
-        ],
         'Titulo' => ['type' => TabularForm::INPUT_TEXT],
         'Institucion' => ['type' => TabularForm::INPUT_TEXT],
         'Area_Tematica' => ['type' => TabularForm::INPUT_TEXT],
         'Modalidad_Presentacion' => ['type' => TabularForm::INPUT_TEXT],
+        'Fecha_Inicio' => ['type' => TabularForm::INPUT_WIDGET,
+            'widgetClass' => \kartik\datecontrol\DateControl::classname(),
+            'options' => [
+                'type' => \kartik\datecontrol\DateControl::FORMAT_DATETIME,
+                'saveFormat' => 'php:Y-m-d H:i:s',
+                'ajaxConversion' => true,
+                'options' => [
+                    'pluginOptions' => [
+                        'placeholder' => Yii::t('app', 'Choose Fecha Inicio'),
+                        'autoclose' => true,
+                    ]
+                ],
+            ]
+        ],
+        'Fecha_Final' => ['type' => TabularForm::INPUT_WIDGET,
+            'widgetClass' => \kartik\datecontrol\DateControl::classname(),
+            'options' => [
+                'type' => \kartik\datecontrol\DateControl::FORMAT_DATETIME,
+                'saveFormat' => 'php:Y-m-d H:i:s',
+                'ajaxConversion' => true,
+                'options' => [
+                    'pluginOptions' => [
+                        'placeholder' => Yii::t('app', 'Choose Fecha Final'),
+                        'autoclose' => true,
+                    ]
+                ],
+            ]
+        ],
         'del' => [
             'type' => 'raw',
             'label' => '',

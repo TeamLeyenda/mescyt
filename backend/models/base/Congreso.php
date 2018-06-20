@@ -6,16 +6,16 @@ use Yii;
 use mootensai\behaviors\UUIDBehavior;
 
 /**
- * This is the base model class for table "congreso".
+ * This is the base model class for table "{{%congreso}}".
  *
  * @property integer $id
- * @property integer $ubicacion_id
- * @property integer $horario_id
+ * @property integer $provincia_id
  * @property string $Nombre
+ * @property string $Fecha_Inicio
+ * @property string $Fecha_Final
  *
  * @property \backend\models\Conferencia[] $conferencias
- * @property \backend\models\Horario $horario
- * @property \backend\models\Ubicacion $ubicacion
+ * @property \backend\models\Provincia $provincia
  */
 class Congreso extends \yii\db\ActiveRecord
 {
@@ -30,8 +30,7 @@ class Congreso extends \yii\db\ActiveRecord
     {
         return [
             'conferencias',
-            'horario',
-            'ubicacion'
+            'provincia'
         ];
     }
 
@@ -41,8 +40,9 @@ class Congreso extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['ubicacion_id', 'horario_id'], 'required'],
-            [['ubicacion_id', 'horario_id'], 'integer'],
+            [['provincia_id', 'Fecha_Inicio', 'Fecha_Final'], 'required'],
+            [['provincia_id'], 'integer'],
+            [['Fecha_Inicio', 'Fecha_Final'], 'safe'],
             [['Nombre'], 'string', 'max' => 255],
             [['lock'], 'default', 'value' => '0'],
             [['lock'], 'mootensai\components\OptimisticLockValidator']
@@ -54,7 +54,7 @@ class Congreso extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return 'congreso';
+        return '{{%congreso}}';
     }
 
     /**
@@ -75,9 +75,10 @@ class Congreso extends \yii\db\ActiveRecord
     {
         return [
             'id' => Yii::t('app', 'ID'),
-            'ubicacion_id' => Yii::t('app', 'Ubicacion ID'),
-            'horario_id' => Yii::t('app', 'Horario ID'),
+            'provincia_id' => Yii::t('app', 'Provincia ID'),
             'Nombre' => Yii::t('app', 'Nombre'),
+            'Fecha_Inicio' => Yii::t('app', 'Fecha Inicio'),
+            'Fecha_Final' => Yii::t('app', 'Fecha Final'),
         ];
     }
     
@@ -92,17 +93,9 @@ class Congreso extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getHorario()
+    public function getProvincia()
     {
-        return $this->hasOne(\backend\models\Horario::className(), ['id' => 'horario_id'])->inverseOf('congresos');
-    }
-        
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getUbicacion()
-    {
-        return $this->hasOne(\backend\models\Ubicacion::className(), ['id' => 'ubicacion_id'])->inverseOf('congresos');
+        return $this->hasOne(\backend\models\Provincia::className(), ['id' => 'provincia_id'])->inverseOf('congresos');
     }
     
     /**

@@ -19,7 +19,7 @@ use backend\models\Presentador;
     {
         return [
             [['id', 'afiliacion_id'], 'integer'],
-            [['Nombre', 'Apellido', 'Telefono', 'Correo', 'Descripcion'], 'safe'],
+            [['Nombre', 'Apellido', 'Telefono', 'Descripcion'], 'safe'],
         ];
     }
 
@@ -63,7 +63,6 @@ use backend\models\Presentador;
         $query->andFilterWhere(['like', 'Nombre', $this->Nombre])
             ->andFilterWhere(['like', 'Apellido', $this->Apellido])
             ->andFilterWhere(['like', 'Telefono', $this->Telefono])
-            ->andFilterWhere(['like', 'Correo', $this->Correo])
             ->andFilterWhere(['like', 'Descripcion', $this->Descripcion]);
 
         return $dataProvider;

@@ -17,8 +17,9 @@ class Congreso extends BaseCongreso
     {
         return array_replace_recursive(parent::rules(),
 	    [
-            [['ubicacion_id', 'horario_id'], 'required'],
-            [['ubicacion_id', 'horario_id'], 'integer'],
+            [['provincia_id', 'Fecha_Inicio', 'Fecha_Final'], 'required'],
+            [['provincia_id'], 'integer'],
+            [['Fecha_Inicio', 'Fecha_Final'], 'safe'],
             [['Nombre'], 'string', 'max' => 255],
             [['lock'], 'default', 'value' => '0'],
             [['lock'], 'mootensai\components\OptimisticLockValidator']

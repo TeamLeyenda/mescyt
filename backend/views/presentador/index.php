@@ -60,7 +60,6 @@ $this->registerJs($search);
         'Nombre',
         'Apellido',
         'Telefono',
-        'Correo',
         'Descripcion:ntext',
         [
             'class' => 'yii\grid\ActionColumn',

@@ -10,9 +10,11 @@ use yii\bootstrap\ActiveForm;
 $this->title = 'Signup';
 $this->params['breadcrumbs'][] = $this->title='Registro de Usuario';
 ?>
-<div class="site-signup">
-    <h1><?= Html::encode($this->title) ?></h1>
-
+ <div class="card mb-3 wow fadeIn">
+ <div class="card-header font-weight-bold">
+ <h1><?= Html::encode($this->title) ?></h1>
+ </div>
+ <div class="card-body">
     <p>Por favor, llene todos los campos para registrar a su cuenta.</p>
 
     <div class="row">
@@ -31,5 +33,7 @@ $this->params['breadcrumbs'][] = $this->title='Registro de Usuario';
 
             <?php ActiveForm::end(); ?>
         </div>
+    </div>
+    </div>
     </div>
 </div>

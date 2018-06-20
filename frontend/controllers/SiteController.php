@@ -75,6 +75,20 @@ class SiteController extends Controller
         return $this->render('index');
     }
 
+    public function actionConferencia()
+    {
+        return $this->render('conferencia');
+    }
+
+    public function actionEvento()
+    {
+        return $this->render('evento');
+    }
+
+    public function actionEstadistica()
+    {
+        return $this->render('estadistica');
+    }
     /**
      * Logs in a user.
      *

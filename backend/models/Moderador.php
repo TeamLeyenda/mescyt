@@ -3,60 +3,26 @@
 namespace backend\models;
 
 use Yii;
+use \backend\models\base\Moderador as BaseModerador;
 
 /**
  * This is the model class for table "moderador".
- *
- * @property int $id
- * @property string $Nombre
- * @property string $Apellido
- * @property string $Telefono
- * @property string $Correo
- *
- * @property Sala[] $salas
  */
-class Moderador extends \yii\db\ActiveRecord
+class Moderador extends BaseModerador
 {
     /**
-     * {@inheritdoc}
-     */
-    public static function tableName()
-    {
-        return 'moderador';
-    }
-
-    /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function rules()
     {
-        return [
-            [['Nombre', 'Correo'], 'required'],
+        return array_replace_recursive(parent::rules(),
+	    [
+            [['Nombre'], 'required'],
             [['Nombre', 'Apellido'], 'string', 'max' => 50],
             [['Telefono'], 'string', 'max' => 20],
-            [['Correo'], 'string', 'max' => 100],
-        ];
+            [['lock'], 'default', 'value' => '0'],
+            [['lock'], 'mootensai\components\OptimisticLockValidator']
+        ]);
     }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function attributeLabels()
-    {
-        return [
-            'id' => 'ID',
-            'Nombre' => 'Nombre',
-            'Apellido' => 'Apellido',
-            'Telefono' => 'Telefono',
-            'Correo' => 'Correo',
-        ];
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getSalas()
-    {
-        return $this->hasMany(Sala::className(), ['moderador_id' => 'id']);
-    }
+	
 }

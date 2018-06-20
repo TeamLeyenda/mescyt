@@ -21,14 +21,12 @@ use kartik\grid\GridView;
     $gridColumn = [
         ['attribute' => 'id', 'visible' => false],
         [
-            'attribute' => 'ubicacion.id',
-            'label' => Yii::t('app', 'Ubicacion'),
-        ],
-        [
-            'attribute' => 'horario.id',
-            'label' => Yii::t('app', 'Horario'),
+            'attribute' => 'provincia.Provincia',
+            'label' => Yii::t('app', 'Provincia'),
         ],
         'Nombre',
+        'Fecha_Inicio',
+        'Fecha_Final',
     ];
     echo DetailView::widget([
         'model' => $model,

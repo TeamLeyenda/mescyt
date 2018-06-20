@@ -31,8 +31,6 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'Telefono')->textInput(['maxlength' => true, 'placeholder' => 'Telefono']) ?>
 
-    <?php /* echo $form->field($model, 'Correo')->textInput(['maxlength' => true, 'placeholder' => 'Correo']) */ ?>
-
     <?php /* echo $form->field($model, 'Descripcion')->textarea(['rows' => 6]) */ ?>
 
     <div class="form-group">

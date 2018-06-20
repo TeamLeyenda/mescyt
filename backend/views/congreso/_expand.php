@@ -16,7 +16,7 @@ $items = [
             'row' => $model->conferencias,
         ]),
     ],
-            ];
+        ];
 echo TabsX::widget([
     'items' => $items,
     'position' => TabsX::POS_ABOVE,

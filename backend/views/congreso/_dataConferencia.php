@@ -9,14 +9,12 @@ use yii\data\ArrayDataProvider;
     $gridColumns = [
         ['class' => 'yii\grid\SerialColumn'],
         ['attribute' => 'id', 'visible' => false],
-        [
-                'attribute' => 'horario.id',
-                'label' => Yii::t('app', 'Horario')
-            ],
         'Titulo',
         'Institucion',
         'Area_Tematica',
         'Modalidad_Presentacion',
+        'Fecha_Inicio',
+        'Fecha_Final',
         [
             'class' => 'yii\grid\ActionColumn',
             'controller' => 'conferencia'

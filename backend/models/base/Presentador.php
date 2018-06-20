@@ -13,10 +13,8 @@ use mootensai\behaviors\UUIDBehavior;
  * @property string $Nombre
  * @property string $Apellido
  * @property string $Telefono
- * @property string $Correo
  * @property string $Descripcion
  *
- * @property \backend\models\Imagen[] $imagens
  * @property \backend\models\Afiliacion $afiliacion
  * @property \backend\models\PresentadorAreaEspecializacion[] $presentadorAreaEspecializacions
  * @property \backend\models\AreaEspecializacion[] $areaEspecializacions
@@ -26,6 +24,7 @@ use mootensai\behaviors\UUIDBehavior;
  * @property \backend\models\GradoAcademico[] $gradoAcademicos
  * @property \backend\models\PresentadorSala[] $presentadorSalas
  * @property \backend\models\Sala[] $salas
+ * @property \backend\models\User[] $users
  */
 class Presentador extends \yii\db\ActiveRecord
 {
@@ -39,7 +38,6 @@ class Presentador extends \yii\db\ActiveRecord
     public function relationNames()
     {
         return [
-            'imagens',
             'afiliacion',
             'presentadorAreaEspecializacions',
             'areaEspecializacions',
@@ -48,7 +46,8 @@ class Presentador extends \yii\db\ActiveRecord
             'presentadorGradoAcademicos',
             'gradoAcademicos',
             'presentadorSalas',
-            'salas'
+            'salas',
+            'users'
         ];
     }
 
@@ -58,12 +57,11 @@ class Presentador extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['afiliacion_id', 'Nombre', 'Correo', 'Descripcion'], 'required'],
+            [['afiliacion_id', 'Nombre', 'Descripcion'], 'required'],
             [['afiliacion_id'], 'integer'],
             [['Descripcion'], 'string'],
             [['Nombre', 'Apellido'], 'string', 'max' => 50],
             [['Telefono'], 'string', 'max' => 20],
-            [['Correo'], 'string', 'max' => 100],
             [['lock'], 'default', 'value' => '0'],
             [['lock'], 'mootensai\components\OptimisticLockValidator']
         ];
@@ -99,19 +97,10 @@ class Presentador extends \yii\db\ActiveRecord
             'Nombre' => Yii::t('app', 'Nombre'),
             'Apellido' => Yii::t('app', 'Apellido'),
             'Telefono' => Yii::t('app', 'Telefono'),
-            'Correo' => Yii::t('app', 'Correo'),
             'Descripcion' => Yii::t('app', 'Descripcion'),
         ];
     }
     
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getImagens()
-    {
-        return $this->hasMany(\backend\models\Imagen::className(), ['presentador_id' => 'id'])->inverseOf('presentador');
-    }
-        
     /**
      * @return \yii\db\ActiveQuery
      */
@@ -182,6 +171,14 @@ class Presentador extends \yii\db\ActiveRecord
     public function getSalas()
     {
         return $this->hasMany(\backend\models\Sala::className(), ['id' => 'sala_id'])->viaTable('{{%presentador_sala}}', ['presentador_id' => 'id']);
+    }
+        
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getUsers()
+    {
+        return $this->hasMany(\backend\models\User::className(), ['presentador_id' => 'id'])->inverseOf('presentador');
     }
     
     /**
