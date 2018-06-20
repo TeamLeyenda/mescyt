@@ -8,10 +8,13 @@ use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 
 //$this->title = 'Acceso - MESCyT';
-$this->params['breadcrumbs'][] = $this->title='Acceso';
+$this->params['breadcrumbs'][] = $this->title='Inicio de sesion';
 ?>
-<div class="site-login">
-    <h1><?= Html::encode($this->title) ?></h1>
+ <div class="card mb-3 wow fadeIn">
+ <div class="card-header font-weight-bold">
+ <h1><?= Html::encode($this->title) ?></h1>
+ </div>
+    <div class="card-body">
 
     <p>Por favor, llene todos los campos para acceder a su cuenta.</p>
 
@@ -38,4 +41,7 @@ $this->params['breadcrumbs'][] = $this->title='Acceso';
             <?php ActiveForm::end(); ?>
         </div>
     </div>
+    </div>
+    </div>
+
 </div>

@@ -29,7 +29,6 @@ AppAsset::register($this);
 
     <?php
     NavBar::begin([
-        'brandLabel' => Html::img('@web/img/color.png',['height'=>"255"]),
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar',
