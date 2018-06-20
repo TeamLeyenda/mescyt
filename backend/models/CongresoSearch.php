@@ -5,12 +5,12 @@ namespace backend\models;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use backend\models\Presentador;
+use backend\models\Congreso;
 
 /**
- * backend\models\CongresoSearch represents the model behind the search form about `backend\models\Presentador`.
+ * backend\models\CongresoSearch represents the model behind the search form about `backend\models\Congreso`.
  */
- class CongresoSearch extends Presentador
+ class CongresoSearch extends Congreso
 {
     /**
      * @inheritdoc
@@ -18,8 +18,8 @@ use backend\models\Presentador;
     public function rules()
     {
         return [
-            [['id', 'afiliacion_id'], 'integer'],
-            [['Nombre', 'Apellido', 'Telefono', 'Correo', 'Descripcion'], 'safe'],
+            [['id', 'ubicacion_id', 'horario_id'], 'integer'],
+            [['Nombre'], 'safe'],
         ];
     }
 
@@ -41,7 +41,7 @@ use backend\models\Presentador;
      */
     public function search($params)
     {
-        $query = Presentador::find();
+        $query = Congreso::find();
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
@@ -57,14 +57,11 @@ use backend\models\Presentador;
 
         $query->andFilterWhere([
             'id' => $this->id,
-            'afiliacion_id' => $this->afiliacion_id,
+            'ubicacion_id' => $this->ubicacion_id,
+            'horario_id' => $this->horario_id,
         ]);
 
-        $query->andFilterWhere(['like', 'Nombre', $this->Nombre])
-            ->andFilterWhere(['like', 'Apellido', $this->Apellido])
-            ->andFilterWhere(['like', 'Telefono', $this->Telefono])
-            ->andFilterWhere(['like', 'Correo', $this->Correo])
-            ->andFilterWhere(['like', 'Descripcion', $this->Descripcion]);
+        $query->andFilterWhere(['like', 'Nombre', $this->Nombre]);
 
         return $dataProvider;
     }

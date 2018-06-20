@@ -3,6 +3,8 @@ return [
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
+        '@mdm/admin' => '@app/vendor/mdm/yii2-admin-2.8',
+        // for example: '@mdm/admin' => '@app/extensions/mdm/yii2-admin-2.0.0',
     ],
     'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
 
@@ -10,22 +12,27 @@ return [
         'admin' => [
             'class' => 'mdm\admin\Module',
             'layout' => 'left-menu', // it can be '@path/to/your/layout'.
+            'mainLayout' => '@app/views/layouts/main.php',
             'controllerMap' => [
                 'assignment' => [
                     'class' => 'mdm\admin\controllers\AssignmentController',
-                    'userClassName' => 'backend\models\User',
+                    'userClassName' => 'common\models\User',
                     'idField' => 'user_id'
                 ],
+                /*
                 'other' => [
                     'class' => 'path\to\OtherController', // add another controller
                 ],
+                */
             ],
+            /*
             'menus' => [
                 'assignment' => [
                     'label' => 'Grand Access' // change label
                 ],
                 'route' => null, // disable menu route
             ]
+            */
         ],
     ],
 
