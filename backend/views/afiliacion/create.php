@@ -6,8 +6,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model backend\models\Afiliacion */
 
-$this->title = 'Create Afiliacion';
-$this->params['breadcrumbs'][] = ['label' => 'Afiliacions', 'url' => ['index']];
+$this->title = Yii::t('app', 'Create Afiliacion');
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Afiliacions'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="afiliacion-create">

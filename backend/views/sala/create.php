@@ -6,8 +6,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model backend\models\Sala */
 
-$this->title = 'Create Sala';
-$this->params['breadcrumbs'][] = ['label' => 'Salas', 'url' => ['index']];
+$this->title = Yii::t('app', 'Create Sala');
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Salas'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="sala-create">

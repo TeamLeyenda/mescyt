@@ -9,14 +9,6 @@ use yii\widgets\ActiveForm;
 
 \mootensai\components\JsBlock::widget(['viewFile' => '_script', 'pos'=> \yii\web\View::POS_END, 
     'viewParams' => [
-        'class' => 'Imagen', 
-        'relID' => 'imagen', 
-        'value' => \yii\helpers\Json::encode($model->imagens),
-        'isNewRecord' => ($model->isNewRecord) ? 1 : 0
-    ]
-]);
-\mootensai\components\JsBlock::widget(['viewFile' => '_script', 'pos'=> \yii\web\View::POS_END, 
-    'viewParams' => [
         'class' => 'PresentadorAreaEspecializacion', 
         'relID' => 'presentador-area-especializacion', 
         'value' => \yii\helpers\Json::encode($model->presentadorAreaEspecializacions),
@@ -47,6 +39,14 @@ use yii\widgets\ActiveForm;
         'isNewRecord' => ($model->isNewRecord) ? 1 : 0
     ]
 ]);
+\mootensai\components\JsBlock::widget(['viewFile' => '_script', 'pos'=> \yii\web\View::POS_END, 
+    'viewParams' => [
+        'class' => 'User', 
+        'relID' => 'user', 
+        'value' => \yii\helpers\Json::encode($model->users),
+        'isNewRecord' => ($model->isNewRecord) ? 1 : 0
+    ]
+]);
 ?>
 
 <div class="presentador-form">
@@ -71,18 +71,10 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'Telefono')->textInput(['maxlength' => true, 'placeholder' => 'Telefono']) ?>
 
-    <?= $form->field($model, 'Correo')->textInput(['maxlength' => true, 'placeholder' => 'Correo']) ?>
-
     <?= $form->field($model, 'Descripcion')->textarea(['rows' => 6]) ?>
 
     <?php
     $forms = [
-        [
-            'label' => '<i class="glyphicon glyphicon-book"></i> ' . Html::encode(Yii::t('app', 'Imagen')),
-            'content' => $this->render('_formImagen', [
-                'row' => \yii\helpers\ArrayHelper::toArray($model->imagens),
-            ]),
-        ],
         [
             'label' => '<i class="glyphicon glyphicon-book"></i> ' . Html::encode(Yii::t('app', 'PresentadorAreaEspecializacion')),
             'content' => $this->render('_formPresentadorAreaEspecializacion', [
@@ -105,6 +97,12 @@ use yii\widgets\ActiveForm;
             'label' => '<i class="glyphicon glyphicon-book"></i> ' . Html::encode(Yii::t('app', 'PresentadorSala')),
             'content' => $this->render('_formPresentadorSala', [
                 'row' => \yii\helpers\ArrayHelper::toArray($model->presentadorSalas),
+            ]),
+        ],
+        [
+            'label' => '<i class="glyphicon glyphicon-book"></i> ' . Html::encode(Yii::t('app', 'User')),
+            'content' => $this->render('_formUser', [
+                'row' => \yii\helpers\ArrayHelper::toArray($model->users),
             ]),
         ],
     ];

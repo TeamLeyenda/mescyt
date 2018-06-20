@@ -45,32 +45,21 @@ $this->registerJs($search);
         ],
         ['attribute' => 'id', 'visible' => false],
         [
-                'attribute' => 'ubicacion_id',
-                'label' => Yii::t('app', 'Ubicacion'),
+                'attribute' => 'provincia_id',
+                'label' => Yii::t('app', 'Provincia'),
                 'value' => function($model){                   
-                    return $model->ubicacion->id;                   
+                    return $model->provincia->Provincia;                   
                 },
                 'filterType' => GridView::FILTER_SELECT2,
-                'filter' => \yii\helpers\ArrayHelper::map(\backend\models\Ubicacion::find()->asArray()->all(), 'id', 'id'),
+                'filter' => \yii\helpers\ArrayHelper::map(\backend\models\Provincia::find()->asArray()->all(), 'id', 'Provincia'),
                 'filterWidgetOptions' => [
                     'pluginOptions' => ['allowClear' => true],
                 ],
-                'filterInputOptions' => ['placeholder' => 'Ubicacion', 'id' => 'grid-congreso-search-ubicacion_id']
-            ],
-        [
-                'attribute' => 'horario_id',
-                'label' => Yii::t('app', 'Horario'),
-                'value' => function($model){                   
-                    return $model->horario->id;                   
-                },
-                'filterType' => GridView::FILTER_SELECT2,
-                'filter' => \yii\helpers\ArrayHelper::map(\backend\models\Horario::find()->asArray()->all(), 'id', 'id'),
-                'filterWidgetOptions' => [
-                    'pluginOptions' => ['allowClear' => true],
-                ],
-                'filterInputOptions' => ['placeholder' => 'Horario', 'id' => 'grid-congreso-search-horario_id']
+                'filterInputOptions' => ['placeholder' => 'Provincia', 'id' => 'grid-congreso-search-provincia_id']
             ],
         'Nombre',
+        'Fecha_Inicio',
+        'Fecha_Final',
         [
             'class' => 'yii\grid\ActionColumn',
             'template' => '{save-as-new} {view} {update} {delete}',

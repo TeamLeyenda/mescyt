@@ -6,8 +6,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model backend\models\Conferencia */
 
-$this->title = 'Create Conferencia';
-$this->params['breadcrumbs'][] = ['label' => 'Conferencias', 'url' => ['index']];
+$this->title = Yii::t('app', 'Create Conferencia');
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Conferencias'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="conferencia-create">

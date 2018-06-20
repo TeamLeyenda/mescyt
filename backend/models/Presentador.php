@@ -17,12 +17,11 @@ class Presentador extends BasePresentador
     {
         return array_replace_recursive(parent::rules(),
 	    [
-            [['afiliacion_id', 'Nombre', 'Correo', 'Descripcion'], 'required'],
+            [['afiliacion_id', 'Nombre', 'Descripcion'], 'required'],
             [['afiliacion_id'], 'integer'],
             [['Descripcion'], 'string'],
             [['Nombre', 'Apellido'], 'string', 'max' => 50],
             [['Telefono'], 'string', 'max' => 20],
-            [['Correo'], 'string', 'max' => 100],
             [['lock'], 'default', 'value' => '0'],
             [['lock'], 'mootensai\components\OptimisticLockValidator']
         ]);

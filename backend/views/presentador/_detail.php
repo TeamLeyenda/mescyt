@@ -12,7 +12,7 @@ use kartik\grid\GridView;
 
     <div class="row">
         <div class="col-sm-9">
-            <h2><?= Html::encode($model->Nombre) ?></h2>
+            <h2><?= Html::encode($model->id) ?></h2>
         </div>
     </div>
 
@@ -27,7 +27,6 @@ use kartik\grid\GridView;
         'Nombre',
         'Apellido',
         'Telefono',
-        'Correo',
         'Descripcion:ntext',
     ];
     echo DetailView::widget([

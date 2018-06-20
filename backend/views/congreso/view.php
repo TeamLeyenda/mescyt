@@ -46,14 +46,12 @@ $this->params['breadcrumbs'][] = $this->title;
     $gridColumn = [
         ['attribute' => 'id', 'visible' => false],
         [
-            'attribute' => 'ubicacion.id',
-            'label' => Yii::t('app', 'Ubicacion'),
-        ],
-        [
-            'attribute' => 'horario.id',
-            'label' => Yii::t('app', 'Horario'),
+            'attribute' => 'provincia.Provincia',
+            'label' => Yii::t('app', 'Provincia'),
         ],
         'Nombre',
+        'Fecha_Inicio',
+        'Fecha_Final',
     ];
     echo DetailView::widget([
         'model' => $model,
@@ -68,14 +66,12 @@ if($providerConferencia->totalCount){
     $gridColumnConferencia = [
         ['class' => 'yii\grid\SerialColumn'],
             ['attribute' => 'id', 'visible' => false],
-                        [
-                'attribute' => 'horario.id',
-                'label' => Yii::t('app', 'Horario')
-            ],
-            'Titulo',
+                        'Titulo',
             'Institucion',
             'Area_Tematica',
             'Modalidad_Presentacion',
+            'Fecha_Inicio',
+            'Fecha_Final',
     ];
     echo Gridview::widget([
         'dataProvider' => $providerConferencia,
@@ -92,29 +88,16 @@ if($providerConferencia->totalCount){
 
     </div>
     <div class="row">
-        <h4>Horario<?= ' '. Html::encode($this->title) ?></h4>
+        <h4>Provincia<?= ' '. Html::encode($this->title) ?></h4>
     </div>
     <?php 
-    $gridColumnHorario = [
+    $gridColumnProvincia = [
         ['attribute' => 'id', 'visible' => false],
-        'Fecha_Inicio',
-        'Fecha_Final',
-    ];
-    echo DetailView::widget([
-        'model' => $model->horario,
-        'attributes' => $gridColumnHorario    ]);
-    ?>
-    <div class="row">
-        <h4>Ubicacion<?= ' '. Html::encode($this->title) ?></h4>
-    </div>
-    <?php 
-    $gridColumnUbicacion = [
-        ['attribute' => 'id', 'visible' => false],
-        'Pais',
+        'pais_id',
         'Provincia',
     ];
     echo DetailView::widget([
-        'model' => $model->ubicacion,
-        'attributes' => $gridColumnUbicacion    ]);
+        'model' => $model->provincia,
+        'attributes' => $gridColumnProvincia    ]);
     ?>
 </div>

@@ -28,7 +28,7 @@ class PresentadorController extends Controller
                 'rules' => [
                     [
                         'allow' => true,
-                        'actions' => ['index', 'view', 'create', 'update', 'delete', 'pdf', 'save-as-new', 'add-imagen', 'add-presentador-area-especializacion', 'add-presentador-conferencia', 'add-presentador-grado-academico', 'add-presentador-sala'],
+                        'actions' => ['index', 'view', 'create', 'update', 'delete', 'pdf', 'save-as-new', 'add-presentador-area-especializacion', 'add-presentador-conferencia', 'add-presentador-grado-academico', 'add-presentador-sala', 'add-user'],
                         'roles' => ['@']
                     ],
                     [
@@ -62,9 +62,6 @@ class PresentadorController extends Controller
     public function actionView($id)
     {
         $model = $this->findModel($id);
-        $providerImagen = new \yii\data\ArrayDataProvider([
-            'allModels' => $model->imagens,
-        ]);
         $providerPresentadorAreaEspecializacion = new \yii\data\ArrayDataProvider([
             'allModels' => $model->presentadorAreaEspecializacions,
         ]);
@@ -77,13 +74,16 @@ class PresentadorController extends Controller
         $providerPresentadorSala = new \yii\data\ArrayDataProvider([
             'allModels' => $model->presentadorSalas,
         ]);
+        $providerUser = new \yii\data\ArrayDataProvider([
+            'allModels' => $model->users,
+        ]);
         return $this->render('view', [
             'model' => $this->findModel($id),
-            'providerImagen' => $providerImagen,
             'providerPresentadorAreaEspecializacion' => $providerPresentadorAreaEspecializacion,
             'providerPresentadorConferencia' => $providerPresentadorConferencia,
             'providerPresentadorGradoAcademico' => $providerPresentadorGradoAcademico,
             'providerPresentadorSala' => $providerPresentadorSala,
+            'providerUser' => $providerUser,
         ]);
     }
 
@@ -149,9 +149,6 @@ class PresentadorController extends Controller
      */
     public function actionPdf($id) {
         $model = $this->findModel($id);
-        $providerImagen = new \yii\data\ArrayDataProvider([
-            'allModels' => $model->imagens,
-        ]);
         $providerPresentadorAreaEspecializacion = new \yii\data\ArrayDataProvider([
             'allModels' => $model->presentadorAreaEspecializacions,
         ]);
@@ -164,14 +161,17 @@ class PresentadorController extends Controller
         $providerPresentadorSala = new \yii\data\ArrayDataProvider([
             'allModels' => $model->presentadorSalas,
         ]);
+        $providerUser = new \yii\data\ArrayDataProvider([
+            'allModels' => $model->users,
+        ]);
 
         $content = $this->renderAjax('_pdf', [
             'model' => $model,
-            'providerImagen' => $providerImagen,
             'providerPresentadorAreaEspecializacion' => $providerPresentadorAreaEspecializacion,
             'providerPresentadorConferencia' => $providerPresentadorConferencia,
             'providerPresentadorGradoAcademico' => $providerPresentadorGradoAcademico,
             'providerPresentadorSala' => $providerPresentadorSala,
+            'providerUser' => $providerUser,
         ]);
 
         $pdf = new \kartik\mpdf\Pdf([
@@ -227,26 +227,6 @@ class PresentadorController extends Controller
     {
         if (($model = Presentador::findOne($id)) !== null) {
             return $model;
-        } else {
-            throw new NotFoundHttpException(Yii::t('app', 'The requested page does not exist.'));
-        }
-    }
-    
-    /**
-    * Action to load a tabular form grid
-    * for Imagen
-    * @author Yohanes Candrajaya <moo.tensai@gmail.com>
-    * @author Jiwantoro Ndaru <jiwanndaru@gmail.com>
-    *
-    * @return mixed
-    */
-    public function actionAddImagen()
-    {
-        if (Yii::$app->request->isAjax) {
-            $row = Yii::$app->request->post('Imagen');
-            if((Yii::$app->request->post('isNewRecord') && Yii::$app->request->post('_action') == 'load' && empty($row)) || Yii::$app->request->post('_action') == 'add')
-                $row[] = [];
-            return $this->renderAjax('_formImagen', ['row' => $row]);
         } else {
             throw new NotFoundHttpException(Yii::t('app', 'The requested page does not exist.'));
         }
@@ -327,6 +307,26 @@ class PresentadorController extends Controller
             if((Yii::$app->request->post('isNewRecord') && Yii::$app->request->post('_action') == 'load' && empty($row)) || Yii::$app->request->post('_action') == 'add')
                 $row[] = [];
             return $this->renderAjax('_formPresentadorSala', ['row' => $row]);
+        } else {
+            throw new NotFoundHttpException(Yii::t('app', 'The requested page does not exist.'));
+        }
+    }
+    
+    /**
+    * Action to load a tabular form grid
+    * for User
+    * @author Yohanes Candrajaya <moo.tensai@gmail.com>
+    * @author Jiwantoro Ndaru <jiwanndaru@gmail.com>
+    *
+    * @return mixed
+    */
+    public function actionAddUser()
+    {
+        if (Yii::$app->request->isAjax) {
+            $row = Yii::$app->request->post('User');
+            if((Yii::$app->request->post('isNewRecord') && Yii::$app->request->post('_action') == 'load' && empty($row)) || Yii::$app->request->post('_action') == 'add')
+                $row[] = [];
+            return $this->renderAjax('_formUser', ['row' => $row]);
         } else {
             throw new NotFoundHttpException(Yii::t('app', 'The requested page does not exist.'));
         }

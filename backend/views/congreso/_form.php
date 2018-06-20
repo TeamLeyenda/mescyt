@@ -25,23 +25,39 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'id', ['template' => '{input}'])->textInput(['style' => 'display:none']); ?>
 
-    <?= $form->field($model, 'ubicacion_id')->widget(\kartik\widgets\Select2::classname(), [
-        'data' => \yii\helpers\ArrayHelper::map(\backend\models\Ubicacion::find()->orderBy('id')->asArray()->all(), 'id', 'id'),
-        'options' => ['placeholder' => Yii::t('app', 'Choose Ubicacion')],
-        'pluginOptions' => [
-            'allowClear' => true
-        ],
-    ]); ?>
-
-    <?= $form->field($model, 'horario_id')->widget(\kartik\widgets\Select2::classname(), [
-        'data' => \yii\helpers\ArrayHelper::map(\backend\models\Horario::find()->orderBy('id')->asArray()->all(), 'id', 'id'),
-        'options' => ['placeholder' => Yii::t('app', 'Choose Horario')],
+    <?= $form->field($model, 'provincia_id')->widget(\kartik\widgets\Select2::classname(), [
+        'data' => \yii\helpers\ArrayHelper::map(\backend\models\Provincia::find()->orderBy('id')->asArray()->all(), 'id', 'Provincia'),
+        'options' => ['placeholder' => Yii::t('app', 'Choose Provincia')],
         'pluginOptions' => [
             'allowClear' => true
         ],
     ]); ?>
 
     <?= $form->field($model, 'Nombre')->textInput(['maxlength' => true, 'placeholder' => 'Nombre']) ?>
+
+    <?= $form->field($model, 'Fecha_Inicio')->widget(\kartik\datecontrol\DateControl::classname(), [
+        'type' => \kartik\datecontrol\DateControl::FORMAT_DATETIME,
+        'saveFormat' => 'php:Y-m-d H:i:s',
+        'ajaxConversion' => true,
+        'options' => [
+            'pluginOptions' => [
+                'placeholder' => Yii::t('app', 'Choose Fecha Inicio'),
+                'autoclose' => true,
+            ]
+        ],
+    ]); ?>
+
+    <?= $form->field($model, 'Fecha_Final')->widget(\kartik\datecontrol\DateControl::classname(), [
+        'type' => \kartik\datecontrol\DateControl::FORMAT_DATETIME,
+        'saveFormat' => 'php:Y-m-d H:i:s',
+        'ajaxConversion' => true,
+        'options' => [
+            'pluginOptions' => [
+                'placeholder' => Yii::t('app', 'Choose Fecha Final'),
+                'autoclose' => true,
+            ]
+        ],
+    ]); ?>
 
     <?php
     $forms = [

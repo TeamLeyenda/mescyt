@@ -9,14 +9,7 @@ $items = [
             'model' => $model,
         ]),
     ],
-        [
-        'label' => '<i class="glyphicon glyphicon-book"></i> '. Html::encode(Yii::t('app', 'Imagen')),
-        'content' => $this->render('_dataImagen', [
-            'model' => $model,
-            'row' => $model->imagens,
-        ]),
-    ],
-                [
+            [
         'label' => '<i class="glyphicon glyphicon-book"></i> '. Html::encode(Yii::t('app', 'Presentador Area Especializacion')),
         'content' => $this->render('_dataPresentadorAreaEspecializacion', [
             'model' => $model,
@@ -44,7 +37,14 @@ $items = [
             'row' => $model->presentadorSalas,
         ]),
     ],
-        ];
+                [
+        'label' => '<i class="glyphicon glyphicon-book"></i> '. Html::encode(Yii::t('app', 'User')),
+        'content' => $this->render('_dataUser', [
+            'model' => $model,
+            'row' => $model->users,
+        ]),
+    ],
+    ];
 echo TabsX::widget([
     'items' => $items,
     'position' => TabsX::POS_ABOVE,

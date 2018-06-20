@@ -18,8 +18,8 @@ use backend\models\Congreso;
     public function rules()
     {
         return [
-            [['id', 'ubicacion_id', 'horario_id'], 'integer'],
-            [['Nombre'], 'safe'],
+            [['id', 'provincia_id'], 'integer'],
+            [['Nombre', 'Fecha_Inicio', 'Fecha_Final'], 'safe'],
         ];
     }
 
@@ -57,8 +57,9 @@ use backend\models\Congreso;
 
         $query->andFilterWhere([
             'id' => $this->id,
-            'ubicacion_id' => $this->ubicacion_id,
-            'horario_id' => $this->horario_id,
+            'provincia_id' => $this->provincia_id,
+            'Fecha_Inicio' => $this->Fecha_Inicio,
+            'Fecha_Final' => $this->Fecha_Final,
         ]);
 
         $query->andFilterWhere(['like', 'Nombre', $this->Nombre]);

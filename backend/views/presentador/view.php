@@ -7,7 +7,7 @@ use kartik\grid\GridView;
 /* @var $this yii\web\View */
 /* @var $model backend\models\Presentador */
 
-$this->title = $model->Nombre;
+$this->title = $model->id;
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Presentadors'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -52,7 +52,6 @@ $this->params['breadcrumbs'][] = $this->title;
         'Nombre',
         'Apellido',
         'Telefono',
-        'Correo',
         'Descripcion:ntext',
     ];
     echo DetailView::widget([
@@ -60,33 +59,6 @@ $this->params['breadcrumbs'][] = $this->title;
         'attributes' => $gridColumn
     ]);
 ?>
-    </div>
-    
-    <div class="row">
-<?php
-if($providerImagen->totalCount){
-    $gridColumnImagen = [
-        ['class' => 'yii\grid\SerialColumn'],
-            ['attribute' => 'id', 'visible' => false],
-                        'Perfil',
-            'Nombre_Imagen',
-            'Tamano',
-            'Tipo',
-            'Ruta',
-    ];
-    echo Gridview::widget([
-        'dataProvider' => $providerImagen,
-        'pjax' => true,
-        'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-imagen']],
-        'panel' => [
-            'type' => GridView::TYPE_PRIMARY,
-            'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode(Yii::t('app', 'Imagen')),
-        ],
-        'columns' => $gridColumnImagen
-    ]);
-}
-?>
-
     </div>
     <div class="row">
         <h4>Afiliacion<?= ' '. Html::encode($this->title) ?></h4>
@@ -106,7 +78,7 @@ if($providerImagen->totalCount){
 if($providerPresentadorAreaEspecializacion->totalCount){
     $gridColumnPresentadorAreaEspecializacion = [
         ['class' => 'yii\grid\SerialColumn'],
-                        [
+            [
                 'attribute' => 'areaEspecializacion.id',
                 'label' => Yii::t('app', 'Area Especializacion')
             ],
@@ -131,7 +103,7 @@ if($providerPresentadorAreaEspecializacion->totalCount){
 if($providerPresentadorConferencia->totalCount){
     $gridColumnPresentadorConferencia = [
         ['class' => 'yii\grid\SerialColumn'],
-                        [
+            [
                 'attribute' => 'conferencia.id',
                 'label' => Yii::t('app', 'Conferencia')
             ],
@@ -156,7 +128,7 @@ if($providerPresentadorConferencia->totalCount){
 if($providerPresentadorGradoAcademico->totalCount){
     $gridColumnPresentadorGradoAcademico = [
         ['class' => 'yii\grid\SerialColumn'],
-                        [
+            [
                 'attribute' => 'gradoAcademico.id',
                 'label' => Yii::t('app', 'Grado Academico')
             ],
@@ -181,7 +153,7 @@ if($providerPresentadorGradoAcademico->totalCount){
 if($providerPresentadorSala->totalCount){
     $gridColumnPresentadorSala = [
         ['class' => 'yii\grid\SerialColumn'],
-                        [
+            [
                 'attribute' => 'sala.id',
                 'label' => Yii::t('app', 'Sala')
             ],
@@ -195,6 +167,36 @@ if($providerPresentadorSala->totalCount){
             'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode(Yii::t('app', 'Presentador Sala')),
         ],
         'columns' => $gridColumnPresentadorSala
+    ]);
+}
+?>
+
+    </div>
+    
+    <div class="row">
+<?php
+if($providerUser->totalCount){
+    $gridColumnUser = [
+        ['class' => 'yii\grid\SerialColumn'],
+            ['attribute' => 'id', 'visible' => false],
+            [
+                'attribute' => 'participante.id',
+                'label' => Yii::t('app', 'Participante')
+            ],
+            'username',
+            'password_hash',
+            'email:email',
+            'image',
+    ];
+    echo Gridview::widget([
+        'dataProvider' => $providerUser,
+        'pjax' => true,
+        'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-user']],
+        'panel' => [
+            'type' => GridView::TYPE_PRIMARY,
+            'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode(Yii::t('app', 'User')),
+        ],
+        'columns' => $gridColumnUser
     ]);
 }
 ?>
