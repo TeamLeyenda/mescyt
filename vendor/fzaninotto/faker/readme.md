@@ -1279,6 +1279,18 @@ echo $faker->metropolitanCity; // "서울특별시"
 echo $faker->borough; // "강남구"
 ```
 
+### `Faker\Provider\ko_KR\PhoneNumer`
+
+```php
+<?php
+
+// Generates a local area phone numer
+echo $faker->localAreaPhoneNumber; // "02-1234-4567"
+
+// Generates a cell phone number
+echo $faker->cellPhoneNumber; // "010-9876-5432"
+```
+
 ### `Faker\Provider\lt_LT\Payment`
 
 ```php
@@ -1609,6 +1621,15 @@ echo $faker->personalIdentityNumber() // '950910-0799'
 
 //Since the numbers are different for male and female persons, optionally you can specify gender.
 echo $faker->personalIdentityNumber('female') // '950910-0781'
+```
+### `Faker\Provider\tr_TR\Person`
+
+```php
+<?php
+
+//Generates a valid Turkish identity number (in Turkish - T.C. Kimlik No)
+echo $faker->tcNo // '55300634882'
+
 ```
 
 

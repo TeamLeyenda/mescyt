@@ -11,6 +11,7 @@ return [
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
+    //'homeUrl' => '/administrator',
     'modules' => [
         /*
         'admin' => [
@@ -75,6 +76,7 @@ return [
         
         'request' => [
             'csrfParam' => '_csrf-backend',
+            //'baseUrl' => '/administrator'
         ],
         /*
         'assignment' => [
@@ -127,7 +129,7 @@ return [
             'some-controller/some-action',
             'gii/*',
             'user/*',
-            //'congreso/*',
+            'congreso/*',
             'builder/*'
             // The actions listed here will be allowed to everyone including guests.
             // So, 'admin/*' should not appear here in the production, of course.
