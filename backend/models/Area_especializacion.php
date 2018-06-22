@@ -10,6 +10,7 @@ use \backend\models\base\Area_especializacion as BaseArea_especializacion;
  */
 class Area_especializacion extends BaseArea_especializacion
 {
+    public $lock;
     /**
      * @inheritdoc
      */

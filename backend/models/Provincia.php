@@ -10,6 +10,7 @@ use \backend\models\base\Provincia as BaseProvincia;
  */
 class Provincia extends BaseProvincia
 {
+    public $lock;
     /**
      * @inheritdoc
      */

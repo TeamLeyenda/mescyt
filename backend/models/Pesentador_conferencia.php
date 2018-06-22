@@ -10,6 +10,7 @@ use \backend\models\base\Pesentador_conferencia as BasePesentador_conferencia;
  */
 class Pesentador_conferencia extends BasePesentador_conferencia
 {
+    public $lock;
     /**
      * @inheritdoc
      */

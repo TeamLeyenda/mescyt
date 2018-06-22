@@ -15,6 +15,7 @@ use Yii;
  */
 class GradoAcademico extends \yii\db\ActiveRecord
 {
+    public $lock;
     /**
      * {@inheritdoc}
      */

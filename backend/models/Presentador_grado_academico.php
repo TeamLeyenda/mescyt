@@ -10,6 +10,7 @@ use \backend\models\base\Presentador_grado_academico as BasePresentador_grado_ac
  */
 class Presentador_grado_academico extends BasePresentador_grado_academico
 {
+    public $lock;
     /**
      * @inheritdoc
      */

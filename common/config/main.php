@@ -3,7 +3,7 @@ return [
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
-        '@mdm/admin' => '@app/vendor/mdm/yii2-admin-2.8',
+        //'@mdm/admin' => '@app/vendor/mdm/yii2-admin-2.8',
         // for example: '@mdm/admin' => '@app/extensions/mdm/yii2-admin-2.0.0',
     ],
     'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',

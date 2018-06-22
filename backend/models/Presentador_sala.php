@@ -10,6 +10,7 @@ use \backend\models\base\Presentador_sala as BasePresentador_sala;
  */
 class Presentador_sala extends BasePresentador_sala
 {
+    public $lock;
     /**
      * @inheritdoc
      */
