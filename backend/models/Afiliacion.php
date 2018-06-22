@@ -10,6 +10,7 @@ use \backend\models\base\Afiliacion as BaseAfiliacion;
  */
 class Afiliacion extends BaseAfiliacion
 {
+    public $lock;
     /**
      * @inheritdoc
      */

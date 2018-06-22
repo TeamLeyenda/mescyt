@@ -15,6 +15,7 @@ use Yii;
  */
 class PresentadorSala extends \yii\db\ActiveRecord
 {
+    public $lock;
     /**
      * {@inheritdoc}
      */

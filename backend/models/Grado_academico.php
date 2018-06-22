@@ -10,6 +10,7 @@ use \backend\models\base\Grado_academico as BaseGrado_academico;
  */
 class Grado_academico extends BaseGrado_academico
 {
+    public $lock;
     /**
      * @inheritdoc
      */

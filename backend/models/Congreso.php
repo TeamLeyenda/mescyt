@@ -10,6 +10,7 @@ use \backend\models\base\Congreso as BaseCongreso;
  */
 class Congreso extends BaseCongreso
 {
+    public $lock;
     /**
      * @inheritdoc
      */

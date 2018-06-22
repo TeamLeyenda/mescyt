@@ -10,6 +10,7 @@ use \backend\models\base\Conferencia as BaseConferencia;
  */
 class Conferencia extends BaseConferencia
 {
+    public $lock;
     /**
      * @inheritdoc
      */

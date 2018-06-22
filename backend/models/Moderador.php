@@ -10,6 +10,7 @@ use \backend\models\base\Moderador as BaseModerador;
  */
 class Moderador extends BaseModerador
 {
+    public $lock;
     /**
      * @inheritdoc
      */

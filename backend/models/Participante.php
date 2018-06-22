@@ -10,6 +10,7 @@ use \backend\models\base\Participante as BaseParticipante;
  */
 class Participante extends BaseParticipante
 {
+    public $lock;
     /**
      * @inheritdoc
      */

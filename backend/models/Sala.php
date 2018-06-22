@@ -10,6 +10,7 @@ use \backend\models\base\Sala as BaseSala;
  */
 class Sala extends BaseSala
 {
+    public $lock;
     /**
      * @inheritdoc
      */

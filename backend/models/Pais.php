@@ -10,6 +10,7 @@ use \backend\models\base\Pais as BasePais;
  */
 class Pais extends BasePais
 {
+    public $lock;
     /**
      * @inheritdoc
      */

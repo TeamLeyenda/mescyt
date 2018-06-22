@@ -10,6 +10,7 @@ use \backend\models\base\Presentador_area_especializacion as BasePresentador_are
  */
 class Presentador_area_especializacion extends BasePresentador_area_especializacion
 {
+    public $lock;
     /**
      * @inheritdoc
      */
