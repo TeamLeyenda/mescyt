@@ -31,15 +31,39 @@ $this->registerJs($search);
     <?php 
     $gridColumn = [
         ['class' => 'yii\grid\SerialColumn'],
+        [
+            'class' => 'kartik\grid\ExpandRowColumn',
+            'width' => '50px',
+            'value' => function ($model, $key, $index, $column) {
+                return GridView::ROW_COLLAPSED;
+            },
+            'detail' => function ($model, $key, $index, $column) {
+                return Yii::$app->controller->renderPartial('_expand', ['model' => $model]);
+            },
+            'headerOptions' => ['class' => 'kartik-sheet-style'],
+            'expandOneOnly' => true
+        ],
         ['attribute' => 'id', 'visible' => false],
+        [
+                'attribute' => 'participante_id',
+                'label' => Yii::t('app', 'Participante'),
+                'value' => function($model){
+                    if ($model->participante)
+                    {return $model->participante->id;}
+                    else
+                    {return NULL;}
+                },
+                'filterType' => GridView::FILTER_SELECT2,
+                'filter' => \yii\helpers\ArrayHelper::map(\backend\models\Participante::find()->asArray()->all(), 'id', 'id'),
+                'filterWidgetOptions' => [
+                    'pluginOptions' => ['allowClear' => true],
+                ],
+                'filterInputOptions' => ['placeholder' => 'Participante', 'id' => 'grid-user-search-participante_id']
+            ],
         'username',
-        'auth_key',
         'password_hash',
-        'password_reset_token',
         'email:email',
-        'status',
-        'created_at',
-        'updated_at',
+        'image',
         [
             'class' => 'yii\grid\ActionColumn',
             'template' => '{save-as-new} {view} {update} {delete}',

@@ -18,8 +18,8 @@ use backend\models\User;
     public function rules()
     {
         return [
-            [['id', 'status', 'created_at', 'updated_at'], 'integer'],
-            [['username', 'auth_key', 'password_hash', 'password_reset_token', 'email'], 'safe'],
+            [['id', 'moderador_id', 'participante_id', 'presentador_id', 'status', 'created_at', 'updated_at'], 'integer'],
+            [['username', 'auth_key', 'password_hash', 'password_reset_token', 'email', 'image'], 'safe'],
         ];
     }
 
@@ -57,6 +57,9 @@ use backend\models\User;
 
         $query->andFilterWhere([
             'id' => $this->id,
+            'moderador_id' => $this->moderador_id,
+            'participante_id' => $this->participante_id,
+            'presentador_id' => $this->presentador_id,
             'status' => $this->status,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
@@ -66,7 +69,8 @@ use backend\models\User;
             ->andFilterWhere(['like', 'auth_key', $this->auth_key])
             ->andFilterWhere(['like', 'password_hash', $this->password_hash])
             ->andFilterWhere(['like', 'password_reset_token', $this->password_reset_token])
-            ->andFilterWhere(['like', 'email', $this->email]);
+            ->andFilterWhere(['like', 'email', $this->email])
+            ->andFilterWhere(['like', 'image', $this->image]);
 
         return $dataProvider;
     }
