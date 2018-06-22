@@ -36,9 +36,10 @@ AppAsset::register($this);
     ]);
     
     $menuItems = [
-        ['label' => 'Home', 'url' => ['/site/index'],'options'=>['class'=>'nav-link waves-effect']],
-        ['label' => 'About', 'url' => ['/site/about'] ,'options'=>['class'=>'nav-link waves-effect']],
-        ['label' => 'Contact', 'url' => ['/site/contact'],'options'=>['class'=>'nav-link waves-effect']],
+        ['label' => 'Inicio', 'url' => ['/site/index'],'options'=>['class'=>'nav-link waves-effect']],
+        ['label' => 'Conferencias', 'url' => ['/site/conferencia'] ,'options'=>['class'=>'nav-link waves-effect']],
+        ['label' => 'Eventos', 'url' => ['/site/evento'],'options'=>['class'=>'nav-link waves-effect']],
+         ['label' => 'Estadísticas', 'url' => ['/site/estadistica'],'options'=>['class'=>'nav-link waves-effect']],
     ];
     if (Yii::$app->user->isGuest) {
         $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup'],'options'=>['class'=>'nav-link waves-effect']];

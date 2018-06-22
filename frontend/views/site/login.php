@@ -10,26 +10,29 @@ use yii\bootstrap\ActiveForm;
 //$this->title = 'Acceso - MESCyT';
 $this->params['breadcrumbs'][] = $this->title='Inicio de sesion';
 ?>
+
+
+
  <div class="card mb-3 wow fadeIn">
  <div class="card-header font-weight-bold">
  <h1><?= Html::encode($this->title) ?></h1>
  </div>
     <div class="card-body">
-
-    <p>Por favor, llene todos los campos para acceder a su cuenta.</p>
-
+    <br>
+    <h4>Por favor, llene todos los campos para acceder a su cuenta.</h4>
+    <br>
     <div class="row">
         <div class="col-lg-5">
             <?php $form = ActiveForm::begin(['id' => 'login-form']); ?>
 
-                <?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?>
-
-                <?= $form->field($model, 'password')->passwordInput() ?>
-
-                <?= $form->field($model, 'rememberMe')->checkbox() ?>
+                <h5><?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?></h5>
+                <br>
+                <h5><?= $form->field($model, 'password')->passwordInput() ?></h5>
+                <br>
+                <h5><?= $form->field($model, 'rememberMe')->checkbox() ?></h5>
 
                 <div style="color:#999;margin:1em 0">
-                    If you forgot your password you can <?= Html::a('reset it', ['site/request-password-reset']) ?>.
+                    <h5>If you forgot your password you can <?= Html::a('reset it', ['site/request-password-reset']) ?>.</h5>
                 </div>
 
                 <div class="form-group">

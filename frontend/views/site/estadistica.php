@@ -8,12 +8,15 @@ use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 
 //$this->title = 'Acceso - MESCyT';
-$this->params['breadcrumbs'][] = $this->title='Estadística';
+$this->params['breadcrumbs'][] = $this->title='Estadísticas - MESCyT';
 ?>
-<div class="site-login">
-    <h1><?= Html::encode($this->title) ?></h1>
 
-    <p>Aquí verá todo lo que necesita saber de las estadísticas de las conferencias y eventos.</p>
+
+
+
+<div class="site-login">
+    <br>
+    <h5>Aquí verás todo lo que necesitas saber de nuestras eventos y conferencias.</h5>
 
     <div class="row">
         <div class="col-lg-5">

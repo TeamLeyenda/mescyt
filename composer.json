@@ -26,7 +26,6 @@
         "deesoft/yii2-gii": "*",
         "meysampg/yii2-treeview": "*",
         "yiisoft/yii2-jui": "^2.0@dev",
-<<<<<<< HEAD
         "mdmsoft/yii2-admin": "~2.0"
         
         
@@ -35,13 +34,11 @@
         "mdmsoft/yii2-admin": "2.x-dev",
         "kartik-v/yii2-tree-manager": "dev-master",
         "phpoffice/phpspreadsheet": "^1.3"
-=======
         "meysampg/yii2-formbuilder": "*",
         "mdmsoft/yii2-admin": "2.x-dev",
         "kartik-v/yii2-tree-manager": "dev-master",
         "phpoffice/phpspreadsheet": "^1.3",
         "kartik-v/yii2-datecontrol": "@dev"
->>>>>>> d8145f3297392d4f8b23f4e2cb971c8dd21deca7
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",
