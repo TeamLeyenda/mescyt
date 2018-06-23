@@ -12,11 +12,10 @@
     "minimum-stability": "dev",
     "require": {
         "php": ">=5.4.0",
-        "yiisoft/yii2": "~2.0.6",
+        "yiisoft/yii2": "~2.0.15",
         "yiisoft/yii2-bootstrap": "~2.0.0",
         "yiisoft/yii2-swiftmailer": "~2.0.0 || ~2.1.0",
         "tunecino/yii2-schema-builder": "*",
-        "dmstr/yii2-adminlte-asset": "2.6",
         "dixonsatit/yii2-agency-theme": "dev-master",
         "wbraganca/yii2-dynamicform": "*",
         "kartik-v/yii2-widget-select2": "dev-master",
@@ -41,7 +40,16 @@
         "sebastian/object-reflector": "^1.1@dev"
     },
     "config": {
-        "process-timeout": 1800
+        "process-timeout": 1800,
+        "fxp-asset": {
+            "pattern-skip-version": "(-build|-patch)",
+        "repositories": {
+          "bower-asset/eve": {
+          "type": "bower-vcs",
+          "url": "https://github.com/adobe-webplatform/eve.git"
+          }
+        }
+      }
     },
     "repositories": [
         {
