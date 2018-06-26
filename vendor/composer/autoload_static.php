@@ -13,12 +13,14 @@ class ComposerStaticInitf8aa444fadf5e861a9b2931a0751dc85
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         '5255c38a0faeba867671b61dfda6d864' => __DIR__ . '/..' . '/paragonie/random_compat/lib/random.php',
         'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
+        '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
         '180092cfc969a12e06f2132a203a3184' => __DIR__ . '/..' . '/codeception/verify/src/Codeception/function.php',
     );
 
     public static $prefixLengthsPsr4 = array (
         'y' => 
         array (
+            'yii\\swiftmailer\\' => 16,
             'yii\\jui\\' => 8,
             'yii\\gii\\' => 8,
             'yii\\faker\\' => 10,
@@ -138,6 +140,10 @@ class ComposerStaticInitf8aa444fadf5e861a9b2931a0751dc85
         array (
             'Faker\\' => 6,
         ),
+        'E' => 
+        array (
+            'Egulias\\EmailValidator\\' => 23,
+        ),
         'D' => 
         array (
             'Doctrine\\Instantiator\\' => 22,
@@ -153,6 +159,10 @@ class ComposerStaticInitf8aa444fadf5e861a9b2931a0751dc85
     );
 
     public static $prefixDirsPsr4 = array (
+        'yii\\swiftmailer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/yiisoft/yii2-swiftmailer/src',
+        ),
         'yii\\jui\\' => 
         array (
             0 => __DIR__ . '/..' . '/yiisoft/yii2-jui',
@@ -460,6 +470,10 @@ class ComposerStaticInitf8aa444fadf5e861a9b2931a0751dc85
         array (
             0 => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker',
         ),
+        'Egulias\\EmailValidator\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator',
+        ),
         'Doctrine\\Instantiator\\' => 
         array (
             0 => __DIR__ . '/..' . '/doctrine/instantiator/src/Doctrine/Instantiator',
@@ -511,6 +525,10 @@ class ComposerStaticInitf8aa444fadf5e861a9b2931a0751dc85
         ),
         'D' => 
         array (
+            'Doctrine\\Common\\Lexer\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/doctrine/lexer/lib',
+            ),
             'Diff' => 
             array (
                 0 => __DIR__ . '/..' . '/phpspec/php-diff/lib',
