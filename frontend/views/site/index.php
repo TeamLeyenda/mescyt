@@ -9,10 +9,15 @@ use yii\bootstrap\ActiveForm;
 
 $this->title = 'Inicio - MESCyT';
 ?>
+
+
 <!---Section: Jumbotron-->
 <section class="card wow fadeIn" style="background-image: url(https://mdbootstrap.com/img/Photos/Others/gradient1.jpg);">
 
     <!--- Content -->
+
+    
+
     <div class="card-body text-white text-center py-5 px-5 my-5">
 
         <h1 class="mb-4">

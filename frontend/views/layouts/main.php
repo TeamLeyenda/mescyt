@@ -17,6 +17,11 @@ AppAsset::register($this);
 <html lang="<?= Yii::$app->language ?>">
 <head>
 <head>
+
+
+    <link rel="shortcut icon" type="image/png" href="<?php echo Yii::app()->request->baseUrl;?>img/color.png">
+    
+
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta charset="<?= Yii::$app->charset ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
