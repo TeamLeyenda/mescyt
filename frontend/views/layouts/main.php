@@ -17,6 +17,11 @@ AppAsset::register($this);
 <html lang="<?= Yii::$app->language ?>">
 <head>
 <head>
+
+
+    <link rel="shortcut icon" type="image/png" href="<?php echo Yii::app()->request->baseUrl;?>img/color.png">
+    
+
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta charset="<?= Yii::$app->charset ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -36,9 +41,10 @@ AppAsset::register($this);
     ]);
     
     $menuItems = [
-        ['label' => 'Home', 'url' => ['/site/index'],'options'=>['class'=>'nav-link waves-effect']],
-        ['label' => 'About', 'url' => ['/site/about'] ,'options'=>['class'=>'nav-link waves-effect']],
-        ['label' => 'Contact', 'url' => ['/site/contact'],'options'=>['class'=>'nav-link waves-effect']],
+        ['label' => 'Inicio', 'url' => ['/site/index'],'options'=>['class'=>'nav-link waves-effect']],
+        ['label' => 'Conferencias', 'url' => ['/site/conferencia'] ,'options'=>['class'=>'nav-link waves-effect']],
+        ['label' => 'Eventos', 'url' => ['/site/evento'],'options'=>['class'=>'nav-link waves-effect']],
+         ['label' => 'Estadísticas', 'url' => ['/site/estadistica'],'options'=>['class'=>'nav-link waves-effect']],
     ];
     if (Yii::$app->user->isGuest) {
         $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup'],'options'=>['class'=>'nav-link waves-effect']];
