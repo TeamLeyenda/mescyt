@@ -1,3 +1,7 @@
+<?php
+$name = Yii::$app->user->identity->username;
+?>
+
 <aside class="main-sidebar">
 
     <section class="sidebar">
@@ -8,7 +12,7 @@
                 <img src="<?= $directoryAsset ?>/img/user2-160x160.jpg" class="img-circle" alt="User Image"/>
             </div>
             <div class="pull-left info">
-                <p>Alexander Pierce</p>
+                <p><?php echo $name ?></p>
 
                 <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
@@ -30,25 +34,19 @@
             [
                 'options' => ['class' => 'sidebar-menu tree', 'data-widget'=> 'tree'],
                 'items' => [
-                    ['label' => 'Menu Yii2', 'options' => ['class' => 'header']],
-                    ['label' => 'Gii', 'icon' => 'file-code-o', 'url' => ['/gii']],
+                    ['label' => 'Menu administrativo', 'options' => ['class' => 'header']],
+                    //['label' => 'Gii', 'icon' => 'file-code-o', 'url' => ['/gii']],
                     ['label' => 'Debug', 'icon' => 'dashboard', 'url' => ['/debug']],
                     ['label' => 'Login', 'url' => ['site/login'], 'visible' => Yii::$app->user->isGuest],
-                    [
-                        'label' => 'Some tools',
-                        'icon' => 'share',
-                        'url' => '#',
-                        'items' => [
-                            ['label' => 'Gii', 'icon' => 'file-code-o', 'url' => ['/gii'],],
-                            ['label' => 'Debug', 'icon' => 'dashboard', 'url' => ['/debug'],],
-                            [
-                                'label' => 'Level One',
-                                'icon' => 'circle-o',
+                    ['label' => 'Usuarios',
+                                'icon' => 'users',
                                 'url' => '#',
                                 'items' => [
-                                    ['label' => 'Level Two', 'icon' => 'circle-o', 'url' => '#',],
-                                    [
-                                        'label' => 'Level Two',
+                                    ['label' => 'Participante', 'icon' => 'user', 'url' => ['/participante'],],
+                                    ['label' => 'Presentador', 'icon' => 'user', 'url' => ['/presentador'],],
+                                    ['label' => 'Moderador', 'icon' => 'user', 'url' => ['/moderador'],],
+                                    ['label' => 'Usuario', 'icon' => 'user', 'url' => ['/user'],],
+                                    /*['label' => 'Level Two',
                                         'icon' => 'circle-o',
                                         'url' => '#',
                                         'items' => [
@@ -56,10 +54,38 @@
                                             ['label' => 'Level Three', 'icon' => 'circle-o', 'url' => '#',],
                                         ],
                                     ],
+                                    */
                                 ],
                             ],
+
+                            ['label' => 'Programa',
+                                        'icon' => 'building',
+                                        'url' => '#',
+                                        'items' => [
+                                            ['label' => 'Congreso', 'icon' => 'building-o', 'url' => ['/congreso'],],
+                                            ['label' => 'Salas', 'icon' => 'cube', 'url' => ['/sala'],],
+                                            ['label' => 'Conferencia', 'icon' => 'comments-o', 'url' => ['/conferencia'],],
+                                            ['label' => 'Afiliaciones', 'icon' => 'credit-card', 'url' => ['/afiliacion'],],
+                                        ],
+                                    ],
+
+                            ['label' => 'Ubicacion',
+                                    'icon' => 'globe',
+                                    'url' => '#',
+                                    'items' => [
+                                        ['label' => 'Pais', 'icon' => 'circle-o', 'url' => ['/pais'],],
+                                        ['label' => 'Provincias', 'icon' => 'circle-o', 'url' => ['/provincia'],],
+                                    ],
+                                ],
+                    /*
+                    ['label' => 'Administracion',
+                        'icon' => 'share',
+                        'url' => '#',
+                        'items' => [
+                            
                         ],
                     ],
+                    */
                 ],
             ]
         ) ?>

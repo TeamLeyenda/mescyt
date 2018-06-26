@@ -7,7 +7,7 @@ use kartik\grid\GridView;
 /* @var $this yii\web\View */
 /* @var $model backend\models\User */
 
-$this->title = $model->username;
+$this->title = $model->id;
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Users'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -45,14 +45,14 @@ $this->params['breadcrumbs'][] = $this->title;
 <?php 
     $gridColumn = [
         ['attribute' => 'id', 'visible' => false],
+        [
+            'attribute' => 'participante.id',
+            'label' => Yii::t('app', 'Participante'),
+        ],
         'username',
-        'auth_key',
         'password_hash',
-        'password_reset_token',
         'email:email',
-        'status',
-        'created_at',
-        'updated_at',
+        'image',
     ];
     echo DetailView::widget([
         'model' => $model,
@@ -60,4 +60,49 @@ $this->params['breadcrumbs'][] = $this->title;
     ]);
 ?>
     </div>
+    <div class="row">
+        <h4>Moderador<?= ' '. Html::encode($this->title) ?></h4>
+    </div>
+    <?php 
+    $gridColumnModerador = [
+        ['attribute' => 'id', 'visible' => false],
+        'Nombre',
+        'Apellido',
+        'Telefono',
+    ];
+    echo DetailView::widget([
+        'model' => $model->moderador,
+        'attributes' => $gridColumnModerador    ]);
+    ?>
+    <div class="row">
+        <h4>Participante<?= ' '. Html::encode($this->title) ?></h4>
+    </div>
+    <?php 
+    $gridColumnParticipante = [
+        ['attribute' => 'id', 'visible' => false],
+        'afiliacion_id',
+        'Nombre',
+        'Apellido',
+        'Telefono',
+    ];
+    echo DetailView::widget([
+        'model' => $model->participante,
+        'attributes' => $gridColumnParticipante    ]);
+    ?>
+    <div class="row">
+        <h4>Presentador<?= ' '. Html::encode($this->title) ?></h4>
+    </div>
+    <?php 
+    $gridColumnPresentador = [
+        ['attribute' => 'id', 'visible' => false],
+        'afiliacion_id',
+        'Nombre',
+        'Apellido',
+        'Telefono',
+        'Descripcion',
+    ];
+    echo DetailView::widget([
+        'model' => $model->presentador,
+        'attributes' => $gridColumnPresentador    ]);
+    ?>
 </div>
