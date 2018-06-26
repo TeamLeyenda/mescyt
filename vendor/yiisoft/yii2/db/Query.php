@@ -748,7 +748,7 @@ PATTERN;
      */
     public function from($tables)
     {
-        if ($tables instanceof ExpressionInterface) {
+        if ($tables instanceof Expression) {
             $tables = [$tables];
         }
         if (is_string($tables)) {

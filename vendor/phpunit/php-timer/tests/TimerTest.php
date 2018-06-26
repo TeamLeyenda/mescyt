@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<?php
 /*
  * This file is part of phpunit/php-timer.
  *
@@ -25,7 +25,7 @@ class TimerTest extends TestCase
     /**
      * @dataProvider secondsProvider
      */
-    public function testSecondsToTimeString(string $string, float $seconds): void
+    public function testSecondsToTimeString(string $string, string $seconds): void
     {
         $this->assertEquals(
             $string,

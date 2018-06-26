@@ -1093,7 +1093,7 @@ class Command extends Component
      * @return array array of two elements, the first is boolean of whether profiling is enabled or not.
      * The second is the rawSql if it has been created.
      */
-    protected function logQuery($category)
+    private function logQuery($category)
     {
         if ($this->db->enableLogging) {
             $rawSql = $this->getRawSql();

@@ -3,7 +3,6 @@ namespace GuzzleHttp\Tests\Psr7;
 
 use GuzzleHttp\Psr7;
 use GuzzleHttp\Psr7\InflateStream;
-use GuzzleHttp\Psr7\NoSeekStream;
 
 class InflateStreamtest extends \PHPUnit_Framework_TestCase
 {
@@ -21,16 +20,6 @@ class InflateStreamtest extends \PHPUnit_Framework_TestCase
         $a = Psr7\stream_for($content);
         $b = new InflateStream($a);
         $this->assertEquals('test', (string) $b);
-    }
-
-    public function testInflatesStreamsPreserveSeekable()
-    {
-        $content = $this->getGzipStringWithFilename('test');
-        $seekable = Psr7\stream_for($content);
-        $nonSeekable = new NoSeekStream(Psr7\stream_for($content));
-
-        $this->assertTrue((new InflateStream($seekable))->isSeekable());
-        $this->assertFalse((new InflateStream($nonSeekable))->isSeekable());
     }
 
     private function getGzipStringWithFilename($original_string)

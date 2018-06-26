@@ -8,15 +8,25 @@ PHPUnit is a programmer-oriented testing framework for PHP. It is an instance of
 
 ## Installation
 
-We distribute a [PHP Archive (PHAR)](https://php.net/phar) that has all required (as well as some optional) dependencies of PHPUnit 7.1 bundled in a single file:
+We distribute a [PHP Archive (PHAR)](https://php.net/phar) that has all required (as well as some optional) dependencies of PHPUnit bundled in a single file:
 
 ```bash
-$ wget https://phar.phpunit.de/phpunit-7.1.phar
+$ wget https://phar.phpunit.de/phpunit.phar
 
-$ php phpunit-7.1.phar --version
+$ chmod +x phpunit.phar
+
+$ mv phpunit.phar /usr/local/bin/phpunit
 ```
 
-Alternatively, you may use [Composer](https://getcomposer.org/) to download and install PHPUnit as well as its dependencies. Please refer to the "[Getting Started](https://phpunit.de/getting-started-with-phpunit.html)" guide for details on how to install PHPUnit.
+You can also immediately use the PHAR after you have downloaded it, of course:
+
+```bash
+$ wget https://phar.phpunit.de/phpunit.phar
+
+$ php phpunit.phar
+```
+
+Alternatively, you may use [Composer](https://getcomposer.org/) to download and install PHPUnit as well as its dependencies. Please refer to the [documentation](https://phpunit.de/documentation.html) for details on how to do this.
 
 ## Contribute
 

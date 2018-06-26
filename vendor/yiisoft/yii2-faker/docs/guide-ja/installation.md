@@ -11,13 +11,11 @@
 php composer.phar require --prefer-dist yiisoft/yii2-faker
 ```
 
-または、あなたの `composer.json` ファイルの `require` セクションに、
+または、あなたの `composer.json` ファイルの `require` セクションに、下記を追加してください。
 
 ```
 "yiisoft/yii2-faker": "~2.0.0"
 ```
-
-を追加してください。
 
 ## アプリケーションを構成する
 

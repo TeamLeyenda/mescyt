@@ -15,20 +15,20 @@ use DateTimeZone;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers \SebastianBergmann\Comparator\DateTimeComparator
+ * @coversDefaultClass SebastianBergmann\Comparator\DateTimeComparator
  *
- * @uses \SebastianBergmann\Comparator\Comparator
- * @uses \SebastianBergmann\Comparator\Factory
- * @uses \SebastianBergmann\Comparator\ComparisonFailure
+ * @uses SebastianBergmann\Comparator\Comparator
+ * @uses SebastianBergmann\Comparator\Factory
+ * @uses SebastianBergmann\Comparator\ComparisonFailure
  */
-final class DateTimeComparatorTest extends TestCase
+class DateTimeComparatorTest extends TestCase
 {
     /**
      * @var DateTimeComparator
      */
     private $comparator;
 
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->comparator = new DateTimeComparator;
     }
@@ -150,7 +150,10 @@ final class DateTimeComparatorTest extends TestCase
         ];
     }
 
-    public function testAcceptsSucceeds(): void
+    /**
+     * @covers  ::accepts
+     */
+    public function testAcceptsSucceeds()
     {
         $this->assertTrue(
             $this->comparator->accepts(
@@ -161,9 +164,10 @@ final class DateTimeComparatorTest extends TestCase
     }
 
     /**
+     * @covers       ::accepts
      * @dataProvider acceptsFailsProvider
      */
-    public function testAcceptsFails($expected, $actual): void
+    public function testAcceptsFails($expected, $actual)
     {
         $this->assertFalse(
             $this->comparator->accepts($expected, $actual)
@@ -171,9 +175,10 @@ final class DateTimeComparatorTest extends TestCase
     }
 
     /**
+     * @covers       ::assertEquals
      * @dataProvider assertEqualsSucceedsProvider
      */
-    public function testAssertEqualsSucceeds($expected, $actual, $delta = 0.0): void
+    public function testAssertEqualsSucceeds($expected, $actual, $delta = 0.0)
     {
         $exception = null;
 
@@ -186,9 +191,10 @@ final class DateTimeComparatorTest extends TestCase
     }
 
     /**
+     * @covers       ::assertEquals
      * @dataProvider assertEqualsFailsProvider
      */
-    public function testAssertEqualsFails($expected, $actual, $delta = 0.0): void
+    public function testAssertEqualsFails($expected, $actual, $delta = 0.0)
     {
         $this->expectException(ComparisonFailure::class);
         $this->expectExceptionMessage('Failed asserting that two DateTime objects are equal.');
@@ -196,12 +202,20 @@ final class DateTimeComparatorTest extends TestCase
         $this->comparator->assertEquals($expected, $actual, $delta);
     }
 
-    public function testAcceptsDateTimeInterface(): void
+    /**
+     * @requires PHP 5.5
+     * @covers   ::accepts
+     */
+    public function testAcceptsDateTimeInterface()
     {
         $this->assertTrue($this->comparator->accepts(new DateTime, new DateTimeImmutable));
     }
 
-    public function testSupportsDateTimeInterface(): void
+    /**
+     * @requires PHP 5.5
+     * @covers   ::assertEquals
+     */
+    public function testSupportsDateTimeInterface()
     {
         $this->assertNull(
             $this->comparator->assertEquals(

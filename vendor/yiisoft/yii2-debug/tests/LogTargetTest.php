@@ -1,6 +1,6 @@
 <?php
 
-namespace yiiunit\debug;
+namespace yiiunit\extensions\debug;
 
 use Yii;
 use yii\debug\LogTarget;

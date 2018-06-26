@@ -12,20 +12,20 @@ namespace SebastianBergmann\Comparator;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers \SebastianBergmann\Comparator\ArrayComparator
+ * @coversDefaultClass SebastianBergmann\Comparator\ArrayComparator
  *
- * @uses \SebastianBergmann\Comparator\Comparator
- * @uses \SebastianBergmann\Comparator\Factory
- * @uses \SebastianBergmann\Comparator\ComparisonFailure
+ * @uses SebastianBergmann\Comparator\Comparator
+ * @uses SebastianBergmann\Comparator\Factory
+ * @uses SebastianBergmann\Comparator\ComparisonFailure
  */
-final class ArrayComparatorTest extends TestCase
+class ArrayComparatorTest extends TestCase
 {
     /**
      * @var ArrayComparator
      */
     private $comparator;
 
-    protected function setUp(): void
+    protected function setUp()
     {
         $this->comparator = new ArrayComparator;
         $this->comparator->setFactory(new Factory);
@@ -116,7 +116,10 @@ final class ArrayComparatorTest extends TestCase
         ];
     }
 
-    public function testAcceptsSucceeds(): void
+    /**
+     * @covers  ::accepts
+     */
+    public function testAcceptsSucceeds()
     {
         $this->assertTrue(
           $this->comparator->accepts([], [])
@@ -124,9 +127,10 @@ final class ArrayComparatorTest extends TestCase
     }
 
     /**
+     * @covers       ::accepts
      * @dataProvider acceptsFailsProvider
      */
-    public function testAcceptsFails($expected, $actual): void
+    public function testAcceptsFails($expected, $actual)
     {
         $this->assertFalse(
           $this->comparator->accepts($expected, $actual)
@@ -134,9 +138,10 @@ final class ArrayComparatorTest extends TestCase
     }
 
     /**
+     * @covers       ::assertEquals
      * @dataProvider assertEqualsSucceedsProvider
      */
-    public function testAssertEqualsSucceeds($expected, $actual, $delta = 0.0, $canonicalize = false): void
+    public function testAssertEqualsSucceeds($expected, $actual, $delta = 0.0, $canonicalize = false)
     {
         $exception = null;
 
@@ -149,9 +154,10 @@ final class ArrayComparatorTest extends TestCase
     }
 
     /**
+     * @covers       ::assertEquals
      * @dataProvider assertEqualsFailsProvider
      */
-    public function testAssertEqualsFails($expected, $actual, $delta = 0.0, $canonicalize = false): void
+    public function testAssertEqualsFails($expected, $actual, $delta = 0.0, $canonicalize = false)
     {
         $this->expectException(ComparisonFailure::class);
         $this->expectExceptionMessage('Failed asserting that two arrays are equal');

@@ -10,9 +10,12 @@ install:
 
 php:
   - 7.0
+  - 7.0snapshot
   - 7.1
-  - 7.2
+  - 7.1snapshot
   - master
+
+sudo: false
 
 before_install:
   - composer self-update

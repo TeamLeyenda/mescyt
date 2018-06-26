@@ -1,6 +1,6 @@
 <?php
 
-namespace yiiunit\debug;
+namespace yiiunit\extensions\debug;
 
 use yii\base\Event;
 use yii\caching\FileCache;
@@ -57,7 +57,7 @@ class ModuleTest extends TestCase
      *
      * @param array $allowedIPs
      * @param string $userIp
-     * @param bool $expectedResult
+     * @param boolean $expectedResult
      */
     public function testCheckAccess(array $allowedIPs, $userIp, $expectedResult)
     {
@@ -96,7 +96,7 @@ HTML
         Yii::getLogger()->dispatcher = $this->getMockBuilder('yii\\log\\Dispatcher')
             ->setMethods(['dispatch'])
             ->getMock();
-        Yii::$app->set('cache', new FileCache(['cachePath' => '@yiiunit/debug/runtime/cache']));
+        Yii::$app->set('cache', new FileCache(['cachePath' => '@yiiunit/runtime/cache']));
 
         $view = Yii::$app->view;
         for ($i = 0; $i <= 1; $i++) {

@@ -16,7 +16,8 @@ if (is_dir(__DIR__ . '/../vendor/')) {
 require_once($vendorRoot . '/autoload.php');
 require_once($vendorRoot . '/yiisoft/yii2/Yii.php');
 
-Yii::setAlias('@yiiunit/debug', __DIR__);
-Yii::setAlias('@yii/debug', dirname(__DIR__) . '/src');
+Yii::setAlias('@yiiunit/extensions/debug', __DIR__);
+Yii::setAlias('@yiiunit', __DIR__ . '/../tests');
+Yii::setAlias('@yii/debug', dirname(__DIR__));
 
 require_once(__DIR__ . '/compatibility.php');

@@ -1,6 +1,6 @@
 <?php
 
-namespace yiiunit\debug;
+namespace yiiunit\extensions\debug;
 
 use yii\web\NotFoundHttpException;
 use yii\debug\FlattenException;
