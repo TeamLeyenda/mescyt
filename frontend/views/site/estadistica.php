@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title='Estadísticas - MESCyT';
 
 <div class="site-login">
     <br>
-    <h5>Aquí verás todo lo que necesitas saber de nuestras eventos y conferencias.</h5>
+    <h5>Aquí verás todo lo que necesitas saber de las estadísticas de nuestras presentaciones.</h5>
 
     <div class="row">
         <div class="col-lg-5">

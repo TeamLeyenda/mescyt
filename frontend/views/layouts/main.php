@@ -19,7 +19,6 @@ AppAsset::register($this);
 <head>
 
 
-    <link rel="shortcut icon" type="image/png" href="<?php echo Yii::app()->request->baseUrl;?>img/color.png">
     
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">

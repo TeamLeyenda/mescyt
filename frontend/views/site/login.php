@@ -8,7 +8,7 @@ use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 
 //$this->title = 'Acceso - MESCyT';
-$this->params['breadcrumbs'][] = $this->title='Inicio de sesion';
+$this->params['breadcrumbs'][] = $this->title='Inicio de Sesion - MESCyT';
 ?>
 
 
