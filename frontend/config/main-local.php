@@ -6,7 +6,11 @@ $config = [
         'view'=>[
             'theme'=>[
                 'pathMap'=>[
-                    '@app/views'=>'@dixonsatit/agencyTheme/views'
+
+                    '@app/views'=>'@dixonsatit/agencyTheme/views'],
+
+                    '@app/views'=>'@frontend/themes/agency/views'
+
                 ]
             ]
         ],
@@ -14,7 +18,7 @@ $config = [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => '1rRyjUfGgqRQsvkP0WLfWD7toUa_BT14',
         ],
-    ],
+    ]
 ];
 
 if (!YII_ENV_TEST) {
