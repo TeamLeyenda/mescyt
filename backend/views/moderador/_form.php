@@ -15,14 +15,6 @@ use yii\widgets\ActiveForm;
         'isNewRecord' => ($model->isNewRecord) ? 1 : 0
     ]
 ]);
-\mootensai\components\JsBlock::widget(['viewFile' => '_script', 'pos'=> \yii\web\View::POS_END, 
-    'viewParams' => [
-        'class' => 'User', 
-        'relID' => 'user', 
-        'value' => \yii\helpers\Json::encode($model->users),
-        'isNewRecord' => ($model->isNewRecord) ? 1 : 0
-    ]
-]);
 ?>
 
 <div class="moderador-form">
@@ -50,7 +42,8 @@ use yii\widgets\ActiveForm;
         [
             'label' => '<i class="glyphicon glyphicon-book"></i> ' . Html::encode(Yii::t('app', 'User')),
             'content' => $this->render('_formUser', [
-                'row' => \yii\helpers\ArrayHelper::toArray($model->users),
+                'form' => $form,
+                'User' => is_null($model->user) ? new backend\models\User() : $model->user,
             ]),
         ],
     ];

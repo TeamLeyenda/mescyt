@@ -1,11 +1,11 @@
 <?php
 
-namespace app\models;
+namespace backend\models;
 
 /**
- * This is the ActiveQuery class for [[\app\models\Sala]].
+ * This is the ActiveQuery class for [[Sala]].
  *
- * @see \app\models\Sala
+ * @see Sala
  */
 class SalaQuery extends \yii\db\ActiveQuery
 {
@@ -17,7 +17,7 @@ class SalaQuery extends \yii\db\ActiveQuery
 
     /**
      * @inheritdoc
-     * @return \app\models\Sala[]|array
+     * @return Sala[]|array
      */
     public function all($db = null)
     {
@@ -26,7 +26,7 @@ class SalaQuery extends \yii\db\ActiveQuery
 
     /**
      * @inheritdoc
-     * @return \app\models\Sala|array|null
+     * @return Sala|array|null
      */
     public function one($db = null)
     {

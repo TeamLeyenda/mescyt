@@ -5,7 +5,7 @@ use yii\db\Migration;
 /**
  * Handles the creation of table `pais`.
  */
-class m180628_000942_create_pais_table extends Migration
+class m180628_042727_create_pais_table extends Migration
 {
     /**
      * {@inheritdoc}

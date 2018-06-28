@@ -2,7 +2,6 @@
 
 namespace backend\models;
 
-use Yii;
 use \backend\models\base\Sala as BaseSala;
 
 /**
@@ -10,7 +9,6 @@ use \backend\models\base\Sala as BaseSala;
  */
 class Sala extends BaseSala
 {
-    public $lock;
     /**
      * @inheritdoc
      */
@@ -20,9 +18,7 @@ class Sala extends BaseSala
 	    [
             [['moderador_id', 'Nombre_Sala'], 'required'],
             [['moderador_id'], 'integer'],
-            [['Nombre_Sala'], 'string', 'max' => 20],
-            [['lock'], 'default', 'value' => '0'],
-            [['lock'], 'mootensai\components\OptimisticLockValidator']
+            [['Nombre_Sala'], 'string', 'max' => 20]
         ]);
     }
 	

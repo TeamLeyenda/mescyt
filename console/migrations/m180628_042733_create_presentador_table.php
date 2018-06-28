@@ -3,37 +3,38 @@
 use yii\db\Migration;
 
 /**
- * Handles the creation of table `participante`.
+ * Handles the creation of table `presentador`.
  * Has foreign keys to the tables:
  *
  * - `afiliacion`
  */
-class m180628_000944_create_participante_table extends Migration
+class m180628_042733_create_presentador_table extends Migration
 {
     /**
      * {@inheritdoc}
      */
     public function safeUp()
     {
-        $this->createTable('participante', [
+        $this->createTable('presentador', [
             'id' => $this->primaryKey(),
             'afiliacion_id' => $this->integer()->notNull(),
             'Nombre' => $this->string(50)->notNull(),
             'Apellido' => $this->string(50),
             'Telefono' => $this->string(20),
+            'Descripcion' => $this->text()->notNull(),
         ]);
 
         // creates index for column `afiliacion_id`
         $this->createIndex(
-            'idx-participante-afiliacion_id',
-            'participante',
+            'idx-presentador-afiliacion_id',
+            'presentador',
             'afiliacion_id'
         );
 
         // add foreign key for table `afiliacion`
         $this->addForeignKey(
-            'fk-participante-afiliacion_id',
-            'participante',
+            'fk-presentador-afiliacion_id',
+            'presentador',
             'afiliacion_id',
             'afiliacion',
             'id',
@@ -48,16 +49,16 @@ class m180628_000944_create_participante_table extends Migration
     {
         // drops foreign key for table `afiliacion`
         $this->dropForeignKey(
-            'fk-participante-afiliacion_id',
-            'participante'
+            'fk-presentador-afiliacion_id',
+            'presentador'
         );
 
         // drops index for column `afiliacion_id`
         $this->dropIndex(
-            'idx-participante-afiliacion_id',
-            'participante'
+            'idx-presentador-afiliacion_id',
+            'presentador'
         );
 
-        $this->dropTable('participante');
+        $this->dropTable('presentador');
     }
 }

@@ -2,7 +2,6 @@
 
 namespace backend\models;
 
-use Yii;
 use \backend\models\base\Moderador as BaseModerador;
 
 /**
@@ -10,7 +9,6 @@ use \backend\models\base\Moderador as BaseModerador;
  */
 class Moderador extends BaseModerador
 {
-    public $lock;
     /**
      * @inheritdoc
      */
@@ -20,9 +18,7 @@ class Moderador extends BaseModerador
 	    [
             [['Nombre'], 'required'],
             [['Nombre', 'Apellido'], 'string', 'max' => 50],
-            [['Telefono'], 'string', 'max' => 20],
-            [['lock'], 'default', 'value' => '0'],
-            [['lock'], 'mootensai\components\OptimisticLockValidator']
+            [['Telefono'], 'string', 'max' => 20]
         ]);
     }
 	

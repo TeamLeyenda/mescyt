@@ -24,6 +24,10 @@ use kartik\grid\GridView;
             'attribute' => 'congreso.id',
             'label' => Yii::t('app', 'Congreso'),
         ],
+        [
+            'attribute' => 'sala.id',
+            'label' => Yii::t('app', 'Sala'),
+        ],
         'Titulo',
         'Institucion',
         'Area_Tematica',

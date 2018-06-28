@@ -7,8 +7,9 @@ use yii\db\Migration;
  * Has foreign keys to the tables:
  *
  * - `congreso`
+ * - `sala`
  */
-class m180628_000946_create_presentacion_table extends Migration
+class m180628_042735_create_presentacion_table extends Migration
 {
     /**
      * {@inheritdoc}
@@ -18,6 +19,7 @@ class m180628_000946_create_presentacion_table extends Migration
         $this->createTable('presentacion', [
             'id' => $this->primaryKey(),
             'congreso_id' => $this->integer()->notNull(),
+            'sala_id' => $this->integer()->notNull(),
             'Titulo' => $this->string(100)->notNull(),
             'Institucion' => $this->string(50),
             'Area_Tematica' => $this->string(100),
@@ -42,6 +44,23 @@ class m180628_000946_create_presentacion_table extends Migration
             'id',
             'CASCADE'
         );
+
+        // creates index for column `sala_id`
+        $this->createIndex(
+            'idx-presentacion-sala_id',
+            'presentacion',
+            'sala_id'
+        );
+
+        // add foreign key for table `sala`
+        $this->addForeignKey(
+            'fk-presentacion-sala_id',
+            'presentacion',
+            'sala_id',
+            'sala',
+            'id',
+            'CASCADE'
+        );
     }
 
     /**
@@ -58,6 +77,18 @@ class m180628_000946_create_presentacion_table extends Migration
         // drops index for column `congreso_id`
         $this->dropIndex(
             'idx-presentacion-congreso_id',
+            'presentacion'
+        );
+
+        // drops foreign key for table `sala`
+        $this->dropForeignKey(
+            'fk-presentacion-sala_id',
+            'presentacion'
+        );
+
+        // drops index for column `sala_id`
+        $this->dropIndex(
+            'idx-presentacion-sala_id',
             'presentacion'
         );
 

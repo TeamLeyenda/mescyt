@@ -9,6 +9,14 @@ use yii\widgets\ActiveForm;
 
 \mootensai\components\JsBlock::widget(['viewFile' => '_script', 'pos'=> \yii\web\View::POS_END, 
     'viewParams' => [
+        'class' => 'Presentacion', 
+        'relID' => 'presentacion', 
+        'value' => \yii\helpers\Json::encode($model->presentacions),
+        'isNewRecord' => ($model->isNewRecord) ? 1 : 0
+    ]
+]);
+\mootensai\components\JsBlock::widget(['viewFile' => '_script', 'pos'=> \yii\web\View::POS_END, 
+    'viewParams' => [
         'class' => 'PresentadorSala', 
         'relID' => 'presentador-sala', 
         'value' => \yii\helpers\Json::encode($model->presentadorSalas),
@@ -29,6 +37,12 @@ use yii\widgets\ActiveForm;
 
     <?php
     $forms = [
+        [
+            'label' => '<i class="glyphicon glyphicon-book"></i> ' . Html::encode(Yii::t('app', 'Presentacion')),
+            'content' => $this->render('_formPresentacion', [
+                'row' => \yii\helpers\ArrayHelper::toArray($model->presentacions),
+            ]),
+        ],
         [
             'label' => '<i class="glyphicon glyphicon-book"></i> ' . Html::encode(Yii::t('app', 'PresentadorSala')),
             'content' => $this->render('_formPresentadorSala', [

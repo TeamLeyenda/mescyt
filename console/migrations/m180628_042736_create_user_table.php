@@ -3,7 +3,7 @@
 use yii\db\Migration;
 use mdm\admin\components\Configs;
 
-class m180628_000947_create_user_table extends Migration
+class m180628_042736_create_user_table extends Migration
 {
 
     public function up()

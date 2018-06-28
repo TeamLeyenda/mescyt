@@ -21,16 +21,6 @@ echo TabularForm::widget([
         'type' => TabularForm::INPUT_TEXT,
     ],
     'attributes' => [
-        'presentador_id' => [
-            'label' => 'Presentador',
-            'type' => TabularForm::INPUT_WIDGET,
-            'widgetClass' => \kartik\widgets\Select2::className(),
-            'options' => [
-                'data' => \yii\helpers\ArrayHelper::map(\backend\models\Presentador::find()->orderBy('id')->asArray()->all(), 'id', 'id'),
-                'options' => ['placeholder' => Yii::t('app', 'Choose Presentador')],
-            ],
-            'columnOptions' => ['width' => '200px']
-        ],
         'del' => [
             'type' => 'raw',
             'label' => '',

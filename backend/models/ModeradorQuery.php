@@ -1,11 +1,11 @@
 <?php
 
-namespace app\models;
+namespace backend\models;
 
 /**
- * This is the ActiveQuery class for [[\app\models\Moderador]].
+ * This is the ActiveQuery class for [[Moderador]].
  *
- * @see \app\models\Moderador
+ * @see Moderador
  */
 class ModeradorQuery extends \yii\db\ActiveQuery
 {
@@ -17,7 +17,7 @@ class ModeradorQuery extends \yii\db\ActiveQuery
 
     /**
      * @inheritdoc
-     * @return \app\models\Moderador[]|array
+     * @return Moderador[]|array
      */
     public function all($db = null)
     {
@@ -26,7 +26,7 @@ class ModeradorQuery extends \yii\db\ActiveQuery
 
     /**
      * @inheritdoc
-     * @return \app\models\Moderador|array|null
+     * @return Moderador|array|null
      */
     public function one($db = null)
     {

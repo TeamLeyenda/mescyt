@@ -9,7 +9,7 @@ use yii\db\Migration;
  * - `presentador`
  * - `presentacion`
  */
-class m180628_000949_create_junction_table_for_presentador_and_presentacion_tables extends Migration
+class m180628_042740_create_junction_table_for_presentador_and_presentacion_tables extends Migration
 {
     /**
      * {@inheritdoc}

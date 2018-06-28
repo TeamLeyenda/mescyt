@@ -3,38 +3,37 @@
 use yii\db\Migration;
 
 /**
- * Handles the creation of table `presentador`.
+ * Handles the creation of table `participante`.
  * Has foreign keys to the tables:
  *
  * - `afiliacion`
  */
-class m180628_000944_create_presentador_table extends Migration
+class m180628_042731_create_participante_table extends Migration
 {
     /**
      * {@inheritdoc}
      */
     public function safeUp()
     {
-        $this->createTable('presentador', [
+        $this->createTable('participante', [
             'id' => $this->primaryKey(),
             'afiliacion_id' => $this->integer()->notNull(),
             'Nombre' => $this->string(50)->notNull(),
             'Apellido' => $this->string(50),
             'Telefono' => $this->string(20),
-            'Descripcion' => $this->text()->notNull(),
         ]);
 
         // creates index for column `afiliacion_id`
         $this->createIndex(
-            'idx-presentador-afiliacion_id',
-            'presentador',
+            'idx-participante-afiliacion_id',
+            'participante',
             'afiliacion_id'
         );
 
         // add foreign key for table `afiliacion`
         $this->addForeignKey(
-            'fk-presentador-afiliacion_id',
-            'presentador',
+            'fk-participante-afiliacion_id',
+            'participante',
             'afiliacion_id',
             'afiliacion',
             'id',
@@ -49,16 +48,16 @@ class m180628_000944_create_presentador_table extends Migration
     {
         // drops foreign key for table `afiliacion`
         $this->dropForeignKey(
-            'fk-presentador-afiliacion_id',
-            'presentador'
+            'fk-participante-afiliacion_id',
+            'participante'
         );
 
         // drops index for column `afiliacion_id`
         $this->dropIndex(
-            'idx-presentador-afiliacion_id',
-            'presentador'
+            'idx-participante-afiliacion_id',
+            'participante'
         );
 
-        $this->dropTable('presentador');
+        $this->dropTable('participante');
     }
 }

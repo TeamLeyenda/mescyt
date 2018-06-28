@@ -5,7 +5,7 @@ use yii\db\Migration;
 /**
  * Handles the creation of table `moderador`.
  */
-class m180628_000939_create_moderador_table extends Migration
+class m180628_042721_create_moderador_table extends Migration
 {
     /**
      * {@inheritdoc}

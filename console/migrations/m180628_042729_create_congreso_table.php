@@ -8,7 +8,7 @@ use yii\db\Migration;
  *
  * - `provincia`
  */
-class m180628_000943_create_congreso_table extends Migration
+class m180628_042729_create_congreso_table extends Migration
 {
     /**
      * {@inheritdoc}

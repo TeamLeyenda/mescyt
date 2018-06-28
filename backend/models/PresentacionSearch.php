@@ -18,7 +18,7 @@ use backend\models\Presentacion;
     public function rules()
     {
         return [
-            [['id', 'congreso_id'], 'integer'],
+            [['id', 'congreso_id', 'sala_id'], 'integer'],
             [['Titulo', 'Institucion', 'Area_Tematica', 'Modalidad_Presentacion', 'Fecha_Inicio', 'Fecha_Final'], 'safe'],
         ];
     }
@@ -58,6 +58,7 @@ use backend\models\Presentacion;
         $query->andFilterWhere([
             'id' => $this->id,
             'congreso_id' => $this->congreso_id,
+            'sala_id' => $this->sala_id,
             'Fecha_Inicio' => $this->Fecha_Inicio,
             'Fecha_Final' => $this->Fecha_Final,
         ]);

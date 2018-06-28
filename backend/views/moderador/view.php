@@ -52,7 +52,7 @@ $this->params['breadcrumbs'][] = $this->title;
     echo DetailView::widget([
         'model' => $model,
         'attributes' => $gridColumn
-    ]);
+    ]); 
 ?>
     </div>
     
@@ -69,43 +69,12 @@ if($providerSala->totalCount){
         'pjax' => true,
         'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-sala']],
         'panel' => [
-            'type' => GridView::TYPE_PRIMARY,
-            'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode(Yii::t('app', 'Sala')),
+        'type' => GridView::TYPE_PRIMARY,
+        'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode(Yii::t('app', 'Sala')),
         ],
         'columns' => $gridColumnSala
     ]);
 }
 ?>
-
-    </div>
-    
-    <div class="row">
-<?php
-if($providerUser->totalCount){
-    $gridColumnUser = [
-        ['class' => 'yii\grid\SerialColumn'],
-            ['attribute' => 'id', 'visible' => false],
-            [
-                'attribute' => 'participante.id',
-                'label' => Yii::t('app', 'Participante')
-            ],
-            'username',
-            'password_hash',
-            'email:email',
-            'image',
-    ];
-    echo Gridview::widget([
-        'dataProvider' => $providerUser,
-        'pjax' => true,
-        'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-user']],
-        'panel' => [
-            'type' => GridView::TYPE_PRIMARY,
-            'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode(Yii::t('app', 'User')),
-        ],
-        'columns' => $gridColumnUser
-    ]);
-}
-?>
-
     </div>
 </div>

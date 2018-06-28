@@ -5,7 +5,7 @@ use yii\db\Migration;
 /**
  * Handles the creation of table `grado_academico`.
  */
-class m180628_000940_create_grado_academico_table extends Migration
+class m180628_042723_create_grado_academico_table extends Migration
 {
     /**
      * {@inheritdoc}

@@ -3,7 +3,6 @@
 namespace backend\models\base;
 
 use Yii;
-use mootensai\behaviors\UUIDBehavior;
 
 /**
  * This is the base model class for table "{{%moderador}}".
@@ -14,24 +13,11 @@ use mootensai\behaviors\UUIDBehavior;
  * @property string $Telefono
  *
  * @property \backend\models\Sala[] $salas
- * @property \backend\models\User[] $users
+ * @property \backend\models\User $user
  */
 class Moderador extends \yii\db\ActiveRecord
 {
     use \mootensai\relation\RelationTrait;
-
-
-    /**
-    * This function helps \mootensai\relation\RelationTrait runs faster
-    * @return array relation names of this model
-    */
-    public function relationNames()
-    {
-        return [
-            'salas',
-            'users'
-        ];
-    }
 
     /**
      * @inheritdoc
@@ -41,29 +27,16 @@ class Moderador extends \yii\db\ActiveRecord
         return [
             [['Nombre'], 'required'],
             [['Nombre', 'Apellido'], 'string', 'max' => 50],
-            [['Telefono'], 'string', 'max' => 20],
-            [['lock'], 'default', 'value' => '0'],
-            [['lock'], 'mootensai\components\OptimisticLockValidator']
+            [['Telefono'], 'string', 'max' => 20]
         ];
     }
-
+    
     /**
      * @inheritdoc
      */
     public static function tableName()
     {
         return '{{%moderador}}';
-    }
-
-    /**
-     *
-     * @return string
-     * overwrite function optimisticLock
-     * return string name of field are used to stored optimistic lock
-     *
-     */
-    public function optimisticLock() {
-        return 'lock';
     }
 
     /**
@@ -84,38 +57,23 @@ class Moderador extends \yii\db\ActiveRecord
      */
     public function getSalas()
     {
-        return $this->hasMany(\backend\models\Sala::className(), ['moderador_id' => 'id'])->inverseOf('moderador');
+        return $this->hasMany(\backend\models\Sala::className(), ['moderador_id' => 'id']);
     }
         
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getUsers()
+    public function getUser()
     {
-        return $this->hasMany(\backend\models\User::className(), ['moderador_id' => 'id'])->inverseOf('moderador');
+        return $this->hasOne(\backend\models\User::className(), ['moderador_id' => 'id']);
     }
     
     /**
      * @inheritdoc
-     * @return array mixed
-     */
-    public function behaviors()
-    {
-        return [
-            'uuid' => [
-                'class' => UUIDBehavior::className(),
-                'column' => 'id',
-            ],
-        ];
-    }
-
-
-    /**
-     * @inheritdoc
-     * @return \app\models\ModeradorQuery the active query used by this AR class.
+     * @return \backend\models\ModeradorQuery the active query used by this AR class.
      */
     public static function find()
     {
-        return new \app\models\ModeradorQuery(get_called_class());
+        return new \backend\models\ModeradorQuery(get_called_class());
     }
 }

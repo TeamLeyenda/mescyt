@@ -8,7 +8,7 @@ use yii\db\Migration;
  *
  * - `moderador`
  */
-class m180628_000945_create_sala_table extends Migration
+class m180628_042734_create_sala_table extends Migration
 {
     /**
      * {@inheritdoc}

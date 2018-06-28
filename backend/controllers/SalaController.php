@@ -28,7 +28,7 @@ class SalaController extends Controller
                 'rules' => [
                     [
                         'allow' => true,
-                        'actions' => ['index', 'view', 'create', 'update', 'delete', 'pdf', 'save-as-new', 'add-presentador-sala'],
+                        'actions' => ['index', 'view', 'create', 'update', 'delete', 'pdf', 'save-as-new', 'add-presentacion', 'add-presentador-sala'],
                         'roles' => ['@']
                     ],
                     [
@@ -62,11 +62,15 @@ class SalaController extends Controller
     public function actionView($id)
     {
         $model = $this->findModel($id);
+        $providerPresentacion = new \yii\data\ArrayDataProvider([
+            'allModels' => $model->presentacions,
+        ]);
         $providerPresentadorSala = new \yii\data\ArrayDataProvider([
             'allModels' => $model->presentadorSalas,
         ]);
         return $this->render('view', [
             'model' => $this->findModel($id),
+            'providerPresentacion' => $providerPresentacion,
             'providerPresentadorSala' => $providerPresentadorSala,
         ]);
     }
@@ -133,12 +137,16 @@ class SalaController extends Controller
      */
     public function actionPdf($id) {
         $model = $this->findModel($id);
+        $providerPresentacion = new \yii\data\ArrayDataProvider([
+            'allModels' => $model->presentacions,
+        ]);
         $providerPresentadorSala = new \yii\data\ArrayDataProvider([
             'allModels' => $model->presentadorSalas,
         ]);
 
         $content = $this->renderAjax('_pdf', [
             'model' => $model,
+            'providerPresentacion' => $providerPresentacion,
             'providerPresentadorSala' => $providerPresentadorSala,
         ]);
 
@@ -165,8 +173,8 @@ class SalaController extends Controller
     * so user don't need to input all field from scratch.
     * If creation is successful, the browser will be redirected to the 'view' page.
     *
-    * @param mixed $id
-    * @return mixed
+    * @param type $id
+    * @return type
     */
     public function actionSaveAsNew($id) {
         $model = new Sala();
@@ -175,7 +183,7 @@ class SalaController extends Controller
             $model = $this->findModel($id);
         }
     
-        if ($model->loadAll(Yii::$app->request->post()) && $model->saveAll()) {
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('saveAsNew', [
@@ -195,6 +203,26 @@ class SalaController extends Controller
     {
         if (($model = Sala::findOne($id)) !== null) {
             return $model;
+        } else {
+            throw new NotFoundHttpException(Yii::t('app', 'The requested page does not exist.'));
+        }
+    }
+    
+    /**
+    * Action to load a tabular form grid
+    * for Presentacion
+    * @author Yohanes Candrajaya <moo.tensai@gmail.com>
+    * @author Jiwantoro Ndaru <jiwanndaru@gmail.com>
+    *
+    * @return mixed
+    */
+    public function actionAddPresentacion()
+    {
+        if (Yii::$app->request->isAjax) {
+            $row = Yii::$app->request->post('Presentacion');
+            if((Yii::$app->request->post('isNewRecord') && Yii::$app->request->post('_action') == 'load' && empty($row)) || Yii::$app->request->post('_action') == 'add')
+                $row[] = [];
+            return $this->renderAjax('_formPresentacion', ['row' => $row]);
         } else {
             throw new NotFoundHttpException(Yii::t('app', 'The requested page does not exist.'));
         }

@@ -27,6 +27,10 @@ $this->params['breadcrumbs'][] = $this->title;
                 'attribute' => 'congreso.id',
                 'label' => Yii::t('app', 'Congreso')
             ],
+        [
+                'attribute' => 'sala.id',
+                'label' => Yii::t('app', 'Sala')
+            ],
         'Titulo',
         'Institucion',
         'Area_Tematica',
@@ -46,10 +50,6 @@ $this->params['breadcrumbs'][] = $this->title;
 if($providerPresentadorPresentacion->totalCount){
     $gridColumnPresentadorPresentacion = [
         ['class' => 'yii\grid\SerialColumn'],
-        [
-                'attribute' => 'presentador.id',
-                'label' => Yii::t('app', 'Presentador')
-            ],
             ];
     echo Gridview::widget([
         'dataProvider' => $providerPresentadorPresentacion,

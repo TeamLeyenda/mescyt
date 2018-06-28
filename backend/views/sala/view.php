@@ -50,7 +50,38 @@ $this->params['breadcrumbs'][] = $this->title;
     echo DetailView::widget([
         'model' => $model,
         'attributes' => $gridColumn
+    ]); 
+?>
+    </div>
+    
+    <div class="row">
+<?php
+if($providerPresentacion->totalCount){
+    $gridColumnPresentacion = [
+        ['class' => 'yii\grid\SerialColumn'],
+            ['attribute' => 'id', 'visible' => false],
+            [
+                'attribute' => 'congreso.id',
+                'label' => Yii::t('app', 'Congreso')
+            ],
+                        'Titulo',
+            'Institucion',
+            'Area_Tematica',
+            'Modalidad_Presentacion',
+            'Fecha_Inicio',
+            'Fecha_Final',
+    ];
+    echo Gridview::widget([
+        'dataProvider' => $providerPresentacion,
+        'pjax' => true,
+        'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-presentacion']],
+        'panel' => [
+        'type' => GridView::TYPE_PRIMARY,
+        'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode(Yii::t('app', 'Presentacion')),
+        ],
+        'columns' => $gridColumnPresentacion
     ]);
+}
 ?>
     </div>
     
@@ -65,27 +96,12 @@ if($providerPresentadorSala->totalCount){
         'pjax' => true,
         'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-presentador-sala']],
         'panel' => [
-            'type' => GridView::TYPE_PRIMARY,
-            'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode(Yii::t('app', 'Presentador Sala')),
+        'type' => GridView::TYPE_PRIMARY,
+        'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode(Yii::t('app', 'Presentador Sala')),
         ],
         'columns' => $gridColumnPresentadorSala
     ]);
 }
 ?>
-
     </div>
-    <div class="row">
-        <h4>Moderador<?= ' '. Html::encode($this->title) ?></h4>
-    </div>
-    <?php 
-    $gridColumnModerador = [
-        ['attribute' => 'id', 'visible' => false],
-        'Nombre',
-        'Apellido',
-        'Telefono',
-    ];
-    echo DetailView::widget([
-        'model' => $model->moderador,
-        'attributes' => $gridColumnModerador    ]);
-    ?>
 </div>

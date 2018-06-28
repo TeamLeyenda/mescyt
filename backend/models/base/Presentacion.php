@@ -9,6 +9,7 @@ use Yii;
  *
  * @property integer $id
  * @property integer $congreso_id
+ * @property integer $sala_id
  * @property string $Titulo
  * @property string $Institucion
  * @property string $Area_Tematica
@@ -17,6 +18,7 @@ use Yii;
  * @property string $Fecha_Final
  *
  * @property \backend\models\Congreso $congreso
+ * @property \backend\models\Sala $sala
  * @property \backend\models\PresentadorPresentacion[] $presentadorPresentacions
  * @property \backend\models\Presentador[] $presentadors
  */
@@ -30,8 +32,8 @@ class Presentacion extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['congreso_id', 'Titulo', 'Fecha_Inicio', 'Fecha_Final'], 'required'],
-            [['congreso_id'], 'integer'],
+            [['congreso_id', 'sala_id', 'Titulo', 'Fecha_Inicio', 'Fecha_Final'], 'required'],
+            [['congreso_id', 'sala_id'], 'integer'],
             [['Fecha_Inicio', 'Fecha_Final'], 'safe'],
             [['Titulo', 'Area_Tematica'], 'string', 'max' => 100],
             [['Institucion'], 'string', 'max' => 50],
@@ -55,6 +57,7 @@ class Presentacion extends \yii\db\ActiveRecord
         return [
             'id' => Yii::t('app', 'ID'),
             'congreso_id' => Yii::t('app', 'Congreso ID'),
+            'sala_id' => Yii::t('app', 'Sala ID'),
             'Titulo' => Yii::t('app', 'Titulo'),
             'Institucion' => Yii::t('app', 'Institucion'),
             'Area_Tematica' => Yii::t('app', 'Area  Tematica'),
@@ -75,6 +78,14 @@ class Presentacion extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
+    public function getSala()
+    {
+        return $this->hasOne(\backend\models\Sala::className(), ['id' => 'sala_id']);
+    }
+        
+    /**
+     * @return \yii\db\ActiveQuery
+     */
     public function getPresentadorPresentacions()
     {
         return $this->hasMany(\backend\models\PresentadorPresentacion::className(), ['presentacion_id' => 'id']);
@@ -90,10 +101,10 @@ class Presentacion extends \yii\db\ActiveRecord
     
     /**
      * @inheritdoc
-     * @return \app\models\PresentacionQuery the active query used by this AR class.
+     * @return \backend\models\PresentacionQuery the active query used by this AR class.
      */
     public static function find()
     {
-        return new \app\models\PresentacionQuery(get_called_class());
+        return new \backend\models\PresentacionQuery(get_called_class());
     }
 }

@@ -55,33 +55,4 @@ if($providerSala->totalCount){
 }
 ?>
     </div>
-    
-    <div class="row">
-<?php
-if($providerUser->totalCount){
-    $gridColumnUser = [
-        ['class' => 'yii\grid\SerialColumn'],
-        ['attribute' => 'id', 'visible' => false],
-        [
-                'attribute' => 'participante.id',
-                'label' => Yii::t('app', 'Participante')
-            ],
-        'username',
-        'password_hash',
-        'email:email',
-        'image',
-    ];
-    echo Gridview::widget([
-        'dataProvider' => $providerUser,
-        'panel' => [
-            'type' => GridView::TYPE_PRIMARY,
-            'heading' => Html::encode(Yii::t('app', 'User')),
-        ],
-        'panelHeadingTemplate' => '<h4>{heading}</h4>{summary}',
-        'toggleData' => false,
-        'columns' => $gridColumnUser
-    ]);
-}
-?>
-    </div>
 </div>

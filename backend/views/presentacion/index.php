@@ -57,6 +57,19 @@ $this->registerJs($search);
                 ],
                 'filterInputOptions' => ['placeholder' => 'Congreso', 'id' => 'grid-presentacion-search-congreso_id']
             ],
+        [
+                'attribute' => 'sala_id',
+                'label' => Yii::t('app', 'Sala'),
+                'value' => function($model){
+                    return $model->sala->id;
+                },
+                'filterType' => GridView::FILTER_SELECT2,
+                'filter' => \yii\helpers\ArrayHelper::map(\backend\models\Sala::find()->asArray()->all(), 'id', 'id'),
+                'filterWidgetOptions' => [
+                    'pluginOptions' => ['allowClear' => true],
+                ],
+                'filterInputOptions' => ['placeholder' => 'Sala', 'id' => 'grid-presentacion-search-sala_id']
+            ],
         'Titulo',
         'Institucion',
         'Area_Tematica',

@@ -5,7 +5,7 @@ use yii\db\Migration;
 /**
  * Handles the creation of table `afiliacion`.
  */
-class m180628_000941_create_afiliacion_table extends Migration
+class m180628_042726_create_afiliacion_table extends Migration
 {
     /**
      * {@inheritdoc}
