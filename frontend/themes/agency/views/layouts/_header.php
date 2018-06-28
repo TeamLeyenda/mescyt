@@ -29,7 +29,7 @@
 <?php
     $options = ['navbar','navbar-default','navbar-fixed-top'];
     NavBar::begin([
-        'brandLabel' => 'Yii 2 Learning',
+        'brandLabel' => 'MESCyT',
         'brandUrl' => Yii::$app->homeUrl,
         'brandOptions'=>[
             'class'=>'navbar-header page-scroll'
