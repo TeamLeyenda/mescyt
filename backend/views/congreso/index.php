@@ -47,8 +47,8 @@ $this->registerJs($search);
         [
                 'attribute' => 'provincia_id',
                 'label' => Yii::t('app', 'Provincia'),
-                'value' => function($model){                   
-                    return $model->provincia->Provincia;                   
+                'value' => function($model){
+                    return $model->provincia->Provincia;
                 },
                 'filterType' => GridView::FILTER_SELECT2,
                 'filter' => \yii\helpers\ArrayHelper::map(\backend\models\Provincia::find()->asArray()->all(), 'id', 'Provincia'),

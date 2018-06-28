@@ -3,7 +3,6 @@
 namespace backend\models\base;
 
 use Yii;
-use mootensai\behaviors\UUIDBehavior;
 
 /**
  * This is the base model class for table "{{%presentador}}".
@@ -18,38 +17,17 @@ use mootensai\behaviors\UUIDBehavior;
  * @property \backend\models\Afiliacion $afiliacion
  * @property \backend\models\PresentadorAreaEspecializacion[] $presentadorAreaEspecializacions
  * @property \backend\models\AreaEspecializacion[] $areaEspecializacions
- * @property \backend\models\PresentadorConferencia[] $presentadorConferencias
- * @property \backend\models\Conferencia[] $conferencias
  * @property \backend\models\PresentadorGradoAcademico[] $presentadorGradoAcademicos
  * @property \backend\models\GradoAcademico[] $gradoAcademicos
+ * @property \backend\models\PresentadorPresentacion[] $presentadorPresentacions
+ * @property \backend\models\Presentacion[] $presentacions
  * @property \backend\models\PresentadorSala[] $presentadorSalas
  * @property \backend\models\Sala[] $salas
- * @property \backend\models\User[] $users
+ * @property \backend\models\User $user
  */
 class Presentador extends \yii\db\ActiveRecord
 {
     use \mootensai\relation\RelationTrait;
-
-
-    /**
-    * This function helps \mootensai\relation\RelationTrait runs faster
-    * @return array relation names of this model
-    */
-    public function relationNames()
-    {
-        return [
-            'afiliacion',
-            'presentadorAreaEspecializacions',
-            'areaEspecializacions',
-            'presentadorConferencias',
-            'conferencias',
-            'presentadorGradoAcademicos',
-            'gradoAcademicos',
-            'presentadorSalas',
-            'salas',
-            'users'
-        ];
-    }
 
     /**
      * @inheritdoc
@@ -61,29 +39,16 @@ class Presentador extends \yii\db\ActiveRecord
             [['afiliacion_id'], 'integer'],
             [['Descripcion'], 'string'],
             [['Nombre', 'Apellido'], 'string', 'max' => 50],
-            [['Telefono'], 'string', 'max' => 20],
-            [['lock'], 'default', 'value' => '0'],
-            [['lock'], 'mootensai\components\OptimisticLockValidator']
+            [['Telefono'], 'string', 'max' => 20]
         ];
     }
-
+    
     /**
      * @inheritdoc
      */
     public static function tableName()
     {
         return '{{%presentador}}';
-    }
-
-    /**
-     *
-     * @return string
-     * overwrite function optimisticLock
-     * return string name of field are used to stored optimistic lock
-     *
-     */
-    public function optimisticLock() {
-        return 'lock';
     }
 
     /**
@@ -106,7 +71,7 @@ class Presentador extends \yii\db\ActiveRecord
      */
     public function getAfiliacion()
     {
-        return $this->hasOne(\backend\models\Afiliacion::className(), ['id' => 'afiliacion_id'])->inverseOf('presentadors');
+        return $this->hasOne(\backend\models\Afiliacion::className(), ['id' => 'afiliacion_id']);
     }
         
     /**
@@ -114,7 +79,7 @@ class Presentador extends \yii\db\ActiveRecord
      */
     public function getPresentadorAreaEspecializacions()
     {
-        return $this->hasMany(\backend\models\PresentadorAreaEspecializacion::className(), ['presentador_id' => 'id'])->inverseOf('presentador');
+        return $this->hasMany(\backend\models\PresentadorAreaEspecializacion::className(), ['presentador_id' => 'id']);
     }
         
     /**
@@ -128,25 +93,9 @@ class Presentador extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getPresentadorConferencias()
-    {
-        return $this->hasMany(\backend\models\PresentadorConferencia::className(), ['presentador_id' => 'id'])->inverseOf('presentador');
-    }
-        
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getConferencias()
-    {
-        return $this->hasMany(\backend\models\Conferencia::className(), ['id' => 'conferencia_id'])->viaTable('{{%presentador_conferencia}}', ['presentador_id' => 'id']);
-    }
-        
-    /**
-     * @return \yii\db\ActiveQuery
-     */
     public function getPresentadorGradoAcademicos()
     {
-        return $this->hasMany(\backend\models\PresentadorGradoAcademico::className(), ['presentador_id' => 'id'])->inverseOf('presentador');
+        return $this->hasMany(\backend\models\PresentadorGradoAcademico::className(), ['presentador_id' => 'id']);
     }
         
     /**
@@ -160,9 +109,25 @@ class Presentador extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
+    public function getPresentadorPresentacions()
+    {
+        return $this->hasMany(\backend\models\PresentadorPresentacion::className(), ['presentador_id' => 'id']);
+    }
+        
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getPresentacions()
+    {
+        return $this->hasMany(\backend\models\Presentacion::className(), ['id' => 'presentacion_id'])->viaTable('{{%presentador_presentacion}}', ['presentador_id' => 'id']);
+    }
+        
+    /**
+     * @return \yii\db\ActiveQuery
+     */
     public function getPresentadorSalas()
     {
-        return $this->hasMany(\backend\models\PresentadorSala::className(), ['presentador_id' => 'id'])->inverseOf('presentador');
+        return $this->hasMany(\backend\models\PresentadorSala::className(), ['presentador_id' => 'id']);
     }
         
     /**
@@ -176,32 +141,17 @@ class Presentador extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getUsers()
+    public function getUser()
     {
-        return $this->hasMany(\backend\models\User::className(), ['presentador_id' => 'id'])->inverseOf('presentador');
+        return $this->hasOne(\backend\models\User::className(), ['presentador_id' => 'id']);
     }
     
     /**
      * @inheritdoc
-     * @return array mixed
-     */
-    public function behaviors()
-    {
-        return [
-            'uuid' => [
-                'class' => UUIDBehavior::className(),
-                'column' => 'id',
-            ],
-        ];
-    }
-
-
-    /**
-     * @inheritdoc
-     * @return \app\models\PresentadorQuery the active query used by this AR class.
+     * @return \backend\models\PresentadorQuery the active query used by this AR class.
      */
     public static function find()
     {
-        return new \app\models\PresentadorQuery(get_called_class());
+        return new \backend\models\PresentadorQuery(get_called_class());
     }
 }

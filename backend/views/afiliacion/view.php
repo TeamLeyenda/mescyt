@@ -50,7 +50,7 @@ $this->params['breadcrumbs'][] = $this->title;
     echo DetailView::widget([
         'model' => $model,
         'attributes' => $gridColumn
-    ]);
+    ]); 
 ?>
     </div>
     
@@ -69,14 +69,13 @@ if($providerParticipante->totalCount){
         'pjax' => true,
         'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-participante']],
         'panel' => [
-            'type' => GridView::TYPE_PRIMARY,
-            'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode(Yii::t('app', 'Participante')),
+        'type' => GridView::TYPE_PRIMARY,
+        'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode(Yii::t('app', 'Participante')),
         ],
         'columns' => $gridColumnParticipante
     ]);
 }
 ?>
-
     </div>
     
     <div class="row">
@@ -95,13 +94,12 @@ if($providerPresentador->totalCount){
         'pjax' => true,
         'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-presentador']],
         'panel' => [
-            'type' => GridView::TYPE_PRIMARY,
-            'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode(Yii::t('app', 'Presentador')),
+        'type' => GridView::TYPE_PRIMARY,
+        'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode(Yii::t('app', 'Presentador')),
         ],
         'columns' => $gridColumnPresentador
     ]);
 }
 ?>
-
     </div>
 </div>

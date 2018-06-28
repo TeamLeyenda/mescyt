@@ -56,14 +56,14 @@ $this->params['breadcrumbs'][] = $this->title;
     echo DetailView::widget([
         'model' => $model,
         'attributes' => $gridColumn
-    ]);
+    ]); 
 ?>
     </div>
     
     <div class="row">
 <?php
-if($providerConferencia->totalCount){
-    $gridColumnConferencia = [
+if($providerPresentacion->totalCount){
+    $gridColumnPresentacion = [
         ['class' => 'yii\grid\SerialColumn'],
             ['attribute' => 'id', 'visible' => false],
                         'Titulo',
@@ -74,30 +74,16 @@ if($providerConferencia->totalCount){
             'Fecha_Final',
     ];
     echo Gridview::widget([
-        'dataProvider' => $providerConferencia,
+        'dataProvider' => $providerPresentacion,
         'pjax' => true,
-        'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-conferencia']],
+        'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-presentacion']],
         'panel' => [
-            'type' => GridView::TYPE_PRIMARY,
-            'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode(Yii::t('app', 'Conferencia')),
+        'type' => GridView::TYPE_PRIMARY,
+        'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode(Yii::t('app', 'Presentacion')),
         ],
-        'columns' => $gridColumnConferencia
+        'columns' => $gridColumnPresentacion
     ]);
 }
 ?>
-
     </div>
-    <div class="row">
-        <h4>Provincia<?= ' '. Html::encode($this->title) ?></h4>
-    </div>
-    <?php 
-    $gridColumnProvincia = [
-        ['attribute' => 'id', 'visible' => false],
-        'pais_id',
-        'Provincia',
-    ];
-    echo DetailView::widget([
-        'model' => $model->provincia,
-        'attributes' => $gridColumnProvincia    ]);
-    ?>
 </div>

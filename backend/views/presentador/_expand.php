@@ -17,17 +17,17 @@ $items = [
         ]),
     ],
                 [
-        'label' => '<i class="glyphicon glyphicon-book"></i> '. Html::encode(Yii::t('app', 'Presentador Conferencia')),
-        'content' => $this->render('_dataPresentadorConferencia', [
-            'model' => $model,
-            'row' => $model->presentadorConferencias,
-        ]),
-    ],
-                [
         'label' => '<i class="glyphicon glyphicon-book"></i> '. Html::encode(Yii::t('app', 'Presentador Grado Academico')),
         'content' => $this->render('_dataPresentadorGradoAcademico', [
             'model' => $model,
             'row' => $model->presentadorGradoAcademicos,
+        ]),
+    ],
+                [
+        'label' => '<i class="glyphicon glyphicon-book"></i> '. Html::encode(Yii::t('app', 'Presentador Presentacion')),
+        'content' => $this->render('_dataPresentadorPresentacion', [
+            'model' => $model,
+            'row' => $model->presentadorPresentacions,
         ]),
     ],
                 [
@@ -40,9 +40,7 @@ $items = [
                 [
         'label' => '<i class="glyphicon glyphicon-book"></i> '. Html::encode(Yii::t('app', 'User')),
         'content' => $this->render('_dataUser', [
-            'model' => $model,
-            'row' => $model->users,
-        ]),
+        'model' => $model->user        ]),
     ],
     ];
 echo TabsX::widget([

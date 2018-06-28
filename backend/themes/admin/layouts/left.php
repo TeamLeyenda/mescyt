@@ -64,7 +64,7 @@ $name = Yii::$app->user->identity->username;
                                         'items' => [
                                             ['label' => 'Congreso', 'icon' => 'building-o', 'url' => ['/congreso'],],
                                             ['label' => 'Salas', 'icon' => 'cube', 'url' => ['/sala'],],
-                                            ['label' => 'Conferencia', 'icon' => 'comments-o', 'url' => ['/conferencia'],],
+                                            ['label' => 'Presentaciones', 'icon' => 'comments-o', 'url' => ['/presentacion'],],
                                             ['label' => 'Afiliaciones', 'icon' => 'credit-card', 'url' => ['/afiliacion'],],
                                         ],
                                     ],

@@ -40,8 +40,8 @@ $this->params['breadcrumbs'][] = $this->title;
     
     <div class="row">
 <?php
-if($providerConferencia->totalCount){
-    $gridColumnConferencia = [
+if($providerPresentacion->totalCount){
+    $gridColumnPresentacion = [
         ['class' => 'yii\grid\SerialColumn'],
         ['attribute' => 'id', 'visible' => false],
                 'Titulo',
@@ -52,14 +52,14 @@ if($providerConferencia->totalCount){
         'Fecha_Final',
     ];
     echo Gridview::widget([
-        'dataProvider' => $providerConferencia,
+        'dataProvider' => $providerPresentacion,
         'panel' => [
             'type' => GridView::TYPE_PRIMARY,
-            'heading' => Html::encode(Yii::t('app', 'Conferencia')),
+            'heading' => Html::encode(Yii::t('app', 'Presentacion')),
         ],
         'panelHeadingTemplate' => '<h4>{heading}</h4>{summary}',
         'toggleData' => false,
-        'columns' => $gridColumnConferencia
+        'columns' => $gridColumnPresentacion
     ]);
 }
 ?>

@@ -57,21 +57,9 @@ $this->params['breadcrumbs'][] = $this->title;
     echo DetailView::widget([
         'model' => $model,
         'attributes' => $gridColumn
-    ]);
+    ]); 
 ?>
     </div>
-    <div class="row">
-        <h4>Afiliacion<?= ' '. Html::encode($this->title) ?></h4>
-    </div>
-    <?php 
-    $gridColumnAfiliacion = [
-        ['attribute' => 'id', 'visible' => false],
-        'Afiliacion',
-    ];
-    echo DetailView::widget([
-        'model' => $model->afiliacion,
-        'attributes' => $gridColumnAfiliacion    ]);
-    ?>
     
     <div class="row">
 <?php
@@ -88,39 +76,13 @@ if($providerPresentadorAreaEspecializacion->totalCount){
         'pjax' => true,
         'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-presentador-area-especializacion']],
         'panel' => [
-            'type' => GridView::TYPE_PRIMARY,
-            'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode(Yii::t('app', 'Presentador Area Especializacion')),
+        'type' => GridView::TYPE_PRIMARY,
+        'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode(Yii::t('app', 'Presentador Area Especializacion')),
         ],
         'columns' => $gridColumnPresentadorAreaEspecializacion
     ]);
 }
 ?>
-
-    </div>
-    
-    <div class="row">
-<?php
-if($providerPresentadorConferencia->totalCount){
-    $gridColumnPresentadorConferencia = [
-        ['class' => 'yii\grid\SerialColumn'],
-            [
-                'attribute' => 'conferencia.id',
-                'label' => Yii::t('app', 'Conferencia')
-            ],
-    ];
-    echo Gridview::widget([
-        'dataProvider' => $providerPresentadorConferencia,
-        'pjax' => true,
-        'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-presentador-conferencia']],
-        'panel' => [
-            'type' => GridView::TYPE_PRIMARY,
-            'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode(Yii::t('app', 'Presentador Conferencia')),
-        ],
-        'columns' => $gridColumnPresentadorConferencia
-    ]);
-}
-?>
-
     </div>
     
     <div class="row">
@@ -138,14 +100,37 @@ if($providerPresentadorGradoAcademico->totalCount){
         'pjax' => true,
         'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-presentador-grado-academico']],
         'panel' => [
-            'type' => GridView::TYPE_PRIMARY,
-            'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode(Yii::t('app', 'Presentador Grado Academico')),
+        'type' => GridView::TYPE_PRIMARY,
+        'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode(Yii::t('app', 'Presentador Grado Academico')),
         ],
         'columns' => $gridColumnPresentadorGradoAcademico
     ]);
 }
 ?>
-
+    </div>
+    
+    <div class="row">
+<?php
+if($providerPresentadorPresentacion->totalCount){
+    $gridColumnPresentadorPresentacion = [
+        ['class' => 'yii\grid\SerialColumn'],
+            [
+                'attribute' => 'presentacion.id',
+                'label' => Yii::t('app', 'Presentacion')
+            ],
+    ];
+    echo Gridview::widget([
+        'dataProvider' => $providerPresentadorPresentacion,
+        'pjax' => true,
+        'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-presentador-presentacion']],
+        'panel' => [
+        'type' => GridView::TYPE_PRIMARY,
+        'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode(Yii::t('app', 'Presentador Presentacion')),
+        ],
+        'columns' => $gridColumnPresentadorPresentacion
+    ]);
+}
+?>
     </div>
     
     <div class="row">
@@ -163,43 +148,12 @@ if($providerPresentadorSala->totalCount){
         'pjax' => true,
         'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-presentador-sala']],
         'panel' => [
-            'type' => GridView::TYPE_PRIMARY,
-            'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode(Yii::t('app', 'Presentador Sala')),
+        'type' => GridView::TYPE_PRIMARY,
+        'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode(Yii::t('app', 'Presentador Sala')),
         ],
         'columns' => $gridColumnPresentadorSala
     ]);
 }
 ?>
-
-    </div>
-    
-    <div class="row">
-<?php
-if($providerUser->totalCount){
-    $gridColumnUser = [
-        ['class' => 'yii\grid\SerialColumn'],
-            ['attribute' => 'id', 'visible' => false],
-            [
-                'attribute' => 'participante.id',
-                'label' => Yii::t('app', 'Participante')
-            ],
-            'username',
-            'password_hash',
-            'email:email',
-            'image',
-    ];
-    echo Gridview::widget([
-        'dataProvider' => $providerUser,
-        'pjax' => true,
-        'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-user']],
-        'panel' => [
-            'type' => GridView::TYPE_PRIMARY,
-            'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode(Yii::t('app', 'User')),
-        ],
-        'columns' => $gridColumnUser
-    ]);
-}
-?>
-
     </div>
 </div>

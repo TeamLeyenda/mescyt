@@ -65,30 +65,6 @@ if($providerPresentadorAreaEspecializacion->totalCount){
     
     <div class="row">
 <?php
-if($providerPresentadorConferencia->totalCount){
-    $gridColumnPresentadorConferencia = [
-        ['class' => 'yii\grid\SerialColumn'],
-        [
-                'attribute' => 'conferencia.id',
-                'label' => Yii::t('app', 'Conferencia')
-            ],
-    ];
-    echo Gridview::widget([
-        'dataProvider' => $providerPresentadorConferencia,
-        'panel' => [
-            'type' => GridView::TYPE_PRIMARY,
-            'heading' => Html::encode(Yii::t('app', 'Presentador Conferencia')),
-        ],
-        'panelHeadingTemplate' => '<h4>{heading}</h4>{summary}',
-        'toggleData' => false,
-        'columns' => $gridColumnPresentadorConferencia
-    ]);
-}
-?>
-    </div>
-    
-    <div class="row">
-<?php
 if($providerPresentadorGradoAcademico->totalCount){
     $gridColumnPresentadorGradoAcademico = [
         ['class' => 'yii\grid\SerialColumn'],
@@ -113,6 +89,30 @@ if($providerPresentadorGradoAcademico->totalCount){
     
     <div class="row">
 <?php
+if($providerPresentadorPresentacion->totalCount){
+    $gridColumnPresentadorPresentacion = [
+        ['class' => 'yii\grid\SerialColumn'],
+        [
+                'attribute' => 'presentacion.id',
+                'label' => Yii::t('app', 'Presentacion')
+            ],
+    ];
+    echo Gridview::widget([
+        'dataProvider' => $providerPresentadorPresentacion,
+        'panel' => [
+            'type' => GridView::TYPE_PRIMARY,
+            'heading' => Html::encode(Yii::t('app', 'Presentador Presentacion')),
+        ],
+        'panelHeadingTemplate' => '<h4>{heading}</h4>{summary}',
+        'toggleData' => false,
+        'columns' => $gridColumnPresentadorPresentacion
+    ]);
+}
+?>
+    </div>
+    
+    <div class="row">
+<?php
 if($providerPresentadorSala->totalCount){
     $gridColumnPresentadorSala = [
         ['class' => 'yii\grid\SerialColumn'],
@@ -130,35 +130,6 @@ if($providerPresentadorSala->totalCount){
         'panelHeadingTemplate' => '<h4>{heading}</h4>{summary}',
         'toggleData' => false,
         'columns' => $gridColumnPresentadorSala
-    ]);
-}
-?>
-    </div>
-    
-    <div class="row">
-<?php
-if($providerUser->totalCount){
-    $gridColumnUser = [
-        ['class' => 'yii\grid\SerialColumn'],
-        ['attribute' => 'id', 'visible' => false],
-        [
-                'attribute' => 'participante.id',
-                'label' => Yii::t('app', 'Participante')
-            ],
-        'username',
-        'password_hash',
-        'email:email',
-        'image',
-    ];
-    echo Gridview::widget([
-        'dataProvider' => $providerUser,
-        'panel' => [
-            'type' => GridView::TYPE_PRIMARY,
-            'heading' => Html::encode(Yii::t('app', 'User')),
-        ],
-        'panelHeadingTemplate' => '<h4>{heading}</h4>{summary}',
-        'toggleData' => false,
-        'columns' => $gridColumnUser
     ]);
 }
 ?>

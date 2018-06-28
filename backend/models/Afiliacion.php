@@ -2,7 +2,6 @@
 
 namespace backend\models;
 
-use Yii;
 use \backend\models\base\Afiliacion as BaseAfiliacion;
 
 /**
@@ -10,7 +9,6 @@ use \backend\models\base\Afiliacion as BaseAfiliacion;
  */
 class Afiliacion extends BaseAfiliacion
 {
-    public $lock;
     /**
      * @inheritdoc
      */
@@ -18,9 +16,7 @@ class Afiliacion extends BaseAfiliacion
     {
         return array_replace_recursive(parent::rules(),
 	    [
-            [['Afiliacion'], 'string', 'max' => 50],
-            [['lock'], 'default', 'value' => '0'],
-            [['lock'], 'mootensai\components\OptimisticLockValidator']
+            [['Afiliacion'], 'string', 'max' => 50]
         ]);
     }
 	

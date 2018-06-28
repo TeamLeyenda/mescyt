@@ -28,7 +28,7 @@ class CongresoController extends Controller
                 'rules' => [
                     [
                         'allow' => true,
-                        'actions' => ['index', 'view', 'create', 'update', 'delete', 'pdf', 'save-as-new', 'add-conferencia'],
+                        'actions' => ['index', 'view', 'create', 'update', 'delete', 'pdf', 'save-as-new', 'add-presentacion'],
                         'roles' => ['@']
                     ],
                     [
@@ -62,12 +62,12 @@ class CongresoController extends Controller
     public function actionView($id)
     {
         $model = $this->findModel($id);
-        $providerConferencia = new \yii\data\ArrayDataProvider([
-            'allModels' => $model->conferencias,
+        $providerPresentacion = new \yii\data\ArrayDataProvider([
+            'allModels' => $model->presentacions,
         ]);
         return $this->render('view', [
             'model' => $this->findModel($id),
-            'providerConferencia' => $providerConferencia,
+            'providerPresentacion' => $providerPresentacion,
         ]);
     }
 
@@ -133,13 +133,13 @@ class CongresoController extends Controller
      */
     public function actionPdf($id) {
         $model = $this->findModel($id);
-        $providerConferencia = new \yii\data\ArrayDataProvider([
-            'allModels' => $model->conferencias,
+        $providerPresentacion = new \yii\data\ArrayDataProvider([
+            'allModels' => $model->presentacions,
         ]);
 
         $content = $this->renderAjax('_pdf', [
             'model' => $model,
-            'providerConferencia' => $providerConferencia,
+            'providerPresentacion' => $providerPresentacion,
         ]);
 
         $pdf = new \kartik\mpdf\Pdf([
@@ -165,8 +165,8 @@ class CongresoController extends Controller
     * so user don't need to input all field from scratch.
     * If creation is successful, the browser will be redirected to the 'view' page.
     *
-    * @param mixed $id
-    * @return mixed
+    * @param type $id
+    * @return type
     */
     public function actionSaveAsNew($id) {
         $model = new Congreso();
@@ -175,7 +175,7 @@ class CongresoController extends Controller
             $model = $this->findModel($id);
         }
     
-        if ($model->loadAll(Yii::$app->request->post()) && $model->saveAll()) {
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('saveAsNew', [
@@ -202,19 +202,19 @@ class CongresoController extends Controller
     
     /**
     * Action to load a tabular form grid
-    * for Conferencia
+    * for Presentacion
     * @author Yohanes Candrajaya <moo.tensai@gmail.com>
     * @author Jiwantoro Ndaru <jiwanndaru@gmail.com>
     *
     * @return mixed
     */
-    public function actionAddConferencia()
+    public function actionAddPresentacion()
     {
         if (Yii::$app->request->isAjax) {
-            $row = Yii::$app->request->post('Conferencia');
+            $row = Yii::$app->request->post('Presentacion');
             if((Yii::$app->request->post('isNewRecord') && Yii::$app->request->post('_action') == 'load' && empty($row)) || Yii::$app->request->post('_action') == 'add')
                 $row[] = [];
-            return $this->renderAjax('_formConferencia', ['row' => $row]);
+            return $this->renderAjax('_formPresentacion', ['row' => $row]);
         } else {
             throw new NotFoundHttpException(Yii::t('app', 'The requested page does not exist.'));
         }

@@ -47,8 +47,8 @@ $this->registerJs($search);
         [
                 'attribute' => 'afiliacion_id',
                 'label' => Yii::t('app', 'Afiliacion'),
-                'value' => function($model){                   
-                    return $model->afiliacion->Afiliacion;                   
+                'value' => function($model){
+                    return $model->afiliacion->Afiliacion;
                 },
                 'filterType' => GridView::FILTER_SELECT2,
                 'filter' => \yii\helpers\ArrayHelper::map(\backend\models\Afiliacion::find()->asArray()->all(), 'id', 'Afiliacion'),

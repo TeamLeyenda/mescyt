@@ -173,8 +173,8 @@ class AfiliacionController extends Controller
     * so user don't need to input all field from scratch.
     * If creation is successful, the browser will be redirected to the 'view' page.
     *
-    * @param mixed $id
-    * @return mixed
+    * @param type $id
+    * @return type
     */
     public function actionSaveAsNew($id) {
         $model = new Afiliacion();
@@ -183,7 +183,7 @@ class AfiliacionController extends Controller
             $model = $this->findModel($id);
         }
     
-        if ($model->loadAll(Yii::$app->request->post()) && $model->saveAll()) {
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('saveAsNew', [

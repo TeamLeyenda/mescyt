@@ -1,11 +1,11 @@
 <?php
 
-namespace app\models;
+namespace backend\models;
 
 /**
- * This is the ActiveQuery class for [[\app\models\Congreso]].
+ * This is the ActiveQuery class for [[Congreso]].
  *
- * @see \app\models\Congreso
+ * @see Congreso
  */
 class CongresoQuery extends \yii\db\ActiveQuery
 {
@@ -17,7 +17,7 @@ class CongresoQuery extends \yii\db\ActiveQuery
 
     /**
      * @inheritdoc
-     * @return \app\models\Congreso[]|array
+     * @return Congreso[]|array
      */
     public function all($db = null)
     {
@@ -26,7 +26,7 @@ class CongresoQuery extends \yii\db\ActiveQuery
 
     /**
      * @inheritdoc
-     * @return \app\models\Congreso|array|null
+     * @return Congreso|array|null
      */
     public function one($db = null)
     {

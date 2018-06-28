@@ -2,7 +2,6 @@
 
 namespace backend\models;
 
-use Yii;
 use \backend\models\base\Presentador as BasePresentador;
 
 /**
@@ -10,7 +9,6 @@ use \backend\models\base\Presentador as BasePresentador;
  */
 class Presentador extends BasePresentador
 {
-    public $lock;
     /**
      * @inheritdoc
      */
@@ -22,9 +20,7 @@ class Presentador extends BasePresentador
             [['afiliacion_id'], 'integer'],
             [['Descripcion'], 'string'],
             [['Nombre', 'Apellido'], 'string', 'max' => 50],
-            [['Telefono'], 'string', 'max' => 20],
-            [['lock'], 'default', 'value' => '0'],
-            [['lock'], 'mootensai\components\OptimisticLockValidator']
+            [['Telefono'], 'string', 'max' => 20]
         ]);
     }
 	

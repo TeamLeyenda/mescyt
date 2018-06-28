@@ -1,11 +1,11 @@
 <?php
 
-namespace app\models;
+namespace backend\models;
 
 /**
- * This is the ActiveQuery class for [[\app\models\Presentador]].
+ * This is the ActiveQuery class for [[Presentador]].
  *
- * @see \app\models\Presentador
+ * @see Presentador
  */
 class PresentadorQuery extends \yii\db\ActiveQuery
 {
@@ -17,7 +17,7 @@ class PresentadorQuery extends \yii\db\ActiveQuery
 
     /**
      * @inheritdoc
-     * @return \app\models\Presentador[]|array
+     * @return Presentador[]|array
      */
     public function all($db = null)
     {
@@ -26,7 +26,7 @@ class PresentadorQuery extends \yii\db\ActiveQuery
 
     /**
      * @inheritdoc
-     * @return \app\models\Presentador|array|null
+     * @return Presentador|array|null
      */
     public function one($db = null)
     {

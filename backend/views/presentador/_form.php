@@ -17,14 +17,6 @@ use yii\widgets\ActiveForm;
 ]);
 \mootensai\components\JsBlock::widget(['viewFile' => '_script', 'pos'=> \yii\web\View::POS_END, 
     'viewParams' => [
-        'class' => 'PresentadorConferencia', 
-        'relID' => 'presentador-conferencia', 
-        'value' => \yii\helpers\Json::encode($model->presentadorConferencias),
-        'isNewRecord' => ($model->isNewRecord) ? 1 : 0
-    ]
-]);
-\mootensai\components\JsBlock::widget(['viewFile' => '_script', 'pos'=> \yii\web\View::POS_END, 
-    'viewParams' => [
         'class' => 'PresentadorGradoAcademico', 
         'relID' => 'presentador-grado-academico', 
         'value' => \yii\helpers\Json::encode($model->presentadorGradoAcademicos),
@@ -33,17 +25,17 @@ use yii\widgets\ActiveForm;
 ]);
 \mootensai\components\JsBlock::widget(['viewFile' => '_script', 'pos'=> \yii\web\View::POS_END, 
     'viewParams' => [
-        'class' => 'PresentadorSala', 
-        'relID' => 'presentador-sala', 
-        'value' => \yii\helpers\Json::encode($model->presentadorSalas),
+        'class' => 'PresentadorPresentacion', 
+        'relID' => 'presentador-presentacion', 
+        'value' => \yii\helpers\Json::encode($model->presentadorPresentacions),
         'isNewRecord' => ($model->isNewRecord) ? 1 : 0
     ]
 ]);
 \mootensai\components\JsBlock::widget(['viewFile' => '_script', 'pos'=> \yii\web\View::POS_END, 
     'viewParams' => [
-        'class' => 'User', 
-        'relID' => 'user', 
-        'value' => \yii\helpers\Json::encode($model->users),
+        'class' => 'PresentadorSala', 
+        'relID' => 'presentador-sala', 
+        'value' => \yii\helpers\Json::encode($model->presentadorSalas),
         'isNewRecord' => ($model->isNewRecord) ? 1 : 0
     ]
 ]);
@@ -82,15 +74,15 @@ use yii\widgets\ActiveForm;
             ]),
         ],
         [
-            'label' => '<i class="glyphicon glyphicon-book"></i> ' . Html::encode(Yii::t('app', 'PresentadorConferencia')),
-            'content' => $this->render('_formPresentadorConferencia', [
-                'row' => \yii\helpers\ArrayHelper::toArray($model->presentadorConferencias),
-            ]),
-        ],
-        [
             'label' => '<i class="glyphicon glyphicon-book"></i> ' . Html::encode(Yii::t('app', 'PresentadorGradoAcademico')),
             'content' => $this->render('_formPresentadorGradoAcademico', [
                 'row' => \yii\helpers\ArrayHelper::toArray($model->presentadorGradoAcademicos),
+            ]),
+        ],
+        [
+            'label' => '<i class="glyphicon glyphicon-book"></i> ' . Html::encode(Yii::t('app', 'PresentadorPresentacion')),
+            'content' => $this->render('_formPresentadorPresentacion', [
+                'row' => \yii\helpers\ArrayHelper::toArray($model->presentadorPresentacions),
             ]),
         ],
         [
@@ -102,7 +94,8 @@ use yii\widgets\ActiveForm;
         [
             'label' => '<i class="glyphicon glyphicon-book"></i> ' . Html::encode(Yii::t('app', 'User')),
             'content' => $this->render('_formUser', [
-                'row' => \yii\helpers\ArrayHelper::toArray($model->users),
+                'form' => $form,
+                'User' => is_null($model->user) ? new backend\models\User() : $model->user,
             ]),
         ],
     ];

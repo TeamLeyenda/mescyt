@@ -9,14 +9,14 @@ $items = [
             'model' => $model,
         ]),
     ],
-        [
-        'label' => '<i class="glyphicon glyphicon-book"></i> '. Html::encode(Yii::t('app', 'Conferencia')),
-        'content' => $this->render('_dataConferencia', [
+            [
+        'label' => '<i class="glyphicon glyphicon-book"></i> '. Html::encode(Yii::t('app', 'Presentacion')),
+        'content' => $this->render('_dataPresentacion', [
             'model' => $model,
-            'row' => $model->conferencias,
+            'row' => $model->presentacions,
         ]),
     ],
-        ];
+    ];
 echo TabsX::widget([
     'items' => $items,
     'position' => TabsX::POS_ABOVE,
