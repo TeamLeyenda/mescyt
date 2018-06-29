@@ -1,6 +1,7 @@
    <?php
 
     Yii::$app->layout='homepage';
+    $this->params['breadcrumbs'][] = $this->title='Inicio - MESCyT';
 
    $directoryAsset = Yii::$app->assetManager->getPublishedUrl('@dixonsatit/agencyTheme/dist');
    ?>
@@ -8,9 +9,9 @@
     <header>
         <div class="container">
             <div class="intro-text">
-                <div class="intro-lead-in">Welcome To Our Studio!</div>
-                <div class="intro-heading">It's Nice To Meet You</div>
-                <a href="#services" class="page-scroll btn btn-xl">Tell Me More</a>
+                <div class="intro-heading">Bienvenidos!</div>
+                <div class="intro-lead-in">Conferencias MESCyT!</div>
+                <a href="http://www.mescyt.gob.do" class="page-scroll btn btn-xl">Ir a MESCyT</a>
             </div>
         </div>
     </header>

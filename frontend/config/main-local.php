@@ -7,7 +7,7 @@ $config = [
             'theme'=>[
                 'pathMap'=>[
 
-                    '@app/views'=>'@dixonsatit/agencyTheme/views',
+                    '@app/views'=>'@frontend/themes/agency/views',
 
                     
 

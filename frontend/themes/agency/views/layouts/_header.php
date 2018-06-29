@@ -7,21 +7,23 @@
     $class = !isset($class)?'':$class;
     if(Yii::$app->layout == 'homepage'){
         $menus = [
-        ['label' => 'Home', 'url' => ['/site/index']],
-            ['label' => 'Service', 'url' =>'#services','linkOptions'=>['class'=>'page-scroll']],
-            ['label' => 'Portfolio', 'url' =>'#portfolio','linkOptions'=>['class'=>'page-scroll']],
-            ['label' => 'About', 'url' =>'#about','linkOptions'=>['class'=>'page-scroll']],
-            ['label' => 'Team', 'url' =>'#team','linkOptions'=>['class'=>'page-scroll']],
-            ['label' => 'Contact', 'url' =>'#contact','linkOptions'=>['class'=>'page-scroll']],
+        ['label' => 'Inicio', 'url' => ['/site/index']],
+            ['label' => 'Presentaciones', 'url' => ['/site/conferencia']],
+            
+            ['label' => 'Sign Up', 'url' => ['/site/signup']],
+            /*['label' => 'About', 'url' =>'#about','linkOptions'=>['class'=>'page-scroll']],
+            /*['label' => 'Team', 'url' =>'#team','linkOptions'=>['class'=>'page-scroll']],
+            ['label' => 'Contact', 'url' =>'#contact','linkOptions'=>['class'=>'page-scroll']],*/
         ];
     }else{
           $menus = [
-          ['label' => 'Home', 'url' => ['/site/index']],
-            ['label' => 'Service', 'url' =>['index','#'=>'services'],'linkOptions'=>['class'=>'page-scroll']],
-            ['label' => 'Portfolio', 'url' =>['index','#'=>'portfolio'],'linkOptions'=>['class'=>'page-scroll']],
-            ['label' => 'About', 'url' =>['index','#'=>'about'],'linkOptions'=>['class'=>'page-scroll']],
+          ['label' => 'Inicio', 'url' => ['/site/index']],
+            ['label' => 'Presentaciones', 'url' => ['/site/conferencia']],
+            
+            ['label' => 'Sign Up', 'url' => ['/site/signup']],
+            /*['label' => 'About', 'url' =>['index','#'=>'about'],'linkOptions'=>['class'=>'page-scroll']],
             ['label' => 'Team', 'url' =>['index','#'=>'team'],'linkOptions'=>['class'=>'page-scroll']],
-            ['label' => 'Contact', 'url' =>['index','#'=>'contact'],'linkOptions'=>['class'=>'page-scroll']],
+            ['label' => 'Contact', 'url' =>['index','#'=>'contact'],'linkOptions'=>['class'=>'page-scroll']],*/
         ];
     }
    ?>
@@ -44,10 +46,10 @@
            [
             
            
-            ['label' => 'Demo', 'items'=>[
+            /*['label' => 'Demo', 'items'=>[
                 ['label' => 'About', 'url' => ['/site/about']],
                 ['label' => 'Contact', 'url' => ['/site/contact']],
-            ]],
+            ]],*/
             Yii::$app->user->isGuest ?
                 ['label' => 'Login', 'url' => ['/site/login']] :
                 ['label' => 'Logout (' . Yii::$app->user->identity->username . ')',
