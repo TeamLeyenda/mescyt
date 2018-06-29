@@ -94,6 +94,11 @@ class ComposerStaticInitf8aa444fadf5e861a9b2931a0751dc85
             'kartik\\alert\\' => 13,
             'kartik\\affix\\' => 13,
         ),
+        'j' => 
+        array (
+            'jamband\\schemadump\\tests\\' => 25,
+            'jamband\\schemadump\\' => 19,
+        ),
         'd' => 
         array (
             'dmstr\\' => 6,
@@ -104,6 +109,10 @@ class ComposerStaticInitf8aa444fadf5e861a9b2931a0751dc85
         array (
             'creocoder\\nestedsets\\' => 21,
             'cebe\\markdown\\' => 14,
+        ),
+        'b' => 
+        array (
+            'bizley\\migration\\' => 17,
         ),
         'W' => 
         array (
@@ -382,6 +391,14 @@ class ComposerStaticInitf8aa444fadf5e861a9b2931a0751dc85
         array (
             0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-affix',
         ),
+        'jamband\\schemadump\\tests\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/jamband/yii2-schemadump/tests',
+        ),
+        'jamband\\schemadump\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/jamband/yii2-schemadump/src',
+        ),
         'dmstr\\' => 
         array (
             0 => __DIR__ . '/..' . '/dmstr/yii2-adminlte-asset',
@@ -401,6 +418,10 @@ class ComposerStaticInitf8aa444fadf5e861a9b2931a0751dc85
         'cebe\\markdown\\' => 
         array (
             0 => __DIR__ . '/..' . '/cebe/markdown',
+        ),
+        'bizley\\migration\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/bizley/migration',
         ),
         'Webmozart\\Assert\\' => 
         array (

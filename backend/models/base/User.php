@@ -4,7 +4,6 @@ namespace backend\models\base;
 
 use Yii;
 use yii\behaviors\TimestampBehavior;
-use mootensai\behaviors\UUIDBehavior;
 
 /**
  * This is the base model class for table "{{%user}}".
@@ -31,20 +30,6 @@ class User extends \yii\db\ActiveRecord
 {
     use \mootensai\relation\RelationTrait;
 
-
-    /**
-    * This function helps \mootensai\relation\RelationTrait runs faster
-    * @return array relation names of this model
-    */
-    public function relationNames()
-    {
-        return [
-            'moderador',
-            'participante',
-            'presentador'
-        ];
-    }
-
     /**
      * @inheritdoc
      */
@@ -52,34 +37,22 @@ class User extends \yii\db\ActiveRecord
     {
         return [
             [['moderador_id', 'participante_id', 'presentador_id', 'status', 'created_at', 'updated_at'], 'integer'],
-            [['username', 'auth_key', 'password_hash', 'email', 'created_at', 'updated_at', 'image'], 'required'],
+            [['username', 'auth_key', 'password_hash', 'email', 'created_at', 'updated_at'], 'required'],
             [['username', 'auth_key'], 'string', 'max' => 32],
             [['password_hash', 'password_reset_token', 'email', 'image'], 'string', 'max' => 255],
             [['email'], 'unique'],
-            [['moderador_id', 'participante_id', 'presentador_id'], 'unique', 'targetAttribute' => ['moderador_id', 'participante_id', 'presentador_id'], 'message' => 'The combination of Moderador ID, Participante ID and Presentador ID has already been taken.'],
-            [['moderador_id', 'participante_id', 'presentador_id'], 'unique', 'targetAttribute' => ['moderador_id', 'participante_id', 'presentador_id'], 'message' => 'The combination of Moderador ID, Participante ID and Presentador ID has already been taken.'],
-            [['lock'], 'default', 'value' => '0'],
-            [['lock'], 'mootensai\components\OptimisticLockValidator']
+            [['moderador_id'], 'unique'],
+            [['participante_id'], 'unique'],
+            [['presentador_id'], 'unique']
         ];
     }
-
+    
     /**
      * @inheritdoc
      */
     public static function tableName()
     {
         return '{{%user}}';
-    }
-
-    /**
-     *
-     * @return string
-     * overwrite function optimisticLock
-     * return string name of field are used to stored optimistic lock
-     *
-     */
-    public function optimisticLock() {
-        return 'lock';
     }
 
     /**
@@ -107,7 +80,7 @@ class User extends \yii\db\ActiveRecord
      */
     public function getModerador()
     {
-        return $this->hasOne(\backend\models\Moderador::className(), ['id' => 'moderador_id'])->inverseOf('users');
+        return $this->hasOne(\backend\models\Moderador::className(), ['id' => 'moderador_id']);
     }
         
     /**
@@ -115,7 +88,7 @@ class User extends \yii\db\ActiveRecord
      */
     public function getParticipante()
     {
-        return $this->hasOne(\backend\models\Participante::className(), ['id' => 'participante_id'])->inverseOf('users');
+        return $this->hasOne(\backend\models\Participante::className(), ['id' => 'participante_id']);
     }
         
     /**
@@ -123,13 +96,13 @@ class User extends \yii\db\ActiveRecord
      */
     public function getPresentador()
     {
-        return $this->hasOne(\backend\models\Presentador::className(), ['id' => 'presentador_id'])->inverseOf('users');
+        return $this->hasOne(\backend\models\Presentador::className(), ['id' => 'presentador_id']);
     }
     
-    /**
+/**
      * @inheritdoc
      * @return array mixed
-     */
+     */ 
     public function behaviors()
     {
         return [
@@ -139,20 +112,15 @@ class User extends \yii\db\ActiveRecord
                 'updatedAtAttribute' => 'updated_at',
                 'value' => new \yii\db\Expression('NOW()'),
             ],
-            'uuid' => [
-                'class' => UUIDBehavior::className(),
-                'column' => 'id',
-            ],
         ];
     }
 
-
     /**
      * @inheritdoc
-     * @return \app\models\UserQuery the active query used by this AR class.
+     * @return \backend\models\UserQuery the active query used by this AR class.
      */
     public static function find()
     {
-        return new \app\models\UserQuery(get_called_class());
+        return new \backend\models\UserQuery(get_called_class());
     }
 }

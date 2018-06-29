@@ -87,6 +87,7 @@ return [
         */
         'user' => [
             //'identityClass' => 'common\models\User',
+            //'identityClass' => 'backend\models\User',
             'identityClass' => 'mdm\admin\models\User',
             //'loginUrl' => ['admin/user/login'],
             'enableAutoLogin' => true,
@@ -131,19 +132,14 @@ return [
         
     ],
 
+    /*
     'as access' => [
         'class' => 'mdm\admin\components\AccessControl',
         'allowActions' => [
-            '*',
-            /*
+            //'*',
             'site/*',
             'admin/*',
-            'some-controller/some-action',
-            'gii/*',
-            'user/*',
-            'congreso/*',
-            'builder/*'
-            */
+        
             // The actions listed here will be allowed to everyone including guests.
             // So, 'admin/*' should not appear here in the production, of course.
             // But in the earlier stages of your development, you may probably want to
@@ -151,6 +147,7 @@ return [
             // otherwise you may not even take a first step.
         ]
     ],
+    */
 
     'params' => $params,
 ];

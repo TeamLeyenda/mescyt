@@ -12,11 +12,12 @@ return [
         'admin' => [
             'class' => 'mdm\admin\Module',
             'layout' => 'left-menu', // it can be '@path/to/your/layout'.
-            'mainLayout' => '@app/views/layouts/main.php',
+            'mainLayout' => '@backend/views/layouts/main.php',
             'controllerMap' => [
                 'assignment' => [
                     'class' => 'mdm\admin\controllers\AssignmentController',
-                    'userClassName' => 'common\models\User',
+                    //'userClassName' => 'common\models\User',
+                    'userClassName' => 'mdm\admin\models\User',
                     'idField' => 'user_id'
                 ],
                 /*
@@ -25,21 +26,23 @@ return [
                 ],
                 */
             ],
-            /*
+            
             'menus' => [
                 'assignment' => [
                     'label' => 'Grand Access' // change label
                 ],
-                'route' => null, // disable menu route
+                'menu' => null, // disable menu route
             ]
-            */
+            
         ],
     ],
 
     'components' => [
         'authManager' => [
             'class' => 'yii\rbac\DbManager', // or use 'yii\rbac\PhpManager'
+            'defaultRoles' => ['administrador', 'moderador', 'presentador','participante'],
         ],
+        
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],

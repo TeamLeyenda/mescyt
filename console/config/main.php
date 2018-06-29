@@ -20,6 +20,22 @@ return [
             'class' => 'yii\console\controllers\FixtureController',
             'namespace' => 'common\fixtures',
           ],
+          'migration' => [
+            'class' => 'bizley\migration\controllers\MigrationController',
+        ],
+        'migrate' => [
+            'class' => yii\console\controllers\MigrateController::class,
+            'templateFile' => '@jamband/schemadump/template.php',
+        ],
+        'schemadump' => [
+            'class' => jamband\schemadump\SchemaDumpController::class,
+            'db' => [
+                'class' => yii\db\Connection::class,
+                'dsn' => 'mysql:host=localhost;dbname=mescyt',
+                'username' => 'root',
+                'password' => '',
+            ],
+        ],
     ],
     'components' => [
         'authManager' => [

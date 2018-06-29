@@ -481,4 +481,23 @@ return array (
       '@yii/swiftmailer' => $vendorDir . '/yiisoft/yii2-swiftmailer/src',
     ),
   ),
+  'bizley/migration' => 
+  array (
+    'name' => 'bizley/migration',
+    'version' => '3.0.0.0',
+    'alias' => 
+    array (
+      '@bizley/migration' => $vendorDir . '/bizley/migration',
+    ),
+  ),
+  'jamband/yii2-schemadump' => 
+  array (
+    'name' => 'jamband/yii2-schemadump',
+    'version' => '0.10.0.0',
+    'alias' => 
+    array (
+      '@jamband/schemadump' => $vendorDir . '/jamband/yii2-schemadump/src',
+      '@jamband/schemadump/tests' => $vendorDir . '/jamband/yii2-schemadump/tests',
+    ),
+  ),
 );
