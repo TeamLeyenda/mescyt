@@ -9,7 +9,7 @@
         "wiki": "https://github.com/tunecino/yii2-app-builder/wiki",
         "source": "https://github.com/tunecino/yii2-app-builder"
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
         "php": ">=5.4.0",
@@ -44,12 +44,9 @@
     },
     "config": {
         "process-timeout": 1800,
-        "repositories": {
-            "bower-asset/eve": {
-            "type": "bower-vcs",
-            "url": "https://github.com/adobe-webplatform/eve.git"
-            }
-          }
+        "fxp-asset": {
+            "pattern-skip-version": "(-build|-patch)"
+        }
     },
     "repositories": [
         {
