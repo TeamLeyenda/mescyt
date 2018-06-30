@@ -34,7 +34,7 @@
                             <div class="clearfix"></div>
                             <div class="col-lg-12 text-center">
                                 <div id="success"></div>
-                                <button type="submit" class="btn btn-xl">Send Message</button>
+                                <button type="submit" class="btn btn-xl" style="background-color: #235288; border-color: #235288" style="border-color: #235288">Send Message</button>
                             </div>
                         </div>
                     </form>

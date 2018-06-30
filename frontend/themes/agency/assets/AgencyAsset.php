@@ -22,7 +22,7 @@ class AgencyAsset extends AssetBundle
         'js/jquery-scrollspy.js',
         'js/cbpAnimatedHeader.min.js',
         'js/classie.js',
-        //'js/contact_me.js',
+        'js/contact_me.js',
         'js/jqBootstrapValidation.js',
         'js/agency.js',
     ];

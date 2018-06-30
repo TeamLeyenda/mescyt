@@ -9,7 +9,7 @@ use dixonsatit\agencyTheme\assets\AgencyAsset;
 /* @var $content string */
 
 AgencyAsset::register($this);
-$directoryAsset = Yii::$app->assetManager->getPublishedUrl('@dixonsatit/agencyTheme/dist');
+$directoryAsset = Yii::$app->assetManager->getPublishedUrl('@frontend/themes/agency/dist');
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>

@@ -1,4 +1,4 @@
-<?php $this->beginContent('@dixonsatit/agencyTheme/views/layouts/_base.php'); ?>
+<?php $this->beginContent('@frontend/themes/agency/views/layouts/_base.php'); ?>
 <?= $this->render('_header.php',['class'=>'navbar-shrink']) ?>
 
  <section class="pages" >
