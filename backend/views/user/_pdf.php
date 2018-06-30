@@ -23,6 +23,8 @@ $this->params['breadcrumbs'][] = $this->title;
 <?php 
     $gridColumn = [
         ['attribute' => 'id', 'visible' => false],
+        'Nombre',
+        'Apellido',
         [
                 'attribute' => 'afiliacion.Afiliacion',
                 'label' => Yii::t('app', 'Afiliacion')
@@ -32,13 +34,9 @@ $this->params['breadcrumbs'][] = $this->title;
                 'label' => Yii::t('app', 'Tipo User')
             ],
         'username',
-        ['attribute' => 'auth_key', 'visible' => false],
-        'password_hash',
         'email:email',
-        'image',
-        'Nombre',
-        'Apellido',
         'Telefono',
+        'image',
     ];
     echo DetailView::widget([
         'model' => $model,

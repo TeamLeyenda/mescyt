@@ -3,20 +3,18 @@ use kartik\grid\GridView;
 use yii\data\ArrayDataProvider;
 
     $dataProvider = new ArrayDataProvider([
-        'allModels' => $model->presentacionUsers,
-        'key' => function($model){
-            return ['presentacion_id' => $model->presentacion_id, 'user_id' => $model->user_id];
-        }
+        'allModels' => $model->congresos,
+        'key' => 'id'
     ]);
     $gridColumns = [
         ['class' => 'yii\grid\SerialColumn'],
-        [
-                'attribute' => 'user.Nombre',
-                'label' => Yii::t('app', 'Usuario')
-            ],
+        ['attribute' => 'id', 'visible' => false],
+        'Nombre',
+        'Fecha_Inicio',
+        'Fecha_Final',
         [
             'class' => 'yii\grid\ActionColumn',
-            'controller' => 'presentacion-user'
+            'controller' => 'congreso'
         ],
     ];
     

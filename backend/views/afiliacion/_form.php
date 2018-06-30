@@ -28,6 +28,7 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'Afiliacion')->textInput(['maxlength' => true, 'placeholder' => 'Afiliacion']) ?>
 
     <?php
+    /*
     $forms = [
         [
             'label' => '<i class="glyphicon glyphicon-book"></i> ' . Html::encode(Yii::t('app', 'User')),
@@ -46,6 +47,7 @@ use yii\widgets\ActiveForm;
             'enableCache' => false,
         ],
     ]);
+    */
     ?>
     <div class="form-group">
     <?php if(Yii::$app->controller->action->id != 'save-as-new'): ?>

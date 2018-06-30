@@ -28,9 +28,7 @@ return [
             ],
             
             'menus' => [
-                'assignment' => [
-                    'label' => 'Grand Access' // change label
-                ],
+
                 'menu' => null, // disable menu route
             ]
             

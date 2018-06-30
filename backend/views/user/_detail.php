@@ -20,6 +20,8 @@ use kartik\grid\GridView;
 <?php 
     $gridColumn = [
         ['attribute' => 'id', 'visible' => false],
+        'Nombre',
+        'Apellido',
         [
             'attribute' => 'afiliacion.Afiliacion',
             'label' => Yii::t('app', 'Afiliacion'),
@@ -29,13 +31,9 @@ use kartik\grid\GridView;
             'label' => Yii::t('app', 'Tipo User'),
         ],
         'username',
-        ['attribute' => 'auth_key', 'visible' => false],
-        'password_hash',
         'email:email',
-        'image',
-        'Nombre',
-        'Apellido',
         'Telefono',
+        'image',
     ];
     echo DetailView::widget([
         'model' => $model,

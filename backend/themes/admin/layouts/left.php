@@ -42,10 +42,11 @@ $name = Yii::$app->user->identity->username;
                                 'icon' => 'users',
                                 'url' => '#',
                                 'items' => [
+                                    ['label' => 'Registrar', 'icon' => 'sign-in', 'url' => ['/admin/user/signup'],],
                                     ['label' => 'Participante', 'icon' => 'user', 'url' => ['/participante'],],
                                     ['label' => 'Presentador', 'icon' => 'user', 'url' => ['/presentador'],],
                                     ['label' => 'Moderador', 'icon' => 'user', 'url' => ['/moderador'],],
-                                    ['label' => 'Usuario', 'icon' => 'user', 'url' => ['/user'],],
+                                    ['label' => 'Usuarios', 'icon' => 'user', 'url' => ['/user'],],
                                 ],
                             ],
 

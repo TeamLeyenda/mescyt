@@ -17,6 +17,10 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'id', ['template' => '{input}'])->textInput(['style' => 'display:none']); ?>
 
+    <?= $form->field($model, 'Nombre')->textInput(['maxlength' => true, 'placeholder' => 'Nombre']) ?>
+
+    <?= $form->field($model, 'Apellido')->textInput(['maxlength' => true, 'placeholder' => 'Apellido']) ?>
+
     <?= $form->field($model, 'afiliacion_id')->widget(\kartik\widgets\Select2::classname(), [
         'data' => \yii\helpers\ArrayHelper::map(\backend\models\Afiliacion::find()->orderBy('id')->asArray()->all(), 'id', 'Afiliacion'),
         'options' => ['placeholder' => Yii::t('app', 'Choose Afiliacion')],
@@ -33,21 +37,13 @@ use yii\widgets\ActiveForm;
         ],
     ]); ?>
 
-    <?= $form->field($model, 'username')->textInput(['maxlength' => true, 'placeholder' => 'Username']) ?>
-
-    <?= $form->field($model, 'auth_key', ['template' => '{input}'])->textInput(['style' => 'display:none']); ?>
-
-    <?php /* echo $form->field($model, 'password_hash')->textInput(['maxlength' => true, 'placeholder' => 'Password Hash']) */ ?>
+    <?php /* echo $form->field($model, 'username')->textInput(['maxlength' => true, 'placeholder' => 'Username']) */ ?>
 
     <?php /* echo $form->field($model, 'email')->textInput(['maxlength' => true, 'placeholder' => 'Email']) */ ?>
 
-    <?php /* echo $form->field($model, 'image')->textInput(['maxlength' => true, 'placeholder' => 'Image']) */ ?>
-
-    <?php /* echo $form->field($model, 'Nombre')->textInput(['maxlength' => true, 'placeholder' => 'Nombre']) */ ?>
-
-    <?php /* echo $form->field($model, 'Apellido')->textInput(['maxlength' => true, 'placeholder' => 'Apellido']) */ ?>
-
     <?php /* echo $form->field($model, 'Telefono')->textInput(['maxlength' => true, 'placeholder' => 'Telefono']) */ ?>
+
+    <?php /* echo $form->field($model, 'image')->textInput(['maxlength' => true, 'placeholder' => 'Image']) */ ?>
 
     <div class="form-group">
         <?= Html::submitButton(Yii::t('app', 'Search'), ['class' => 'btn btn-primary']) ?>

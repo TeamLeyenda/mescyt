@@ -22,7 +22,6 @@ $this->registerJs($search);
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a(Yii::t('app', 'Create User'), ['create'], ['class' => 'btn btn-success']) ?>
         <?= Html::a(Yii::t('app', 'Advance Search'), '#', ['class' => 'btn btn-info search-button']) ?>
     </p>
     <div class="search-form" style="display:none">
@@ -44,6 +43,8 @@ $this->registerJs($search);
             'expandOneOnly' => true
         ],
         ['attribute' => 'id', 'visible' => false],
+        'Nombre',
+        'Apellido',
         [
                 'attribute' => 'afiliacion_id',
                 'label' => Yii::t('app', 'Afiliacion'),
@@ -76,13 +77,9 @@ $this->registerJs($search);
                 'filterInputOptions' => ['placeholder' => 'Tipo user', 'id' => 'grid-user-search-tipo_user_id']
             ],
         'username',
-        ['attribute' => 'auth_key', 'visible' => false],
-        'password_hash',
         'email:email',
-        'image',
-        'Nombre',
-        'Apellido',
         'Telefono',
+        'image',
         [
             'class' => 'yii\grid\ActionColumn',
             'template' => '{save-as-new} {view} {update} {delete}',

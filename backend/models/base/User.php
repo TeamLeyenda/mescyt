@@ -6,26 +6,24 @@ use Yii;
 use yii\behaviors\TimestampBehavior;
 
 /**
- * This is the base model class for table "user".
+ * This is the base model class for table "{{%user}}".
  *
  * @property integer $id
+ * @property string $Nombre
+ * @property string $Apellido
  * @property integer $afiliacion_id
  * @property integer $tipo_user_id
  * @property string $username
- * @property string $auth_key
+ * @property string $email
+ * @property string $Telefono
+ * @property string $image
  * @property string $password_hash
  * @property string $password_reset_token
- * @property string $email
  * @property integer $status
+ * @property string $auth_key
  * @property integer $created_at
  * @property integer $updated_at
- * @property string $image
- * @property string $Nombre
- * @property string $Apellido
- * @property string $Telefono
  *
- * @property Auth[] $auths
- * 
  * @property \backend\models\PresentacionUser[] $presentacionUsers
  * @property \backend\models\Presentacion[] $presentacions
  * @property \backend\models\Afiliacion $afiliacion
@@ -48,11 +46,11 @@ class User extends \yii\db\ActiveRecord
     {
         return [
             [['afiliacion_id', 'tipo_user_id', 'status', 'created_at', 'updated_at'], 'integer'],
-            [['username', 'auth_key', 'password_hash', 'email'], 'required'],
-            [['username', 'auth_key'], 'string', 'max' => 32],
-            [['password_hash', 'password_reset_token', 'email', 'image'], 'string', 'max' => 255],
+            [['username', 'email', 'password_hash', 'auth_key'], 'required'],
             [['Nombre'], 'string', 'max' => 50],
             [['Apellido', 'Telefono'], 'string', 'max' => 20],
+            [['username', 'auth_key'], 'string', 'max' => 32],
+            [['email', 'image', 'password_hash', 'password_reset_token'], 'string', 'max' => 255],
             [['email'], 'unique']
         ];
     }
@@ -62,7 +60,7 @@ class User extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return 'user';
+        return '{{%user}}';
     }
 
     /**
@@ -72,29 +70,21 @@ class User extends \yii\db\ActiveRecord
     {
         return [
             'id' => Yii::t('app', 'ID'),
+            'Nombre' => Yii::t('app', 'Nombre'),
+            'Apellido' => Yii::t('app', 'Apellido'),
             'afiliacion_id' => Yii::t('app', 'Afiliacion ID'),
             'tipo_user_id' => Yii::t('app', 'Tipo User ID'),
             'username' => Yii::t('app', 'Usuario'),
-            'auth_key' => Yii::t('app', 'Auth Key'),
+            'email' => Yii::t('app', 'Email'),
+            'Telefono' => Yii::t('app', 'Telefono'),
+            'image' => Yii::t('app', 'perfil'),
             'password_hash' => Yii::t('app', 'contrasena'),
             'password_reset_token' => Yii::t('app', 'Password Reset Token'),
-            'email' => Yii::t('app', 'Email'),
             'status' => Yii::t('app', 'estado'),
-            'image' => Yii::t('app', 'perfil'),
-            'Nombre' => Yii::t('app', 'Nombre'),
-            'Apellido' => Yii::t('app', 'Apellido'),
-            'Telefono' => Yii::t('app', 'Telefono'),
+            'auth_key' => Yii::t('app', 'Auth Key'),
         ];
     }
     
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getAuths()
-    {
-        return $this->hasMany(Auth::className(), ['user_id' => 'id']);
-    }
-
     /**
      * @return \yii\db\ActiveQuery
      */
@@ -108,7 +98,7 @@ class User extends \yii\db\ActiveRecord
      */
     public function getPresentacions()
     {
-        return $this->hasMany(\backend\models\Presentacion::className(), ['id' => 'presentacion_id'])->viaTable('presentacion_user', ['user_id' => 'id']);
+        return $this->hasMany(\backend\models\Presentacion::className(), ['id' => 'presentacion_id'])->viaTable('{{%presentacion_user}}', ['user_id' => 'id']);
     }
         
     /**
@@ -140,7 +130,7 @@ class User extends \yii\db\ActiveRecord
      */
     public function getAreaEspecializacions()
     {
-        return $this->hasMany(\backend\models\AreaEspecializacion::className(), ['id' => 'area_especializacion_id'])->viaTable('user_area_especializacion', ['user_id' => 'id']);
+        return $this->hasMany(\backend\models\AreaEspecializacion::className(), ['id' => 'area_especializacion_id'])->viaTable('{{%user_area_especializacion}}', ['user_id' => 'id']);
     }
         
     /**
@@ -156,7 +146,7 @@ class User extends \yii\db\ActiveRecord
      */
     public function getGradoAcademicos()
     {
-        return $this->hasMany(\backend\models\GradoAcademico::className(), ['id' => 'grado_academico_id'])->viaTable('user_grado_academico', ['user_id' => 'id']);
+        return $this->hasMany(\backend\models\GradoAcademico::className(), ['id' => 'grado_academico_id'])->viaTable('{{%user_grado_academico}}', ['user_id' => 'id']);
     }
         
     /**
@@ -172,7 +162,7 @@ class User extends \yii\db\ActiveRecord
      */
     public function getSalas()
     {
-        return $this->hasMany(\backend\models\Sala::className(), ['id' => 'sala_id'])->viaTable('user_sala', ['user_id' => 'id']);
+        return $this->hasMany(\backend\models\Sala::className(), ['id' => 'sala_id'])->viaTable('{{%user_sala}}', ['user_id' => 'id']);
     }
     
 /**

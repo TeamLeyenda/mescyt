@@ -19,7 +19,7 @@ use backend\models\User;
     {
         return [
             [['id', 'afiliacion_id', 'tipo_user_id', 'status', 'created_at', 'updated_at'], 'integer'],
-            [['username', 'auth_key', 'password_hash', 'password_reset_token', 'email', 'image', 'Nombre', 'Apellido', 'Telefono'], 'safe'],
+            [['Nombre', 'Apellido', 'username', 'email', 'Telefono', 'image', 'password_hash', 'password_reset_token', 'auth_key'], 'safe'],
         ];
     }
 
@@ -64,15 +64,15 @@ use backend\models\User;
             'updated_at' => $this->updated_at,
         ]);
 
-        $query->andFilterWhere(['like', 'username', $this->username])
-            ->andFilterWhere(['like', 'auth_key', $this->auth_key])
+        $query->andFilterWhere(['like', 'Nombre', $this->Nombre])
+            ->andFilterWhere(['like', 'Apellido', $this->Apellido])
+            ->andFilterWhere(['like', 'username', $this->username])
+            ->andFilterWhere(['like', 'email', $this->email])
+            ->andFilterWhere(['like', 'Telefono', $this->Telefono])
+            ->andFilterWhere(['like', 'image', $this->image])
             ->andFilterWhere(['like', 'password_hash', $this->password_hash])
             ->andFilterWhere(['like', 'password_reset_token', $this->password_reset_token])
-            ->andFilterWhere(['like', 'email', $this->email])
-            ->andFilterWhere(['like', 'image', $this->image])
-            ->andFilterWhere(['like', 'Nombre', $this->Nombre])
-            ->andFilterWhere(['like', 'Apellido', $this->Apellido])
-            ->andFilterWhere(['like', 'Telefono', $this->Telefono]);
+            ->andFilterWhere(['like', 'auth_key', $this->auth_key]);
 
         return $dataProvider;
     }
