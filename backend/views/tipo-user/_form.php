@@ -23,7 +23,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->errorSummary($model); ?>
 
-    <?= $form->field($model, 'id', ['template' => '{input}'])->textInput(['style' => 'display:none']); ?>
+    <?= $form->field($model, 'id')->textInput(['placeholder' => 'Id']) ?>
 
     <?= $form->field($model, 'Tipo')->textInput(['maxlength' => true, 'placeholder' => 'Tipo']) ?>
 

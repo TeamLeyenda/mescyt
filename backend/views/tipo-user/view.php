@@ -44,7 +44,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <div class="row">
 <?php 
     $gridColumn = [
-        ['attribute' => 'id', 'visible' => false],
+        'id',
         'Tipo',
     ];
     echo DetailView::widget([
@@ -59,23 +59,17 @@ $this->params['breadcrumbs'][] = $this->title;
 if($providerUser->totalCount){
     $gridColumnUser = [
         ['class' => 'yii\grid\SerialColumn'],
-            ['attribute' => 'id', 'visible' => false],
+            'id',
+            'Nombre',
+            'Apellido',
             [
                 'attribute' => 'afiliacion.Afiliacion',
                 'label' => Yii::t('app', 'Afiliacion')
             ],
                         'username',
-            ['attribute' => 'auth_key', 'visible' => false],
-            'password_hash',
-            ['attribute' => 'password_reset_token', 'visible' => false],
             'email:email',
-            ['attribute' => 'status', 'visible' => false],
-            ['attribute' => 'created_at', 'visible' => false],
-            ['attribute' => 'updated_at', 'visible' => false],
-            'image',
-            'Nombre',
-            'Apellido',
             'Telefono',
+            'image',
     ];
     echo Gridview::widget([
         'dataProvider' => $providerUser,

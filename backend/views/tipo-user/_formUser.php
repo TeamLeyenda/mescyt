@@ -21,7 +21,9 @@ echo TabularForm::widget([
         'type' => TabularForm::INPUT_TEXT,
     ],
     'attributes' => [
-        "id" => ['type' => TabularForm::INPUT_HIDDEN, 'visible' => false],
+        'id' => ['type' => TabularForm::INPUT_HIDDEN, 'visible' => false],
+        'Nombre' => ['type' => TabularForm::INPUT_TEXT],
+        'Apellido' => ['type' => TabularForm::INPUT_TEXT],
         'afiliacion_id' => [
             'label' => 'Afiliacion',
             'type' => TabularForm::INPUT_WIDGET,
@@ -33,17 +35,9 @@ echo TabularForm::widget([
             'columnOptions' => ['width' => '200px']
         ],
         'username' => ['type' => TabularForm::INPUT_TEXT],
-        "auth_key" => ['type' => TabularForm::INPUT_HIDDEN, 'visible' => false],
-        'password_hash' => ['type' => TabularForm::INPUT_TEXT],
-        "password_reset_token" => ['type' => TabularForm::INPUT_HIDDEN, 'visible' => false],
         'email' => ['type' => TabularForm::INPUT_TEXT],
-        "status" => ['type' => TabularForm::INPUT_HIDDEN, 'visible' => false],
-        "created_at" => ['type' => TabularForm::INPUT_HIDDEN, 'visible' => false],
-        "updated_at" => ['type' => TabularForm::INPUT_HIDDEN, 'visible' => false],
-        'image' => ['type' => TabularForm::INPUT_TEXT],
-        'Nombre' => ['type' => TabularForm::INPUT_TEXT],
-        'Apellido' => ['type' => TabularForm::INPUT_TEXT],
         'Telefono' => ['type' => TabularForm::INPUT_TEXT],
+        'image' => ['type' => TabularForm::INPUT_TEXT],
         'del' => [
             'type' => 'raw',
             'label' => '',

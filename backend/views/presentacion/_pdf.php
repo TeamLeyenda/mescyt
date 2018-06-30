@@ -8,7 +8,7 @@ use kartik\grid\GridView;
 /* @var $model backend\models\Presentacion */
 
 $this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Presentacions'), 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Presentaciones'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="presentacion-view">
@@ -51,15 +51,15 @@ if($providerPresentacionUser->totalCount){
     $gridColumnPresentacionUser = [
         ['class' => 'yii\grid\SerialColumn'],
                 [
-                'attribute' => 'user.Nombre',
-                'label' => Yii::t('app', 'User')
+                'attribute' => 'user.username',
+                'label' => Yii::t('app', 'Usuario')
             ],
     ];
     echo Gridview::widget([
         'dataProvider' => $providerPresentacionUser,
         'panel' => [
             'type' => GridView::TYPE_PRIMARY,
-            'heading' => Html::encode(Yii::t('app', 'Presentacion User')),
+            'heading' => Html::encode(Yii::t('app', 'Usuarios')),
         ],
         'panelHeadingTemplate' => '<h4>{heading}</h4>{summary}',
         'toggleData' => false,

@@ -43,7 +43,7 @@ $this->registerJs($search);
             'headerOptions' => ['class' => 'kartik-sheet-style'],
             'expandOneOnly' => true
         ],
-        ['attribute' => 'id', 'visible' => false],
+        'id',
         'Tipo',
         [
             'class' => 'yii\grid\ActionColumn',

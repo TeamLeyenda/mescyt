@@ -5,7 +5,7 @@ use kartik\builder\TabularForm;
 use yii\data\ArrayDataProvider;
 use yii\helpers\Html;
 use yii\widgets\Pjax;
-
+//$rol = Yii::$app->tipo_user->Tipo;
 $dataProvider = new ArrayDataProvider([
     'allModels' => $row,
     'pagination' => [
@@ -22,12 +22,13 @@ echo TabularForm::widget([
     ],
     'attributes' => [
         'user_id' => [
-            'label' => 'User',
+            'label' => 'Presentadores',
             'type' => TabularForm::INPUT_WIDGET,
             'widgetClass' => \kartik\widgets\Select2::className(),
             'options' => [
-                'data' => \yii\helpers\ArrayHelper::map(\backend\models\User::find()->orderBy('Nombre')->asArray()->all(), 'id', 'Nombre'),
-                'options' => ['placeholder' => Yii::t('app', 'Choose User')],
+                //'data' => \yii\helpers\ArrayHelper::map(\backend\models\User::find()->orderBy('username')->asArray()->all(), 'id', 'username'),
+                'data' => \yii\helpers\ArrayHelper::map(\backend\models\User::find()->where(['tipo_user_id' => 3])->orderBy('username')->asArray()->all(), 'id', 'username'),
+                'options' => ['placeholder' => Yii::t('app', 'Elige presentador')],
             ],
             'columnOptions' => ['width' => '200px']
         ],
