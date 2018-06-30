@@ -45,25 +45,44 @@ $this->registerJs($search);
         ],
         ['attribute' => 'id', 'visible' => false],
         [
-                'attribute' => 'participante_id',
-                'label' => Yii::t('app', 'Participante'),
+                'attribute' => 'afiliacion_id',
+                'label' => Yii::t('app', 'Afiliacion'),
                 'value' => function($model){
-                    if ($model->participante)
-                    {return $model->participante->id;}
+                    if ($model->afiliacion)
+                    {return $model->afiliacion->Afiliacion;}
+                    else{return NULL;}
+                },
+                'filterType' => GridView::FILTER_SELECT2,
+                'filter' => \yii\helpers\ArrayHelper::map(\backend\models\Afiliacion::find()->asArray()->all(), 'id', 'Afiliacion'),
+                'filterWidgetOptions' => [
+                    'pluginOptions' => ['allowClear' => true],
+                ],
+                'filterInputOptions' => ['placeholder' => 'Afiliacion', 'id' => 'grid-user-search-afiliacion_id']
+            ],
+        [
+                'attribute' => 'tipo_user_id',
+                'label' => Yii::t('app', 'Tipo User'),
+                'value' => function($model){
+                    if ($model->tipoUser)
+                    {return $model->tipoUser->Tipo;}
                     else
                     {return NULL;}
                 },
                 'filterType' => GridView::FILTER_SELECT2,
-                'filter' => \yii\helpers\ArrayHelper::map(\backend\models\Participante::find()->asArray()->all(), 'id', 'id'),
+                'filter' => \yii\helpers\ArrayHelper::map(\backend\models\TipoUser::find()->asArray()->all(), 'id', 'Tipo'),
                 'filterWidgetOptions' => [
                     'pluginOptions' => ['allowClear' => true],
                 ],
-                'filterInputOptions' => ['placeholder' => 'Participante', 'id' => 'grid-user-search-participante_id']
+                'filterInputOptions' => ['placeholder' => 'Tipo user', 'id' => 'grid-user-search-tipo_user_id']
             ],
         'username',
+        ['attribute' => 'auth_key', 'visible' => false],
         'password_hash',
         'email:email',
         'image',
+        'Nombre',
+        'Apellido',
+        'Telefono',
         [
             'class' => 'yii\grid\ActionColumn',
             'template' => '{save-as-new} {view} {update} {delete}',

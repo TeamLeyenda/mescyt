@@ -5,7 +5,7 @@ use yii\widgets\DetailView;
 use kartik\grid\GridView;
 
 /* @var $this yii\web\View */
-/* @var $model backend\models\Grado_academico */
+/* @var $model backend\models\GradoAcademico */
 
 ?>
 <div class="grado-academico-view">

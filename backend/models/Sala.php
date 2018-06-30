@@ -16,8 +16,7 @@ class Sala extends BaseSala
     {
         return array_replace_recursive(parent::rules(),
 	    [
-            [['moderador_id', 'Nombre_Sala'], 'required'],
-            [['moderador_id'], 'integer'],
+            [['Nombre_Sala'], 'required'],
             [['Nombre_Sala'], 'string', 'max' => 20]
         ]);
     }

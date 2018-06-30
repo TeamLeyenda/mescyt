@@ -21,11 +21,11 @@ use kartik\grid\GridView;
     $gridColumn = [
         ['attribute' => 'id', 'visible' => false],
         [
-            'attribute' => 'congreso.id',
+            'attribute' => 'congreso.Nombre',
             'label' => Yii::t('app', 'Congreso'),
         ],
         [
-            'attribute' => 'sala.id',
+            'attribute' => 'sala.Nombre_Sala',
             'label' => Yii::t('app', 'Sala'),
         ],
         'Titulo',

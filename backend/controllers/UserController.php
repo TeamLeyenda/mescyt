@@ -28,7 +28,7 @@ class UserController extends Controller
                 'rules' => [
                     [
                         'allow' => true,
-                        'actions' => ['index', 'view', 'create', 'update', 'delete', 'pdf', 'save-as-new'],
+                        'actions' => ['index', 'view', 'create', 'update', 'delete', 'pdf', 'save-as-new', 'add-presentacion-user', 'add-user-area-especializacion', 'add-user-grado-academico', 'add-user-sala'],
                         'roles' => ['@']
                     ],
                     [
@@ -62,8 +62,24 @@ class UserController extends Controller
     public function actionView($id)
     {
         $model = $this->findModel($id);
+        $providerPresentacionUser = new \yii\data\ArrayDataProvider([
+            'allModels' => $model->presentacionUsers,
+        ]);
+        $providerUserAreaEspecializacion = new \yii\data\ArrayDataProvider([
+            'allModels' => $model->userAreaEspecializacions,
+        ]);
+        $providerUserGradoAcademico = new \yii\data\ArrayDataProvider([
+            'allModels' => $model->userGradoAcademicos,
+        ]);
+        $providerUserSala = new \yii\data\ArrayDataProvider([
+            'allModels' => $model->userSalas,
+        ]);
         return $this->render('view', [
             'model' => $this->findModel($id),
+            'providerPresentacionUser' => $providerPresentacionUser,
+            'providerUserAreaEspecializacion' => $providerUserAreaEspecializacion,
+            'providerUserGradoAcademico' => $providerUserGradoAcademico,
+            'providerUserSala' => $providerUserSala,
         ]);
     }
 
@@ -129,9 +145,25 @@ class UserController extends Controller
      */
     public function actionPdf($id) {
         $model = $this->findModel($id);
+        $providerPresentacionUser = new \yii\data\ArrayDataProvider([
+            'allModels' => $model->presentacionUsers,
+        ]);
+        $providerUserAreaEspecializacion = new \yii\data\ArrayDataProvider([
+            'allModels' => $model->userAreaEspecializacions,
+        ]);
+        $providerUserGradoAcademico = new \yii\data\ArrayDataProvider([
+            'allModels' => $model->userGradoAcademicos,
+        ]);
+        $providerUserSala = new \yii\data\ArrayDataProvider([
+            'allModels' => $model->userSalas,
+        ]);
 
         $content = $this->renderAjax('_pdf', [
             'model' => $model,
+            'providerPresentacionUser' => $providerPresentacionUser,
+            'providerUserAreaEspecializacion' => $providerUserAreaEspecializacion,
+            'providerUserGradoAcademico' => $providerUserGradoAcademico,
+            'providerUserSala' => $providerUserSala,
         ]);
 
         $pdf = new \kartik\mpdf\Pdf([
@@ -157,8 +189,8 @@ class UserController extends Controller
     * so user don't need to input all field from scratch.
     * If creation is successful, the browser will be redirected to the 'view' page.
     *
-    * @param mixed $id
-    * @return mixed
+    * @param type $id
+    * @return type
     */
     public function actionSaveAsNew($id) {
         $model = new User();
@@ -167,7 +199,7 @@ class UserController extends Controller
             $model = $this->findModel($id);
         }
     
-        if ($model->loadAll(Yii::$app->request->post()) && $model->saveAll()) {
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('saveAsNew', [
@@ -187,6 +219,86 @@ class UserController extends Controller
     {
         if (($model = User::findOne($id)) !== null) {
             return $model;
+        } else {
+            throw new NotFoundHttpException(Yii::t('app', 'The requested page does not exist.'));
+        }
+    }
+    
+    /**
+    * Action to load a tabular form grid
+    * for PresentacionUser
+    * @author Yohanes Candrajaya <moo.tensai@gmail.com>
+    * @author Jiwantoro Ndaru <jiwanndaru@gmail.com>
+    *
+    * @return mixed
+    */
+    public function actionAddPresentacionUser()
+    {
+        if (Yii::$app->request->isAjax) {
+            $row = Yii::$app->request->post('PresentacionUser');
+            if((Yii::$app->request->post('isNewRecord') && Yii::$app->request->post('_action') == 'load' && empty($row)) || Yii::$app->request->post('_action') == 'add')
+                $row[] = [];
+            return $this->renderAjax('_formPresentacionUser', ['row' => $row]);
+        } else {
+            throw new NotFoundHttpException(Yii::t('app', 'The requested page does not exist.'));
+        }
+    }
+    
+    /**
+    * Action to load a tabular form grid
+    * for UserAreaEspecializacion
+    * @author Yohanes Candrajaya <moo.tensai@gmail.com>
+    * @author Jiwantoro Ndaru <jiwanndaru@gmail.com>
+    *
+    * @return mixed
+    */
+    public function actionAddUserAreaEspecializacion()
+    {
+        if (Yii::$app->request->isAjax) {
+            $row = Yii::$app->request->post('UserAreaEspecializacion');
+            if((Yii::$app->request->post('isNewRecord') && Yii::$app->request->post('_action') == 'load' && empty($row)) || Yii::$app->request->post('_action') == 'add')
+                $row[] = [];
+            return $this->renderAjax('_formUserAreaEspecializacion', ['row' => $row]);
+        } else {
+            throw new NotFoundHttpException(Yii::t('app', 'The requested page does not exist.'));
+        }
+    }
+    
+    /**
+    * Action to load a tabular form grid
+    * for UserGradoAcademico
+    * @author Yohanes Candrajaya <moo.tensai@gmail.com>
+    * @author Jiwantoro Ndaru <jiwanndaru@gmail.com>
+    *
+    * @return mixed
+    */
+    public function actionAddUserGradoAcademico()
+    {
+        if (Yii::$app->request->isAjax) {
+            $row = Yii::$app->request->post('UserGradoAcademico');
+            if((Yii::$app->request->post('isNewRecord') && Yii::$app->request->post('_action') == 'load' && empty($row)) || Yii::$app->request->post('_action') == 'add')
+                $row[] = [];
+            return $this->renderAjax('_formUserGradoAcademico', ['row' => $row]);
+        } else {
+            throw new NotFoundHttpException(Yii::t('app', 'The requested page does not exist.'));
+        }
+    }
+    
+    /**
+    * Action to load a tabular form grid
+    * for UserSala
+    * @author Yohanes Candrajaya <moo.tensai@gmail.com>
+    * @author Jiwantoro Ndaru <jiwanndaru@gmail.com>
+    *
+    * @return mixed
+    */
+    public function actionAddUserSala()
+    {
+        if (Yii::$app->request->isAjax) {
+            $row = Yii::$app->request->post('UserSala');
+            if((Yii::$app->request->post('isNewRecord') && Yii::$app->request->post('_action') == 'load' && empty($row)) || Yii::$app->request->post('_action') == 'add')
+                $row[] = [];
+            return $this->renderAjax('_formUserSala', ['row' => $row]);
         } else {
             throw new NotFoundHttpException(Yii::t('app', 'The requested page does not exist.'));
         }

@@ -27,7 +27,7 @@ echo TabularForm::widget([
             'type' => TabularForm::INPUT_WIDGET,
             'widgetClass' => \kartik\widgets\Select2::className(),
             'options' => [
-                'data' => \yii\helpers\ArrayHelper::map(\backend\models\Congreso::find()->orderBy('id')->asArray()->all(), 'id', 'id'),
+                'data' => \yii\helpers\ArrayHelper::map(\backend\models\Congreso::find()->orderBy('Nombre')->asArray()->all(), 'id', 'Nombre'),
                 'options' => ['placeholder' => Yii::t('app', 'Choose Congreso')],
             ],
             'columnOptions' => ['width' => '200px']

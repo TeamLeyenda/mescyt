@@ -21,13 +21,21 @@ use kartik\grid\GridView;
     $gridColumn = [
         ['attribute' => 'id', 'visible' => false],
         [
-            'attribute' => 'participante.id',
-            'label' => Yii::t('app', 'Participante'),
+            'attribute' => 'afiliacion.Afiliacion',
+            'label' => Yii::t('app', 'Afiliacion'),
+        ],
+        [
+            'attribute' => 'tipoUser.Tipo',
+            'label' => Yii::t('app', 'Tipo User'),
         ],
         'username',
+        ['attribute' => 'auth_key', 'visible' => false],
         'password_hash',
         'email:email',
         'image',
+        'Nombre',
+        'Apellido',
+        'Telefono',
     ];
     echo DetailView::widget([
         'model' => $model,

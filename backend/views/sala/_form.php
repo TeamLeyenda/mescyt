@@ -17,9 +17,9 @@ use yii\widgets\ActiveForm;
 ]);
 \mootensai\components\JsBlock::widget(['viewFile' => '_script', 'pos'=> \yii\web\View::POS_END, 
     'viewParams' => [
-        'class' => 'PresentadorSala', 
-        'relID' => 'presentador-sala', 
-        'value' => \yii\helpers\Json::encode($model->presentadorSalas),
+        'class' => 'UserSala', 
+        'relID' => 'user-sala', 
+        'value' => \yii\helpers\Json::encode($model->userSalas),
         'isNewRecord' => ($model->isNewRecord) ? 1 : 0
     ]
 ]);
@@ -44,9 +44,9 @@ use yii\widgets\ActiveForm;
             ]),
         ],
         [
-            'label' => '<i class="glyphicon glyphicon-book"></i> ' . Html::encode(Yii::t('app', 'PresentadorSala')),
-            'content' => $this->render('_formPresentadorSala', [
-                'row' => \yii\helpers\ArrayHelper::toArray($model->presentadorSalas),
+            'label' => '<i class="glyphicon glyphicon-book"></i> ' . Html::encode(Yii::t('app', 'UserSala')),
+            'content' => $this->render('_formUserSala', [
+                'row' => \yii\helpers\ArrayHelper::toArray($model->userSalas),
             ]),
         ],
     ];

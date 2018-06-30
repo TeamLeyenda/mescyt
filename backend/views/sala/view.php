@@ -61,7 +61,7 @@ if($providerPresentacion->totalCount){
         ['class' => 'yii\grid\SerialColumn'],
             ['attribute' => 'id', 'visible' => false],
             [
-                'attribute' => 'congreso.id',
+                'attribute' => 'congreso.Nombre',
                 'label' => Yii::t('app', 'Congreso')
             ],
                         'Titulo',
@@ -87,19 +87,23 @@ if($providerPresentacion->totalCount){
     
     <div class="row">
 <?php
-if($providerPresentadorSala->totalCount){
-    $gridColumnPresentadorSala = [
+if($providerUserSala->totalCount){
+    $gridColumnUserSala = [
         ['class' => 'yii\grid\SerialColumn'],
+            [
+                'attribute' => 'user.Nombre',
+                'label' => Yii::t('app', 'User')
+            ],
                 ];
     echo Gridview::widget([
-        'dataProvider' => $providerPresentadorSala,
+        'dataProvider' => $providerUserSala,
         'pjax' => true,
-        'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-presentador-sala']],
+        'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-user-sala']],
         'panel' => [
         'type' => GridView::TYPE_PRIMARY,
-        'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode(Yii::t('app', 'Presentador Sala')),
+        'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode(Yii::t('app', 'User Sala')),
         ],
-        'columns' => $gridColumnPresentadorSala
+        'columns' => $gridColumnUserSala
     ]);
 }
 ?>

@@ -10,8 +10,7 @@ use Yii;
  * @property integer $id
  * @property string $Afiliacion
  *
- * @property \backend\models\Participante[] $participantes
- * @property \backend\models\Presentador[] $presentadors
+ * @property \backend\models\User[] $users
  */
 class Afiliacion extends \yii\db\ActiveRecord
 {
@@ -49,25 +48,17 @@ class Afiliacion extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getParticipantes()
+    public function getUsers()
     {
-        return $this->hasMany(\backend\models\Participante::className(), ['afiliacion_id' => 'id']);
-    }
-        
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getPresentadors()
-    {
-        return $this->hasMany(\backend\models\Presentador::className(), ['afiliacion_id' => 'id']);
+        return $this->hasMany(\backend\models\User::className(), ['afiliacion_id' => 'id']);
     }
     
     /**
      * @inheritdoc
-     * @return \app\models\AfiliacionQuery the active query used by this AR class.
+     * @return \backend\models\AfiliacionQuery the active query used by this AR class.
      */
     public static function find()
     {
-        return new \app\models\AfiliacionQuery(get_called_class());
+        return new \backend\models\AfiliacionQuery(get_called_class());
     }
 }

@@ -56,48 +56,30 @@ $this->params['breadcrumbs'][] = $this->title;
     
     <div class="row">
 <?php
-if($providerParticipante->totalCount){
-    $gridColumnParticipante = [
+if($providerUser->totalCount){
+    $gridColumnUser = [
         ['class' => 'yii\grid\SerialColumn'],
             ['attribute' => 'id', 'visible' => false],
-                        'Nombre',
+                        [
+                'attribute' => 'tipoUser.Tipo',
+                'label' => Yii::t('app', 'Tipo User')
+            ],
+            'username',
+            'email:email',
+            'image',
+            'Nombre',
             'Apellido',
             'Telefono',
     ];
     echo Gridview::widget([
-        'dataProvider' => $providerParticipante,
+        'dataProvider' => $providerUser,
         'pjax' => true,
-        'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-participante']],
+        'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-user']],
         'panel' => [
         'type' => GridView::TYPE_PRIMARY,
-        'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode(Yii::t('app', 'Participante')),
+        'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode(Yii::t('app', 'User')),
         ],
-        'columns' => $gridColumnParticipante
-    ]);
-}
-?>
-    </div>
-    
-    <div class="row">
-<?php
-if($providerPresentador->totalCount){
-    $gridColumnPresentador = [
-        ['class' => 'yii\grid\SerialColumn'],
-            ['attribute' => 'id', 'visible' => false],
-                        'Nombre',
-            'Apellido',
-            'Telefono',
-            'Descripcion:ntext',
-    ];
-    echo Gridview::widget([
-        'dataProvider' => $providerPresentador,
-        'pjax' => true,
-        'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-presentador']],
-        'panel' => [
-        'type' => GridView::TYPE_PRIMARY,
-        'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode(Yii::t('app', 'Presentador')),
-        ],
-        'columns' => $gridColumnPresentador
+        'columns' => $gridColumnUser
     ]);
 }
 ?>

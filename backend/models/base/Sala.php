@@ -8,12 +8,11 @@ use Yii;
  * This is the base model class for table "{{%sala}}".
  *
  * @property integer $id
- * @property integer $moderador_id
  * @property string $Nombre_Sala
  *
  * @property \backend\models\Presentacion[] $presentacions
- * @property \backend\models\PresentadorSala[] $presentadorSalas
- * @property \backend\models\Presentador[] $presentadors
+ * @property \backend\models\UserSala[] $userSalas
+ * @property \backend\models\User[] $users
  */
 class Sala extends \yii\db\ActiveRecord
 {
@@ -25,8 +24,7 @@ class Sala extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['moderador_id', 'Nombre_Sala'], 'required'],
-            [['moderador_id'], 'integer'],
+            [['Nombre_Sala'], 'required'],
             [['Nombre_Sala'], 'string', 'max' => 20]
         ];
     }
@@ -46,8 +44,7 @@ class Sala extends \yii\db\ActiveRecord
     {
         return [
             'id' => Yii::t('app', 'ID'),
-            'moderador_id' => Yii::t('app', 'Moderador ID'),
-            'Nombre_Sala' => Yii::t('app', 'Nombre  Sala'),
+            'Nombre_Sala' => Yii::t('app', 'Sala'),
         ];
     }
     
@@ -62,19 +59,19 @@ class Sala extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getPresentadorSalas()
+    public function getUserSalas()
     {
-        return $this->hasMany(\backend\models\PresentadorSala::className(), ['sala_id' => 'id']);
+        return $this->hasMany(\backend\models\UserSala::className(), ['sala_id' => 'id']);
     }
         
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getPresentadors()
+    public function getUsers()
     {
-        return $this->hasMany(\backend\models\Presentador::className(), ['id' => 'presentador_id'])->viaTable('{{%presentador_sala}}', ['sala_id' => 'id']);
+        return $this->hasMany(\backend\models\User::className(), ['id' => 'user_id'])->viaTable('{{%user_sala}}', ['sala_id' => 'id']);
     }
-        
+    
     /**
      * @inheritdoc
      * @return \backend\models\SalaQuery the active query used by this AR class.

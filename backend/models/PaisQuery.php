@@ -1,11 +1,11 @@
 <?php
 
-namespace app\models;
+namespace backend\models;
 
 /**
- * This is the ActiveQuery class for [[\app\models\Pais]].
+ * This is the ActiveQuery class for [[Pais]].
  *
- * @see \app\models\Pais
+ * @see Pais
  */
 class PaisQuery extends \yii\db\ActiveQuery
 {
@@ -17,7 +17,7 @@ class PaisQuery extends \yii\db\ActiveQuery
 
     /**
      * @inheritdoc
-     * @return \app\models\Pais[]|array
+     * @return Pais[]|array
      */
     public function all($db = null)
     {
@@ -26,7 +26,7 @@ class PaisQuery extends \yii\db\ActiveQuery
 
     /**
      * @inheritdoc
-     * @return \app\models\Pais|array|null
+     * @return Pais|array|null
      */
     public function one($db = null)
     {

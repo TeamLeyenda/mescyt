@@ -66,7 +66,11 @@ if($providerPresentacion->totalCount){
     $gridColumnPresentacion = [
         ['class' => 'yii\grid\SerialColumn'],
             ['attribute' => 'id', 'visible' => false],
-                        'Titulo',
+                        [
+                'attribute' => 'sala.id',
+                'label' => Yii::t('app', 'Sala')
+            ],
+            'Titulo',
             'Institucion',
             'Area_Tematica',
             'Modalidad_Presentacion',

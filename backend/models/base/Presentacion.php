@@ -19,8 +19,8 @@ use Yii;
  *
  * @property \backend\models\Congreso $congreso
  * @property \backend\models\Sala $sala
- * @property \backend\models\PresentadorPresentacion[] $presentadorPresentacions
- * @property \backend\models\Presentador[] $presentadors
+ * @property \backend\models\PresentacionUser[] $presentacionUsers
+ * @property \backend\models\User[] $users
  */
 class Presentacion extends \yii\db\ActiveRecord
 {
@@ -86,17 +86,17 @@ class Presentacion extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getPresentadorPresentacions()
+    public function getPresentacionUsers()
     {
-        return $this->hasMany(\backend\models\PresentadorPresentacion::className(), ['presentacion_id' => 'id']);
+        return $this->hasMany(\backend\models\PresentacionUser::className(), ['presentacion_id' => 'id']);
     }
         
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getPresentadors()
+    public function getUsers()
     {
-        return $this->hasMany(\backend\models\Presentador::className(), ['id' => 'presentador_id'])->viaTable('{{%presentador_presentacion}}', ['presentacion_id' => 'id']);
+        return $this->hasMany(\backend\models\User::className(), ['id' => 'user_id'])->viaTable('{{%presentacion_user}}', ['presentacion_id' => 'id']);
     }
     
     /**

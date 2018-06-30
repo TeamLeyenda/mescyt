@@ -14,7 +14,7 @@ class UserGroupRule extends Rule
     public function execute($user, $item, $params)
     {
         if (!Yii::$app->user->isGuest) {
-            $group = Yii::$app->user->identity->group;
+            $group = Yii::$app->user->identity->tipo_user_id;
             if ($item->name === 'admin') {
                 return $group == 1;
             } elseif ($item->name === 'moderador') {

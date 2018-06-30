@@ -2,7 +2,6 @@
 
 namespace backend\models;
 
-use Yii;
 use \backend\models\base\Provincia as BaseProvincia;
 
 /**
@@ -10,7 +9,6 @@ use \backend\models\base\Provincia as BaseProvincia;
  */
 class Provincia extends BaseProvincia
 {
-    public $lock;
     /**
      * @inheritdoc
      */
@@ -20,9 +18,7 @@ class Provincia extends BaseProvincia
 	    [
             [['pais_id', 'Provincia'], 'required'],
             [['pais_id'], 'integer'],
-            [['Provincia'], 'string', 'max' => 100],
-            [['lock'], 'default', 'value' => '0'],
-            [['lock'], 'mootensai\components\OptimisticLockValidator']
+            [['Provincia'], 'string', 'max' => 100]
         ]);
     }
 	

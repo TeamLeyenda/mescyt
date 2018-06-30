@@ -8,9 +8,9 @@ use yii\data\ActiveDataProvider;
 use backend\models\Sala;
 
 /**
- * backend\models\salaSearch represents the model behind the search form about `backend\models\Sala`.
+ * backend\models\SalaSearch represents the model behind the search form about `backend\models\Sala`.
  */
- class salaSearch extends Sala
+ class SalaSearch extends Sala
 {
     /**
      * @inheritdoc
@@ -18,7 +18,7 @@ use backend\models\Sala;
     public function rules()
     {
         return [
-            [['id', 'moderador_id'], 'integer'],
+            [['id'], 'integer'],
             [['Nombre_Sala'], 'safe'],
         ];
     }
@@ -57,7 +57,6 @@ use backend\models\Sala;
 
         $query->andFilterWhere([
             'id' => $this->id,
-            'moderador_id' => $this->moderador_id,
         ]);
 
         $query->andFilterWhere(['like', 'Nombre_Sala', $this->Nombre_Sala]);

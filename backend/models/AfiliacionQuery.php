@@ -1,11 +1,11 @@
 <?php
 
-namespace app\models;
+namespace backend\models;
 
 /**
- * This is the ActiveQuery class for [[\app\models\Afiliacion]].
+ * This is the ActiveQuery class for [[Afiliacion]].
  *
- * @see \app\models\Afiliacion
+ * @see Afiliacion
  */
 class AfiliacionQuery extends \yii\db\ActiveQuery
 {
@@ -17,7 +17,7 @@ class AfiliacionQuery extends \yii\db\ActiveQuery
 
     /**
      * @inheritdoc
-     * @return \app\models\Afiliacion[]|array
+     * @return Afiliacion[]|array
      */
     public function all($db = null)
     {
@@ -26,7 +26,7 @@ class AfiliacionQuery extends \yii\db\ActiveQuery
 
     /**
      * @inheritdoc
-     * @return \app\models\Afiliacion|array|null
+     * @return Afiliacion|array|null
      */
     public function one($db = null)
     {

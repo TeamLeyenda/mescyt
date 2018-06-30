@@ -28,7 +28,7 @@ class AfiliacionController extends Controller
                 'rules' => [
                     [
                         'allow' => true,
-                        'actions' => ['index', 'view', 'create', 'update', 'delete', 'pdf', 'save-as-new', 'add-participante', 'add-presentador'],
+                        'actions' => ['index', 'view', 'create', 'update', 'delete', 'pdf', 'save-as-new', 'add-user'],
                         'roles' => ['@']
                     ],
                     [
@@ -62,16 +62,12 @@ class AfiliacionController extends Controller
     public function actionView($id)
     {
         $model = $this->findModel($id);
-        $providerParticipante = new \yii\data\ArrayDataProvider([
-            'allModels' => $model->participantes,
-        ]);
-        $providerPresentador = new \yii\data\ArrayDataProvider([
-            'allModels' => $model->presentadors,
+        $providerUser = new \yii\data\ArrayDataProvider([
+            'allModels' => $model->users,
         ]);
         return $this->render('view', [
             'model' => $this->findModel($id),
-            'providerParticipante' => $providerParticipante,
-            'providerPresentador' => $providerPresentador,
+            'providerUser' => $providerUser,
         ]);
     }
 
@@ -137,17 +133,13 @@ class AfiliacionController extends Controller
      */
     public function actionPdf($id) {
         $model = $this->findModel($id);
-        $providerParticipante = new \yii\data\ArrayDataProvider([
-            'allModels' => $model->participantes,
-        ]);
-        $providerPresentador = new \yii\data\ArrayDataProvider([
-            'allModels' => $model->presentadors,
+        $providerUser = new \yii\data\ArrayDataProvider([
+            'allModels' => $model->users,
         ]);
 
         $content = $this->renderAjax('_pdf', [
             'model' => $model,
-            'providerParticipante' => $providerParticipante,
-            'providerPresentador' => $providerPresentador,
+            'providerUser' => $providerUser,
         ]);
 
         $pdf = new \kartik\mpdf\Pdf([
@@ -210,39 +202,19 @@ class AfiliacionController extends Controller
     
     /**
     * Action to load a tabular form grid
-    * for Participante
+    * for User
     * @author Yohanes Candrajaya <moo.tensai@gmail.com>
     * @author Jiwantoro Ndaru <jiwanndaru@gmail.com>
     *
     * @return mixed
     */
-    public function actionAddParticipante()
+    public function actionAddUser()
     {
         if (Yii::$app->request->isAjax) {
-            $row = Yii::$app->request->post('Participante');
+            $row = Yii::$app->request->post('User');
             if((Yii::$app->request->post('isNewRecord') && Yii::$app->request->post('_action') == 'load' && empty($row)) || Yii::$app->request->post('_action') == 'add')
                 $row[] = [];
-            return $this->renderAjax('_formParticipante', ['row' => $row]);
-        } else {
-            throw new NotFoundHttpException(Yii::t('app', 'The requested page does not exist.'));
-        }
-    }
-    
-    /**
-    * Action to load a tabular form grid
-    * for Presentador
-    * @author Yohanes Candrajaya <moo.tensai@gmail.com>
-    * @author Jiwantoro Ndaru <jiwanndaru@gmail.com>
-    *
-    * @return mixed
-    */
-    public function actionAddPresentador()
-    {
-        if (Yii::$app->request->isAjax) {
-            $row = Yii::$app->request->post('Presentador');
-            if((Yii::$app->request->post('isNewRecord') && Yii::$app->request->post('_action') == 'load' && empty($row)) || Yii::$app->request->post('_action') == 'add')
-                $row[] = [];
-            return $this->renderAjax('_formPresentador', ['row' => $row]);
+            return $this->renderAjax('_formUser', ['row' => $row]);
         } else {
             throw new NotFoundHttpException(Yii::t('app', 'The requested page does not exist.'));
         }

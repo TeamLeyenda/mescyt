@@ -9,6 +9,10 @@ use yii\data\ArrayDataProvider;
     $gridColumns = [
         ['class' => 'yii\grid\SerialColumn'],
         ['attribute' => 'id', 'visible' => false],
+        [
+                'attribute' => 'sala.id',
+                'label' => Yii::t('app', 'Sala')
+            ],
         'Titulo',
         'Institucion',
         'Area_Tematica',

@@ -4,14 +4,14 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
-/* @var $model backend\models\Grado_academico */
+/* @var $model backend\models\GradoAcademico */
 /* @var $form yii\widgets\ActiveForm */
 
 \mootensai\components\JsBlock::widget(['viewFile' => '_script', 'pos'=> \yii\web\View::POS_END, 
     'viewParams' => [
-        'class' => 'PresentadorGradoAcademico', 
-        'relID' => 'presentador-grado-academico', 
-        'value' => \yii\helpers\Json::encode($model->presentadorGradoAcademicos),
+        'class' => 'UserGradoAcademico', 
+        'relID' => 'user-grado-academico', 
+        'value' => \yii\helpers\Json::encode($model->userGradoAcademicos),
         'isNewRecord' => ($model->isNewRecord) ? 1 : 0
     ]
 ]);
@@ -30,9 +30,9 @@ use yii\widgets\ActiveForm;
     <?php
     $forms = [
         [
-            'label' => '<i class="glyphicon glyphicon-book"></i> ' . Html::encode(Yii::t('app', 'PresentadorGradoAcademico')),
-            'content' => $this->render('_formPresentadorGradoAcademico', [
-                'row' => \yii\helpers\ArrayHelper::toArray($model->presentadorGradoAcademicos),
+            'label' => '<i class="glyphicon glyphicon-book"></i> ' . Html::encode(Yii::t('app', 'UserGradoAcademico')),
+            'content' => $this->render('_formUserGradoAcademico', [
+                'row' => \yii\helpers\ArrayHelper::toArray($model->userGradoAcademicos),
             ]),
         ],
     ];

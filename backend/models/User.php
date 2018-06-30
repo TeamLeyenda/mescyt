@@ -16,14 +16,13 @@ class User extends BaseUser
     {
         return array_replace_recursive(parent::rules(),
 	    [
-            [['moderador_id', 'participante_id', 'presentador_id', 'status', 'created_at', 'updated_at'], 'integer'],
-            [['username', 'auth_key', 'password_hash', 'email', 'created_at', 'updated_at'], 'required'],
+            [['afiliacion_id', 'tipo_user_id', 'status', 'created_at', 'updated_at'], 'integer'],
+            [['username', 'auth_key', 'password_hash', 'email'], 'required'],
             [['username', 'auth_key'], 'string', 'max' => 32],
             [['password_hash', 'password_reset_token', 'email', 'image'], 'string', 'max' => 255],
-            [['email'], 'unique'],
-            [['moderador_id'], 'unique'],
-            [['participante_id'], 'unique'],
-            [['presentador_id'], 'unique']
+            [['Nombre'], 'string', 'max' => 50],
+            [['Apellido', 'Telefono'], 'string', 'max' => 20],
+            [['email'], 'unique']
         ]);
     }
 	

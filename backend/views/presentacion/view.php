@@ -46,11 +46,11 @@ $this->params['breadcrumbs'][] = $this->title;
     $gridColumn = [
         ['attribute' => 'id', 'visible' => false],
         [
-            'attribute' => 'congreso.id',
+            'attribute' => 'congreso.Nombre',
             'label' => Yii::t('app', 'Congreso'),
         ],
         [
-            'attribute' => 'sala.id',
+            'attribute' => 'sala.Nombre_Sala',
             'label' => Yii::t('app', 'Sala'),
         ],
         'Titulo',
@@ -69,19 +69,23 @@ $this->params['breadcrumbs'][] = $this->title;
     
     <div class="row">
 <?php
-if($providerPresentadorPresentacion->totalCount){
-    $gridColumnPresentadorPresentacion = [
+if($providerPresentacionUser->totalCount){
+    $gridColumnPresentacionUser = [
         ['class' => 'yii\grid\SerialColumn'],
-                ];
+                        [
+                'attribute' => 'user.Nombre',
+                'label' => Yii::t('app', 'User')
+            ],
+    ];
     echo Gridview::widget([
-        'dataProvider' => $providerPresentadorPresentacion,
+        'dataProvider' => $providerPresentacionUser,
         'pjax' => true,
-        'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-presentador-presentacion']],
+        'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-presentacion-user']],
         'panel' => [
         'type' => GridView::TYPE_PRIMARY,
-        'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode(Yii::t('app', 'Presentador Presentacion')),
+        'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode(Yii::t('app', 'Presentacion User')),
         ],
-        'columns' => $gridColumnPresentadorPresentacion
+        'columns' => $gridColumnPresentacionUser
     ]);
 }
 ?>

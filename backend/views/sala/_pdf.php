@@ -39,7 +39,7 @@ if($providerPresentacion->totalCount){
         ['class' => 'yii\grid\SerialColumn'],
         ['attribute' => 'id', 'visible' => false],
         [
-                'attribute' => 'congreso.id',
+                'attribute' => 'congreso.Nombre',
                 'label' => Yii::t('app', 'Congreso')
             ],
                 'Titulo',
@@ -65,19 +65,23 @@ if($providerPresentacion->totalCount){
     
     <div class="row">
 <?php
-if($providerPresentadorSala->totalCount){
-    $gridColumnPresentadorSala = [
+if($providerUserSala->totalCount){
+    $gridColumnUserSala = [
         ['class' => 'yii\grid\SerialColumn'],
+        [
+                'attribute' => 'user.Nombre',
+                'label' => Yii::t('app', 'User')
+            ],
             ];
     echo Gridview::widget([
-        'dataProvider' => $providerPresentadorSala,
+        'dataProvider' => $providerUserSala,
         'panel' => [
             'type' => GridView::TYPE_PRIMARY,
-            'heading' => Html::encode(Yii::t('app', 'Presentador Sala')),
+            'heading' => Html::encode(Yii::t('app', 'User Sala')),
         ],
         'panelHeadingTemplate' => '<h4>{heading}</h4>{summary}',
         'toggleData' => false,
-        'columns' => $gridColumnPresentadorSala
+        'columns' => $gridColumnUserSala
     ]);
 }
 ?>

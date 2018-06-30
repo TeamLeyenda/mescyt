@@ -5,7 +5,7 @@ use yii\widgets\DetailView;
 use kartik\grid\GridView;
 
 /* @var $this yii\web\View */
-/* @var $model backend\models\Grado_academico */
+/* @var $model backend\models\GradoAcademico */
 
 $this->title = $model->id;
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Grado Academicos'), 'url' => ['index']];
@@ -50,32 +50,31 @@ $this->params['breadcrumbs'][] = $this->title;
     echo DetailView::widget([
         'model' => $model,
         'attributes' => $gridColumn
-    ]);
+    ]); 
 ?>
     </div>
     
     <div class="row">
 <?php
-if($providerPresentadorGradoAcademico->totalCount){
-    $gridColumnPresentadorGradoAcademico = [
+if($providerUserGradoAcademico->totalCount){
+    $gridColumnUserGradoAcademico = [
         ['class' => 'yii\grid\SerialColumn'],
             [
-                'attribute' => 'presentador.id',
-                'label' => Yii::t('app', 'Presentador')
+                'attribute' => 'user.Nombre',
+                'label' => Yii::t('app', 'User')
             ],
                 ];
     echo Gridview::widget([
-        'dataProvider' => $providerPresentadorGradoAcademico,
+        'dataProvider' => $providerUserGradoAcademico,
         'pjax' => true,
-        'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-presentador-grado-academico']],
+        'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-user-grado-academico']],
         'panel' => [
-            'type' => GridView::TYPE_PRIMARY,
-            'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode(Yii::t('app', 'Presentador Grado Academico')),
+        'type' => GridView::TYPE_PRIMARY,
+        'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode(Yii::t('app', 'User Grado Academico')),
         ],
-        'columns' => $gridColumnPresentadorGradoAcademico
+        'columns' => $gridColumnUserGradoAcademico
     ]);
 }
 ?>
-
     </div>
 </div>

@@ -17,9 +17,17 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'id', ['template' => '{input}'])->textInput(['style' => 'display:none']); ?>
 
-    <?= $form->field($model, 'participante_id')->widget(\kartik\widgets\Select2::classname(), [
-        'data' => \yii\helpers\ArrayHelper::map(\backend\models\Participante::find()->orderBy('id')->asArray()->all(), 'id', 'id'),
-        'options' => ['placeholder' => Yii::t('app', 'Choose Participante')],
+    <?= $form->field($model, 'afiliacion_id')->widget(\kartik\widgets\Select2::classname(), [
+        'data' => \yii\helpers\ArrayHelper::map(\backend\models\Afiliacion::find()->orderBy('id')->asArray()->all(), 'id', 'Afiliacion'),
+        'options' => ['placeholder' => Yii::t('app', 'Choose Afiliacion')],
+        'pluginOptions' => [
+            'allowClear' => true
+        ],
+    ]); ?>
+
+    <?= $form->field($model, 'tipo_user_id')->widget(\kartik\widgets\Select2::classname(), [
+        'data' => \yii\helpers\ArrayHelper::map(\backend\models\TipoUser::find()->orderBy('id')->asArray()->all(), 'id', 'Tipo'),
+        'options' => ['placeholder' => Yii::t('app', 'Choose Tipo user')],
         'pluginOptions' => [
             'allowClear' => true
         ],
@@ -27,11 +35,19 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'username')->textInput(['maxlength' => true, 'placeholder' => 'Username']) ?>
 
-    <?= $form->field($model, 'password_hash')->textInput(['maxlength' => true, 'placeholder' => 'Password Hash']) ?>
+    <?= $form->field($model, 'auth_key', ['template' => '{input}'])->textInput(['style' => 'display:none']); ?>
 
-    <?= $form->field($model, 'email')->textInput(['maxlength' => true, 'placeholder' => 'Email']) ?>
+    <?php /* echo $form->field($model, 'password_hash')->textInput(['maxlength' => true, 'placeholder' => 'Password Hash']) */ ?>
+
+    <?php /* echo $form->field($model, 'email')->textInput(['maxlength' => true, 'placeholder' => 'Email']) */ ?>
 
     <?php /* echo $form->field($model, 'image')->textInput(['maxlength' => true, 'placeholder' => 'Image']) */ ?>
+
+    <?php /* echo $form->field($model, 'Nombre')->textInput(['maxlength' => true, 'placeholder' => 'Nombre']) */ ?>
+
+    <?php /* echo $form->field($model, 'Apellido')->textInput(['maxlength' => true, 'placeholder' => 'Apellido']) */ ?>
+
+    <?php /* echo $form->field($model, 'Telefono')->textInput(['maxlength' => true, 'placeholder' => 'Telefono']) */ ?>
 
     <div class="form-group">
         <?= Html::submitButton(Yii::t('app', 'Search'), ['class' => 'btn btn-primary']) ?>

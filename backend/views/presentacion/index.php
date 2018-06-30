@@ -48,10 +48,10 @@ $this->registerJs($search);
                 'attribute' => 'congreso_id',
                 'label' => Yii::t('app', 'Congreso'),
                 'value' => function($model){
-                    return $model->congreso->id;
+                    return $model->congreso->Nombre;
                 },
                 'filterType' => GridView::FILTER_SELECT2,
-                'filter' => \yii\helpers\ArrayHelper::map(\backend\models\Congreso::find()->asArray()->all(), 'id', 'id'),
+                'filter' => \yii\helpers\ArrayHelper::map(\backend\models\Congreso::find()->asArray()->all(), 'id', 'Nombre'),
                 'filterWidgetOptions' => [
                     'pluginOptions' => ['allowClear' => true],
                 ],
@@ -61,10 +61,10 @@ $this->registerJs($search);
                 'attribute' => 'sala_id',
                 'label' => Yii::t('app', 'Sala'),
                 'value' => function($model){
-                    return $model->sala->id;
+                    return $model->sala->Nombre_Sala;
                 },
                 'filterType' => GridView::FILTER_SELECT2,
-                'filter' => \yii\helpers\ArrayHelper::map(\backend\models\Sala::find()->asArray()->all(), 'id', 'id'),
+                'filter' => \yii\helpers\ArrayHelper::map(\backend\models\Sala::find()->asArray()->all(), 'id', 'Nombre_Sala'),
                 'filterWidgetOptions' => [
                     'pluginOptions' => ['allowClear' => true],
                 ],

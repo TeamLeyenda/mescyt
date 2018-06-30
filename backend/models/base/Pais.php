@@ -3,7 +3,6 @@
 namespace backend\models\base;
 
 use Yii;
-use mootensai\behaviors\UUIDBehavior;
 
 /**
  * This is the base model class for table "{{%pais}}".
@@ -17,47 +16,22 @@ class Pais extends \yii\db\ActiveRecord
 {
     use \mootensai\relation\RelationTrait;
 
-
-    /**
-    * This function helps \mootensai\relation\RelationTrait runs faster
-    * @return array relation names of this model
-    */
-    public function relationNames()
-    {
-        return [
-            'provincias'
-        ];
-    }
-
     /**
      * @inheritdoc
      */
     public function rules()
     {
         return [
-            [['Pais'], 'string', 'max' => 255],
-            [['lock'], 'default', 'value' => '0'],
-            [['lock'], 'mootensai\components\OptimisticLockValidator']
+            [['Pais'], 'string', 'max' => 255]
         ];
     }
-
+    
     /**
      * @inheritdoc
      */
     public static function tableName()
     {
         return '{{%pais}}';
-    }
-
-    /**
-     *
-     * @return string
-     * overwrite function optimisticLock
-     * return string name of field are used to stored optimistic lock
-     *
-     */
-    public function optimisticLock() {
-        return 'lock';
     }
 
     /**
@@ -76,30 +50,15 @@ class Pais extends \yii\db\ActiveRecord
      */
     public function getProvincias()
     {
-        return $this->hasMany(\backend\models\Provincia::className(), ['pais_id' => 'id'])->inverseOf('pais');
+        return $this->hasMany(\backend\models\Provincia::className(), ['pais_id' => 'id']);
     }
     
     /**
      * @inheritdoc
-     * @return array mixed
-     */
-    public function behaviors()
-    {
-        return [
-            'uuid' => [
-                'class' => UUIDBehavior::className(),
-                'column' => 'id',
-            ],
-        ];
-    }
-
-
-    /**
-     * @inheritdoc
-     * @return \app\models\PaisQuery the active query used by this AR class.
+     * @return \backend\models\PaisQuery the active query used by this AR class.
      */
     public static function find()
     {
-        return new \app\models\PaisQuery(get_called_class());
+        return new \backend\models\PaisQuery(get_called_class());
     }
 }

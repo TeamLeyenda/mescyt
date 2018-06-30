@@ -17,13 +17,13 @@ $items = [
         ]),
     ],
             [
-        'label' => '<i class="glyphicon glyphicon-book"></i> '. Html::encode(Yii::t('app', 'Presentador Sala')),
-        'content' => $this->render('_dataPresentadorSala', [
+        'label' => '<i class="glyphicon glyphicon-book"></i> '. Html::encode(Yii::t('app', 'User Sala')),
+        'content' => $this->render('_dataUserSala', [
             'model' => $model,
-            'row' => $model->presentadorSalas,
+            'row' => $model->userSalas,
         ]),
     ],
-            ];
+        ];
 echo TabsX::widget([
     'items' => $items,
     'position' => TabsX::POS_ABOVE,

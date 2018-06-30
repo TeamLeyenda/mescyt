@@ -4,7 +4,7 @@ namespace backend\controllers;
 
 use Yii;
 use backend\models\Sala;
-use backend\models\salaSearch;
+use backend\models\SalaSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -28,7 +28,7 @@ class SalaController extends Controller
                 'rules' => [
                     [
                         'allow' => true,
-                        'actions' => ['index', 'view', 'create', 'update', 'delete', 'pdf', 'save-as-new', 'add-presentacion', 'add-presentador-sala'],
+                        'actions' => ['index', 'view', 'create', 'update', 'delete', 'pdf', 'save-as-new', 'add-presentacion', 'add-user-sala'],
                         'roles' => ['@']
                     ],
                     [
@@ -45,7 +45,7 @@ class SalaController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new salaSearch();
+        $searchModel = new SalaSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -65,13 +65,13 @@ class SalaController extends Controller
         $providerPresentacion = new \yii\data\ArrayDataProvider([
             'allModels' => $model->presentacions,
         ]);
-        $providerPresentadorSala = new \yii\data\ArrayDataProvider([
-            'allModels' => $model->presentadorSalas,
+        $providerUserSala = new \yii\data\ArrayDataProvider([
+            'allModels' => $model->userSalas,
         ]);
         return $this->render('view', [
             'model' => $this->findModel($id),
             'providerPresentacion' => $providerPresentacion,
-            'providerPresentadorSala' => $providerPresentadorSala,
+            'providerUserSala' => $providerUserSala,
         ]);
     }
 
@@ -140,14 +140,14 @@ class SalaController extends Controller
         $providerPresentacion = new \yii\data\ArrayDataProvider([
             'allModels' => $model->presentacions,
         ]);
-        $providerPresentadorSala = new \yii\data\ArrayDataProvider([
-            'allModels' => $model->presentadorSalas,
+        $providerUserSala = new \yii\data\ArrayDataProvider([
+            'allModels' => $model->userSalas,
         ]);
 
         $content = $this->renderAjax('_pdf', [
             'model' => $model,
             'providerPresentacion' => $providerPresentacion,
-            'providerPresentadorSala' => $providerPresentadorSala,
+            'providerUserSala' => $providerUserSala,
         ]);
 
         $pdf = new \kartik\mpdf\Pdf([
@@ -230,19 +230,19 @@ class SalaController extends Controller
     
     /**
     * Action to load a tabular form grid
-    * for PresentadorSala
+    * for UserSala
     * @author Yohanes Candrajaya <moo.tensai@gmail.com>
     * @author Jiwantoro Ndaru <jiwanndaru@gmail.com>
     *
     * @return mixed
     */
-    public function actionAddPresentadorSala()
+    public function actionAddUserSala()
     {
         if (Yii::$app->request->isAjax) {
-            $row = Yii::$app->request->post('PresentadorSala');
+            $row = Yii::$app->request->post('UserSala');
             if((Yii::$app->request->post('isNewRecord') && Yii::$app->request->post('_action') == 'load' && empty($row)) || Yii::$app->request->post('_action') == 'add')
                 $row[] = [];
-            return $this->renderAjax('_formPresentadorSala', ['row' => $row]);
+            return $this->renderAjax('_formUserSala', ['row' => $row]);
         } else {
             throw new NotFoundHttpException(Yii::t('app', 'The requested page does not exist.'));
         }

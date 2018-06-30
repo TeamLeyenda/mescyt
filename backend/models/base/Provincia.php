@@ -3,7 +3,6 @@
 namespace backend\models\base;
 
 use Yii;
-use mootensai\behaviors\UUIDBehavior;
 
 /**
  * This is the base model class for table "{{%provincia}}".
@@ -19,19 +18,6 @@ class Provincia extends \yii\db\ActiveRecord
 {
     use \mootensai\relation\RelationTrait;
 
-
-    /**
-    * This function helps \mootensai\relation\RelationTrait runs faster
-    * @return array relation names of this model
-    */
-    public function relationNames()
-    {
-        return [
-            'congresos',
-            'pais'
-        ];
-    }
-
     /**
      * @inheritdoc
      */
@@ -40,29 +26,16 @@ class Provincia extends \yii\db\ActiveRecord
         return [
             [['pais_id', 'Provincia'], 'required'],
             [['pais_id'], 'integer'],
-            [['Provincia'], 'string', 'max' => 100],
-            [['lock'], 'default', 'value' => '0'],
-            [['lock'], 'mootensai\components\OptimisticLockValidator']
+            [['Provincia'], 'string', 'max' => 100]
         ];
     }
-
+    
     /**
      * @inheritdoc
      */
     public static function tableName()
     {
         return '{{%provincia}}';
-    }
-
-    /**
-     *
-     * @return string
-     * overwrite function optimisticLock
-     * return string name of field are used to stored optimistic lock
-     *
-     */
-    public function optimisticLock() {
-        return 'lock';
     }
 
     /**
@@ -82,7 +55,7 @@ class Provincia extends \yii\db\ActiveRecord
      */
     public function getCongresos()
     {
-        return $this->hasMany(\backend\models\Congreso::className(), ['provincia_id' => 'id'])->inverseOf('provincia');
+        return $this->hasMany(\backend\models\Congreso::className(), ['provincia_id' => 'id']);
     }
         
     /**
@@ -90,30 +63,15 @@ class Provincia extends \yii\db\ActiveRecord
      */
     public function getPais()
     {
-        return $this->hasOne(\backend\models\Pais::className(), ['id' => 'pais_id'])->inverseOf('provincias');
+        return $this->hasOne(\backend\models\Pais::className(), ['id' => 'pais_id']);
     }
     
     /**
      * @inheritdoc
-     * @return array mixed
-     */
-    public function behaviors()
-    {
-        return [
-            'uuid' => [
-                'class' => UUIDBehavior::className(),
-                'column' => 'id',
-            ],
-        ];
-    }
-
-
-    /**
-     * @inheritdoc
-     * @return \app\models\ProvinciaQuery the active query used by this AR class.
+     * @return \backend\models\ProvinciaQuery the active query used by this AR class.
      */
     public static function find()
     {
-        return new \app\models\ProvinciaQuery(get_called_class());
+        return new \backend\models\ProvinciaQuery(get_called_class());
     }
 }

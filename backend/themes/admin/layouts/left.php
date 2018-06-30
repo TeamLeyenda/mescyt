@@ -46,15 +46,6 @@ $name = Yii::$app->user->identity->username;
                                     ['label' => 'Presentador', 'icon' => 'user', 'url' => ['/presentador'],],
                                     ['label' => 'Moderador', 'icon' => 'user', 'url' => ['/moderador'],],
                                     ['label' => 'Usuario', 'icon' => 'user', 'url' => ['/user'],],
-                                    /*['label' => 'Level Two',
-                                        'icon' => 'circle-o',
-                                        'url' => '#',
-                                        'items' => [
-                                            ['label' => 'Level Three', 'icon' => 'circle-o', 'url' => '#',],
-                                            ['label' => 'Level Three', 'icon' => 'circle-o', 'url' => '#',],
-                                        ],
-                                    ],
-                                    */
                                 ],
                             ],
 

@@ -46,63 +46,122 @@ $this->params['breadcrumbs'][] = $this->title;
     $gridColumn = [
         ['attribute' => 'id', 'visible' => false],
         [
-            'attribute' => 'participante.id',
-            'label' => Yii::t('app', 'Participante'),
+            'attribute' => 'afiliacion.Afiliacion',
+            'label' => Yii::t('app', 'Afiliacion'),
+        ],
+        [
+            'attribute' => 'tipoUser.Tipo',
+            'label' => Yii::t('app', 'Tipo User'),
         ],
         'username',
+        ['attribute' => 'auth_key', 'visible' => false],
         'password_hash',
         'email:email',
         'image',
+        'Nombre',
+        'Apellido',
+        'Telefono',
     ];
     echo DetailView::widget([
         'model' => $model,
         'attributes' => $gridColumn
-    ]);
+    ]); 
 ?>
     </div>
+    
     <div class="row">
-        <h4>Moderador<?= ' '. Html::encode($this->title) ?></h4>
+<?php
+if($providerPresentacionUser->totalCount){
+    $gridColumnPresentacionUser = [
+        ['class' => 'yii\grid\SerialColumn'],
+            [
+                'attribute' => 'presentacion.id',
+                'label' => Yii::t('app', 'Presentacion')
+            ],
+                ];
+    echo Gridview::widget([
+        'dataProvider' => $providerPresentacionUser,
+        'pjax' => true,
+        'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-presentacion-user']],
+        'panel' => [
+        'type' => GridView::TYPE_PRIMARY,
+        'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode(Yii::t('app', 'Presentacion User')),
+        ],
+        'columns' => $gridColumnPresentacionUser
+    ]);
+}
+?>
     </div>
-    <?php 
-    $gridColumnModerador = [
-        ['attribute' => 'id', 'visible' => false],
-        'Nombre',
-        'Apellido',
-        'Telefono',
-    ];
-    echo DetailView::widget([
-        'model' => $model->moderador,
-        'attributes' => $gridColumnModerador    ]);
-    ?>
+    
     <div class="row">
-        <h4>Participante<?= ' '. Html::encode($this->title) ?></h4>
-    </div>
-    <?php 
-    $gridColumnParticipante = [
-        ['attribute' => 'id', 'visible' => false],
-        'afiliacion_id',
-        'Nombre',
-        'Apellido',
-        'Telefono',
+<?php
+if($providerUserAreaEspecializacion->totalCount){
+    $gridColumnUserAreaEspecializacion = [
+        ['class' => 'yii\grid\SerialColumn'],
+                        [
+                'attribute' => 'areaEspecializacion.id',
+                'label' => Yii::t('app', 'Area Especializacion')
+            ],
     ];
-    echo DetailView::widget([
-        'model' => $model->participante,
-        'attributes' => $gridColumnParticipante    ]);
-    ?>
+    echo Gridview::widget([
+        'dataProvider' => $providerUserAreaEspecializacion,
+        'pjax' => true,
+        'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-user-area-especializacion']],
+        'panel' => [
+        'type' => GridView::TYPE_PRIMARY,
+        'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode(Yii::t('app', 'User Area Especializacion')),
+        ],
+        'columns' => $gridColumnUserAreaEspecializacion
+    ]);
+}
+?>
+    </div>
+    
     <div class="row">
-        <h4>Presentador<?= ' '. Html::encode($this->title) ?></h4>
-    </div>
-    <?php 
-    $gridColumnPresentador = [
-        ['attribute' => 'id', 'visible' => false],
-        'afiliacion_id',
-        'Nombre',
-        'Apellido',
-        'Telefono',
-        'Descripcion',
+<?php
+if($providerUserGradoAcademico->totalCount){
+    $gridColumnUserGradoAcademico = [
+        ['class' => 'yii\grid\SerialColumn'],
+                        [
+                'attribute' => 'gradoAcademico.id',
+                'label' => Yii::t('app', 'Grado Academico')
+            ],
     ];
-    echo DetailView::widget([
-        'model' => $model->presentador,
-        'attributes' => $gridColumnPresentador    ]);
-    ?>
+    echo Gridview::widget([
+        'dataProvider' => $providerUserGradoAcademico,
+        'pjax' => true,
+        'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-user-grado-academico']],
+        'panel' => [
+        'type' => GridView::TYPE_PRIMARY,
+        'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode(Yii::t('app', 'User Grado Academico')),
+        ],
+        'columns' => $gridColumnUserGradoAcademico
+    ]);
+}
+?>
+    </div>
+    
+    <div class="row">
+<?php
+if($providerUserSala->totalCount){
+    $gridColumnUserSala = [
+        ['class' => 'yii\grid\SerialColumn'],
+                        [
+                'attribute' => 'sala.id',
+                'label' => Yii::t('app', 'Sala')
+            ],
+    ];
+    echo Gridview::widget([
+        'dataProvider' => $providerUserSala,
+        'pjax' => true,
+        'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-user-sala']],
+        'panel' => [
+        'type' => GridView::TYPE_PRIMARY,
+        'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode(Yii::t('app', 'User Sala')),
+        ],
+        'columns' => $gridColumnUserSala
+    ]);
+}
+?>
+    </div>
 </div>

@@ -1,11 +1,11 @@
 <?php
 
-namespace app\models;
+namespace backend\models;
 
 /**
- * This is the ActiveQuery class for [[\app\models\Provincia]].
+ * This is the ActiveQuery class for [[Provincia]].
  *
- * @see \app\models\Provincia
+ * @see Provincia
  */
 class ProvinciaQuery extends \yii\db\ActiveQuery
 {
@@ -17,7 +17,7 @@ class ProvinciaQuery extends \yii\db\ActiveQuery
 
     /**
      * @inheritdoc
-     * @return \app\models\Provincia[]|array
+     * @return Provincia[]|array
      */
     public function all($db = null)
     {
@@ -26,7 +26,7 @@ class ProvinciaQuery extends \yii\db\ActiveQuery
 
     /**
      * @inheritdoc
-     * @return \app\models\Provincia|array|null
+     * @return Provincia|array|null
      */
     public function one($db = null)
     {

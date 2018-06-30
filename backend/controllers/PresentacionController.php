@@ -28,7 +28,7 @@ class PresentacionController extends Controller
                 'rules' => [
                     [
                         'allow' => true,
-                        'actions' => ['index', 'view', 'create', 'update', 'delete', 'pdf', 'save-as-new', 'add-presentador-presentacion'],
+                        'actions' => ['index', 'view', 'create', 'update', 'delete', 'pdf', 'save-as-new', 'add-presentacion-user'],
                         'roles' => ['@']
                     ],
                     [
@@ -62,12 +62,12 @@ class PresentacionController extends Controller
     public function actionView($id)
     {
         $model = $this->findModel($id);
-        $providerPresentadorPresentacion = new \yii\data\ArrayDataProvider([
-            'allModels' => $model->presentadorPresentacions,
+        $providerPresentacionUser = new \yii\data\ArrayDataProvider([
+            'allModels' => $model->presentacionUsers,
         ]);
         return $this->render('view', [
             'model' => $this->findModel($id),
-            'providerPresentadorPresentacion' => $providerPresentadorPresentacion,
+            'providerPresentacionUser' => $providerPresentacionUser,
         ]);
     }
 
@@ -133,13 +133,13 @@ class PresentacionController extends Controller
      */
     public function actionPdf($id) {
         $model = $this->findModel($id);
-        $providerPresentadorPresentacion = new \yii\data\ArrayDataProvider([
-            'allModels' => $model->presentadorPresentacions,
+        $providerPresentacionUser = new \yii\data\ArrayDataProvider([
+            'allModels' => $model->presentacionUsers,
         ]);
 
         $content = $this->renderAjax('_pdf', [
             'model' => $model,
-            'providerPresentadorPresentacion' => $providerPresentadorPresentacion,
+            'providerPresentacionUser' => $providerPresentacionUser,
         ]);
 
         $pdf = new \kartik\mpdf\Pdf([
@@ -202,19 +202,19 @@ class PresentacionController extends Controller
     
     /**
     * Action to load a tabular form grid
-    * for PresentadorPresentacion
+    * for PresentacionUser
     * @author Yohanes Candrajaya <moo.tensai@gmail.com>
     * @author Jiwantoro Ndaru <jiwanndaru@gmail.com>
     *
     * @return mixed
     */
-    public function actionAddPresentadorPresentacion()
+    public function actionAddPresentacionUser()
     {
         if (Yii::$app->request->isAjax) {
-            $row = Yii::$app->request->post('PresentadorPresentacion');
+            $row = Yii::$app->request->post('PresentacionUser');
             if((Yii::$app->request->post('isNewRecord') && Yii::$app->request->post('_action') == 'load' && empty($row)) || Yii::$app->request->post('_action') == 'add')
                 $row[] = [];
-            return $this->renderAjax('_formPresentadorPresentacion', ['row' => $row]);
+            return $this->renderAjax('_formPresentacionUser', ['row' => $row]);
         } else {
             throw new NotFoundHttpException(Yii::t('app', 'The requested page does not exist.'));
         }

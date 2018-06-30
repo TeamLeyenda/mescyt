@@ -34,48 +34,30 @@ $this->params['breadcrumbs'][] = $this->title;
     
     <div class="row">
 <?php
-if($providerParticipante->totalCount){
-    $gridColumnParticipante = [
+if($providerUser->totalCount){
+    $gridColumnUser = [
         ['class' => 'yii\grid\SerialColumn'],
         ['attribute' => 'id', 'visible' => false],
-                'Nombre',
+                [
+                'attribute' => 'tipoUser.Tipo',
+                'label' => Yii::t('app', 'Tipo User')
+            ],
+        'username',
+        'email:email',
+        'image',
+        'Nombre',
         'Apellido',
         'Telefono',
     ];
     echo Gridview::widget([
-        'dataProvider' => $providerParticipante,
+        'dataProvider' => $providerUser,
         'panel' => [
             'type' => GridView::TYPE_PRIMARY,
-            'heading' => Html::encode(Yii::t('app', 'Participante')),
+            'heading' => Html::encode(Yii::t('app', 'User')),
         ],
         'panelHeadingTemplate' => '<h4>{heading}</h4>{summary}',
         'toggleData' => false,
-        'columns' => $gridColumnParticipante
-    ]);
-}
-?>
-    </div>
-    
-    <div class="row">
-<?php
-if($providerPresentador->totalCount){
-    $gridColumnPresentador = [
-        ['class' => 'yii\grid\SerialColumn'],
-        ['attribute' => 'id', 'visible' => false],
-                'Nombre',
-        'Apellido',
-        'Telefono',
-        'Descripcion:ntext',
-    ];
-    echo Gridview::widget([
-        'dataProvider' => $providerPresentador,
-        'panel' => [
-            'type' => GridView::TYPE_PRIMARY,
-            'heading' => Html::encode(Yii::t('app', 'Presentador')),
-        ],
-        'panelHeadingTemplate' => '<h4>{heading}</h4>{summary}',
-        'toggleData' => false,
-        'columns' => $gridColumnPresentador
+        'columns' => $gridColumnUser
     ]);
 }
 ?>

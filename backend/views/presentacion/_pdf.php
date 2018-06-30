@@ -24,11 +24,11 @@ $this->params['breadcrumbs'][] = $this->title;
     $gridColumn = [
         ['attribute' => 'id', 'visible' => false],
         [
-                'attribute' => 'congreso.id',
+                'attribute' => 'congreso.Nombre',
                 'label' => Yii::t('app', 'Congreso')
             ],
         [
-                'attribute' => 'sala.id',
+                'attribute' => 'sala.Nombre_Sala',
                 'label' => Yii::t('app', 'Sala')
             ],
         'Titulo',
@@ -47,19 +47,23 @@ $this->params['breadcrumbs'][] = $this->title;
     
     <div class="row">
 <?php
-if($providerPresentadorPresentacion->totalCount){
-    $gridColumnPresentadorPresentacion = [
+if($providerPresentacionUser->totalCount){
+    $gridColumnPresentacionUser = [
         ['class' => 'yii\grid\SerialColumn'],
-            ];
+                [
+                'attribute' => 'user.Nombre',
+                'label' => Yii::t('app', 'User')
+            ],
+    ];
     echo Gridview::widget([
-        'dataProvider' => $providerPresentadorPresentacion,
+        'dataProvider' => $providerPresentacionUser,
         'panel' => [
             'type' => GridView::TYPE_PRIMARY,
-            'heading' => Html::encode(Yii::t('app', 'Presentador Presentacion')),
+            'heading' => Html::encode(Yii::t('app', 'Presentacion User')),
         ],
         'panelHeadingTemplate' => '<h4>{heading}</h4>{summary}',
         'toggleData' => false,
-        'columns' => $gridColumnPresentadorPresentacion
+        'columns' => $gridColumnPresentacionUser
     ]);
 }
 ?>
