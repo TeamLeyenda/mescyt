@@ -38,7 +38,7 @@ return [
     'components' => [
         'authManager' => [
             'class' => 'yii\rbac\DbManager', // or use 'yii\rbac\PhpManager'
-            'defaultRoles' => ['administrador', 'moderador', 'presentador','participante'],
+            'defaultRoles' => ['admin', 'moderador', 'presentador','participante'],
         ],
         
         'cache' => [

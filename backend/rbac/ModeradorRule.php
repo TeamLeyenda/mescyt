@@ -1,15 +1,15 @@
 <?php
-namespace app\rbac;
+namespace backend\rbac;
 
 use yii\rbac\Rule;
 use app\models\Post;
 
 /**
- * Checks if authorID matches user passed via params
+ * Checks if ModeradorID matches user passed via params
  */
-class MyRule extends Rule
+class ModeradorRule extends Rule
 {
-    public $name = 'isRule';
+    public $name = 'isModerador';
 
     /**
      * @param string|int $user the user ID.
