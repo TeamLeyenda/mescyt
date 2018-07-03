@@ -23,7 +23,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'afiliacion_id')->widget(\kartik\widgets\Select2::classname(), [
         'data' => \yii\helpers\ArrayHelper::map(\backend\models\Afiliacion::find()->orderBy('id')->asArray()->all(), 'id', 'Afiliacion'),
-        'options' => ['placeholder' => Yii::t('app', 'Choose Afiliacion')],
+        'options' => ['placeholder' => Yii::t('app', 'Elige Afiliacion')],
         'pluginOptions' => [
             'allowClear' => true
         ],
@@ -31,7 +31,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'tipo_user_id')->widget(\kartik\widgets\Select2::classname(), [
         'data' => \yii\helpers\ArrayHelper::map(\backend\models\TipoUser::find()->orderBy('id')->asArray()->all(), 'id', 'Tipo'),
-        'options' => ['placeholder' => Yii::t('app', 'Choose Tipo user')],
+        'options' => ['placeholder' => Yii::t('app', 'Elige Tipo user')],
         'pluginOptions' => [
             'allowClear' => true
         ],

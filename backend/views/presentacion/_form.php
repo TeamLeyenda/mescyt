@@ -27,7 +27,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'congreso_id')->widget(\kartik\widgets\Select2::classname(), [
         'data' => \yii\helpers\ArrayHelper::map(\backend\models\Congreso::find()->orderBy('id')->asArray()->all(), 'id', 'Nombre'),
-        'options' => ['placeholder' => Yii::t('app', 'Choose Congreso')],
+        'options' => ['placeholder' => Yii::t('app', 'Elige Congreso')],
         'pluginOptions' => [
             'allowClear' => true
         ],
@@ -35,7 +35,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'sala_id')->widget(\kartik\widgets\Select2::classname(), [
         'data' => \yii\helpers\ArrayHelper::map(\backend\models\Sala::find()->orderBy('id')->asArray()->all(), 'id', 'Nombre_Sala'),
-        'options' => ['placeholder' => Yii::t('app', 'Choose Sala')],
+        'options' => ['placeholder' => Yii::t('app', 'Elige Sala')],
         'pluginOptions' => [
             'allowClear' => true
         ],
@@ -55,7 +55,7 @@ use yii\widgets\ActiveForm;
         'ajaxConversion' => true,
         'options' => [
             'pluginOptions' => [
-                'placeholder' => Yii::t('app', 'Choose Fecha Inicio'),
+                'placeholder' => Yii::t('app', 'Elige Fecha Inicio'),
                 'autoclose' => true,
             ]
         ],
@@ -67,7 +67,7 @@ use yii\widgets\ActiveForm;
         'ajaxConversion' => true,
         'options' => [
             'pluginOptions' => [
-                'placeholder' => Yii::t('app', 'Choose Fecha Final'),
+                'placeholder' => Yii::t('app', 'Elige Fecha Final'),
                 'autoclose' => true,
             ]
         ],
@@ -76,7 +76,7 @@ use yii\widgets\ActiveForm;
     <?php
     $forms = [
         [
-            'label' => '<i class="glyphicon glyphicon-book"></i> ' . Html::encode(Yii::t('app', 'PresentacionUser')),
+            'label' => '<i class="glyphicon glyphicon-book"></i> ' . Html::encode(Yii::t('app', 'Usuarios')),
             'content' => $this->render('_formPresentacionUser', [
                 'row' => \yii\helpers\ArrayHelper::toArray($model->presentacionUsers),
             ]),
@@ -95,12 +95,12 @@ use yii\widgets\ActiveForm;
     ?>
     <div class="form-group">
     <?php if(Yii::$app->controller->action->id != 'save-as-new'): ?>
-        <?= Html::submitButton($model->isNewRecord ? Yii::t('app', 'Create') : Yii::t('app', 'Update'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        <?= Html::submitButton($model->isNewRecord ? Yii::t('app', 'Añadir') : Yii::t('app', 'Actualizar'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     <?php endif; ?>
     <?php if(Yii::$app->controller->action->id != 'create'): ?>
         <?= Html::submitButton(Yii::t('app', 'Save As New'), ['class' => 'btn btn-info', 'value' => '1', 'name' => '_asnew']) ?>
     <?php endif; ?>
-        <?= Html::a(Yii::t('app', 'Cancel'), Yii::$app->request->referrer , ['class'=> 'btn btn-danger']) ?>
+        <?= Html::a(Yii::t('app', 'Cancelar'), Yii::$app->request->referrer , ['class'=> 'btn btn-danger']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

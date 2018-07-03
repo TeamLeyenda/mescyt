@@ -31,7 +31,7 @@ echo TabularForm::widget([
                 'ajaxConversion' => true,
                 'options' => [
                     'pluginOptions' => [
-                        'placeholder' => Yii::t('app', 'Choose Fecha Inicio'),
+                        'placeholder' => Yii::t('app', 'Elige Fecha Inicio'),
                         'autoclose' => true,
                     ]
                 ],
@@ -45,7 +45,7 @@ echo TabularForm::widget([
                 'ajaxConversion' => true,
                 'options' => [
                     'pluginOptions' => [
-                        'placeholder' => Yii::t('app', 'Choose Fecha Final'),
+                        'placeholder' => Yii::t('app', 'Elige Fecha Final'),
                         'autoclose' => true,
                     ]
                 ],

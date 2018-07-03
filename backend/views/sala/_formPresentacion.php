@@ -28,7 +28,7 @@ echo TabularForm::widget([
             'widgetClass' => \kartik\widgets\Select2::className(),
             'options' => [
                 'data' => \yii\helpers\ArrayHelper::map(\backend\models\Congreso::find()->orderBy('Nombre')->asArray()->all(), 'id', 'Nombre'),
-                'options' => ['placeholder' => Yii::t('app', 'Choose Congreso')],
+                'options' => ['placeholder' => Yii::t('app', 'Elige Congreso')],
             ],
             'columnOptions' => ['width' => '200px']
         ],
@@ -44,7 +44,7 @@ echo TabularForm::widget([
                 'ajaxConversion' => true,
                 'options' => [
                     'pluginOptions' => [
-                        'placeholder' => Yii::t('app', 'Choose Fecha Inicio'),
+                        'placeholder' => Yii::t('app', 'Elige Fecha Inicio'),
                         'autoclose' => true,
                     ]
                 ],
@@ -58,7 +58,7 @@ echo TabularForm::widget([
                 'ajaxConversion' => true,
                 'options' => [
                     'pluginOptions' => [
-                        'placeholder' => Yii::t('app', 'Choose Fecha Final'),
+                        'placeholder' => Yii::t('app', 'Elige Fecha Final'),
                         'autoclose' => true,
                     ]
                 ],

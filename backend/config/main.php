@@ -121,15 +121,15 @@ return [
         ],
         */
         
-        /*
+        
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => true,
             'rules' => [
-                '<alias:\w+>' => 'site/<alias>',
+                //'<alias:\w+>' => 'site/<alias>',
             ],
         ],
-        */
+        
         
     ],
 

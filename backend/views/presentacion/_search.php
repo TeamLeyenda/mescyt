@@ -19,7 +19,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'congreso_id')->widget(\kartik\widgets\Select2::classname(), [
         'data' => \yii\helpers\ArrayHelper::map(\backend\models\Congreso::find()->orderBy('id')->asArray()->all(), 'id', 'Nombre'),
-        'options' => ['placeholder' => Yii::t('app', 'Choose Congreso')],
+        'options' => ['placeholder' => Yii::t('app', 'Elige Congreso')],
         'pluginOptions' => [
             'allowClear' => true
         ],
@@ -27,7 +27,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'sala_id')->widget(\kartik\widgets\Select2::classname(), [
         'data' => \yii\helpers\ArrayHelper::map(\backend\models\Sala::find()->orderBy('id')->asArray()->all(), 'id', 'Nombre_Sala'),
-        'options' => ['placeholder' => Yii::t('app', 'Choose Sala')],
+        'options' => ['placeholder' => Yii::t('app', 'Elige Sala')],
         'pluginOptions' => [
             'allowClear' => true
         ],
@@ -47,7 +47,7 @@ use yii\widgets\ActiveForm;
         'ajaxConversion' => true,
         'options' => [
             'pluginOptions' => [
-                'placeholder' => Yii::t('app', 'Choose Fecha Inicio'),
+                'placeholder' => Yii::t('app', 'Elige Fecha Inicio'),
                 'autoclose' => true,
             ]
         ],
@@ -59,7 +59,7 @@ use yii\widgets\ActiveForm;
         'ajaxConversion' => true,
         'options' => [
             'pluginOptions' => [
-                'placeholder' => Yii::t('app', 'Choose Fecha Final'),
+                'placeholder' => Yii::t('app', 'Elige Fecha Final'),
                 'autoclose' => true,
             ]
         ],

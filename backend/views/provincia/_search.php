@@ -19,7 +19,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'pais_id')->widget(\kartik\widgets\Select2::classname(), [
         'data' => \yii\helpers\ArrayHelper::map(\backend\models\Pais::find()->orderBy('id')->asArray()->all(), 'id', 'Pais'),
-        'options' => ['placeholder' => Yii::t('app', 'Choose Pais')],
+        'options' => ['placeholder' => Yii::t('app', 'Elige Pais')],
         'pluginOptions' => [
             'allowClear' => true
         ],

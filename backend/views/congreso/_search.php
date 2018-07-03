@@ -19,7 +19,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'provincia_id')->widget(\kartik\widgets\Select2::classname(), [
         'data' => \yii\helpers\ArrayHelper::map(\backend\models\Provincia::find()->orderBy('id')->asArray()->all(), 'id', 'Provincia'),
-        'options' => ['placeholder' => Yii::t('app', 'Choose Provincia')],
+        'options' => ['placeholder' => Yii::t('app', 'Elige Provincia')],
         'pluginOptions' => [
             'allowClear' => true
         ],
@@ -33,7 +33,7 @@ use yii\widgets\ActiveForm;
         'ajaxConversion' => true,
         'options' => [
             'pluginOptions' => [
-                'placeholder' => Yii::t('app', 'Choose Fecha Inicio'),
+                'placeholder' => Yii::t('app', 'Elige Fecha Inicio'),
                 'autoclose' => true,
             ]
         ],
@@ -45,7 +45,7 @@ use yii\widgets\ActiveForm;
         'ajaxConversion' => true,
         'options' => [
             'pluginOptions' => [
-                'placeholder' => Yii::t('app', 'Choose Fecha Final'),
+                'placeholder' => Yii::t('app', 'Elige Fecha Final'),
                 'autoclose' => true,
             ]
         ],

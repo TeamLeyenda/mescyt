@@ -9,7 +9,7 @@
         "wiki": "https://github.com/tunecino/yii2-app-builder/wiki",
         "source": "https://github.com/tunecino/yii2-app-builder"
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
         "php": ">=5.4.0",

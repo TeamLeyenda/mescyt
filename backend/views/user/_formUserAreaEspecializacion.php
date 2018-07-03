@@ -27,7 +27,7 @@ echo TabularForm::widget([
             'widgetClass' => \kartik\widgets\Select2::className(),
             'options' => [
                 'data' => \yii\helpers\ArrayHelper::map(\backend\models\AreaEspecializacion::find()->orderBy('id')->asArray()->all(), 'id', 'id'),
-                'options' => ['placeholder' => Yii::t('app', 'Choose Area especializacion')],
+                'options' => ['placeholder' => Yii::t('app', 'Elige Area especializacion')],
             ],
             'columnOptions' => ['width' => '200px']
         ],

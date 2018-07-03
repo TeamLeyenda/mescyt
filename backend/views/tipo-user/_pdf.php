@@ -53,7 +53,7 @@ if($providerUser->totalCount){
         'dataProvider' => $providerUser,
         'panel' => [
             'type' => GridView::TYPE_PRIMARY,
-            'heading' => Html::encode(Yii::t('app', 'User')),
+            'heading' => Html::encode(Yii::t('app', 'Usuario')),
         ],
         'panelHeadingTemplate' => '<h4>{heading}</h4>{summary}',
         'toggleData' => false,

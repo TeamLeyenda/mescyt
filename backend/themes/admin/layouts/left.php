@@ -43,9 +43,9 @@ $name = Yii::$app->user->identity->username;
                                 'url' => '#',
                                 'items' => [
                                     ['label' => 'Registrar', 'icon' => 'sign-in', 'url' => ['/admin/user/signup'],],
-                                    ['label' => 'Participante', 'icon' => 'user', 'url' => ['/participante'],],
-                                    ['label' => 'Presentador', 'icon' => 'user', 'url' => ['/presentador'],],
-                                    ['label' => 'Moderador', 'icon' => 'user', 'url' => ['/moderador'],],
+                                    ['label' => 'Participante', 'icon' => 'user', 'url' => ['/tipo-user/view?id=4'],],
+                                    ['label' => 'Presentador', 'icon' => 'user', 'url' => ['/tipo-user/view?id=3'],],
+                                    ['label' => 'Moderador', 'icon' => 'user', 'url' => ['/tipo-user/view?id=2'],],
                                     ['label' => 'Usuarios', 'icon' => 'user', 'url' => ['/user'],],
                                 ],
                             ],

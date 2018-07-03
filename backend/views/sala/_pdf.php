@@ -70,7 +70,7 @@ if($providerUserSala->totalCount){
         ['class' => 'yii\grid\SerialColumn'],
         [
                 'attribute' => 'user.Nombre',
-                'label' => Yii::t('app', 'User')
+                'label' => Yii::t('app', 'Usuario')
             ],
             ];
     echo Gridview::widget([

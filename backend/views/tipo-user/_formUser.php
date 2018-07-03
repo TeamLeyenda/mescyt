@@ -30,7 +30,7 @@ echo TabularForm::widget([
             'widgetClass' => \kartik\widgets\Select2::className(),
             'options' => [
                 'data' => \yii\helpers\ArrayHelper::map(\backend\models\Afiliacion::find()->orderBy('Afiliacion')->asArray()->all(), 'id', 'Afiliacion'),
-                'options' => ['placeholder' => Yii::t('app', 'Choose Afiliacion')],
+                'options' => ['placeholder' => Yii::t('app', 'Elige Afiliacion')],
             ],
             'columnOptions' => ['width' => '200px']
         ],

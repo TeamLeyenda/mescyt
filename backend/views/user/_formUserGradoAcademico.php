@@ -27,7 +27,7 @@ echo TabularForm::widget([
             'widgetClass' => \kartik\widgets\Select2::className(),
             'options' => [
                 'data' => \yii\helpers\ArrayHelper::map(\backend\models\GradoAcademico::find()->orderBy('id')->asArray()->all(), 'id', 'id'),
-                'options' => ['placeholder' => Yii::t('app', 'Choose Grado academico')],
+                'options' => ['placeholder' => Yii::t('app', 'Elige Grado academico')],
             ],
             'columnOptions' => ['width' => '200px']
         ],

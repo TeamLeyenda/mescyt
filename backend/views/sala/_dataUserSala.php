@@ -12,7 +12,7 @@ use yii\data\ArrayDataProvider;
         ['class' => 'yii\grid\SerialColumn'],
         [
                 'attribute' => 'user.Nombre',
-                'label' => Yii::t('app', 'User')
+                'label' => Yii::t('app', 'Usuario')
             ],
         [
             'class' => 'yii\grid\ActionColumn',
