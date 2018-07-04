@@ -7,6 +7,10 @@
 use yii\helpers\Html;
 use kartik\export\ExportMenu;
 use kartik\grid\GridView;
+use backend\assets\AdminLtePluginAsset;
+use backend\assets\AppAsset;
+AdminLtePluginAsset::register($this);
+AppAsset::register($this);
 
 $this->title = Yii::t('app', 'Users');
 $this->params['breadcrumbs'][] = $this->title;
@@ -101,7 +105,16 @@ $this->registerJs($search);
             'type' => GridView::TYPE_PRIMARY,
             'heading' => '<span class="glyphicon glyphicon-book"></span>  ' . Html::encode($this->title),
         ],
+
+        'toolbar' =>  [
+            '{export}',
+            '{toggleData}',
+        ],
+        'export' => [
+            'fontAwesome' => true
+        ],
         // your toolbar can include the additional full export menu
+        /*
         'toolbar' => [
             '{export}',
             ExportMenu::widget([
@@ -118,6 +131,7 @@ $this->registerJs($search);
                 ],
             ]) ,
         ],
+        */
     ]); ?>
 
 </div>
