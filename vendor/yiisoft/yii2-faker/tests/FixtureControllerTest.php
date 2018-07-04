@@ -1,6 +1,11 @@
 <?php
+/**
+ * @link http://www.yiiframework.com/
+ * @copyright Copyright (c) 2008 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
 
-namespace yiiunit\extensions\faker;
+namespace yiiunit\faker;
 
 use Yii;
 use yii\faker\FixtureController;
@@ -14,11 +19,14 @@ use yii\faker\FixtureController;
 class FixtureControllerTest extends TestCase
 {
     /**
-     * @var \yiiunit\extensions\faker\FixtureConsoledController
+     * @var FixtureConsoledController
      */
     private $_fixtureController;
 
 
+    /**
+     * {@inheritdoc}
+     */
     protected function setUp()
     {
         parent::setUp();
@@ -31,13 +39,16 @@ class FixtureControllerTest extends TestCase
         $this->mockApplication();
 
         $this->_fixtureController = Yii::createObject([
-            'class' => 'yiiunit\extensions\faker\FixtureConsoledController',
+            'class' => 'yiiunit\faker\FixtureConsoledController',
             'interactive' => false,
             'fixtureDataPath' => '@runtime/faker',
-            'templatePath' => '@yiiunit/extensions/faker/data/templates'
+            'templatePath' => '@yiiunit/faker/data/templates'
         ],['fixture-faker', Yii::$app]);
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function tearDown()
     {
         @unlink(Yii::getAlias('@runtime/faker/user.php'));
@@ -91,7 +102,7 @@ class FixtureControllerTest extends TestCase
         $bookFilename = Yii::getAlias('@runtime/faker/book.php');
         $this->assertFileNotExists($bookFilename, 'file to be generated should not exist before');
 
-        $this->_fixtureController->providers[] = 'yiiunit\extensions\faker\data\providers\Book';
+        $this->_fixtureController->providers[] = 'yiiunit\faker\data\providers\Book';
         $this->_fixtureController->run('generate',['book']);
         $this->assertFileExists($bookFilename, 'fixture template file should be generated');
     }
@@ -150,7 +161,7 @@ class FixtureControllerTest extends TestCase
         $bookFilename = Yii::getAlias('@runtime/faker/book.php');
         $this->assertFileNotExists($bookFilename, 'file to be generated should not exist before');
 
-        $this->_fixtureController->providers[] = 'yiiunit\extensions\faker\data\providers\Book';
+        $this->_fixtureController->providers[] = 'yiiunit\faker\data\providers\Book';
         $this->_fixtureController->run('generate-all');
 
         $this->assertFileExists($userFilename, 'fixture template file should be generated');
@@ -162,9 +173,7 @@ class FixtureControllerTest extends TestCase
 
 class FixtureConsoledController extends FixtureController
 {
-
     public function stdout($string)
     {
     }
-
 }

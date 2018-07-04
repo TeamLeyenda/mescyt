@@ -1,21 +1,4 @@
 <?php
-/*
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
- * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
- * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
- * A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
- * OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
- * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
- * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
- * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
- * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
- * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
- * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
- *
- * This software consists of voluntary contributions made by many individuals
- * and is licensed under the MIT license. For more information, see
- * <http://www.doctrine-project.org>.
- */
 
 namespace DoctrineTest\InstantiatorTest;
 
@@ -41,19 +24,18 @@ use PDORow;
 use PharException;
 use PHPUnit\Framework\TestCase;
 use stdClass;
+use function defined;
+use function str_replace;
+use function uniqid;
 
 /**
  * Tests for {@see \Doctrine\Instantiator\Instantiator}
- *
- * @author Marco Pivetta <ocramius@gmail.com>
  *
  * @covers \Doctrine\Instantiator\Instantiator
  */
 class InstantiatorTest extends TestCase
 {
-    /**
-     * @var Instantiator
-     */
+    /** @var Instantiator */
     private $instantiator;
 
     /**
@@ -71,7 +53,7 @@ class InstantiatorTest extends TestCase
      */
     public function testCanInstantiate(string $className) : void
     {
-        $this->assertInstanceOf($className, $this->instantiator->instantiate($className));
+        self::assertInstanceOf($className, $this->instantiator->instantiate($className));
     }
 
     /**
@@ -82,8 +64,8 @@ class InstantiatorTest extends TestCase
         $instance1 = $this->instantiator->instantiate($className);
         $instance2 = $this->instantiator->instantiate($className);
 
-        $this->assertEquals($instance1, $instance2);
-        $this->assertNotSame($instance1, $instance2);
+        self::assertEquals($instance1, $instance2);
+        self::assertNotSame($instance1, $instance2);
     }
 
     public function testExceptionOnUnSerializationException() : void
@@ -122,7 +104,7 @@ class InstantiatorTest extends TestCase
 
         $instance2 = $this->instantiator->instantiate(__NAMESPACE__ . '\\' . $className);
 
-        $this->assertObjectNotHasAttribute('foo', $instance2);
+        self::assertObjectNotHasAttribute('foo', $instance2);
     }
 
     /**
@@ -134,7 +116,7 @@ class InstantiatorTest extends TestCase
     {
         return [
             [stdClass::class],
-            [__CLASS__],
+            [self::class],
             [Instantiator::class],
             [Exception::class],
             [PharException::class],
@@ -161,10 +143,10 @@ class InstantiatorTest extends TestCase
     public function getInvalidClassNames() : array
     {
         return [
-            [__CLASS__ . str_replace('.', '', uniqid('', true))],
+            [self::class . str_replace('.', '', uniqid('', true))],
             [InstantiatorInterface::class],
             [AbstractClassAsset::class],
-            [SimpleTraitAsset::class]
+            [SimpleTraitAsset::class],
         ];
     }
 }

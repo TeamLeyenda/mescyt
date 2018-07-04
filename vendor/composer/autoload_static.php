@@ -12,6 +12,7 @@ class ComposerStaticInitf8aa444fadf5e861a9b2931a0751dc85
         '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         '5255c38a0faeba867671b61dfda6d864' => __DIR__ . '/..' . '/paragonie/random_compat/lib/random.php',
+        '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
         'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
         '180092cfc969a12e06f2132a203a3184' => __DIR__ . '/..' . '/codeception/verify/src/Codeception/function.php',
@@ -156,6 +157,7 @@ class ComposerStaticInitf8aa444fadf5e861a9b2931a0751dc85
         'D' => 
         array (
             'Doctrine\\Instantiator\\' => 22,
+            'Doctrine\\Common\\Lexer\\' => 22,
             'DeepCopy\\' => 9,
         ),
         'C' => 
@@ -174,7 +176,7 @@ class ComposerStaticInitf8aa444fadf5e861a9b2931a0751dc85
         ),
         'yii\\jui\\' => 
         array (
-            0 => __DIR__ . '/..' . '/yiisoft/yii2-jui',
+            0 => __DIR__ . '/..' . '/yiisoft/yii2-jui/src',
         ),
         'yii\\gii\\' => 
         array (
@@ -182,11 +184,11 @@ class ComposerStaticInitf8aa444fadf5e861a9b2931a0751dc85
         ),
         'yii\\faker\\' => 
         array (
-            0 => __DIR__ . '/..' . '/yiisoft/yii2-faker',
+            0 => __DIR__ . '/..' . '/yiisoft/yii2-faker/src',
         ),
         'yii\\debug\\' => 
         array (
-            0 => __DIR__ . '/..' . '/yiisoft/yii2-debug',
+            0 => __DIR__ . '/..' . '/yiisoft/yii2-debug/src',
         ),
         'yii\\composer\\' => 
         array (
@@ -261,7 +263,7 @@ class ComposerStaticInitf8aa444fadf5e861a9b2931a0751dc85
         ),
         'kartik\\tree\\' => 
         array (
-            0 => __DIR__ . '/..' . '/kartik-v/yii2-tree-manager',
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-tree-manager/src',
         ),
         'kartik\\touchspin\\' => 
         array (
@@ -499,6 +501,10 @@ class ComposerStaticInitf8aa444fadf5e861a9b2931a0751dc85
         array (
             0 => __DIR__ . '/..' . '/doctrine/instantiator/src/Doctrine/Instantiator',
         ),
+        'Doctrine\\Common\\Lexer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/lexer/lib/Doctrine/Common/Lexer',
+        ),
         'DeepCopy\\' => 
         array (
             0 => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy',
@@ -546,10 +552,6 @@ class ComposerStaticInitf8aa444fadf5e861a9b2931a0751dc85
         ),
         'D' => 
         array (
-            'Doctrine\\Common\\Lexer\\' => 
-            array (
-                0 => __DIR__ . '/..' . '/doctrine/lexer/lib',
-            ),
             'Diff' => 
             array (
                 0 => __DIR__ . '/..' . '/phpspec/php-diff/lib',
