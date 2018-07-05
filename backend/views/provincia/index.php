@@ -80,7 +80,7 @@ $this->registerJs($search);
             'heading' => '<span class="glyphicon glyphicon-book"></span>  ' . Html::encode($this->title),
         ],
         // your toolbar can include the additional full export menu
-        'toolbar' => [
+        /*'toolbar' => [
             '{export}',
             ExportMenu::widget([
                 'dataProvider' => $dataProvider,
@@ -96,6 +96,7 @@ $this->registerJs($search);
                 ],
             ]) ,
         ],
+        */
     ]); ?>
 
 </div>
