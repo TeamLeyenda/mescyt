@@ -13,7 +13,7 @@
     "prefer-stable": true,
     "require": {
         "php": ">=5.4.0",
-        "yiisoft/yii2": "2.0.15.1",
+        "yiisoft/yii2": "2.0.16-dev",
         "yiisoft/yii2-bootstrap": "^2.0",
         "tunecino/yii2-schema-builder": "^0.1.5",
         "dmstr/yii2-adminlte-asset": "^2.6",
