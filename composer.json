@@ -35,7 +35,8 @@
         "jamband/yii2-schemadump": "^0.10.0",
         "kartik-v/yii2-social": "@dev",
         "chiliec/yii2-vote": "^4.2",
-        "machour/yii2-notifications": "^1.0@dev"
+        "machour/yii2-notifications": "^1.0@dev",
+        "2amigos/yii2-chartjs-widget": "^2.1"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",

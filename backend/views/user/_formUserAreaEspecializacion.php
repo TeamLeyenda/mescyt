@@ -35,7 +35,7 @@ echo TabularForm::widget([
             'type' => 'raw',
             'label' => '',
             'value' => function($model, $key) {
-                return Html::a('<i class="glyphicon glyphicon-trash"></i>', '#', ['title' =>  Yii::t('app', 'Delete'), 'onClick' => 'delRowUserAreaEspecializacion(' . $key . '); return false;', 'id' => 'user-area-especializacion-del-btn']);
+                return Html::a('<i class="glyphicon glyphicon-trash"></i>', '#', ['title' =>  Yii::t('app', 'Eliminar'), 'onClick' => 'delRowUserAreaEspecializacion(' . $key . '); return false;', 'id' => 'user-area-especializacion-del-btn']);
             },
         ],
     ],

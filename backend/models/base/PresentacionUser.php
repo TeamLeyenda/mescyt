@@ -55,8 +55,8 @@ class PresentacionUser extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'presentacion_id' => Yii::t('app', 'Presentacion ID'),
-            'user_id' => Yii::t('app', 'User ID'),
+            'presentacion_id' => Yii::t('app', 'Presentacion'),
+            'user_id' => Yii::t('app', 'User'),
         ];
     }
     

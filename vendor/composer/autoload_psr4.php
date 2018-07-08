@@ -64,6 +64,7 @@ return array(
     'kartik\\affix\\' => array($vendorDir . '/kartik-v/yii2-widget-affix'),
     'jamband\\schemadump\\tests\\' => array($vendorDir . '/jamband/yii2-schemadump/tests'),
     'jamband\\schemadump\\' => array($vendorDir . '/jamband/yii2-schemadump/src'),
+    'dosamigos\\chartjs\\' => array($vendorDir . '/2amigos/yii2-chartjs-widget/src'),
     'dmstr\\' => array($vendorDir . '/dmstr/yii2-adminlte-asset'),
     'dixonsatit\\agencyTheme\\' => array($vendorDir . '/dixonsatit/yii2-agency-theme'),
     'dee\\gii\\' => array($vendorDir . '/deesoft/yii2-gii'),

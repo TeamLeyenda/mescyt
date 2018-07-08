@@ -104,6 +104,7 @@ class ComposerStaticInitf8aa444fadf5e861a9b2931a0751dc85
         ),
         'd' => 
         array (
+            'dosamigos\\chartjs\\' => 18,
             'dmstr\\' => 6,
             'dixonsatit\\agencyTheme\\' => 23,
             'dee\\gii\\' => 8,
@@ -408,6 +409,10 @@ class ComposerStaticInitf8aa444fadf5e861a9b2931a0751dc85
         'jamband\\schemadump\\' => 
         array (
             0 => __DIR__ . '/..' . '/jamband/yii2-schemadump/src',
+        ),
+        'dosamigos\\chartjs\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/2amigos/yii2-chartjs-widget/src',
         ),
         'dmstr\\' => 
         array (
