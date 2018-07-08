@@ -22,8 +22,8 @@ $this->registerJs($search);
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a(Yii::t('app', 'Añadir Presentacion'), ['create'], ['class' => 'btn btn-success']) ?>
-        <?= Html::a(Yii::t('app', 'Busqueda avanzada'), '#', ['class' => 'btn btn-info search-button']) ?>
+        <?= Html::a(Yii::t('app', 'Create Presentacion'), ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a(Yii::t('app', 'Advance Search'), '#', ['class' => 'btn btn-info search-button']) ?>
     </p>
     <div class="search-form" style="display:none">
         <?=  $this->render('_search', ['model' => $searchModel]); ?>
@@ -47,8 +47,8 @@ $this->registerJs($search);
         [
                 'attribute' => 'congreso_id',
                 'label' => Yii::t('app', 'Congreso'),
-                'value' => function($model){
-                    return $model->congreso->Nombre;
+                'value' => function($model){                   
+                    return $model->congreso->Nombre;                   
                 },
                 'filterType' => GridView::FILTER_SELECT2,
                 'filter' => \yii\helpers\ArrayHelper::map(\backend\models\Congreso::find()->asArray()->all(), 'id', 'Nombre'),
@@ -61,7 +61,10 @@ $this->registerJs($search);
                 'attribute' => 'sala_id',
                 'label' => Yii::t('app', 'Sala'),
                 'value' => function($model){
-                    return $model->sala->Nombre_Sala;
+                    if ($model->sala)
+                    {return $model->sala->Nombre_Sala;}
+                    else
+                    {return NULL;}
                 },
                 'filterType' => GridView::FILTER_SELECT2,
                 'filter' => \yii\helpers\ArrayHelper::map(\backend\models\Sala::find()->asArray()->all(), 'id', 'Nombre_Sala'),
@@ -76,6 +79,8 @@ $this->registerJs($search);
         'Modalidad_Presentacion',
         'Fecha_Inicio',
         'Fecha_Final',
+        'Vinculo',
+        'Archivo',
         [
             'class' => 'yii\grid\ActionColumn',
             'template' => '{save-as-new} {view} {update} {delete}',

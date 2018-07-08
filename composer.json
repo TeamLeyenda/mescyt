@@ -10,10 +10,9 @@
         "source": "https://github.com/tunecino/yii2-app-builder"
     },
     "minimum-stability": "dev",
-    "prefer-stable": true,
     "require": {
         "php": ">=5.4.0",
-        "yiisoft/yii2": "2.0.16-dev",
+        "yiisoft/yii2": "^2.0@dev",
         "yiisoft/yii2-bootstrap": "^2.0",
         "tunecino/yii2-schema-builder": "^0.1.5",
         "dmstr/yii2-adminlte-asset": "^2.6",
@@ -21,7 +20,7 @@
         "mootensai/yii2-uuid-behavior": "^1.0",
         "wbraganca/yii2-dynamicform": "^2.0",
         "kartik-v/yii2-widget-select2": "^2.1",
-        "mootensai/yii2-enhanced-gii": "^1.0",
+        "mootensai/yii2-enhanced-gii": "dev-master",
         "mootensai/yii2-relation-trait": "^1.1",
         "kartik-v/yii2-mpdf": "^1.0",
         "deesoft/yii2-gii": "^1.4",

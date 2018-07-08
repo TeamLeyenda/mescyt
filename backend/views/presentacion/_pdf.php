@@ -8,7 +8,7 @@ use kartik\grid\GridView;
 /* @var $model backend\models\Presentacion */
 
 $this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Presentaciones'), 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Presentacions'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="presentacion-view">
@@ -37,6 +37,8 @@ $this->params['breadcrumbs'][] = $this->title;
         'Modalidad_Presentacion',
         'Fecha_Inicio',
         'Fecha_Final',
+        'Vinculo',
+        'Archivo',
     ];
     echo DetailView::widget([
         'model' => $model,
@@ -51,15 +53,15 @@ if($providerPresentacionUser->totalCount){
     $gridColumnPresentacionUser = [
         ['class' => 'yii\grid\SerialColumn'],
                 [
-                'attribute' => 'user.username',
-                'label' => Yii::t('app', 'Usuario')
+                'attribute' => 'user.Nombre',
+                'label' => Yii::t('app', 'User')
             ],
     ];
     echo Gridview::widget([
         'dataProvider' => $providerPresentacionUser,
         'panel' => [
             'type' => GridView::TYPE_PRIMARY,
-            'heading' => Html::encode(Yii::t('app', 'Usuarios')),
+            'heading' => Html::encode(Yii::t('app', 'Presentacion User')),
         ],
         'panelHeadingTemplate' => '<h4>{heading}</h4>{summary}',
         'toggleData' => false,

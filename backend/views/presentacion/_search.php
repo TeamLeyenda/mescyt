@@ -19,7 +19,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'congreso_id')->widget(\kartik\widgets\Select2::classname(), [
         'data' => \yii\helpers\ArrayHelper::map(\backend\models\Congreso::find()->orderBy('id')->asArray()->all(), 'id', 'Nombre'),
-        'options' => ['placeholder' => Yii::t('app', 'Elige Congreso')],
+        'options' => ['placeholder' => Yii::t('app', 'Choose Congreso')],
         'pluginOptions' => [
             'allowClear' => true
         ],
@@ -27,7 +27,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'sala_id')->widget(\kartik\widgets\Select2::classname(), [
         'data' => \yii\helpers\ArrayHelper::map(\backend\models\Sala::find()->orderBy('id')->asArray()->all(), 'id', 'Nombre_Sala'),
-        'options' => ['placeholder' => Yii::t('app', 'Elige Sala')],
+        'options' => ['placeholder' => Yii::t('app', 'Choose Sala')],
         'pluginOptions' => [
             'allowClear' => true
         ],
@@ -47,7 +47,7 @@ use yii\widgets\ActiveForm;
         'ajaxConversion' => true,
         'options' => [
             'pluginOptions' => [
-                'placeholder' => Yii::t('app', 'Elige Fecha Inicio'),
+                'placeholder' => Yii::t('app', 'Choose Fecha Inicio'),
                 'autoclose' => true,
             ]
         ],
@@ -59,11 +59,15 @@ use yii\widgets\ActiveForm;
         'ajaxConversion' => true,
         'options' => [
             'pluginOptions' => [
-                'placeholder' => Yii::t('app', 'Elige Fecha Final'),
+                'placeholder' => Yii::t('app', 'Choose Fecha Final'),
                 'autoclose' => true,
             ]
         ],
     ]); */ ?>
+
+    <?php /* echo $form->field($model, 'Vinculo')->textInput(['maxlength' => true, 'placeholder' => 'Vinculo']) */ ?>
+
+    <?php /* echo $form->field($model, 'Archivo')->textInput(['placeholder' => 'Archivo']) */ ?>
 
     <div class="form-group">
         <?= Html::submitButton(Yii::t('app', 'Search'), ['class' => 'btn btn-primary']) ?>

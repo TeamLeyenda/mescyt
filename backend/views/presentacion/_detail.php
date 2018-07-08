@@ -34,6 +34,8 @@ use kartik\grid\GridView;
         'Modalidad_Presentacion',
         'Fecha_Inicio',
         'Fecha_Final',
+        'Vinculo',
+        'Archivo',
     ];
     echo DetailView::widget([
         'model' => $model,

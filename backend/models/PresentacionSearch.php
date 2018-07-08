@@ -19,7 +19,7 @@ use backend\models\Presentacion;
     {
         return [
             [['id', 'congreso_id', 'sala_id'], 'integer'],
-            [['Titulo', 'Institucion', 'Area_Tematica', 'Modalidad_Presentacion', 'Fecha_Inicio', 'Fecha_Final'], 'safe'],
+            [['Titulo', 'Institucion', 'Area_Tematica', 'Modalidad_Presentacion', 'Fecha_Inicio', 'Fecha_Final', 'Vinculo', 'Archivo'], 'safe'],
         ];
     }
 
@@ -66,7 +66,9 @@ use backend\models\Presentacion;
         $query->andFilterWhere(['like', 'Titulo', $this->Titulo])
             ->andFilterWhere(['like', 'Institucion', $this->Institucion])
             ->andFilterWhere(['like', 'Area_Tematica', $this->Area_Tematica])
-            ->andFilterWhere(['like', 'Modalidad_Presentacion', $this->Modalidad_Presentacion]);
+            ->andFilterWhere(['like', 'Modalidad_Presentacion', $this->Modalidad_Presentacion])
+            ->andFilterWhere(['like', 'Vinculo', $this->Vinculo])
+            ->andFilterWhere(['like', 'Archivo', $this->Archivo]);
 
         return $dataProvider;
     }

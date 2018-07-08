@@ -18,7 +18,6 @@ $this->registerJs($search);
 ?>
 <div class="provincia-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
@@ -44,6 +43,7 @@ $this->registerJs($search);
             'expandOneOnly' => true
         ],
         ['attribute' => 'id', 'visible' => false],
+        'Provincia',
         [
                 'attribute' => 'pais_id',
                 'label' => Yii::t('app', 'Pais'),
@@ -57,7 +57,6 @@ $this->registerJs($search);
                 ],
                 'filterInputOptions' => ['placeholder' => 'Pais', 'id' => 'grid-provincia-search-pais_id']
             ],
-        'Provincia',
         [
             'class' => 'yii\grid\ActionColumn',
             'template' => '{save-as-new} {view} {update} {delete}',
@@ -77,10 +76,13 @@ $this->registerJs($search);
         'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-provincia']],
         'panel' => [
             'type' => GridView::TYPE_PRIMARY,
-            'heading' => '<span class="glyphicon glyphicon-book"></span>  ' . Html::encode($this->title),
+            'heading' => '<span class="glyphicon glyphicon-globe"></span>  ',
+            //'heading' => '<span class="glyphicon glyphicon-book"></span>  ' . Html::encode($this->title),
+            //'heading' => false,
+            //'footer' => false,
         ],
         // your toolbar can include the additional full export menu
-        /*'toolbar' => [
+        'toolbar' => [
             '{export}',
             ExportMenu::widget([
                 'dataProvider' => $dataProvider,
@@ -96,7 +98,6 @@ $this->registerJs($search);
                 ],
             ]) ,
         ],
-        */
     ]); ?>
 
 </div>
