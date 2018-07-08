@@ -17,6 +17,19 @@ class PresentacionUser extends \yii\db\ActiveRecord
 {
     use \mootensai\relation\RelationTrait;
 
+
+    /**
+    * This function helps \mootensai\relation\RelationTrait runs faster
+    * @return array relation names of this model
+    */
+    public function relationNames()
+    {
+        return [
+            'presentacion',
+            'user'
+        ];
+    }
+
     /**
      * @inheritdoc
      */
@@ -27,7 +40,7 @@ class PresentacionUser extends \yii\db\ActiveRecord
             [['presentacion_id', 'user_id'], 'integer']
         ];
     }
-    
+
     /**
      * @inheritdoc
      */
@@ -42,8 +55,8 @@ class PresentacionUser extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'presentacion_id' => Yii::t('app', 'Presentacion'),
-            'user_id' => Yii::t('app', 'User'),
+            'presentacion_id' => Yii::t('app', 'Presentacion ID'),
+            'user_id' => Yii::t('app', 'User ID'),
         ];
     }
     
@@ -63,6 +76,7 @@ class PresentacionUser extends \yii\db\ActiveRecord
         return $this->hasOne(\backend\models\User::className(), ['id' => 'user_id']);
     }
     
+
     /**
      * @inheritdoc
      * @return \backend\models\PresentacionUserQuery the active query used by this AR class.

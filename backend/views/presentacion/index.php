@@ -8,7 +8,7 @@ use yii\helpers\Html;
 use kartik\export\ExportMenu;
 use kartik\grid\GridView;
 
-$this->title = Yii::t('app', 'Presentacions');
+$this->title = Yii::t('app', 'Presentaciones');
 $this->params['breadcrumbs'][] = $this->title;
 $search = "$('.search-button').click(function(){
 	$('.search-form').toggle(1000);
@@ -79,8 +79,8 @@ $this->registerJs($search);
         'Modalidad_Presentacion',
         'Fecha_Inicio',
         'Fecha_Final',
-        'Vinculo',
-        'Archivo',
+        //'Vinculo',
+        //'Archivo',
         [
             'class' => 'yii\grid\ActionColumn',
             'template' => '{save-as-new} {view} {update} {delete}',
@@ -100,7 +100,8 @@ $this->registerJs($search);
         'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-presentacion']],
         'panel' => [
             'type' => GridView::TYPE_PRIMARY,
-            'heading' => '<span class="glyphicon glyphicon-book"></span>  ' . Html::encode($this->title),
+            'heading' => '<span class="glyphicon glyphicon-comment"></span>  ',
+            'footer' => false,
         ],
         // your toolbar can include the additional full export menu
         'toolbar' => [

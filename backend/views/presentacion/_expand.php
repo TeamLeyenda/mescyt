@@ -3,14 +3,16 @@ use yii\helpers\Html;
 use kartik\tabs\TabsX;
 use yii\helpers\Url;
 $items = [
+    /*
     [
         'label' => '<i class="glyphicon glyphicon-book"></i> '. Html::encode(Yii::t('app', 'Presentacion')),
         'content' => $this->render('_detail', [
             'model' => $model,
         ]),
     ],
+    */
                 [
-        'label' => '<i class="glyphicon glyphicon-book"></i> '. Html::encode(Yii::t('app', 'Presentacion User')),
+        'label' => '<i class="glyphicon glyphicon-book"></i> '. Html::encode(Yii::t('app', 'Presentadores')),
         'content' => $this->render('_dataPresentacionUser', [
             'model' => $model,
             'row' => $model->presentacionUsers,

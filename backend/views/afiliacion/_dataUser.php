@@ -11,13 +11,15 @@ use yii\data\ArrayDataProvider;
         ['attribute' => 'id', 'visible' => false],
         [
                 'attribute' => 'tipoUser.Tipo',
-                'label' => Yii::t('app', 'Tipo User')
+                'label' => Yii::t('app', 'Tipo')
             ],
-        'username',
-        'email:email',
-        'image',
+        ['attribute' =>'username',
+        'label' => Yii::t('app', 'Usuario')
+        ],
         'Nombre',
         'Apellido',
+        'email:email',
+        //'image',
         'Telefono',
         [
             'class' => 'yii\grid\ActionColumn',
