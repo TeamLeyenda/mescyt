@@ -75,15 +75,6 @@ return array (
       '@meysampg/treeview' => $vendorDir . '/meysampg/yii2-treeview',
     ),
   ),
-  'meysampg/yii2-formbuilder' => 
-  array (
-    'name' => 'meysampg/yii2-formbuilder',
-    'version' => '1.2.6.0',
-    'alias' => 
-    array (
-      '@meysampg/formbuilder' => $vendorDir . '/meysampg/yii2-formbuilder',
-    ),
-  ),
   'creocoder/yii2-nested-sets' => 
   array (
     'name' => 'creocoder/yii2-nested-sets',
@@ -498,6 +489,33 @@ return array (
     'alias' => 
     array (
       '@dmstr' => $vendorDir . '/dmstr/yii2-adminlte-asset',
+    ),
+  ),
+  'kartik-v/yii2-social' => 
+  array (
+    'name' => 'kartik-v/yii2-social',
+    'version' => '9999999-dev',
+    'alias' => 
+    array (
+      '@kartik/social' => $vendorDir . '/kartik-v/yii2-social',
+    ),
+  ),
+  'chiliec/yii2-vote' => 
+  array (
+    'name' => 'chiliec/yii2-vote',
+    'version' => '4.2.0.0',
+    'alias' => 
+    array (
+      '@chiliec/vote' => $vendorDir . '/chiliec/yii2-vote',
+    ),
+  ),
+  'machour/yii2-notifications' => 
+  array (
+    'name' => 'machour/yii2-notifications',
+    'version' => '9999999-dev',
+    'alias' => 
+    array (
+      '@machour/yii2/notifications' => $vendorDir . '/machour/yii2-notifications',
     ),
   ),
 );

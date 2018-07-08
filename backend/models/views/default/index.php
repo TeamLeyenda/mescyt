@@ -1,8 +1,7 @@
 <?php
-use meysampg\formbuilder\FormBuilder;
+//use meysampg\formbuilder\FormBuilder;
 ?>
 
-<?= FormBuilder::widget(); ?>
 
 
 <form id="rendered-form">

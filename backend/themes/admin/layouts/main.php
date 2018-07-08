@@ -1,6 +1,6 @@
 <?php
 use yii\helpers\Html;
-
+use kartik\social\GoogleAnalytics;
 /* @var $this \yii\web\View */
 /* @var $content string */
 
@@ -30,6 +30,7 @@ if (Yii::$app->controller->action->id === 'login') {
     <?php $this->beginPage() ?>
     <!DOCTYPE html>
     <html lang="<?= Yii::$app->language ?>">
+    <?=GoogleAnalytics::widget([]);?>
     <head>
         <meta charset="<?= Yii::$app->charset ?>"/>
         <meta name="viewport" content="width=device-width, initial-scale=1">

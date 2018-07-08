@@ -1,5 +1,6 @@
 <?php
 use yii\helpers\Html;
+use kartik\social\GoogleAnalytics;
 use kartik\export\ExportMenu;
 use kartik\grid\GridView;
 use yii\widgets\DetailView;
@@ -7,17 +8,12 @@ use yii\helpers\ArrayHelper;
 use kartik\builder\TabularForm;
 use yii\data\ArrayDataProvider;
 use yii\widgets\Pjax;
+
 /* @var $this yii\web\View */
 
-$this->title = 'Mescyt app';
+$this->title = '';
 ?>
 <div class="site-index">
-
-    <div class="jumbotron">
-        <h1>Congresos Activos</h1>
-
-        <p><?= Html::a('Manejar Congresos', ['/congreso'], ['class' => 'btn btn-lg btn-success']) ?><p>
-    </div>
     
     <div class="congreso-index">
     <?=GridView::widget([

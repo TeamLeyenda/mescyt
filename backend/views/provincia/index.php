@@ -62,7 +62,7 @@ $this->registerJs($search);
             'template' => '{save-as-new} {view} {update} {delete}',
             'buttons' => [
                 'save-as-new' => function ($url) {
-                    return Html::a('<span class="glyphicon glyphicon-copy"></span>', $url, ['title' => 'Save As New']);
+                    return Html::a('<span class="glyphicon glyphicon-copy"></span>', $url, ['title' => 'Guardar como nuevo']);
                 },
             ],
         ],
@@ -79,7 +79,7 @@ $this->registerJs($search);
             'heading' => '<span class="glyphicon glyphicon-globe"></span>  ',
             //'heading' => '<span class="glyphicon glyphicon-book"></span>  ' . Html::encode($this->title),
             //'heading' => false,
-            //'footer' => false,
+            'footer' => false,
         ],
         // your toolbar can include the additional full export menu
         'toolbar' => [

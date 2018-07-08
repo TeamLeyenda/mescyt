@@ -12,6 +12,7 @@ class ComposerStaticInitf8aa444fadf5e861a9b2931a0751dc85
         '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         '5255c38a0faeba867671b61dfda6d864' => __DIR__ . '/..' . '/paragonie/random_compat/lib/random.php',
+        'c65d09b6820da036953a371c8c73a9b1' => __DIR__ . '/..' . '/facebook/graph-sdk/src/Facebook/polyfills.php',
         '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
         'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
@@ -54,8 +55,8 @@ class ComposerStaticInitf8aa444fadf5e861a9b2931a0751dc85
             'mootensai\\components\\' => 21,
             'mootensai\\behaviors\\' => 20,
             'meysampg\\treeview\\' => 18,
-            'meysampg\\formbuilder\\' => 21,
             'mdm\\admin\\' => 10,
+            'machour\\yii2\\notifications\\' => 27,
         ),
         'k' => 
         array (
@@ -68,6 +69,7 @@ class ComposerStaticInitf8aa444fadf5e861a9b2931a0751dc85
             'kartik\\switchinput\\' => 19,
             'kartik\\spinner\\' => 15,
             'kartik\\sortable\\' => 16,
+            'kartik\\social\\' => 14,
             'kartik\\sidenav\\' => 15,
             'kartik\\select2\\' => 15,
             'kartik\\rating\\' => 14,
@@ -109,6 +111,7 @@ class ComposerStaticInitf8aa444fadf5e861a9b2931a0751dc85
         'c' => 
         array (
             'creocoder\\nestedsets\\' => 21,
+            'chiliec\\vote\\' => 13,
             'cebe\\markdown\\' => 14,
         ),
         'b' => 
@@ -149,6 +152,7 @@ class ComposerStaticInitf8aa444fadf5e861a9b2931a0751dc85
         'F' => 
         array (
             'Faker\\' => 6,
+            'Facebook\\' => 9,
         ),
         'E' => 
         array (
@@ -245,13 +249,13 @@ class ComposerStaticInitf8aa444fadf5e861a9b2931a0751dc85
         array (
             0 => __DIR__ . '/..' . '/meysampg/yii2-treeview',
         ),
-        'meysampg\\formbuilder\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/meysampg/yii2-formbuilder',
-        ),
         'mdm\\admin\\' => 
         array (
             0 => __DIR__ . '/..' . '/mdmsoft/yii2-admin',
+        ),
+        'machour\\yii2\\notifications\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/machour/yii2-notifications',
         ),
         'kartik\\widgets\\' => 
         array (
@@ -288,6 +292,10 @@ class ComposerStaticInitf8aa444fadf5e861a9b2931a0751dc85
         'kartik\\sortable\\' => 
         array (
             0 => __DIR__ . '/..' . '/kartik-v/yii2-sortable',
+        ),
+        'kartik\\social\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-social',
         ),
         'kartik\\sidenav\\' => 
         array (
@@ -417,6 +425,10 @@ class ComposerStaticInitf8aa444fadf5e861a9b2931a0751dc85
         array (
             0 => __DIR__ . '/..' . '/creocoder/yii2-nested-sets/src',
         ),
+        'chiliec\\vote\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/chiliec/yii2-vote',
+        ),
         'cebe\\markdown\\' => 
         array (
             0 => __DIR__ . '/..' . '/cebe/markdown',
@@ -492,6 +504,10 @@ class ComposerStaticInitf8aa444fadf5e861a9b2931a0751dc85
         'Faker\\' => 
         array (
             0 => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker',
+        ),
+        'Facebook\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/facebook/graph-sdk/src/Facebook',
         ),
         'Egulias\\EmailValidator\\' => 
         array (
