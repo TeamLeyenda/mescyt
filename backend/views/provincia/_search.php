@@ -1,11 +1,12 @@
 <?php
-
 use yii\helpers\Html;
-use yii\widgets\ActiveForm;
-
+use kartik\widgets\ActiveForm;
+//use yii\widgets\ActiveForm;
+use kartik\builder\Form;
 /* @var $this yii\web\View */
 /* @var $model backend\models\ProvinciaSearch */
 /* @var $form yii\widgets\ActiveForm */
+
 ?>
 
 <div class="form-provincia-search">
@@ -13,23 +14,29 @@ use yii\widgets\ActiveForm;
     <?php $form = ActiveForm::begin([
         'action' => ['index'],
         'method' => 'get',
+        'type' => ActiveForm::TYPE_VERTICAL
     ]); ?>
 
-    <?= $form->field($model, 'id', ['template' => '{input}'])->textInput(['style' => 'display:none']); ?>
+                <?= Form::widget([
+                        'model'=>$model,
+                        'form'=>$form,
+                        'columns'=>2,
+                        'attributes'=>[
+                            'Provincia'=>['type'=>Form::INPUT_TEXT],
+                            'pais_id'=>[
+                                'type'=>Form::INPUT_WIDGET, 
+                                'widgetClass'=>'\kartik\widgets\Select2', 
+                                'options'=>['data'=>\yii\helpers\ArrayHelper::map(\backend\models\Pais::find()->orderBy('id')->asArray()->all(), 'id', 'Pais'),], 
+                                //'hint'=>'Type and select state'
+                            ],
+                        ]
+                    ]);
+                ?>
 
-    <?= $form->field($model, 'pais_id')->widget(\kartik\widgets\Select2::classname(), [
-        'data' => \yii\helpers\ArrayHelper::map(\backend\models\Pais::find()->orderBy('id')->asArray()->all(), 'id', 'Pais'),
-        'options' => ['placeholder' => Yii::t('app', 'Elige Pais')],
-        'pluginOptions' => [
-            'allowClear' => true
-        ],
-    ]); ?>
-
-    <?= $form->field($model, 'Provincia')->textInput(['maxlength' => true, 'placeholder' => 'Provincia']) ?>
-
+   
     <div class="form-group">
-        <?= Html::submitButton(Yii::t('app', 'Search'), ['class' => 'btn btn-primary']) ?>
-        <?= Html::resetButton(Yii::t('app', 'Reset'), ['class' => 'btn btn-default']) ?>
+        <?= Html::submitButton(Yii::t('app', 'Buscar'), ['class' => 'btn btn-primary']) ?>
+        <?= Html::resetButton(Yii::t('app', 'Reiniciar'), ['class' => 'btn btn-default']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

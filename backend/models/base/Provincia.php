@@ -45,7 +45,7 @@ class Provincia extends \yii\db\ActiveRecord
     {
         return [
             'id' => Yii::t('app', 'ID'),
-            'pais_id' => Yii::t('app', 'Pais ID'),
+            'pais_id' => Yii::t('app', 'Pais'),
             'Provincia' => Yii::t('app', 'Provincia'),
         ];
     }

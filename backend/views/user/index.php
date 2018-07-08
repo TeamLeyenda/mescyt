@@ -114,7 +114,7 @@ $this->registerJs($search);
             'fontAwesome' => true
         ],
         // your toolbar can include the additional full export menu
-        /*
+        
         'toolbar' => [
             '{export}',
             ExportMenu::widget([
@@ -131,7 +131,7 @@ $this->registerJs($search);
                 ],
             ]) ,
         ],
-        */
+        
     ]); ?>
 
 </div>

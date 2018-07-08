@@ -42,8 +42,8 @@ class UserAreaEspecializacion extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'user_id' => Yii::t('app', 'User ID'),
-            'area_especializacion_id' => Yii::t('app', 'Area Especializacion ID'),
+            'user_id' => Yii::t('app', 'User'),
+            'area_especializacion_id' => Yii::t('app', 'Area Especializacion'),
         ];
     }
     
