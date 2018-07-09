@@ -76,7 +76,7 @@ if($providerUserAreaEspecializacion->totalCount){
         ['class' => 'yii\grid\SerialColumn'],
                 [
                 'attribute' => 'areaEspecializacion.id',
-                'label' => Yii::t('app', 'Area Especializacion')
+                'label' => Yii::t('app', 'Area de especializacion')
             ],
     ];
     echo Gridview::widget([

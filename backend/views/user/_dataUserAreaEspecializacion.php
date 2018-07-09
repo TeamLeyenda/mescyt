@@ -12,7 +12,7 @@ use yii\data\ArrayDataProvider;
         ['class' => 'yii\grid\SerialColumn'],
         [
                 'attribute' => 'areaEspecializacion.id',
-                'label' => Yii::t('app', 'Area Especializacion')
+                'label' => Yii::t('app', 'Area de especializacion')
             ],
         [
             'class' => 'yii\grid\ActionColumn',

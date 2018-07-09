@@ -17,6 +17,19 @@ class UserGradoAcademico extends \yii\db\ActiveRecord
 {
     use \mootensai\relation\RelationTrait;
 
+
+    /**
+    * This function helps \mootensai\relation\RelationTrait runs faster
+    * @return array relation names of this model
+    */
+    public function relationNames()
+    {
+        return [
+            'gradoAcademico',
+            'user'
+        ];
+    }
+
     /**
      * @inheritdoc
      */
@@ -27,7 +40,7 @@ class UserGradoAcademico extends \yii\db\ActiveRecord
             [['user_id', 'grado_academico_id'], 'integer']
         ];
     }
-    
+
     /**
      * @inheritdoc
      */
@@ -42,8 +55,8 @@ class UserGradoAcademico extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'user_id' => Yii::t('app', 'User'),
-            'grado_academico_id' => Yii::t('app', 'Grado Academico'),
+            'user_id' => Yii::t('app', 'User ID'),
+            'grado_academico_id' => Yii::t('app', 'Grado Academico ID'),
         ];
     }
     
@@ -63,6 +76,7 @@ class UserGradoAcademico extends \yii\db\ActiveRecord
         return $this->hasOne(\backend\models\User::className(), ['id' => 'user_id']);
     }
     
+
     /**
      * @inheritdoc
      * @return \backend\models\UserGradoAcademicoQuery the active query used by this AR class.

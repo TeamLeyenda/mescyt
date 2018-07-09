@@ -8,14 +8,14 @@ use kartik\grid\GridView;
 /* @var $model backend\models\AreaEspecializacion */
 
 $this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Area Especializacions'), 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Areas de especializaciones'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="area-especializacion-view">
 
     <div class="row">
         <div class="col-sm-8">
-            <h2><?= Yii::t('app', 'Area Especializacion').' '. Html::encode($this->title) ?></h2>
+            <h2><?= Yii::t('app', 'Area de especializacion').' '. Html::encode($this->title) ?></h2>
         </div>
         <div class="col-sm-4" style="margin-top: 15px">
 <?=             
@@ -70,7 +70,7 @@ if($providerUserAreaEspecializacion->totalCount){
         'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-user-area-especializacion']],
         'panel' => [
         'type' => GridView::TYPE_PRIMARY,
-        'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode(Yii::t('app', 'User Area Especializacion')),
+        'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode(Yii::t('app', 'Usuarios')),
         ],
         'columns' => $gridColumnUserAreaEspecializacion
     ]);

@@ -8,7 +8,7 @@ use yii\helpers\Html;
 use kartik\export\ExportMenu;
 use kartik\grid\GridView;
 
-$this->title = Yii::t('app', 'Area Especializacions');
+$this->title = Yii::t('app', 'Areas de especializaciones');
 $this->params['breadcrumbs'][] = $this->title;
 $search = "$('.search-button').click(function(){
 	$('.search-form').toggle(1000);
@@ -22,7 +22,7 @@ $this->registerJs($search);
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a(Yii::t('app', 'Añadir Area Especializacion'), ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a(Yii::t('app', 'Añadir Area de especializacion'), ['create'], ['class' => 'btn btn-success']) ?>
         <?= Html::a(Yii::t('app', 'Busqueda avanzada'), '#', ['class' => 'btn btn-info search-button']) ?>
     </p>
     <div class="search-form" style="display:none">
@@ -64,7 +64,8 @@ $this->registerJs($search);
         'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-area-especializacion']],
         'panel' => [
             'type' => GridView::TYPE_PRIMARY,
-            'heading' => '<span class="glyphicon glyphicon-book"></span>  ' . Html::encode($this->title),
+            'heading' => '<span class="glyphicon glyphicon-book"></span>  ' ,
+            'footer' => false,
         ],
         // your toolbar can include the additional full export menu
         'toolbar' => [

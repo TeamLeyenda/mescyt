@@ -17,6 +17,19 @@ class UserAreaEspecializacion extends \yii\db\ActiveRecord
 {
     use \mootensai\relation\RelationTrait;
 
+
+    /**
+    * This function helps \mootensai\relation\RelationTrait runs faster
+    * @return array relation names of this model
+    */
+    public function relationNames()
+    {
+        return [
+            'areaEspecializacion',
+            'user'
+        ];
+    }
+
     /**
      * @inheritdoc
      */
@@ -27,7 +40,7 @@ class UserAreaEspecializacion extends \yii\db\ActiveRecord
             [['user_id', 'area_especializacion_id'], 'integer']
         ];
     }
-    
+
     /**
      * @inheritdoc
      */
@@ -42,8 +55,8 @@ class UserAreaEspecializacion extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'user_id' => Yii::t('app', 'User'),
-            'area_especializacion_id' => Yii::t('app', 'Area Especializacion'),
+            'user_id' => Yii::t('app', 'Usuario'),
+            'area_especializacion_id' => Yii::t('app', 'Area de especializacion'),
         ];
     }
     
@@ -63,6 +76,7 @@ class UserAreaEspecializacion extends \yii\db\ActiveRecord
         return $this->hasOne(\backend\models\User::className(), ['id' => 'user_id']);
     }
     
+
     /**
      * @inheritdoc
      * @return \backend\models\UserAreaEspecializacionQuery the active query used by this AR class.

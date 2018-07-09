@@ -45,7 +45,7 @@ echo TabularForm::widget([
             'type' => GridView::TYPE_DEFAULT,
             'before' => false,
             'footer' => false,
-            'after' => Html::button('<i class="glyphicon glyphicon-plus"></i>' . Yii::t('app', 'Add User Grado Academico'), ['type' => 'button', 'class' => 'btn btn-success kv-batch-create', 'onClick' => 'addRowUserGradoAcademico()']),
+            'after' => Html::button('<i class="glyphicon glyphicon-plus"></i>' . Yii::t('app', 'Añadir User Grado Academico'), ['type' => 'button', 'class' => 'btn btn-success kv-batch-create', 'onClick' => 'addRowUserGradoAcademico()']),
         ]
     ]
 ]);

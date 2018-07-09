@@ -7,9 +7,9 @@ use yii\helpers\Html;
 /* @var $model backend\models\AreaEspecializacion */
 
 $this->title = Yii::t('app', 'Guardar nuevo {modelClass}: ', [
-    'modelClass' => 'Area Especializacion',
+    'modelClass' => 'Area de especializacion',
 ]). ' ' . $model->id;
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Area Especializacions'), 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Areas de especializaciones'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = Yii::t('app', 'Guardar nuevo');
 ?>

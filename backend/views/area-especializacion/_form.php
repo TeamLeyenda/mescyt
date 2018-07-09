@@ -28,6 +28,7 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'area')->textInput(['maxlength' => true, 'placeholder' => 'Area']) ?>
 
     <?php
+    /*
     $forms = [
         [
             'label' => '<i class="glyphicon glyphicon-book"></i> ' . Html::encode(Yii::t('app', 'UserAreaEspecializacion')),
@@ -46,6 +47,7 @@ use yii\widgets\ActiveForm;
             'enableCache' => false,
         ],
     ]);
+    */
     ?>
     <div class="form-group">
     <?php if(Yii::$app->controller->action->id != 'save-as-new'): ?>

@@ -45,7 +45,7 @@ echo TabularForm::widget([
             'type' => GridView::TYPE_DEFAULT,
             'before' => false,
             'footer' => false,
-            'after' => Html::button('<i class="glyphicon glyphicon-plus"></i>' . Yii::t('app', 'Add User Area Especializacion'), ['type' => 'button', 'class' => 'btn btn-success kv-batch-create', 'onClick' => 'addRowUserAreaEspecializacion()']),
+            'after' => Html::button('<i class="glyphicon glyphicon-plus"></i>' . Yii::t('app', 'Añadir Usuarios'), ['type' => 'button', 'class' => 'btn btn-success kv-batch-create', 'onClick' => 'addRowUserAreaEspecializacion()']),
         ]
     ]
 ]);

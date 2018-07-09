@@ -65,7 +65,7 @@ echo TabularForm::widget([
             'type' => GridView::TYPE_DEFAULT,
             'before' => false,
             'footer' => false,
-            'after' => Html::button('<i class="glyphicon glyphicon-plus"></i>' . Yii::t('app', 'Add Congreso'), ['type' => 'button', 'class' => 'btn btn-success kv-batch-create', 'onClick' => 'addRowCongreso()']),
+            'after' => Html::button('<i class="glyphicon glyphicon-plus"></i>' . Yii::t('app', 'Añadir Congreso'), ['type' => 'button', 'class' => 'btn btn-success kv-batch-create', 'onClick' => 'addRowCongreso()']),
         ]
     ]
 ]);
