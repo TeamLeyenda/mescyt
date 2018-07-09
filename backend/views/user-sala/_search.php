@@ -17,7 +17,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'user_id')->widget(\kartik\widgets\Select2::classname(), [
         'data' => \yii\helpers\ArrayHelper::map(\backend\models\User::find()->orderBy('id')->asArray()->all(), 'id', 'username'),
-        'options' => ['placeholder' => Yii::t('app', 'Choose User')],
+        'options' => ['placeholder' => Yii::t('app', 'Elige Usuario')],
         'pluginOptions' => [
             'allowClear' => true
         ],
@@ -25,7 +25,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'sala_id')->widget(\kartik\widgets\Select2::classname(), [
         'data' => \yii\helpers\ArrayHelper::map(\backend\models\Sala::find()->orderBy('id')->asArray()->all(), 'id', 'Nombre_Sala'),
-        'options' => ['placeholder' => Yii::t('app', 'Choose Sala')],
+        'options' => ['placeholder' => Yii::t('app', 'Elige Sala')],
         'pluginOptions' => [
             'allowClear' => true
         ],

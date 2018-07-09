@@ -27,7 +27,7 @@ echo TabularForm::widget([
             'widgetClass' => \kartik\widgets\Select2::className(),
             'options' => [
                 'data' => \yii\helpers\ArrayHelper::map(\backend\models\User::find()->orderBy('Nombre')->asArray()->all(), 'id', 'Nombre'),
-                'options' => ['placeholder' => Yii::t('app', 'Elige User')],
+                'options' => ['placeholder' => Yii::t('app', 'Elige Usuario')],
             ],
             'columnOptions' => ['width' => '200px']
         ],

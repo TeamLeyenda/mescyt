@@ -25,7 +25,7 @@ use kartik\grid\GridView;
         ],
         [
             'attribute' => 'user.username',
-            'label' => Yii::t('app', 'User'),
+            'label' => Yii::t('app', 'Usuario'),
         ],
     ];
     echo DetailView::widget([

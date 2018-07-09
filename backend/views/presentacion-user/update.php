@@ -5,7 +5,7 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model backend\models\PresentacionUser */
 
-$this->title = Yii::t('app', 'Update {modelClass}: ', [
+$this->title = Yii::t('app', 'Actualizar {modelClass}: ', [
     'modelClass' => 'Presentacion User',
 ]) . ' ' . $model->presentacion_id;
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Presentacion y Usuarios'), 'url' => ['index']];

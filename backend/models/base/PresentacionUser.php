@@ -56,7 +56,7 @@ class PresentacionUser extends \yii\db\ActiveRecord
     {
         return [
             'presentacion_id' => Yii::t('app', 'Presentacion'),
-            'user_id' => Yii::t('app', 'User'),
+            'user_id' => Yii::t('app', 'Usuario'),
         ];
     }
     

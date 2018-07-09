@@ -48,7 +48,8 @@ class User extends \yii\db\ActiveRecord
             [['afiliacion_id', 'tipo_user_id', 'status', 'created_at', 'updated_at'], 'integer'],
             [['username', 'email', 'password_hash', 'auth_key'], 'required'],
             [['Nombre'], 'string', 'max' => 50],
-            [['Apellido', 'Telefono'], 'string', 'max' => 20],
+            [['Apellido'], 'string', 'max' => 50],
+            [['Telefono'], 'string', 'max' => 20],
             [['username', 'auth_key'], 'string', 'max' => 32],
             [['email', 'image', 'password_hash', 'password_reset_token'], 'string', 'max' => 255],
             [['email'], 'unique']
@@ -73,7 +74,7 @@ class User extends \yii\db\ActiveRecord
             'Nombre' => Yii::t('app', 'Nombre'),
             'Apellido' => Yii::t('app', 'Apellido'),
             'afiliacion_id' => Yii::t('app', 'Afiliacion'),
-            'tipo_user_id' => Yii::t('app', 'Tipo User'),
+            'tipo_user_id' => Yii::t('app', 'Tipo Usuario'),
             'username' => Yii::t('app', 'Usuario'),
             'email' => Yii::t('app', 'Email'),
             'Telefono' => Yii::t('app', 'Telefono'),

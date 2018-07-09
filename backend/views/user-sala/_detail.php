@@ -21,7 +21,7 @@ use kartik\grid\GridView;
     $gridColumn = [
         [
             'attribute' => 'user.username',
-            'label' => Yii::t('app', 'User'),
+            'label' => Yii::t('app', 'Usuario'),
         ],
         [
             'attribute' => 'sala.Nombre_Sala',

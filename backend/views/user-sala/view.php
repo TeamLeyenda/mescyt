@@ -7,7 +7,7 @@ use kartik\grid\GridView;
 /* @var $this yii\web\View */
 /* @var $model backend\models\UserSala */
 
-$this->title = $model->user_id;
+$this->title = '';  //$this->title = $model->user_id;
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'User Salas'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -15,7 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <div class="row">
         <div class="col-sm-8">
-            <h2><?= Yii::t('app', 'User Sala').' '. Html::encode($this->title) ?></h2>
+            <h2><?= Yii::t('app', 'User Sala')?></h2>
         </div>
         <div class="col-sm-4" style="margin-top: 15px">
 <?=             
@@ -28,8 +28,8 @@ $this->params['breadcrumbs'][] = $this->title;
                     'title' => Yii::t('app', 'Will open the generated PDF file in a new window')
                 ]
             )?>
-            <?= Html::a(Yii::t('app', 'Save As New'), ['save-as-new', 'user_id' => $model->user_id, 'sala_id' => $model->sala_id], ['class' => 'btn btn-info']) ?>            
-            <?= Html::a(Yii::t('app', 'Update'), ['update', 'user_id' => $model->user_id, 'sala_id' => $model->sala_id], ['class' => 'btn btn-primary']) ?>
+            <?= Html::a(Yii::t('app', 'Guardar nuevo'), ['save-as-new', 'user_id' => $model->user_id, 'sala_id' => $model->sala_id], ['class' => 'btn btn-info']) ?>            
+            <?= Html::a(Yii::t('app', 'Actualizar'), ['update', 'user_id' => $model->user_id, 'sala_id' => $model->sala_id], ['class' => 'btn btn-primary']) ?>
             <?= Html::a(Yii::t('app', 'Delete'), ['delete', 'user_id' => $model->user_id, 'sala_id' => $model->sala_id], [
                 'class' => 'btn btn-danger',
                 'data' => [
@@ -46,7 +46,7 @@ $this->params['breadcrumbs'][] = $this->title;
     $gridColumn = [
         [
             'attribute' => 'user.username',
-            'label' => Yii::t('app', 'User'),
+            'label' => Yii::t('app', 'Usuario'),
         ],
         [
             'attribute' => 'sala.Nombre_Sala',

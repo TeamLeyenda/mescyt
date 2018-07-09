@@ -17,7 +17,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'presentacion_id')->widget(\kartik\widgets\Select2::classname(), [
         'data' => \yii\helpers\ArrayHelper::map(\backend\models\Presentacion::find()->orderBy('id')->asArray()->all(), 'id', 'Titulo'),
-        'options' => ['placeholder' => Yii::t('app', 'Choose Presentacion')],
+        'options' => ['placeholder' => Yii::t('app', 'Elige Presentacion')],
         'pluginOptions' => [
             'allowClear' => true
         ],
@@ -25,7 +25,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'user_id')->widget(\kartik\widgets\Select2::classname(), [
         'data' => \yii\helpers\ArrayHelper::map(\backend\models\User::find()->orderBy('id')->asArray()->all(), 'id', 'username'),
-        'options' => ['placeholder' => Yii::t('app', 'Choose User')],
+        'options' => ['placeholder' => Yii::t('app', 'Elige Usuario')],
         'pluginOptions' => [
             'allowClear' => true
         ],

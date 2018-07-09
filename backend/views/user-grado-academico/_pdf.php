@@ -8,7 +8,7 @@ use kartik\grid\GridView;
 /* @var $model backend\models\UserGradoAcademico */
 
 $this->title = $model->user_id;
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'User Grado Academicos'), 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'User Grado academicos'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="user-grado-academico-view">
@@ -24,7 +24,7 @@ $this->params['breadcrumbs'][] = $this->title;
     $gridColumn = [
         [
                 'attribute' => 'user.username',
-                'label' => Yii::t('app', 'User')
+                'label' => Yii::t('app', 'Usuario')
             ],
         [
                 'attribute' => 'gradoAcademico.Grado',

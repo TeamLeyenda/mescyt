@@ -17,7 +17,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'user_id')->widget(\kartik\widgets\Select2::classname(), [
         'data' => \yii\helpers\ArrayHelper::map(\backend\models\User::find()->orderBy('id')->asArray()->all(), 'id', 'username'),
-        'options' => ['placeholder' => Yii::t('app', 'Choose User')],
+        'options' => ['placeholder' => Yii::t('app', 'Elige Usuario')],
         'pluginOptions' => [
             'allowClear' => true
         ],
@@ -25,7 +25,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'area_especializacion_id')->widget(\kartik\widgets\Select2::classname(), [
         'data' => \yii\helpers\ArrayHelper::map(\backend\models\AreaEspecializacion::find()->orderBy('id')->asArray()->all(), 'id', 'area'),
-        'options' => ['placeholder' => Yii::t('app', 'Choose Area especializacion')],
+        'options' => ['placeholder' => Yii::t('app', 'Elige Area especializacion')],
         'pluginOptions' => [
             'allowClear' => true
         ],

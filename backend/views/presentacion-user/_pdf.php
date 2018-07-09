@@ -15,7 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <div class="row">
         <div class="col-sm-9">
-            <h2><?= Yii::t('app', 'Presentacion User').' '. Html::encode($this->title) ?></h2>
+            <h2><?= Yii::t('app', 'Presentacion Usuario').' '. Html::encode($this->title) ?></h2>
         </div>
     </div>
 
@@ -28,7 +28,7 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
         [
                 'attribute' => 'user.username',
-                'label' => Yii::t('app', 'User')
+                'label' => Yii::t('app', 'Usuario')
             ],
     ];
     echo DetailView::widget([

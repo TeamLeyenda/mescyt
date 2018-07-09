@@ -8,7 +8,7 @@ use yii\helpers\Html;
 use kartik\export\ExportMenu;
 use kartik\grid\GridView;
 
-$this->title = Yii::t('app', 'User Grado Academicos');
+$this->title = Yii::t('app', 'User Grado academicos');
 $this->params['breadcrumbs'][] = $this->title;
 $search = "$('.search-button').click(function(){
 	$('.search-form').toggle(1000);
@@ -22,7 +22,7 @@ $this->registerJs($search);
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a(Yii::t('app', 'Create User Grado Academico'), ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a(Yii::t('app', 'Añadir User Grado Academico'), ['create'], ['class' => 'btn btn-success']) ?>
         <?= Html::a(Yii::t('app', 'Advance Search'), '#', ['class' => 'btn btn-info search-button']) ?>
     </p>
     <div class="search-form" style="display:none">
@@ -45,7 +45,7 @@ $this->registerJs($search);
         ],
         [
                 'attribute' => 'user_id',
-                'label' => Yii::t('app', 'User'),
+                'label' => Yii::t('app', 'Usuario'),
                 'value' => function($model){                   
                     return $model->user->username;                   
                 },
@@ -74,7 +74,7 @@ $this->registerJs($search);
             'template' => '{save-as-new} {view} {update} {delete}',
             'buttons' => [
                 'save-as-new' => function ($url) {
-                    return Html::a('<span class="glyphicon glyphicon-copy"></span>', $url, ['title' => 'Save As New']);
+                    return Html::a('<span class="glyphicon glyphicon-copy"></span>', $url, ['title' => 'Guardar nuevo']);
                 },
             ],
         ],

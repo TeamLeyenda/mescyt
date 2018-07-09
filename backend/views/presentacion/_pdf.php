@@ -54,14 +54,14 @@ if($providerPresentacionUser->totalCount){
         ['class' => 'yii\grid\SerialColumn'],
                 [
                 'attribute' => 'user.Nombre',
-                'label' => Yii::t('app', 'User')
+                'label' => Yii::t('app', 'Usuario')
             ],
     ];
     echo Gridview::widget([
         'dataProvider' => $providerPresentacionUser,
         'panel' => [
             'type' => GridView::TYPE_PRIMARY,
-            'heading' => Html::encode(Yii::t('app', 'Presentacion User')),
+            'heading' => Html::encode(Yii::t('app', 'Presentacion Usuario')),
         ],
         'panelHeadingTemplate' => '<h4>{heading}</h4>{summary}',
         'toggleData' => false,

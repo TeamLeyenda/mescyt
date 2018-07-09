@@ -7,7 +7,7 @@ use kartik\grid\GridView;
 /* @var $this yii\web\View */
 /* @var $model backend\models\Afiliacion */
 
-$this->title = $model->Afiliacion;
+$this->title = '';  //$this->title = $model->Afiliacion;
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Afiliacions'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -15,7 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <div class="row">
         <div class="col-sm-8">
-            <h2><?= Yii::t('app', 'Afiliacion').' '. Html::encode($this->title) ?></h2>
+            <h2><?= Yii::t('app', 'Afiliacion')?></h2>
         </div>
         <div class="col-sm-4" style="margin-top: 15px">
 <?=             
@@ -62,7 +62,7 @@ if($providerUser->totalCount){
             ['attribute' => 'id', 'visible' => false],
                         [
                 'attribute' => 'tipoUser.Tipo',
-                'label' => Yii::t('app', 'Tipo User')
+                'label' => Yii::t('app', 'Tipo Usuario')
             ],
             'username',
             'email:email',

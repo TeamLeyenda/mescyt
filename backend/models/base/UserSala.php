@@ -55,8 +55,8 @@ class UserSala extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'user_id' => Yii::t('app', 'User ID'),
-            'sala_id' => Yii::t('app', 'Sala ID'),
+            'user_id' => Yii::t('app', 'Usuario'),
+            'sala_id' => Yii::t('app', 'Sala'),
         ];
     }
     

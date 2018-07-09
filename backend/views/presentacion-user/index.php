@@ -22,7 +22,7 @@ $this->registerJs($search);
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a(Yii::t('app', 'Create Presentacion User'), ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a(Yii::t('app', 'Añadir Presentacion Usuario'), ['create'], ['class' => 'btn btn-success']) ?>
         <?= Html::a(Yii::t('app', 'Advance Search'), '#', ['class' => 'btn btn-info search-button']) ?>
     </p>
     <div class="search-form" style="display:none">
@@ -58,7 +58,7 @@ $this->registerJs($search);
             ],
         [
                 'attribute' => 'user_id',
-                'label' => Yii::t('app', 'User'),
+                'label' => Yii::t('app', 'Usuario'),
                 'value' => function($model){                   
                     return $model->user->username;                   
                 },

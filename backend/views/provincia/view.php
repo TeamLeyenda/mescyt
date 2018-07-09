@@ -7,7 +7,7 @@ use kartik\grid\GridView;
 /* @var $this yii\web\View */
 /* @var $model backend\models\Provincia */
 
-$this->title = $model->Provincia;
+$this->title = '';  //$this->title = $model->Provincia;
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Provincias'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -15,7 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <div class="row">
         <div class="col-sm-8">
-            <h2><?= Yii::t('app', 'Provincia').' '. Html::encode($this->title) ?></h2>
+            <h2><?= Yii::t('app', 'Provincia')?></h2>
         </div>
         <div class="col-sm-4" style="margin-top: 15px">
 <?=             

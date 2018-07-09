@@ -24,7 +24,7 @@ $this->params['breadcrumbs'][] = $this->title;
     $gridColumn = [
         [
                 'attribute' => 'user.username',
-                'label' => Yii::t('app', 'User')
+                'label' => Yii::t('app', 'Usuario')
             ],
         [
                 'attribute' => 'areaEspecializacion.area',

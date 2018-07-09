@@ -12,7 +12,7 @@ $items = [
     ],
     */
                 [
-        'label' => '<i class="glyphicon glyphicon-book"></i> '. Html::encode(Yii::t('app', 'Presentadores')),
+        'label' => '<i class="glyphicon glyphicon-user"></i> '. Html::encode(Yii::t('app', 'Presentadores')),
         'content' => $this->render('_dataPresentacionUser', [
             'model' => $model,
             'row' => $model->presentacionUsers,

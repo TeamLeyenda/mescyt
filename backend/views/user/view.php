@@ -7,7 +7,7 @@ use kartik\grid\GridView;
 /* @var $this yii\web\View */
 /* @var $model backend\models\User */
 
-$this->title = $model->id;
+$this->title = '';  //$this->title = $model->id;
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Users'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -15,7 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <div class="row">
         <div class="col-sm-8">
-            <h2><?= Yii::t('app', 'Usuario').' '. Html::encode($this->title) ?></h2>
+            <h2><?= Yii::t('app', 'Usuario')?></h2>
         </div>
         <div class="col-sm-4" style="margin-top: 15px">
 <?=             
@@ -53,7 +53,7 @@ $this->params['breadcrumbs'][] = $this->title;
         ],
         [
             'attribute' => 'tipoUser.Tipo',
-            'label' => Yii::t('app', 'Tipo User'),
+            'label' => Yii::t('app', 'Tipo Usuario'),
         ],
         'username',
         'email:email',
@@ -83,7 +83,7 @@ if($providerPresentacionUser->totalCount){
         'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-presentacion-user']],
         'panel' => [
         'type' => GridView::TYPE_PRIMARY,
-        'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode(Yii::t('app', 'Presentacion User')),
+        'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode(Yii::t('app', 'Presentacion Usuario')),
         ],
         'columns' => $gridColumnPresentacionUser
     ]);

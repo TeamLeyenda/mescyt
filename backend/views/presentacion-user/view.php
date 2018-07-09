@@ -7,15 +7,15 @@ use kartik\grid\GridView;
 /* @var $this yii\web\View */
 /* @var $model backend\models\PresentacionUser */
 
-$this->title = $model->presentacion->Titulo;
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Presentacion y Usuarios'), 'url' => ['index']];
+$this->title = '';  //$this->title = $model->presentacion->Titulo;
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Presentacion y Usuario'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="presentacion-user-view">
 
     <div class="row">
         <div class="col-sm-8">
-            <h2><?= Yii::t('app', 'Presentacion').' '. Html::encode($this->title) ?></h2>
+            <h2><?= Yii::t('app', 'Presentacion y Usuario')?></h2>
         </div>
         <div class="col-sm-4" style="margin-top: 15px">
 <?=             
@@ -87,17 +87,17 @@ $this->params['breadcrumbs'][] = $this->title;
         'attributes' => $gridColumnPresentacion    ]);
     ?>
     <div class="row">
-        <h4>Usuario<?= ' '. Html::encode($model->user->username) ?></h4>
+        <h4>Usuario</h4>
     </div>
     <?php 
     $gridColumnUser = [
         ['attribute' => 'id', 'visible' => false],
         'Nombre',
         'Apellido',
-        'afiliacion_id',
-        'tipo_user_id',
+        'afiliacion.Afiliacion',
+        'tipoUser.Tipo',
         'username',
-        'email',
+        'email:email',
         'Telefono',
         'image',
     ];

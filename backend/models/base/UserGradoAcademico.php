@@ -55,8 +55,8 @@ class UserGradoAcademico extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'user_id' => Yii::t('app', 'User ID'),
-            'grado_academico_id' => Yii::t('app', 'Grado Academico ID'),
+            'user_id' => Yii::t('app', 'Usuario'),
+            'grado_academico_id' => Yii::t('app', 'Grado Academico'),
         ];
     }
     

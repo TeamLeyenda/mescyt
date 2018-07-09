@@ -7,15 +7,15 @@ use kartik\grid\GridView;
 /* @var $this yii\web\View */
 /* @var $model backend\models\GradoAcademico */
 
-$this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Grados Academicos'), 'url' => ['index']];
+$this->title = '';  //$this->title = $model->id;
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Grados academicos'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="grado-academico-view">
 
     <div class="row">
         <div class="col-sm-8">
-            <h2><?= Yii::t('app', 'Grado Academico').' '. Html::encode($this->title) ?></h2>
+            <h2><?= Yii::t('app', 'Grado academico')?></h2>
         </div>
         <div class="col-sm-4" style="margin-top: 15px">
 <?=             
@@ -70,7 +70,7 @@ if($providerUserGradoAcademico->totalCount){
         'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-user-grado-academico']],
         'panel' => [
         'type' => GridView::TYPE_PRIMARY,
-        'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode(Yii::t('app', 'User Grado Academico')),
+        'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode(Yii::t('app', 'User Grado academico')),
         ],
         'columns' => $gridColumnUserGradoAcademico
     ]);

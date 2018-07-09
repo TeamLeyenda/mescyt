@@ -28,7 +28,7 @@ use kartik\grid\GridView;
         ],
         [
             'attribute' => 'tipoUser.Tipo',
-            'label' => Yii::t('app', 'Tipo User'),
+            'label' => Yii::t('app', 'Tipo Usuario'),
         ],
         'username',
         'email:email',

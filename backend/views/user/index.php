@@ -66,7 +66,7 @@ $this->registerJs($search);
             ],
         [
                 'attribute' => 'tipo_user_id',
-                'label' => Yii::t('app', 'Tipo User'),
+                'label' => Yii::t('app', 'Tipo Usuario'),
                 'value' => function($model){
                     if ($model->tipoUser)
                     {return $model->tipoUser->Tipo;}
