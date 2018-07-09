@@ -22,7 +22,7 @@ $this->registerJs($search);
 ?>
 <div class="user-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
@@ -66,7 +66,7 @@ $this->registerJs($search);
             ],
         [
                 'attribute' => 'tipo_user_id',
-                'label' => Yii::t('app', 'Tipo User'),
+                'label' => Yii::t('app', 'Tipo Usuario'),
                 'value' => function($model){
                     if ($model->tipoUser)
                     {return $model->tipoUser->Tipo;}
@@ -89,7 +89,7 @@ $this->registerJs($search);
             'template' => '{save-as-new} {view} {update} {delete}',
             'buttons' => [
                 'save-as-new' => function ($url) {
-                    return Html::a('<span class="glyphicon glyphicon-copy"></span>', $url, ['title' => 'Save As New']);
+                    return Html::a('<span class="glyphicon glyphicon-copy"></span>', $url, ['title' => 'Guardar nuevo']);
                 },
             ],
         ],
@@ -114,7 +114,7 @@ $this->registerJs($search);
             'fontAwesome' => true
         ],
         // your toolbar can include the additional full export menu
-        /*
+        
         'toolbar' => [
             '{export}',
             ExportMenu::widget([
@@ -131,7 +131,7 @@ $this->registerJs($search);
                 ],
             ]) ,
         ],
-        */
+        
     ]); ?>
 
 </div>

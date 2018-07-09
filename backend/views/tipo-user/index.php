@@ -18,11 +18,11 @@ $this->registerJs($search);
 ?>
 <div class="tipo-user-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a(Yii::t('app', 'Añadir Tipo User'), ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a(Yii::t('app', 'Añadir Tipo Usuario'), ['create'], ['class' => 'btn btn-success']) ?>
         <?= Html::a(Yii::t('app', 'Busqueda avanzada'), '#', ['class' => 'btn btn-info search-button']) ?>
     </p>
     <div class="search-form" style="display:none">
@@ -50,7 +50,7 @@ $this->registerJs($search);
             'template' => '{save-as-new} {view} {update} {delete}',
             'buttons' => [
                 'save-as-new' => function ($url) {
-                    return Html::a('<span class="glyphicon glyphicon-copy"></span>', $url, ['title' => 'Save As New']);
+                    return Html::a('<span class="glyphicon glyphicon-copy"></span>', $url, ['title' => 'Guardar nuevo']);
                 },
             ],
         ],
@@ -67,7 +67,7 @@ $this->registerJs($search);
             'heading' => '<span class="glyphicon glyphicon-book"></span>  ' . Html::encode($this->title),
         ],
         // your toolbar can include the additional full export menu
-        /*'toolbar' => [
+        'toolbar' => [
             '{export}',
             ExportMenu::widget([
                 'dataProvider' => $dataProvider,
@@ -82,7 +82,7 @@ $this->registerJs($search);
                     ],
                 ],
             ]) ,
-        ],*/
+        ],
     ]); ?>
 
 </div>

@@ -11,9 +11,17 @@ use yii\data\ArrayDataProvider;
     $gridColumns = [
         ['class' => 'yii\grid\SerialColumn'],
         [
-                'attribute' => 'user.Nombre',
-                'label' => Yii::t('app', 'Usuario')
-            ],
+            'attribute' => 'user.tipoUser.Tipo',
+            'label' => Yii::t('app', 'Tipo')
+        ],
+        ['attribute' =>'user.username',
+        'label' => Yii::t('app', 'Usuario')
+        ],
+        'user.Nombre',
+        'user.Apellido',
+        'user.email:email',
+        //'image',
+        'user.Telefono',
         [
             'class' => 'yii\grid\ActionColumn',
             'controller' => 'user-area-especializacion'

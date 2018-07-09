@@ -8,7 +8,7 @@ use yii\helpers\Html;
 use kartik\export\ExportMenu;
 use kartik\grid\GridView;
 
-$this->title = Yii::t('app', 'Grado Academicos');
+$this->title = Yii::t('app', 'Grados academicos');
 $this->params['breadcrumbs'][] = $this->title;
 $search = "$('.search-button').click(function(){
 	$('.search-form').toggle(1000);
@@ -18,11 +18,11 @@ $this->registerJs($search);
 ?>
 <div class="grado-academico-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a(Yii::t('app', 'Añadir Grado Academico'), ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a(Yii::t('app', 'Añadir Grado academico'), ['create'], ['class' => 'btn btn-success']) ?>
         <?= Html::a(Yii::t('app', 'Busqueda avanzada'), '#', ['class' => 'btn btn-info search-button']) ?>
     </p>
     <div class="search-form" style="display:none">
@@ -50,7 +50,7 @@ $this->registerJs($search);
             'template' => '{save-as-new} {view} {update} {delete}',
             'buttons' => [
                 'save-as-new' => function ($url) {
-                    return Html::a('<span class="glyphicon glyphicon-copy"></span>', $url, ['title' => 'Save As New']);
+                    return Html::a('<span class="glyphicon glyphicon-copy"></span>', $url, ['title' => 'Guardar nuevo']);
                 },
             ],
         ],
@@ -65,9 +65,10 @@ $this->registerJs($search);
         'panel' => [
             'type' => GridView::TYPE_PRIMARY,
             'heading' => '<span class="glyphicon glyphicon-book"></span>  ' . Html::encode($this->title),
+            'footer' => false,
         ],
         // your toolbar can include the additional full export menu
-        /*'toolbar' => [
+        'toolbar' => [
             '{export}',
             ExportMenu::widget([
                 'dataProvider' => $dataProvider,
@@ -82,7 +83,7 @@ $this->registerJs($search);
                     ],
                 ],
             ]) ,
-        ],*/
+        ],
     ]); ?>
 
 </div>

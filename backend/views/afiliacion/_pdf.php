@@ -40,7 +40,7 @@ if($providerUser->totalCount){
         ['attribute' => 'id', 'visible' => false],
                 [
                 'attribute' => 'tipoUser.Tipo',
-                'label' => Yii::t('app', 'Tipo User')
+                'label' => Yii::t('app', 'Tipo Usuario')
             ],
         'username',
         'email:email',

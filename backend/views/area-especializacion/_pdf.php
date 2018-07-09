@@ -8,14 +8,14 @@ use kartik\grid\GridView;
 /* @var $model backend\models\AreaEspecializacion */
 
 $this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Area Especializacions'), 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Areas de especializaciones'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="area-especializacion-view">
 
     <div class="row">
         <div class="col-sm-9">
-            <h2><?= Yii::t('app', 'Area Especializacion').' '. Html::encode($this->title) ?></h2>
+            <h2><?= Yii::t('app', 'Area de especializacion').' '. Html::encode($this->title) ?></h2>
         </div>
     </div>
 
@@ -46,7 +46,7 @@ if($providerUserAreaEspecializacion->totalCount){
         'dataProvider' => $providerUserAreaEspecializacion,
         'panel' => [
             'type' => GridView::TYPE_PRIMARY,
-            'heading' => Html::encode(Yii::t('app', 'User Area Especializacion')),
+            'heading' => Html::encode(Yii::t('app', 'Usuarios')),
         ],
         'panelHeadingTemplate' => '<h4>{heading}</h4>{summary}',
         'toggleData' => false,

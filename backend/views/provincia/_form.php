@@ -27,7 +27,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'pais_id')->widget(\kartik\widgets\Select2::classname(), [
         'data' => \yii\helpers\ArrayHelper::map(\backend\models\Pais::find()->orderBy('id')->asArray()->all(), 'id', 'Pais'),
-        'options' => ['placeholder' => Yii::t('app', 'Elije Pais')],
+        'options' => ['placeholder' => Yii::t('app', 'Elige Pais')],
         'pluginOptions' => [
             'allowClear' => true
         ],
@@ -62,7 +62,7 @@ use yii\widgets\ActiveForm;
         <?= Html::submitButton($model->isNewRecord ? Yii::t('app', 'Añadir') : Yii::t('app', 'Actualizar'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     <?php endif; ?>
     <?php if(Yii::$app->controller->action->id != 'create'): ?>
-        <?= Html::submitButton(Yii::t('app', 'Guardar como nuevo'), ['class' => 'btn btn-info', 'value' => '1', 'name' => '_asnew']) ?>
+        <?= Html::submitButton(Yii::t('app', 'Guardar nuevo'), ['class' => 'btn btn-info', 'value' => '1', 'name' => '_asnew']) ?>
     <?php endif; ?>
         <?= Html::a(Yii::t('app', 'Cancelar'), Yii::$app->request->referrer , ['class'=> 'btn btn-danger']) ?>
     </div>

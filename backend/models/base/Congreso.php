@@ -48,7 +48,7 @@ class Congreso extends \yii\db\ActiveRecord
     {
         return [
             'id' => Yii::t('app', 'ID'),
-            'provincia_id' => Yii::t('app', 'Provincia ID'),
+            'provincia_id' => Yii::t('app', 'Provincia'),
             'Nombre' => Yii::t('app', 'Nombre'),
             'Fecha_Inicio' => Yii::t('app', 'Fecha  Inicio'),
             'Fecha_Final' => Yii::t('app', 'Fecha  Final'),

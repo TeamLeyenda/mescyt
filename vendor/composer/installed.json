@@ -1,5 +1,65 @@
 [
     {
+        "name": "2amigos/yii2-chartjs-widget",
+        "version": "2.1.2",
+        "version_normalized": "2.1.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/2amigos/yii2-chartjs-widget.git",
+            "reference": "a5246d9bb491ef4ff82915dccc6980ed17ed0873"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/2amigos/yii2-chartjs-widget/zipball/a5246d9bb491ef4ff82915dccc6980ed17ed0873",
+            "reference": "a5246d9bb491ef4ff82915dccc6980ed17ed0873",
+            "shasum": ""
+        },
+        "require": {
+            "bower-asset/chartjs": "~2.6",
+            "yiisoft/yii2": "~2.0.5"
+        },
+        "require-dev": {
+            "friendsofphp/php-cs-fixer": "^2.0",
+            "phpunit/phpunit": "~4.4"
+        },
+        "time": "2017-07-26T09:24:16+00:00",
+        "type": "yii2-extension",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "dosamigos\\chartjs\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "2amigOS! Consulting Group",
+                "email": "hola@2amigos.us",
+                "homepage": "http://2amigos.us",
+                "role": "Developer"
+            }
+        ],
+        "description": "ChartJs widget for Yii2.",
+        "homepage": "http://yiiwheels.com/extension/chartjs-widget",
+        "keywords": [
+            "2amigos",
+            "chartjs",
+            "extension",
+            "widget",
+            "yii",
+            "yii 2",
+            "yii2"
+        ]
+    },
+    {
         "name": "almasaeed2010/adminlte",
         "version": "v2.x-dev",
         "version_normalized": "2.9999999.9999999.9999999-dev",
@@ -194,6 +254,27 @@
         "require": {
             "bower-asset/bootstrap": ">=3.1.0",
             "bower-asset/jquery": ">=1.9.0"
+        },
+        "type": "bower-asset",
+        "installation-source": "dist",
+        "license": [
+            "MIT"
+        ]
+    },
+    {
+        "name": "bower-asset/chartjs",
+        "version": "v2.7.2",
+        "version_normalized": "2.7.2.0",
+        "source": {
+            "type": "git",
+            "url": "git@github.com:nnnick/Chart.js.git",
+            "reference": "98f104cdd03617f1300b417b3d60c23d4e3e3403"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/nnnick/Chart.js/zipball/98f104cdd03617f1300b417b3d60c23d4e3e3403",
+            "reference": "98f104cdd03617f1300b417b3d60c23d4e3e3403",
+            "shasum": null
         },
         "type": "bower-asset",
         "installation-source": "dist",
@@ -500,6 +581,53 @@
         "keywords": [
             "gravatar",
             "yii"
+        ]
+    },
+    {
+        "name": "chiliec/yii2-vote",
+        "version": "4.2",
+        "version_normalized": "4.2.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/Chiliec/yii2-vote.git",
+            "reference": "10ea278fb5448fb6020d9f933f97677cb6904045"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/Chiliec/yii2-vote/zipball/10ea278fb5448fb6020d9f933f97677cb6904045",
+            "reference": "10ea278fb5448fb6020d9f933f97677cb6904045",
+            "shasum": ""
+        },
+        "require": {
+            "yiisoft/yii2": "*"
+        },
+        "require-dev": {
+            "yiisoft/yii2-codeception": "^2.0"
+        },
+        "time": "2018-05-19T15:24:07+00:00",
+        "type": "yii2-extension",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "chiliec\\vote\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Vladimir Babin",
+                "email": "vovababin@gmail.com",
+                "homepage": "http://chiliec.ru"
+            }
+        ],
+        "description": "Provides anonymous voting for any models",
+        "keywords": [
+            "anonymous",
+            "vote",
+            "voting"
         ]
     },
     {
@@ -1250,6 +1378,66 @@
         "homepage": "http://htmlpurifier.org/",
         "keywords": [
             "html"
+        ]
+    },
+    {
+        "name": "facebook/graph-sdk",
+        "version": "5.6.3",
+        "version_normalized": "5.6.3.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/facebook/php-graph-sdk.git",
+            "reference": "90e92bd1816fe718e55184ab85910dfcf488432c"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/facebook/php-graph-sdk/zipball/90e92bd1816fe718e55184ab85910dfcf488432c",
+            "reference": "90e92bd1816fe718e55184ab85910dfcf488432c",
+            "shasum": ""
+        },
+        "require": {
+            "php": "^5.4|^7.0"
+        },
+        "require-dev": {
+            "guzzlehttp/guzzle": "~5.0",
+            "mockery/mockery": "~0.8",
+            "phpunit/phpunit": "~4.0"
+        },
+        "suggest": {
+            "guzzlehttp/guzzle": "Allows for implementation of the Guzzle HTTP client",
+            "paragonie/random_compat": "Provides a better CSPRNG option in PHP 5"
+        },
+        "time": "2018-07-03T02:25:00+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "5.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Facebook\\": "src/Facebook/"
+            },
+            "files": [
+                "src/Facebook/polyfills.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "Facebook Platform"
+        ],
+        "authors": [
+            {
+                "name": "Facebook",
+                "homepage": "https://github.com/facebook/php-graph-sdk/contributors"
+            }
+        ],
+        "description": "Facebook SDK for PHP",
+        "homepage": "https://github.com/facebook/php-graph-sdk",
+        "keywords": [
+            "facebook",
+            "sdk"
         ]
     },
     {
@@ -2227,6 +2415,61 @@
             "mpdf",
             "pdf",
             "utf8",
+            "yii2"
+        ]
+    },
+    {
+        "name": "kartik-v/yii2-social",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/kartik-v/yii2-social.git",
+            "reference": "0000d8b005213a786d7c93af7eabb623d37f3002"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/kartik-v/yii2-social/zipball/0000d8b005213a786d7c93af7eabb623d37f3002",
+            "reference": "0000d8b005213a786d7c93af7eabb623d37f3002",
+            "shasum": ""
+        },
+        "require": {
+            "facebook/graph-sdk": "~5.0",
+            "kartik-v/yii2-krajee-base": "~1.7"
+        },
+        "time": "2018-02-26T17:43:03+00:00",
+        "type": "yii2-extension",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.3.x-dev"
+            }
+        },
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "kartik\\social\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Kartik Visweswaran",
+                "email": "kartikv2@gmail.com",
+                "homepage": "http://www.krajee.com/"
+            }
+        ],
+        "description": "Module containing useful widgets for Yii Framework 2.0 that integrates social functionalities from DISQUS, Facebook, Google etc.",
+        "homepage": "https://github.com/kartik-v/yii2-social",
+        "keywords": [
+            "disqus",
+            "extension",
+            "facebook",
+            "social",
+            "twitter",
+            "widget",
             "yii2"
         ]
     },
@@ -3422,6 +3665,57 @@
         ]
     },
     {
+        "name": "machour/yii2-notifications",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/machour/yii2-notifications.git",
+            "reference": "e07184024319c195c6dfb413100eff63bc902735"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/machour/yii2-notifications/zipball/e07184024319c195c6dfb413100eff63bc902735",
+            "reference": "e07184024319c195c6dfb413100eff63bc902735",
+            "shasum": ""
+        },
+        "require": {
+            "rmrevin/yii2-fontawesome": "~2.15",
+            "yiisoft/yii2": "*"
+        },
+        "time": "2017-11-20T09:55:32+00:00",
+        "type": "yii2-extension",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0-dev"
+            }
+        },
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "machour\\yii2\\notifications\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Mehdi Achour",
+                "email": "machour@gmail.com"
+            }
+        ],
+        "description": "Notifications for your Yii2 app",
+        "keywords": [
+            "growl",
+            "notification",
+            "notify",
+            "noty",
+            "yii"
+        ]
+    },
+    {
         "name": "mdmsoft/yii2-admin",
         "version": "dev-master",
         "version_normalized": "9999999-dev",
@@ -3479,52 +3773,6 @@
             "auth",
             "rbac",
             "yii"
-        ]
-    },
-    {
-        "name": "meysampg/yii2-formbuilder",
-        "version": "v1.2.6",
-        "version_normalized": "1.2.6.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/meysampg/yii2-formbuilder.git",
-            "reference": "3a1880afbc01fa687af8b2975630a995051003c8"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/meysampg/yii2-formbuilder/zipball/3a1880afbc01fa687af8b2975630a995051003c8",
-            "reference": "3a1880afbc01fa687af8b2975630a995051003c8",
-            "shasum": ""
-        },
-        "require": {
-            "yiisoft/yii2": "*",
-            "yiisoft/yii2-jui": "*"
-        },
-        "time": "2017-12-02T16:56:01+00:00",
-        "type": "yii2-extension",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "meysampg\\formbuilder\\": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Meysam P.G.",
-                "email": "p.g.meysam@gmail.com"
-            }
-        ],
-        "description": "A drag and drop form builder with jQuery for Yii2",
-        "keywords": [
-            "JS",
-            "extension",
-            "form",
-            "form-builder",
-            "yii2"
         ]
     },
     {

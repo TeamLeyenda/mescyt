@@ -1,7 +1,10 @@
 <?php
 
 use yii\helpers\Html;
-use yii\widgets\ActiveForm;
+//use yii\widgets\ActiveForm;
+use yii\bootstrap\Modal;
+use kartik\widgets\ActiveForm;
+use kartik\widgets\DateTimePicker;
 
 /* @var $this yii\web\View */
 /* @var $model backend\models\Presentacion */
@@ -27,7 +30,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'congreso_id')->widget(\kartik\widgets\Select2::classname(), [
         'data' => \yii\helpers\ArrayHelper::map(\backend\models\Congreso::find()->orderBy('id')->asArray()->all(), 'id', 'Nombre'),
-        'options' => ['placeholder' => Yii::t('app', 'Choose Congreso')],
+        'options' => ['placeholder' => Yii::t('app', 'Elige Congreso')],
         'pluginOptions' => [
             'allowClear' => true
         ],
@@ -35,7 +38,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'sala_id')->widget(\kartik\widgets\Select2::classname(), [
         'data' => \yii\helpers\ArrayHelper::map(\backend\models\Sala::find()->orderBy('id')->asArray()->all(), 'id', 'Nombre_Sala'),
-        'options' => ['placeholder' => Yii::t('app', 'Choose Sala')],
+        'options' => ['placeholder' => Yii::t('app', 'Elige Sala')],
         'pluginOptions' => [
             'allowClear' => true
         ],
@@ -48,29 +51,47 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'Area_Tematica')->textInput(['maxlength' => true, 'placeholder' => 'Area Tematica']) ?>
 
     <?= $form->field($model, 'Modalidad_Presentacion')->textInput(['maxlength' => true, 'placeholder' => 'Modalidad Presentacion']) ?>
-
-    <?= $form->field($model, 'Fecha_Inicio')->widget(\kartik\datecontrol\DateControl::classname(), [
-        'type' => \kartik\datecontrol\DateControl::FORMAT_DATETIME,
-        'saveFormat' => 'php:Y-m-d H:i:s',
-        'ajaxConversion' => true,
-        'options' => [
-            'pluginOptions' => [
-                'placeholder' => Yii::t('app', 'Choose Fecha Inicio'),
-                'autoclose' => true,
-            ]
+    
+    <?= $form->field($model, 'Fecha_Inicio')->widget(\kartik\widgets\DateTimePicker::classname(), [
+        'pluginOptions' => [
+            'showMeridian' => true,
+            'placeholder' => Yii::t('app', 'Elige Fecha Inicio'),
+            'autoclose' => true,
+            'format' => 'dd-M-yyyy HH:ii P'
         ],
+        'type' => \kartik\widgets\DateTimePicker::TYPE_COMPONENT_PREPEND,
+        //'saveFormat' => 'dd-M-yyyy HH:ii P',
+        //'ajaxConversion' => true,
+        
+        
+        
     ]); ?>
-
-    <?= $form->field($model, 'Fecha_Final')->widget(\kartik\datecontrol\DateControl::classname(), [
-        'type' => \kartik\datecontrol\DateControl::FORMAT_DATETIME,
-        'saveFormat' => 'php:Y-m-d H:i:s',
-        'ajaxConversion' => true,
-        'options' => [
+    <?php
+    /*
+    echo '<label>Start Date/Time</label>';
+    echo DateTimePicker::widget([
+        'name' => 'Fecha_Inicio',
+        //'options' => ['placeholder' => 'Select operating time ...'],
+        'type' => DateTimePicker::TYPE_COMPONENT_PREPEND,
+        'convertFormat' => false,
+        'pluginOptions' => [
+            'format' => 'dd/M/yyyy HH:ii P',
+            //'startDate' => '01-Mar-2014 12:00 AM',
+            //'todayHighlight' => true
+        ]
+    ]);
+    */
+    ?>
+    <?= $form->field($model, 'Fecha_Final')->widget(\kartik\widgets\DateTimePicker::classname(), [
+        'type' => \kartik\widgets\DateTimePicker::TYPE_COMPONENT_PREPEND,
+        //'saveFormat' => 'dd-M-yyyy HH:ii P',
+        //'ajaxConversion' => true,
             'pluginOptions' => [
-                'placeholder' => Yii::t('app', 'Choose Fecha Final'),
+                'placeholder' => Yii::t('app', 'Elige Fecha Final'),
                 'autoclose' => true,
+                'format' => 'dd-M-yyyy HH:ii P'
             ]
-        ],
+        
     ]); ?>
 
     <?= $form->field($model, 'Vinculo')->textInput(['maxlength' => true, 'placeholder' => 'Vinculo']) ?>
@@ -80,7 +101,7 @@ use yii\widgets\ActiveForm;
     <?php
     $forms = [
         [
-            'label' => '<i class="glyphicon glyphicon-book"></i> ' . Html::encode(Yii::t('app', 'PresentacionUser')),
+            'label' => '<i class="glyphicon glyphicon-user"></i> ' . Html::encode(Yii::t('app', 'Presentadores')),
             'content' => $this->render('_formPresentacionUser', [
                 'row' => \yii\helpers\ArrayHelper::toArray($model->presentacionUsers),
             ]),
@@ -99,12 +120,12 @@ use yii\widgets\ActiveForm;
     ?>
     <div class="form-group">
     <?php if(Yii::$app->controller->action->id != 'save-as-new'): ?>
-        <?= Html::submitButton($model->isNewRecord ? Yii::t('app', 'Create') : Yii::t('app', 'Update'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        <?= Html::submitButton($model->isNewRecord ? Yii::t('app', 'Añadir') : Yii::t('app', 'Actualizar'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     <?php endif; ?>
     <?php if(Yii::$app->controller->action->id != 'create'): ?>
-        <?= Html::submitButton(Yii::t('app', 'Save As New'), ['class' => 'btn btn-info', 'value' => '1', 'name' => '_asnew']) ?>
+        <?= Html::submitButton(Yii::t('app', 'Guardar nuevo'), ['class' => 'btn btn-info', 'value' => '1', 'name' => '_asnew']) ?>
     <?php endif; ?>
-        <?= Html::a(Yii::t('app', 'Cancel'), Yii::$app->request->referrer , ['class'=> 'btn btn-danger']) ?>
+        <?= Html::a(Yii::t('app', 'Cancelar'), Yii::$app->request->referrer , ['class'=> 'btn btn-danger']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

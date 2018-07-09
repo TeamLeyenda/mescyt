@@ -61,6 +61,15 @@ $name = Yii::$app->user->identity->username;
                                         ],
                                     ],
 
+                            ['label' => 'Estudios',
+                                        'icon' => 'institution',
+                                        'url' => '#',
+                                        'items' => [
+                                            ['label' => 'Area de especializacion', 'icon' => 'book', 'url' => ['/area-especializacion'],],
+                                            ['label' => 'Grado academico', 'icon' => 'book', 'url' => ['/grado-academico'],],
+                                        ],
+                                    ],
+                                    
                             ['label' => 'Ubicacion',
                                     'icon' => 'globe',
                                     'url' => '#',
@@ -69,6 +78,7 @@ $name = Yii::$app->user->identity->username;
                                         ['label' => 'Provincias', 'icon' => 'circle-o', 'url' => ['/provincia'],],
                                     ],
                                 ],
+                                
                     /*
                     ['label' => 'Administracion',
                         'icon' => 'share',

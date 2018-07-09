@@ -7,14 +7,15 @@ namespace Composer\Autoload;
 class ComposerStaticInitc70512041bcbe534a3dc17724eba2e67
 {
     public static $files = array (
+        '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         '2cffec82183ee1cea088009cef9a6fc3' => __DIR__ . '/..' . '/ezyang/htmlpurifier/library/HTMLPurifier.composer.php',
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
-        '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         '5255c38a0faeba867671b61dfda6d864' => __DIR__ . '/..' . '/paragonie/random_compat/lib/random.php',
+        'c65d09b6820da036953a371c8c73a9b1' => __DIR__ . '/..' . '/facebook/graph-sdk/src/Facebook/polyfills.php',
         '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
-        'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
+        'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
         '180092cfc969a12e06f2132a203a3184' => __DIR__ . '/..' . '/codeception/verify/src/Codeception/function.php',
     );
 
@@ -54,8 +55,8 @@ class ComposerStaticInitc70512041bcbe534a3dc17724eba2e67
             'mootensai\\components\\' => 21,
             'mootensai\\behaviors\\' => 20,
             'meysampg\\treeview\\' => 18,
-            'meysampg\\formbuilder\\' => 21,
             'mdm\\admin\\' => 10,
+            'machour\\yii2\\notifications\\' => 27,
         ),
         'k' => 
         array (
@@ -68,6 +69,7 @@ class ComposerStaticInitc70512041bcbe534a3dc17724eba2e67
             'kartik\\switchinput\\' => 19,
             'kartik\\spinner\\' => 15,
             'kartik\\sortable\\' => 16,
+            'kartik\\social\\' => 14,
             'kartik\\sidenav\\' => 15,
             'kartik\\select2\\' => 15,
             'kartik\\rating\\' => 14,
@@ -102,6 +104,7 @@ class ComposerStaticInitc70512041bcbe534a3dc17724eba2e67
         ),
         'd' => 
         array (
+            'dosamigos\\chartjs\\' => 18,
             'dmstr\\' => 6,
             'dixonsatit\\agencyTheme\\' => 23,
             'dee\\gii\\' => 8,
@@ -109,6 +112,7 @@ class ComposerStaticInitc70512041bcbe534a3dc17724eba2e67
         'c' => 
         array (
             'creocoder\\nestedsets\\' => 21,
+            'chiliec\\vote\\' => 13,
             'cebe\\markdown\\' => 14,
         ),
         'b' => 
@@ -149,6 +153,7 @@ class ComposerStaticInitc70512041bcbe534a3dc17724eba2e67
         'F' => 
         array (
             'Faker\\' => 6,
+            'Facebook\\' => 9,
         ),
         'E' => 
         array (
@@ -221,8 +226,8 @@ class ComposerStaticInitc70512041bcbe534a3dc17724eba2e67
         'phpDocumentor\\Reflection\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
-            1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
-            2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
+            1 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
+            2 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
         ),
         'mootensai\\relation\\' => 
         array (
@@ -234,8 +239,8 @@ class ComposerStaticInitc70512041bcbe534a3dc17724eba2e67
         ),
         'mootensai\\components\\' => 
         array (
-            0 => __DIR__ . '/..' . '/mootensai/yii2-jsblock',
-            1 => __DIR__ . '/..' . '/mootensai/yii2-optimistic-lock-validator',
+            0 => __DIR__ . '/..' . '/mootensai/yii2-optimistic-lock-validator',
+            1 => __DIR__ . '/..' . '/mootensai/yii2-jsblock',
         ),
         'mootensai\\behaviors\\' => 
         array (
@@ -245,13 +250,13 @@ class ComposerStaticInitc70512041bcbe534a3dc17724eba2e67
         array (
             0 => __DIR__ . '/..' . '/meysampg/yii2-treeview',
         ),
-        'meysampg\\formbuilder\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/meysampg/yii2-formbuilder',
-        ),
         'mdm\\admin\\' => 
         array (
             0 => __DIR__ . '/..' . '/mdmsoft/yii2-admin',
+        ),
+        'machour\\yii2\\notifications\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/machour/yii2-notifications',
         ),
         'kartik\\widgets\\' => 
         array (
@@ -288,6 +293,10 @@ class ComposerStaticInitc70512041bcbe534a3dc17724eba2e67
         'kartik\\sortable\\' => 
         array (
             0 => __DIR__ . '/..' . '/kartik-v/yii2-sortable',
+        ),
+        'kartik\\social\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-social',
         ),
         'kartik\\sidenav\\' => 
         array (
@@ -401,6 +410,10 @@ class ComposerStaticInitc70512041bcbe534a3dc17724eba2e67
         array (
             0 => __DIR__ . '/..' . '/jamband/yii2-schemadump/src',
         ),
+        'dosamigos\\chartjs\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/2amigos/yii2-chartjs-widget/src',
+        ),
         'dmstr\\' => 
         array (
             0 => __DIR__ . '/..' . '/dmstr/yii2-adminlte-asset',
@@ -416,6 +429,10 @@ class ComposerStaticInitc70512041bcbe534a3dc17724eba2e67
         'creocoder\\nestedsets\\' => 
         array (
             0 => __DIR__ . '/..' . '/creocoder/yii2-nested-sets/src',
+        ),
+        'chiliec\\vote\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/chiliec/yii2-vote',
         ),
         'cebe\\markdown\\' => 
         array (
@@ -493,6 +510,10 @@ class ComposerStaticInitc70512041bcbe534a3dc17724eba2e67
         array (
             0 => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker',
         ),
+        'Facebook\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/facebook/graph-sdk/src/Facebook',
+        ),
         'Egulias\\EmailValidator\\' => 
         array (
             0 => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator',
@@ -523,8 +544,8 @@ class ComposerStaticInitc70512041bcbe534a3dc17724eba2e67
         ),
         'Codeception\\' => 
         array (
-            0 => __DIR__ . '/..' . '/codeception/base/src/Codeception',
-            1 => __DIR__ . '/..' . '/codeception/stub/src',
+            0 => __DIR__ . '/..' . '/codeception/stub/src',
+            1 => __DIR__ . '/..' . '/codeception/base/src/Codeception',
         ),
     );
 

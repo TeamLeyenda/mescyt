@@ -8,14 +8,14 @@ use kartik\grid\GridView;
 /* @var $model backend\models\GradoAcademico */
 
 $this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Grado Academicos'), 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Grados academicos'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="grado-academico-view">
 
     <div class="row">
         <div class="col-sm-9">
-            <h2><?= Yii::t('app', 'Grado Academico').' '. Html::encode($this->title) ?></h2>
+            <h2><?= Yii::t('app', 'Grado academico').' '. Html::encode($this->title) ?></h2>
         </div>
     </div>
 
@@ -46,7 +46,7 @@ if($providerUserGradoAcademico->totalCount){
         'dataProvider' => $providerUserGradoAcademico,
         'panel' => [
             'type' => GridView::TYPE_PRIMARY,
-            'heading' => Html::encode(Yii::t('app', 'User Grado Academico')),
+            'heading' => Html::encode(Yii::t('app', 'User Grado academico')),
         ],
         'panelHeadingTemplate' => '<h4>{heading}</h4>{summary}',
         'toggleData' => false,

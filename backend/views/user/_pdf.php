@@ -31,7 +31,7 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
         [
                 'attribute' => 'tipoUser.Tipo',
-                'label' => Yii::t('app', 'Tipo User')
+                'label' => Yii::t('app', 'Tipo Usuario')
             ],
         'username',
         'email:email',
@@ -59,7 +59,7 @@ if($providerPresentacionUser->totalCount){
         'dataProvider' => $providerPresentacionUser,
         'panel' => [
             'type' => GridView::TYPE_PRIMARY,
-            'heading' => Html::encode(Yii::t('app', 'Presentacion User')),
+            'heading' => Html::encode(Yii::t('app', 'Presentacion Usuario')),
         ],
         'panelHeadingTemplate' => '<h4>{heading}</h4>{summary}',
         'toggleData' => false,
@@ -76,7 +76,7 @@ if($providerUserAreaEspecializacion->totalCount){
         ['class' => 'yii\grid\SerialColumn'],
                 [
                 'attribute' => 'areaEspecializacion.id',
-                'label' => Yii::t('app', 'Area Especializacion')
+                'label' => Yii::t('app', 'Area de especializacion')
             ],
     ];
     echo Gridview::widget([

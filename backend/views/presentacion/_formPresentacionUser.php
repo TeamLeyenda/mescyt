@@ -22,12 +22,17 @@ echo TabularForm::widget([
     ],
     'attributes' => [
         'user_id' => [
-            'label' => 'User',
+            'label' => 'Presentador',
             'type' => TabularForm::INPUT_WIDGET,
             'widgetClass' => \kartik\widgets\Select2::className(),
             'options' => [
-                'data' => \yii\helpers\ArrayHelper::map(\backend\models\User::find()->orderBy('Nombre')->asArray()->all(), 'id', 'Nombre'),
-                'options' => ['placeholder' => Yii::t('app', 'Choose User')],
+                'data' => \yii\helpers\ArrayHelper::map(
+                    \backend\models\User::find()->where(['tipo_user_id' => 3])->asArray()->all(), 'id',
+                    function($model) {
+                        return $model['Nombre'].' '.$model['Apellido'];
+                    }
+                ),
+                'options' => ['placeholder' => Yii::t('app', 'Elige Presentador')],
             ],
             'columnOptions' => ['width' => '200px']
         ],
@@ -37,7 +42,7 @@ echo TabularForm::widget([
             'value' => function($model, $key) {
                 return
                     Html::hiddenInput('Children[' . $key . '][id]', (!empty($model['id'])) ? $model['id'] : "") .
-                    Html::a('<i class="glyphicon glyphicon-trash"></i>', '#', ['title' =>  Yii::t('app', 'Delete'), 'onClick' => 'delRowPresentacionUser(' . $key . '); return false;', 'id' => 'presentacion-user-del-btn']);
+                    Html::a('<i class="glyphicon glyphicon-trash"></i>', '#', ['title' =>  Yii::t('app', 'Eliminar'), 'onClick' => 'delRowPresentacionUser(' . $key . '); return false;', 'id' => 'presentacion-user-del-btn']);
             },
         ],
     ],
@@ -47,7 +52,7 @@ echo TabularForm::widget([
             'type' => GridView::TYPE_DEFAULT,
             'before' => false,
             'footer' => false,
-            'after' => Html::button('<i class="glyphicon glyphicon-plus"></i>' . Yii::t('app', 'Add Presentacion User'), ['type' => 'button', 'class' => 'btn btn-success kv-batch-create', 'onClick' => 'addRowPresentacionUser()']),
+            'after' => Html::button('<i class="glyphicon glyphicon-plus"></i>' . Yii::t('app', 'Añadir Presentador'), ['type' => 'button', 'class' => 'btn btn-success kv-batch-create', 'onClick' => 'addRowPresentacionUser()']),
         ]
     ]
 ]);

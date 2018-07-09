@@ -7,15 +7,15 @@ use kartik\grid\GridView;
 /* @var $this yii\web\View */
 /* @var $model backend\models\GradoAcademico */
 
-$this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Grado Academicos'), 'url' => ['index']];
+$this->title = '';  //$this->title = $model->id;
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Grados academicos'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="grado-academico-view">
 
     <div class="row">
         <div class="col-sm-8">
-            <h2><?= Yii::t('app', 'Grado Academico').' '. Html::encode($this->title) ?></h2>
+            <h2><?= Yii::t('app', 'Grado academico')?></h2>
         </div>
         <div class="col-sm-4" style="margin-top: 15px">
 <?=             
@@ -28,9 +28,9 @@ $this->params['breadcrumbs'][] = $this->title;
                     'title' => Yii::t('app', 'Will open the generated PDF file in a new window')
                 ]
             )?>
-            <?= Html::a(Yii::t('app', 'Guardar como nuevo'), ['save-as-new', 'id' => $model->id], ['class' => 'btn btn-info']) ?>            
+            <?= Html::a(Yii::t('app', 'Guardar nuevo'), ['save-as-new', 'id' => $model->id], ['class' => 'btn btn-info']) ?>            
             <?= Html::a(Yii::t('app', 'Actualizar'), ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-            <?= Html::a(Yii::t('app', 'Delete'), ['delete', 'id' => $model->id], [
+            <?= Html::a(Yii::t('app', 'Eliminar'), ['delete', 'id' => $model->id], [
                 'class' => 'btn btn-danger',
                 'data' => [
                     'confirm' => Yii::t('app', 'Are you sure you want to delete this item?'),
@@ -70,7 +70,7 @@ if($providerUserGradoAcademico->totalCount){
         'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-user-grado-academico']],
         'panel' => [
         'type' => GridView::TYPE_PRIMARY,
-        'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode(Yii::t('app', 'User Grado Academico')),
+        'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode(Yii::t('app', 'User Grado academico')),
         ],
         'columns' => $gridColumnUserGradoAcademico
     ]);
