@@ -11,7 +11,7 @@
             <div class="intro-text">
                 <div class="intro-heading">Bienvenidos!</div>
                 <div class="intro-lead-in">Conferencias MESCyT!</div>
-                <a href="http://www.mescyt.gob.do" class="page-scroll btn btn-xl" style="background-color: #235288; border-color: #235288" style="border-color: #235288">Ir a MESCyT</a>
+                <a href="http://www.mescyt.gob.do" class="page-scroll btn btn-xl" style="background-color: #235288; border-color: #235288">Ir a MESCyT</a>
             </div>
         </div>
     </header>
