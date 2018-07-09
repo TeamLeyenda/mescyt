@@ -14,35 +14,241 @@ use dosamigos\chartjs\ChartJs;
 
 $this->title = '';
 ?>
-<?= ChartJs::widget([
-    //'type' => 'pie',
-    'type' => 'pie',
-    /*
-    'options' => [
-        "height"=>50,
-        "width" =>100,
-    ],*/
-    'clientOptions' => [
-        'responsive' => true,
-    ],
-    'data' => [
-        'labels' => ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-        'datasets' => [
-            [
-                'data' => [12, 19, 3, 5, 2, 3],
-                'backgroundColor' => [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',
-                    'rgba(153, 102, 255, 0.2)',
-                    'rgba(255, 159, 64, 0.2)'
-                ],
-            ],
-        ]
-    ]
-]);
-?>
+<div class="row">
+        <div class="col-md-6">
+          <!-- AREA CHART -->
+          <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">Area Chart</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>
+            <div class="box-body">
+              <div class="chart">
+              <?= ChartJs::widget([
+                    'type' => 'line',
+                    /*
+                    'options' => [
+                        "height"=>400,
+                        "width" =>400,
+                    ],
+                    */
+                    'clientOptions' => [
+                        'responsive' => true,
+                    ],
+                    'data' => [
+                        'labels' => ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio"],
+                        'datasets' => [
+                            [
+                                'label' => "Santiago",
+                                'fill' => true,
+                                'backgroundColor' => "rgba(179,181,198,0.2)",
+                                'borderColor' => "rgba(179,181,198,1)",
+                                'pointBackgroundColor' => "rgba(179,181,198,1)",
+                                'pointBorderColor' => "#fff",
+                                'pointHoverBackgroundColor' => "#fff",
+                                'pointHoverBorderColor' => "rgba(179,181,198,1)",
+                                'data' => [65, 59, 90, 81, 56, 55, 40]
+                            ],
+                            [
+                                'label' => "La vega",
+                                'fill' => true,
+                                'backgroundColor' => "rgba(255,99,132,0.2)",
+                                'borderColor' => "rgba(255,99,132,1)",
+                                'pointBackgroundColor' => "rgba(255,99,132,1)",
+                                'pointBorderColor' => "#fff",
+                                'pointHoverBackgroundColor' => "#fff",
+                                'pointHoverBorderColor' => "rgba(255,99,132,1)",
+                                'data' => [28, 48, 40, 19, 96, 27, 100]
+                            ]
+                        ]
+                    ]
+                    ]);
+                    ?>
+                
+              </div>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+
+          <!-- DONUT CHART -->
+          <div class="box box-danger">
+            <div class="box-header with-border">
+              <h3 class="box-title">Donut Chart</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>
+            <div class="box-body">
+            <?= ChartJs::widget([
+                    'type' => 'doughnut',
+                    /*
+                    'options' => [
+                        "height"=>400,
+                        "width" =>400,
+                    ],
+                    */
+                    'clientOptions' => [
+                        'responsive' => true,
+                    ],
+                    'data' => [
+                        'labels' => ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+                        'datasets' => [
+                            [
+                                'label' => "Santiago",
+                                //'fill' => true,
+                                'backgroundColor' => [ 
+                                'rgba(255, 99, 132, 0.2)',
+                                'rgba(54, 162, 235, 0.2)',
+                                'rgba(255, 206, 86, 0.2)',
+                                'rgba(75, 192, 192, 0.2)',
+                                'rgba(153, 102, 255, 0.2)',
+                                'rgba(255, 159, 64, 0.2)'
+                                ],
+                                'data' => [65, 59, 90, 81, 56, 55, 40]
+                            ],
+                        ]
+                    ]
+                    ]);
+                    ?>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+
+        </div>
+        <!-- /.col (LEFT) -->
+        <div class="col-md-6">
+          <!-- LINE CHART -->
+          <div class="box box-info">
+            <div class="box-header with-border">
+              <h3 class="box-title">Line Chart</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>
+            <div class="box-body">
+              <div class="chart">
+              <?= ChartJs::widget([
+                    'type' => 'line',
+                    /*
+                    'options' => [
+                        "height"=>400,
+                        "width" =>400,
+                    ],
+                    */
+                    'clientOptions' => [
+                        'responsive' => true,
+                    ],
+                    'data' => [
+                        'labels' => ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio"],
+                        'datasets' => [
+                            [
+                                'label' => "Santiago",
+                                'fill' => false,
+                                'backgroundColor' => "rgba(179,181,198,0.2)",
+                                'borderColor' => "rgba(179,181,198,1)",
+                                'pointBackgroundColor' => "rgba(179,181,198,1)",
+                                'pointBorderColor' => "#fff",
+                                'pointHoverBackgroundColor' => "#fff",
+                                'pointHoverBorderColor' => "rgba(179,181,198,1)",
+                                'data' => [65, 59, 90, 81, 56, 55, 40]
+                            ],
+                            [
+                                'label' => "La vega",
+                                'fill' => false,
+                                'backgroundColor' => "rgba(255,99,132,0.2)",
+                                'borderColor' => "rgba(255,99,132,1)",
+                                'pointBackgroundColor' => "rgba(255,99,132,1)",
+                                'pointBorderColor' => "#fff",
+                                'pointHoverBackgroundColor' => "#fff",
+                                'pointHoverBorderColor' => "rgba(255,99,132,1)",
+                                'data' => [28, 48, 40, 19, 96, 27, 100]
+                            ]
+                        ]
+                    ]
+                    ]);
+                    ?>
+              </div>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+
+          <!-- BAR CHART -->
+          <div class="box box-success">
+            <div class="box-header with-border">
+              <h3 class="box-title">Bar Chart</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>
+            <div class="box-body">
+              <div class="chart">
+              <?= ChartJs::widget([
+                    'type' => 'bar',
+                    /*
+                    'options' => [
+                        "height"=>400,
+                        "width" =>400,
+                    ],
+                    */
+                    'clientOptions' => [
+                        'responsive' => true,
+                    ],
+                    'data' => [
+                        'labels' => ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio"],
+                        'datasets' => [
+                            [
+                                'label' => "Santiago",
+                                'fill' => true,
+                                'backgroundColor' => "rgba(179,181,198,0.2)",
+                                'borderColor' => "rgba(179,181,198,1)",
+                                'pointBackgroundColor' => "rgba(179,181,198,1)",
+                                'pointBorderColor' => "#fff",
+                                'pointHoverBackgroundColor' => "#fff",
+                                'pointHoverBorderColor' => "rgba(179,181,198,1)",
+                                'data' => [65, 59, 90, 81, 56, 55, 40]
+                            ],
+                            [
+                                'label' => "La vega",
+                                'fill' => true,
+                                'backgroundColor' => "rgba(255,99,132,0.2)",
+                                'borderColor' => "rgba(255,99,132,1)",
+                                'pointBackgroundColor' => "rgba(255,99,132,1)",
+                                'pointBorderColor' => "#fff",
+                                'pointHoverBackgroundColor' => "#fff",
+                                'pointHoverBorderColor' => "rgba(255,99,132,1)",
+                                'data' => [28, 48, 40, 19, 96, 27, 100]
+                            ]
+                        ]
+                    ]
+                    ]);
+                    ?>
+              </div>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+
+        </div>
+        <!-- /.col (RIGHT) -->
+      </div>
+
 <div class="site-index">
     
     <div class="congreso-index">
