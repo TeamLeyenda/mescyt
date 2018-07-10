@@ -4,7 +4,12 @@ use yii\helpers\Html;
 //use yii\widgets\ActiveForm;
 use yii\bootstrap\Modal;
 use kartik\widgets\ActiveForm;
+use kartik\builder\Form;
 use kartik\widgets\DateTimePicker;
+use kartik\datecontrol\DateControl;
+use kartik\widgets\FileInput;
+// or 'use kartikile\FileInput' if you have only installed yii2-widget-fileinput in isolation
+use yii\helpers\Url;
 
 /* @var $this yii\web\View */
 /* @var $model backend\models\Presentacion */
@@ -22,81 +27,92 @@ use kartik\widgets\DateTimePicker;
 
 <div class="presentacion-form">
 
-    <?php $form = ActiveForm::begin(); ?>
+    <?php $form = ActiveForm::begin(['type' => ActiveForm::TYPE_VERTICAL]); ?>
 
     <?= $form->errorSummary($model); ?>
 
     <?= $form->field($model, 'id', ['template' => '{input}'])->textInput(['style' => 'display:none']); ?>
 
-    <?= $form->field($model, 'congreso_id')->widget(\kartik\widgets\Select2::classname(), [
-        'data' => \yii\helpers\ArrayHelper::map(\backend\models\Congreso::find()->orderBy('id')->asArray()->all(), 'id', 'Nombre'),
-        'options' => ['placeholder' => Yii::t('app', 'Elige Congreso')],
-        'pluginOptions' => [
-            'allowClear' => true
-        ],
-    ]); ?>
+    <?= Form::widget([
+                    'model'=>$model,
+                    'form'=>$form,
+                    'columns'=>2,
+                    'attributes'=>[
+                        'congreso_id'=>[
+                            'type'=>Form::INPUT_WIDGET, 
+                            'widgetClass'=>'\kartik\widgets\Select2', 
+                            'options'=>['data'=>\yii\helpers\ArrayHelper::map(\backend\models\Congreso::find()->orderBy('id')->asArray()->all(), 'id', 'Nombre'),],
+                            //'hint'=>'Type and select state'
+                        ],
 
-    <?= $form->field($model, 'sala_id')->widget(\kartik\widgets\Select2::classname(), [
-        'data' => \yii\helpers\ArrayHelper::map(\backend\models\Sala::find()->orderBy('id')->asArray()->all(), 'id', 'Nombre_Sala'),
-        'options' => ['placeholder' => Yii::t('app', 'Elige Sala')],
-        'pluginOptions' => [
-            'allowClear' => true
-        ],
-    ]); ?>
+                        'sala_id'=>[
+                            'type'=>Form::INPUT_WIDGET, 
+                            'widgetClass'=>'\kartik\widgets\Select2', 
+                            'options'=>[
+                                'data'=>\yii\helpers\ArrayHelper::map(\backend\models\Sala::find()->orderBy('id')->asArray()->all(),'id', 'Nombre_Sala'),],
+                            //'hint'=>'Type and select state'
+                        ],
+                    ]
+                ]);
+            ?>
 
-    <?= $form->field($model, 'Titulo')->textInput(['maxlength' => true, 'placeholder' => 'Titulo']) ?>
-
-    <?= $form->field($model, 'Institucion')->textInput(['maxlength' => true, 'placeholder' => 'Institucion']) ?>
-
-    <?= $form->field($model, 'Area_Tematica')->textInput(['maxlength' => true, 'placeholder' => 'Area Tematica']) ?>
-
-    <?= $form->field($model, 'Modalidad_Presentacion')->textInput(['maxlength' => true, 'placeholder' => 'Modalidad Presentacion']) ?>
-    
-    <?= $form->field($model, 'Fecha_Inicio')->widget(\kartik\widgets\DateTimePicker::classname(), [
-        'pluginOptions' => [
-            'showMeridian' => true,
-            'placeholder' => Yii::t('app', 'Elige Fecha Inicio'),
-            'autoclose' => true,
-            'format' => 'dd-M-yyyy HH:ii P'
-        ],
-        'type' => \kartik\widgets\DateTimePicker::TYPE_COMPONENT_PREPEND,
-        //'saveFormat' => 'dd-M-yyyy HH:ii P',
-        //'ajaxConversion' => true,
+        <?= Form::widget([
+                        'model'=>$model,
+                        'form'=>$form,
+                        'columns'=>4,
+                        'attributes'=>[
+                            'Titulo'=>['type'=>Form::INPUT_TEXT],
+                            'Institucion'=>['type'=>Form::INPUT_TEXT],
+                            'Area_Tematica'=>['type'=>Form::INPUT_TEXT],
+                            'Modalidad_Presentacion'=>['type'=>Form::INPUT_TEXT],
+                            
+                        ]
+                    ]);
+            ?>
         
-        
-        
-    ]); ?>
-    <?php
-    /*
-    echo '<label>Start Date/Time</label>';
-    echo DateTimePicker::widget([
-        'name' => 'Fecha_Inicio',
-        //'options' => ['placeholder' => 'Select operating time ...'],
-        'type' => DateTimePicker::TYPE_COMPONENT_PREPEND,
-        'convertFormat' => false,
+        <?= Form::widget([
+                    'model'=>$model,
+                    'form'=>$form,
+                    'columns'=>2,
+                    'attributes'=>[
+                        'Fecha_Inicio'=>[
+                            'type'=>Form::INPUT_WIDGET, 
+                            'widgetClass'=>'\kartik\widgets\DateTimePicker', 
+                            'pluginOptions' => [
+                                'autoclose' => true
+                            ]
+                        ],
+
+                        'Fecha_Final'=>[
+                            'type'=>Form::INPUT_WIDGET,  
+                            'widgetClass'=>'\kartik\widgets\DateTimePicker', 
+                            //'hint'=>'Type and select state',
+                            'pluginOptions' => [
+                                'autoclose' => true
+                            ]
+                        ],
+                    ]
+                ]);
+            ?>
+
+
+    <?= $form->field($model, 'Vinculo')->textInput(['maxlength' => true, 'placeholder' => 'Link']) ?>
+
+
+
+    <?= $form->field($model, 'Archivo')->widget(FileInput::classname(), [
+        'options'=>[
+            'multiple'=>true
+        ],
         'pluginOptions' => [
-            'format' => 'dd/M/yyyy HH:ii P',
-            //'startDate' => '01-Mar-2014 12:00 AM',
-            //'todayHighlight' => true
+            'uploadUrl' => Url::to(['/site/file-upload']),
+            'uploadExtraData' => [
+                'album_id' => 20,
+                'cat_id' => 'Nature'
+            ],
+            'maxFileCount' => 10
         ]
-    ]);
-    */
-    ?>
-    <?= $form->field($model, 'Fecha_Final')->widget(\kartik\widgets\DateTimePicker::classname(), [
-        'type' => \kartik\widgets\DateTimePicker::TYPE_COMPONENT_PREPEND,
-        //'saveFormat' => 'dd-M-yyyy HH:ii P',
-        //'ajaxConversion' => true,
-            'pluginOptions' => [
-                'placeholder' => Yii::t('app', 'Elige Fecha Final'),
-                'autoclose' => true,
-                'format' => 'dd-M-yyyy HH:ii P'
-            ]
-        
-    ]); ?>
-
-    <?= $form->field($model, 'Vinculo')->textInput(['maxlength' => true, 'placeholder' => 'Vinculo']) ?>
-
-    <?= $form->field($model, 'Archivo')->textInput(['placeholder' => 'Archivo']) ?>
+        ]);?>
 
     <?php
     $forms = [

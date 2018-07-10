@@ -52,7 +52,7 @@ class Presentacion extends \yii\db\ActiveRecord
             [['congreso_id', 'Titulo', 'Fecha_Inicio', 'Fecha_Final'], 'required'],
             [['congreso_id', 'sala_id'], 'integer'],
             [['Fecha_Inicio', 'Fecha_Final'], 'safe'],
-            [['Archivo'], 'string'],
+            [['Archivo'], 'file'],
             [['Titulo', 'Area_Tematica'], 'string', 'max' => 100],
             [['Institucion'], 'string', 'max' => 50],
             [['Modalidad_Presentacion'], 'string', 'max' => 20],
