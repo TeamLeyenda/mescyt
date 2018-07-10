@@ -50,7 +50,7 @@ $this->registerJs($search);
             'template' => '{save-as-new} {view} {update} {delete}',
             'buttons' => [
                 'save-as-new' => function ($url) {
-                    return Html::a('<span class="glyphicon glyphicon-copy"></span>', $url, ['title' => 'Guardar nuevo']);
+                    return Html::a('<span class="glyphicon glyphicon-copy"></span>', $url, ['title' => 'Nuevo']);
                 },
             ],
         ],
@@ -64,7 +64,8 @@ $this->registerJs($search);
         'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-sala']],
         'panel' => [
             'type' => GridView::TYPE_PRIMARY,
-            'heading' => '<span class="glyphicon glyphicon-book"></span>  ' . Html::encode($this->title),
+            'heading' => '<span class="glyphicon glyphicon-inbox"></span>  ',
+            'footer' => false
         ],
         // your toolbar can include the additional full export menu
         'toolbar' => [

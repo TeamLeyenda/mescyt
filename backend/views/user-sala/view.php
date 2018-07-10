@@ -28,7 +28,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     'title' => Yii::t('app', 'Will open the generated PDF file in a new window')
                 ]
             )?>
-            <?= Html::a(Yii::t('app', 'Guardar nuevo'), ['save-as-new', 'user_id' => $model->user_id, 'sala_id' => $model->sala_id], ['class' => 'btn btn-info']) ?>            
+            <?= Html::a(Yii::t('app', 'Nuevo'), ['save-as-new', 'user_id' => $model->user_id, 'sala_id' => $model->sala_id], ['class' => 'btn btn-info']) ?>            
             <?= Html::a(Yii::t('app', 'Actualizar'), ['update', 'user_id' => $model->user_id, 'sala_id' => $model->sala_id], ['class' => 'btn btn-primary']) ?>
             <?= Html::a(Yii::t('app', 'Delete'), ['delete', 'user_id' => $model->user_id, 'sala_id' => $model->sala_id], [
                 'class' => 'btn btn-danger',

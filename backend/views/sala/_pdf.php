@@ -53,7 +53,7 @@ if($providerPresentacion->totalCount){
         'dataProvider' => $providerPresentacion,
         'panel' => [
             'type' => GridView::TYPE_PRIMARY,
-            'heading' => Html::encode(Yii::t('app', 'Presentacion')),
+            'heading' => Html::encode(Yii::t('app', 'Presentaciones')),
         ],
         'panelHeadingTemplate' => '<h4>{heading}</h4>{summary}',
         'toggleData' => false,
@@ -77,7 +77,7 @@ if($providerUserSala->totalCount){
         'dataProvider' => $providerUserSala,
         'panel' => [
             'type' => GridView::TYPE_PRIMARY,
-            'heading' => Html::encode(Yii::t('app', 'User Sala')),
+            'heading' => Html::encode(Yii::t('app', 'Moderadores')),
         ],
         'panelHeadingTemplate' => '<h4>{heading}</h4>{summary}',
         'toggleData' => false,

@@ -8,7 +8,7 @@ use kartik\grid\GridView;
 /* @var $model backend\models\Presentacion */
 
 $this->title = '';  //$this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Presentacions'), 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Presentaciones'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="presentacion-view">
@@ -28,7 +28,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     'title' => Yii::t('app', 'Will open the generated PDF file in a new window')
                 ]
             )?>
-            <?= Html::a(Yii::t('app', 'Guardar nuevo'), ['save-as-new', 'id' => $model->id], ['class' => 'btn btn-info']) ?>            
+            <?= Html::a(Yii::t('app', 'Nuevo'), ['save-as-new', 'id' => $model->id], ['class' => 'btn btn-info']) ?>            
             <?= Html::a(Yii::t('app', 'Actualizar'), ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
             <?= Html::a(Yii::t('app', 'Eliminar'), ['delete', 'id' => $model->id], [
                 'class' => 'btn btn-danger',
@@ -86,7 +86,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php 
     $gridColumnCongreso = [
         ['attribute' => 'id', 'visible' => false],
-        'provincia_id',
+        'provincia.Provincia',
         'Nombre',
         'Fecha_Inicio',
         'Fecha_Final',
@@ -101,10 +101,26 @@ $this->params['breadcrumbs'][] = $this->title;
 if($providerPresentacionUser->totalCount){
     $gridColumnPresentacionUser = [
         ['class' => 'yii\grid\SerialColumn'],
-                        [
-                'attribute' => 'user.Nombre',
-                'label' => Yii::t('app', 'Usuario')
+
+        ['attribute' => 'user.Nombre',
+        'label' => Yii::t('app', 'Nombre')
             ],
+        
+        ['attribute' => 'user.Apellido',
+         'label' => Yii::t('app', 'Apellido')
+            ],
+        
+        ['attribute' =>'user.username',
+        'label' => Yii::t('app', 'Usuario')
+            ],
+
+        ['attribute' => 'user.email',
+        'label' => Yii::t('app', 'Email')
+            ],
+
+        ['attribute' => 'user.Telefono',
+        'label' => Yii::t('app', 'Telefono')
+        ],
     ];
     echo Gridview::widget([
         'dataProvider' => $providerPresentacionUser,
@@ -112,7 +128,8 @@ if($providerPresentacionUser->totalCount){
         'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-presentacion-user']],
         'panel' => [
             'type' => GridView::TYPE_PRIMARY,
-            'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode(Yii::t('app', 'Presentacion Usuario')),
+            'heading' => '<span class="glyphicon glyphicon-user"></span> ' . Html::encode(Yii::t('app', 'Presentadores')),
+            'footer' => false
         ],
         'columns' => $gridColumnPresentacionUser
     ]);

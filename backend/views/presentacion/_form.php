@@ -41,7 +41,12 @@ use yii\helpers\Url;
                         'congreso_id'=>[
                             'type'=>Form::INPUT_WIDGET, 
                             'widgetClass'=>'\kartik\widgets\Select2', 
-                            'options'=>['data'=>\yii\helpers\ArrayHelper::map(\backend\models\Congreso::find()->orderBy('id')->asArray()->all(), 'id', 'Nombre'),],
+                            'options'=>['data'=>\yii\helpers\ArrayHelper::map(\backend\models\Congreso::find()->orderBy('id')->asArray()->all(), 'id', 'Nombre'),
+                                'options' => ['placeholder' => Yii::t('app', 'Elige Congreso')],
+                                        'pluginOptions' => [
+                                            'allowClear' => true
+                                        ],
+                            ],
                             //'hint'=>'Type and select state'
                         ],
 
@@ -49,7 +54,12 @@ use yii\helpers\Url;
                             'type'=>Form::INPUT_WIDGET, 
                             'widgetClass'=>'\kartik\widgets\Select2', 
                             'options'=>[
-                                'data'=>\yii\helpers\ArrayHelper::map(\backend\models\Sala::find()->orderBy('id')->asArray()->all(),'id', 'Nombre_Sala'),],
+                                'data'=>\yii\helpers\ArrayHelper::map(\backend\models\Sala::find()->orderBy('id')->asArray()->all(),'id', 'Nombre_Sala'),
+                                'options' => ['placeholder' => Yii::t('app', 'Elige Sala')],
+                                    'pluginOptions' => [
+                                        'allowClear' => true
+                                    ],
+                            ],
                             //'hint'=>'Type and select state'
                         ],
                     ]
@@ -98,8 +108,6 @@ use yii\helpers\Url;
 
     <?= $form->field($model, 'Vinculo')->textInput(['maxlength' => true, 'placeholder' => 'Link']) ?>
 
-
-
     <?= $form->field($model, 'Archivo')->widget(FileInput::classname(), [
         'options'=>[
             'multiple'=>true
@@ -139,7 +147,7 @@ use yii\helpers\Url;
         <?= Html::submitButton($model->isNewRecord ? Yii::t('app', 'Añadir') : Yii::t('app', 'Actualizar'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     <?php endif; ?>
     <?php if(Yii::$app->controller->action->id != 'create'): ?>
-        <?= Html::submitButton(Yii::t('app', 'Guardar nuevo'), ['class' => 'btn btn-info', 'value' => '1', 'name' => '_asnew']) ?>
+        <?= Html::submitButton(Yii::t('app', 'Nuevo'), ['class' => 'btn btn-info', 'value' => '1', 'name' => '_asnew']) ?>
     <?php endif; ?>
         <?= Html::a(Yii::t('app', 'Cancelar'), Yii::$app->request->referrer , ['class'=> 'btn btn-danger']) ?>
     </div>

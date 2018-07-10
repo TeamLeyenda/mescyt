@@ -28,7 +28,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     'title' => Yii::t('app', 'Will open the generated PDF file in a new window')
                 ]
             )?>
-            <?= Html::a(Yii::t('app', 'Guardar nuevo'), ['save-as-new', 'id' => $model->id], ['class' => 'btn btn-info']) ?>            
+            <?= Html::a(Yii::t('app', 'Nuevo'), ['save-as-new', 'id' => $model->id], ['class' => 'btn btn-info']) ?>            
             <?= Html::a(Yii::t('app', 'Actualizar'), ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
             <?= Html::a(Yii::t('app', 'Eliminar'), ['delete', 'id' => $model->id], [
                 'class' => 'btn btn-danger',
@@ -77,7 +77,7 @@ if($providerPresentacion->totalCount){
         'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-presentacion']],
         'panel' => [
         'type' => GridView::TYPE_PRIMARY,
-        'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode(Yii::t('app', 'Presentacion')),
+        'heading' => '<span class="glyphicon glyphicon-comment"></span> ' . Html::encode(Yii::t('app', 'Presentaciones')),
         ],
         'columns' => $gridColumnPresentacion
     ]);
@@ -101,7 +101,7 @@ if($providerUserSala->totalCount){
         'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-user-sala']],
         'panel' => [
         'type' => GridView::TYPE_PRIMARY,
-        'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode(Yii::t('app', 'User Sala')),
+        'heading' => '<span class="glyphicon glyphicon-user"></span> ' . Html::encode(Yii::t('app', 'Moderadores')),
         ],
         'columns' => $gridColumnUserSala
     ]);
