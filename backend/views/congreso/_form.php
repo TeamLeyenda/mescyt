@@ -1,7 +1,10 @@
 <?php
 
 use yii\helpers\Html;
-use yii\widgets\ActiveForm;
+//use yii\widgets\ActiveForm;
+use kartik\widgets\ActiveForm;
+use kartik\builder\Form;
+use kartik\widgets\DateTimePicker;
 
 /* @var $this yii\web\View */
 /* @var $model backend\models\Congreso */
@@ -25,39 +28,52 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'id', ['template' => '{input}'])->textInput(['style' => 'display:none']); ?>
 
-    <?= $form->field($model, 'provincia_id')->widget(\kartik\widgets\Select2::classname(), [
-        'data' => \yii\helpers\ArrayHelper::map(\backend\models\Provincia::find()->orderBy('id')->asArray()->all(), 'id', 'Provincia'),
-        'options' => ['placeholder' => Yii::t('app', 'Elige Provincia')],
-        'pluginOptions' => [
-            'allowClear' => true
-        ],
-    ]); ?>
+     <?= Form::widget([
+                        'model'=>$model,
+                        'form'=>$form,
+                        'columns'=>2,
+                        'attributes'=>[
+                            'provincia_id'=>[
+                                'type'=>Form::INPUT_WIDGET, 
+                                'widgetClass'=>'\kartik\widgets\Select2', 
+                                'options'=>['data'=>\yii\helpers\ArrayHelper::map(\backend\models\Provincia::find()->orderBy('id')->asArray()->all(), 'id', 'Provincia'),
+                                    'options' => ['placeholder' => Yii::t('app', 'Elige Provincia')],
+                                            'pluginOptions' => [
+                                                'allowClear' => true
+                                            ],
+                                ],
+                                //'hint'=>'Type and select state'
+                            ],
+                            'Nombre'=>['type'=>Form::INPUT_TEXT],
+                            
+                        ]
+                    ]);
+            ?>
 
-    <?= $form->field($model, 'Nombre')->textInput(['maxlength' => true, 'placeholder' => 'Nombre']) ?>
+    <?= Form::widget([
+                    'model'=>$model,
+                    'form'=>$form,
+                    'columns'=>2,
+                    'attributes'=>[
+                        'Fecha_Inicio'=>[
+                            'type'=>Form::INPUT_WIDGET, 
+                            'widgetClass'=>'\kartik\widgets\DateTimePicker', 
+                            'pluginOptions' => [
+                                'autoclose' => true
+                            ]
+                        ],
 
-    <?= $form->field($model, 'Fecha_Inicio')->widget(\kartik\datecontrol\DateControl::classname(), [
-        'type' => \kartik\datecontrol\DateControl::FORMAT_DATETIME,
-        'saveFormat' => 'php:Y-m-d H:i:s',
-        'ajaxConversion' => true,
-        'options' => [
-            'pluginOptions' => [
-                'placeholder' => Yii::t('app', 'Elige Fecha Inicio'),
-                'autoclose' => true,
-            ]
-        ],
-    ]); ?>
-
-    <?= $form->field($model, 'Fecha_Final')->widget(\kartik\datecontrol\DateControl::classname(), [
-        'type' => \kartik\datecontrol\DateControl::FORMAT_DATETIME,
-        'saveFormat' => 'php:Y-m-d H:i:s',
-        'ajaxConversion' => true,
-        'options' => [
-            'pluginOptions' => [
-                'placeholder' => Yii::t('app', 'Elige Fecha Final'),
-                'autoclose' => true,
-            ]
-        ],
-    ]); ?>
+                        'Fecha_Final'=>[
+                            'type'=>Form::INPUT_WIDGET,  
+                            'widgetClass'=>'\kartik\widgets\DateTimePicker', 
+                            //'hint'=>'Type and select state',
+                            'pluginOptions' => [
+                                'autoclose' => true
+                            ]
+                        ],
+                    ]
+                ]);
+            ?>
 
     <?php
     $forms = [

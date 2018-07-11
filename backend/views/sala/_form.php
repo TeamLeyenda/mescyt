@@ -37,14 +37,16 @@ use yii\widgets\ActiveForm;
 
     <?php
     $forms = [
+        /*
         [
-            'label' => '<i class="glyphicon glyphicon-book"></i> ' . Html::encode(Yii::t('app', 'Presentaciones')),
+            'label' => '<i class="glyphicon glyphicon-comment"></i> ' . Html::encode(Yii::t('app', 'Presentaciones')),
             'content' => $this->render('_formPresentacion', [
                 'row' => \yii\helpers\ArrayHelper::toArray($model->presentacions),
             ]),
         ],
+        */
         [
-            'label' => '<i class="glyphicon glyphicon-book"></i> ' . Html::encode(Yii::t('app', 'UserSala')),
+            'label' => '<i class="glyphicon glyphicon-user"></i> ' . Html::encode(Yii::t('app', 'Moderadores')),
             'content' => $this->render('_formUserSala', [
                 'row' => \yii\helpers\ArrayHelper::toArray($model->userSalas),
             ]),

@@ -5,6 +5,7 @@ use kartik\builder\TabularForm;
 use yii\data\ArrayDataProvider;
 use yii\helpers\Html;
 use yii\widgets\Pjax;
+use kartik\widgets\DateTimePicker;
 
 $dataProvider = new ArrayDataProvider([
     'allModels' => $row,
@@ -27,7 +28,7 @@ echo TabularForm::widget([
             'type' => TabularForm::INPUT_WIDGET,
             'widgetClass' => \kartik\widgets\Select2::className(),
             'options' => [
-                'data' => \yii\helpers\ArrayHelper::map(\backend\models\Sala::find()->orderBy('id')->asArray()->all(), 'id', 'id'),
+                'data' => \yii\helpers\ArrayHelper::map(\backend\models\Sala::find()->orderBy('Nombre_Sala')->asArray()->all(), 'id', 'Nombre_Sala'),
                 'options' => ['placeholder' => Yii::t('app', 'Elige Sala')],
             ],
             'columnOptions' => ['width' => '200px']
@@ -36,6 +37,45 @@ echo TabularForm::widget([
         'Institucion' => ['type' => TabularForm::INPUT_TEXT],
         'Area_Tematica' => ['type' => TabularForm::INPUT_TEXT],
         'Modalidad_Presentacion' => ['type' => TabularForm::INPUT_TEXT],
+        'Fecha_Inicio'=>[
+            'type'=>TabularForm::INPUT_WIDGET, 
+            'widgetClass'=>'\kartik\widgets\DateTimePicker', 
+            'options' =>[
+                'pluginOptions' => [
+                    'pickerPosition' => 'top-left',
+                    'autoclose' => true
+                ]
+
+            ]
+            
+        ],
+
+        'Fecha_Inicio'=>[
+            'type'=>TabularForm::INPUT_WIDGET, 
+            'widgetClass'=>'\kartik\widgets\DateTimePicker', 
+            'options' =>[
+                'pluginOptions' => [
+                    'pickerPosition' => 'top-left',
+                    'autoclose' => true
+                ]
+
+            ]
+            
+        ],
+
+        'Fecha_Final'=>[
+            'type'=>TabularForm::INPUT_WIDGET, 
+            'widgetClass'=>'\kartik\widgets\DateTimePicker', 
+            'options' =>[
+                'pluginOptions' => [
+                    'pickerPosition' => 'top-left',
+                    'autoclose' => true
+                ]
+
+            ]
+            
+        ],
+        /*
         'Fecha_Inicio' => ['type' => TabularForm::INPUT_WIDGET,
             'widgetClass' => \kartik\datecontrol\DateControl::classname(),
             'options' => [
@@ -64,6 +104,7 @@ echo TabularForm::widget([
                 ],
             ]
         ],
+        */
         'del' => [
             'type' => 'raw',
             'label' => '',

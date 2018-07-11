@@ -1,0 +1,4 @@
+#Subir archivo y imagenes al servidor
+#Editar la opcion de actualizacion para que no duplique los datos de insercion de unoAmuchos
+#Mostrar fechas en estilo meridiem(AM/PM)
+#Arreglar tablas de estadisticas
