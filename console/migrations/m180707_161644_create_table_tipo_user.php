@@ -17,6 +17,22 @@ class m180707_161644_create_table_tipo_user extends Migration
         ], $tableOptions);
 
         $this->createIndex('Tipo', '{{%tipo_user}}', 'Tipo', true);
+
+        $this->insert('tipo_user',array(
+            'Tipo'=>'admin',
+        ));
+
+        $this->insert('tipo_user',array(
+            'Tipo'=>'moderador',
+        ));
+
+        $this->insert('tipo_user',array(
+            'Tipo'=>'presentador',
+        ));
+
+        $this->insert('tipo_user',array(
+            'Tipo'=>'participante',
+        ));
     }
 
     public function down()
