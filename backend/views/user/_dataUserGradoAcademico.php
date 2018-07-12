@@ -11,7 +11,7 @@ use yii\data\ArrayDataProvider;
     $gridColumns = [
         ['class' => 'yii\grid\SerialColumn'],
         [
-                'attribute' => 'gradoAcademico.id',
+                'attribute' => 'gradoAcademico.Grado',
                 'label' => Yii::t('app', 'Grado Academico')
             ],
         [

@@ -12,7 +12,7 @@ use backend\assets\AppAsset;
 AdminLtePluginAsset::register($this);
 AppAsset::register($this);
 
-$this->title = Yii::t('app', 'Users');
+$this->title = Yii::t('app', 'Usuarios');
 $this->params['breadcrumbs'][] = $this->title;
 $search = "$('.search-button').click(function(){
 	$('.search-form').toggle(1000);
@@ -66,7 +66,7 @@ $this->registerJs($search);
             ],
         [
                 'attribute' => 'tipo_user_id',
-                'label' => Yii::t('app', 'Tipo Usuario'),
+                'label' => Yii::t('app', 'Tipo'),
                 'value' => function($model){
                     if ($model->tipoUser)
                     {return $model->tipoUser->Tipo;}
@@ -103,7 +103,7 @@ $this->registerJs($search);
         'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-user']],
         'panel' => [
             'type' => GridView::TYPE_PRIMARY,
-            'heading' => '<span class="glyphicon glyphicon-book"></span>  ' . Html::encode($this->title),
+            'heading' => '<span class="glyphicon glyphicon-user"></span>  ' ,
         ],
 
         'toolbar' =>  [

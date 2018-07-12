@@ -79,10 +79,10 @@ $this->params['breadcrumbs'][] = $this->title;
         ['attribute' => 'id', 'visible' => false],
         'Nombre',
         'Apellido',
-        'afiliacion_id',
-        'tipo_user_id',
+        'afiliacion.Afiliacion',
+        'tipoUser.Tipo',
         'username',
-        'email',
+        'email:email',
         'Telefono',
         'image',
     ];

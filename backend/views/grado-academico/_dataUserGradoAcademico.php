@@ -10,10 +10,27 @@ use yii\data\ArrayDataProvider;
     ]);
     $gridColumns = [
         ['class' => 'yii\grid\SerialColumn'],
-        [
-                'attribute' => 'user.Nombre',
-                'label' => Yii::t('app', 'Usuario')
+
+            [
+                'attribute' => 'user.tipoUser.Tipo',
+                'label' => Yii::t('app', 'Tipo')
             ],
+        ['attribute' =>'user.username',
+        'label' => Yii::t('app', 'Usuario')
+        ],
+        ['attribute' =>'user.Nombre',
+        'label' => Yii::t('app', 'Nombre')
+        ],
+        ['attribute' =>'user.Apellido',
+        'label' => Yii::t('app', 'Apellido')
+        ],
+        ['attribute' =>'user.email',
+        'label' => Yii::t('app', 'Email')
+        ],
+        //'image',
+        ['attribute' =>'user.Telefono',
+        'label' => Yii::t('app', 'Telefono')
+        ],
         [
             'class' => 'yii\grid\ActionColumn',
             'controller' => 'user-grado-academico'

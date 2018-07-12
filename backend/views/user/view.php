@@ -8,7 +8,7 @@ use kartik\grid\GridView;
 /* @var $model backend\models\User */
 
 $this->title = '';  //$this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Users'), 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Usuarios'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="user-view">
