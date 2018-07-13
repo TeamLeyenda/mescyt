@@ -165,8 +165,8 @@ class TipoUserController extends Controller
     * so user don't need to input all field from scratch.
     * If creation is successful, the browser will be redirected to the 'view' page.
     *
-    * @param type $id
-    * @return type
+    * @param mixed $id
+    * @return mixed
     */
     public function actionSaveAsNew($id) {
         $model = new TipoUser();
@@ -175,7 +175,7 @@ class TipoUserController extends Controller
             $model = $this->findModel($id);
         }
     
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->loadAll(Yii::$app->request->post()) && $model->saveAll()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('saveAsNew', [

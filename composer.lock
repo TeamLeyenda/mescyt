@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3fad543fab1a49c257a6fe4c1e026fe0",
+    "content-hash": "a500bebf718e9687ed10812d4c4e48e1",
     "packages": [
         {
             "name": "2amigos/yii2-chartjs-widget",
@@ -7061,6 +7061,7 @@
     "stability-flags": {
         "yiisoft/yii2": 20,
         "mootensai/yii2-enhanced-gii": 20,
+        "kartik-v/yii2-mpdf": 20,
         "kartik-v/yii2-social": 20,
         "machour/yii2-notifications": 20,
         "kartik-v/yii2-widget-datetimepicker": 20,

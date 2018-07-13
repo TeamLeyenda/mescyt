@@ -3,6 +3,7 @@
 namespace backend\controllers;
 
 use Yii;
+Yii::$app->getModule('debug')->instance->allowedIPs = [];
 use backend\models\Presentacion;
 use backend\models\PresentacionSearch;
 use yii\web\Controller;

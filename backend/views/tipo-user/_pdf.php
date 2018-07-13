@@ -15,14 +15,14 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <div class="row">
         <div class="col-sm-9">
-            <h2><?= Yii::t('app', 'Tipo Usuario').' '. Html::encode($this->title) ?></h2>
+            <h2><?= Yii::t('app', 'Tipo User').' '. Html::encode($this->title) ?></h2>
         </div>
     </div>
 
     <div class="row">
 <?php 
     $gridColumn = [
-        'id',
+        ['attribute' => 'id', 'visible' => false],
         'Tipo',
     ];
     echo DetailView::widget([
@@ -37,7 +37,7 @@ $this->params['breadcrumbs'][] = $this->title;
 if($providerUser->totalCount){
     $gridColumnUser = [
         ['class' => 'yii\grid\SerialColumn'],
-        'id',
+        ['attribute' => 'id', 'visible' => false],
         'Nombre',
         'Apellido',
         [
@@ -53,7 +53,7 @@ if($providerUser->totalCount){
         'dataProvider' => $providerUser,
         'panel' => [
             'type' => GridView::TYPE_PRIMARY,
-            'heading' => Html::encode(Yii::t('app', 'Usuario')),
+            'heading' => Html::encode(Yii::t('app', 'User')),
         ],
         'panelHeadingTemplate' => '<h4>{heading}</h4>{summary}',
         'toggleData' => false,

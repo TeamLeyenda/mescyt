@@ -19,7 +19,7 @@ use kartik\grid\GridView;
     <div class="row">
 <?php 
     $gridColumn = [
-        'id',
+        ['attribute' => 'id', 'visible' => false],
         'Tipo',
     ];
     echo DetailView::widget([

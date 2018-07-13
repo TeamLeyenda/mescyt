@@ -11,7 +11,7 @@ return [
     'modules' => [
         'admin' => [
             'class' => 'mdm\admin\Module',
-            'layout' => 'left-menu', // it can be '@path/to/your/layout'.
+            //'layout' => 'left-menu', // it can be '@path/to/your/layout'.
             'mainLayout' => '@backend/views/layouts/main.php',
             'controllerMap' => [
                 'assignment' => [

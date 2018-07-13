@@ -8,7 +8,7 @@ use yii\data\ArrayDataProvider;
     ]);
     $gridColumns = [
         ['class' => 'yii\grid\SerialColumn'],
-        'id',
+        ['attribute' => 'id', 'visible' => false],
         'Nombre',
         'Apellido',
         [

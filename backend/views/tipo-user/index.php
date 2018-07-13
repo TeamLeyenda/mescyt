@@ -18,12 +18,12 @@ $this->registerJs($search);
 ?>
 <div class="tipo-user-index">
 
-    
+    <h1><?= Html::encode($this->title) ?></h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a(Yii::t('app', 'Añadir Tipo Usuario'), ['create'], ['class' => 'btn btn-success']) ?>
-        <?= Html::a(Yii::t('app', 'Busqueda avanzada'), '#', ['class' => 'btn btn-info search-button']) ?>
+        <?= Html::a(Yii::t('app', 'Create Tipo User'), ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a(Yii::t('app', 'Advance Search'), '#', ['class' => 'btn btn-info search-button']) ?>
     </p>
     <div class="search-form" style="display:none">
         <?=  $this->render('_search', ['model' => $searchModel]); ?>
@@ -31,26 +31,14 @@ $this->registerJs($search);
     <?php 
     $gridColumn = [
         ['class' => 'yii\grid\SerialColumn'],
-        [
-            'class' => 'kartik\grid\ExpandRowColumn',
-            'width' => '50px',
-            'value' => function ($model, $key, $index, $column) {
-                return GridView::ROW_COLLAPSED;
-            },
-            'detail' => function ($model, $key, $index, $column) {
-                return Yii::$app->controller->renderPartial('_expand', ['model' => $model]);
-            },
-            'headerOptions' => ['class' => 'kartik-sheet-style'],
-            'expandOneOnly' => true
-        ],
-        'id',
+        ['attribute' => 'id', 'visible' => false],
         'Tipo',
         [
             'class' => 'yii\grid\ActionColumn',
             'template' => '{save-as-new} {view} {update} {delete}',
             'buttons' => [
                 'save-as-new' => function ($url) {
-                    return Html::a('<span class="glyphicon glyphicon-copy"></span>', $url, ['title' => 'Nuevo']);
+                    return Html::a('<span class="glyphicon glyphicon-copy"></span>', $url, ['title' => 'Save As New']);
                 },
             ],
         ],

@@ -3,3 +3,4 @@
 #Mostrar fechas en estilo meridiem(AM/PM)
 #Arreglar tablas de estadisticas
 #Cambiar a id =4 en common para el frontend
+#PDF Arreglar
