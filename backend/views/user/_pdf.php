@@ -51,7 +51,7 @@ if($providerPresentacionUser->totalCount){
     $gridColumnPresentacionUser = [
         ['class' => 'yii\grid\SerialColumn'],
         [
-                'attribute' => 'presentacion.id',
+                'attribute' => 'presentacion.Titulo',
                 'label' => Yii::t('app', 'Presentacion')
             ],
             ];
@@ -75,7 +75,7 @@ if($providerUserAreaEspecializacion->totalCount){
     $gridColumnUserAreaEspecializacion = [
         ['class' => 'yii\grid\SerialColumn'],
                 [
-                'attribute' => 'areaEspecializacion.id',
+                'attribute' => 'areaEspecializacion.area',
                 'label' => Yii::t('app', 'Area de especializacion')
             ],
     ];
@@ -99,7 +99,7 @@ if($providerUserGradoAcademico->totalCount){
     $gridColumnUserGradoAcademico = [
         ['class' => 'yii\grid\SerialColumn'],
                 [
-                'attribute' => 'gradoAcademico.id',
+                'attribute' => 'gradoAcademico.Grado',
                 'label' => Yii::t('app', 'Grado Academico')
             ],
     ];
@@ -123,7 +123,7 @@ if($providerUserSala->totalCount){
     $gridColumnUserSala = [
         ['class' => 'yii\grid\SerialColumn'],
                 [
-                'attribute' => 'sala.id',
+                'attribute' => 'sala.Nombre_Sala',
                 'label' => Yii::t('app', 'Sala')
             ],
     ];

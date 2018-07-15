@@ -28,9 +28,10 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'Tipo')->textInput(['maxlength' => true, 'placeholder' => 'Tipo']) ?>
 
     <?php
+    /*
     $forms = [
         [
-            'label' => '<i class="glyphicon glyphicon-book"></i> ' . Html::encode(Yii::t('app', 'User')),
+            'label' => '<i class="glyphicon glyphicon-user"></i> ' . Html::encode(Yii::t('app', 'User')),
             'content' => $this->render('_formUser', [
                 'row' => \yii\helpers\ArrayHelper::toArray($model->users),
             ]),
@@ -46,6 +47,7 @@ use yii\widgets\ActiveForm;
             'enableCache' => false,
         ],
     ]);
+    */
     ?>
     <div class="form-group">
     <?php if(Yii::$app->controller->action->id != 'save-as-new'): ?>

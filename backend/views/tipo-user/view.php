@@ -7,7 +7,7 @@ use kartik\grid\GridView;
 /* @var $this yii\web\View */
 /* @var $model backend\models\TipoUser */
 
-$this->title = $model->id;
+$this->title = '';  //$this->title = $model->id;
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Tipos'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
