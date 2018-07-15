@@ -1,7 +1,9 @@
 <?php
 
 use yii\helpers\Html;
-use yii\widgets\ActiveForm;
+//use yii\widgets\ActiveForm;
+use kartik\widgets\ActiveForm;
+use kartik\builder\Form;
 
 /* @var $this yii\web\View */
 /* @var $model backend\models\User */
@@ -49,29 +51,58 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'id', ['template' => '{input}'])->textInput(['style' => 'display:none']); ?>
 
-    <?= $form->field($model, 'Nombre')->textInput(['maxlength' => true, 'placeholder' => 'Nombre']) ?>
+    <?= Form::widget([
+                'model'=>$model,
+                'form'=>$form,
+                'columns'=>2,
+                'attributes'=>[
+                    'Nombre'=>['type'=>Form::INPUT_TEXT],
+                    'Apellido'=>['type'=>Form::INPUT_TEXT],
+                ]
+            ]);
+    ?>
 
-    <?= $form->field($model, 'Apellido')->textInput(['maxlength' => true, 'placeholder' => 'Apellido']) ?>
+    <?= Form::widget([
+                'model'=>$model,
+                'form'=>$form,
+                'columns'=>2,
+                'attributes'=>[
+                    'afiliacion_id'=>[
+                        'type'=>Form::INPUT_WIDGET, 
+                        'widgetClass'=>'\kartik\widgets\Select2', 
+                        'options'=>['data'=>\yii\helpers\ArrayHelper::map(\backend\models\Afiliacion::find()->orderBy('id')->asArray()->all(), 'id', 'Afiliacion'),
+                            'options' => ['placeholder' => Yii::t('app', 'Elige Afiliacion')],
+                                    'pluginOptions' => [
+                                        'allowClear' => true
+                                    ],
+                        ],
+                    ],
 
-    <?= $form->field($model, 'afiliacion_id')->widget(\kartik\widgets\Select2::classname(), [
-        'data' => \yii\helpers\ArrayHelper::map(\backend\models\Afiliacion::find()->orderBy('id')->asArray()->all(), 'id', 'Afiliacion'),
-        'options' => ['placeholder' => Yii::t('app', 'Elige Afiliacion')],
-        'pluginOptions' => [
-            'allowClear' => true
-        ],
-    ]); ?>
+                    'tipo_user_id'=>[
+                        'type'=>Form::INPUT_WIDGET, 
+                        'widgetClass'=>'\kartik\widgets\Select2', 
+                        'options'=>['data'=>\yii\helpers\ArrayHelper::map(\backend\models\TipoUser::find()->orderBy('id')->asArray()->all(), 'id', 'Tipo'),
+                            'options' => ['placeholder' => Yii::t('app', 'Elige Tipo')],
+                                    'pluginOptions' => [
+                                        'allowClear' => true
+                                    ],
+                        ],
+                    ],
+                    
+                ]
+            ]);
+    ?>
 
-    <?= $form->field($model, 'tipo_user_id')->widget(\kartik\widgets\Select2::classname(), [
-        'data' => \yii\helpers\ArrayHelper::map(\backend\models\TipoUser::find()->orderBy('id')->asArray()->all(), 'id', 'Tipo'),
-        'options' => ['placeholder' => Yii::t('app', 'Elige Tipo user')],
-        'pluginOptions' => [
-            'allowClear' => true
-        ],
-    ]); ?>
-
-    <?= $form->field($model, 'username')->textInput(['maxlength' => true, 'placeholder' => 'Username']) ?>
-
-    <?= $form->field($model, 'email')->textInput(['maxlength' => true, 'placeholder' => 'Email']) ?>
+    <?= Form::widget([
+                'model'=>$model,
+                'form'=>$form,
+                'columns'=>2,
+                'attributes'=>[
+                    'username'=>['type'=>Form::INPUT_TEXT],
+                    'email'=>['type'=>Form::INPUT_TEXT],
+                ]
+            ]);
+    ?>
 
     <?= $form->field($model, 'Telefono')->textInput(['maxlength' => true, 'placeholder' => 'Telefono']) ?>
 
@@ -80,25 +111,25 @@ use yii\widgets\ActiveForm;
     <?php
     $forms = [
         [
-            'label' => '<i class="glyphicon glyphicon-book"></i> ' . Html::encode(Yii::t('app', 'PresentacionUser')),
+            'label' => '<i class="glyphicon glyphicon-comment"></i> ' . Html::encode(Yii::t('app', 'Presentaciones')),
             'content' => $this->render('_formPresentacionUser', [
                 'row' => \yii\helpers\ArrayHelper::toArray($model->presentacionUsers),
             ]),
         ],
         [
-            'label' => '<i class="glyphicon glyphicon-book"></i> ' . Html::encode(Yii::t('app', 'UserAreaEspecializacion')),
+            'label' => '<i class="glyphicon glyphicon-book"></i> ' . Html::encode(Yii::t('app', 'Areas de especializacion')),
             'content' => $this->render('_formUserAreaEspecializacion', [
                 'row' => \yii\helpers\ArrayHelper::toArray($model->userAreaEspecializacions),
             ]),
         ],
         [
-            'label' => '<i class="glyphicon glyphicon-book"></i> ' . Html::encode(Yii::t('app', 'UserGradoAcademico')),
+            'label' => '<i class="glyphicon glyphicon-book"></i> ' . Html::encode(Yii::t('app', 'Grados Academicos')),
             'content' => $this->render('_formUserGradoAcademico', [
                 'row' => \yii\helpers\ArrayHelper::toArray($model->userGradoAcademicos),
             ]),
         ],
         [
-            'label' => '<i class="glyphicon glyphicon-book"></i> ' . Html::encode(Yii::t('app', 'UserSala')),
+            'label' => '<i class="glyphicon glyphicon-inbox"></i> ' . Html::encode(Yii::t('app', 'Salas')),
             'content' => $this->render('_formUserSala', [
                 'row' => \yii\helpers\ArrayHelper::toArray($model->userSalas),
             ]),

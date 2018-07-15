@@ -29,26 +29,26 @@ use kartik\widgets\DateTimePicker;
     <?= $form->field($model, 'id', ['template' => '{input}'])->textInput(['style' => 'display:none']); ?>
 
      <?= Form::widget([
-                        'model'=>$model,
-                        'form'=>$form,
-                        'columns'=>2,
-                        'attributes'=>[
-                            'provincia_id'=>[
-                                'type'=>Form::INPUT_WIDGET, 
-                                'widgetClass'=>'\kartik\widgets\Select2', 
-                                'options'=>['data'=>\yii\helpers\ArrayHelper::map(\backend\models\Provincia::find()->orderBy('id')->asArray()->all(), 'id', 'Provincia'),
-                                    'options' => ['placeholder' => Yii::t('app', 'Elige Provincia')],
-                                            'pluginOptions' => [
-                                                'allowClear' => true
-                                            ],
-                                ],
-                                //'hint'=>'Type and select state'
-                            ],
-                            'Nombre'=>['type'=>Form::INPUT_TEXT],
-                            
-                        ]
-                    ]);
-            ?>
+                'model'=>$model,
+                'form'=>$form,
+                'columns'=>2,
+                'attributes'=>[
+                    'provincia_id'=>[
+                        'type'=>Form::INPUT_WIDGET, 
+                        'widgetClass'=>'\kartik\widgets\Select2', 
+                        'options'=>['data'=>\yii\helpers\ArrayHelper::map(\backend\models\Provincia::find()->orderBy('id')->asArray()->all(), 'id', 'Provincia'),
+                            'options' => ['placeholder' => Yii::t('app', 'Elige Provincia')],
+                                    'pluginOptions' => [
+                                        'allowClear' => true
+                                    ],
+                        ],
+                        //'hint'=>'Type and select state'
+                    ],
+                    'Nombre'=>['type'=>Form::INPUT_TEXT],
+                    
+                ]
+            ]);
+    ?>
 
     <?= Form::widget([
                     'model'=>$model,

@@ -2,7 +2,7 @@
 
 namespace backend\controllers;
 
-use Yii;
+use Yii;  Yii::$app->getModule('debug')->instance->allowedIPs = [];
 use backend\models\UserGradoAcademico;
 use backend\models\UserGradoAcademicoSearch;
 use yii\web\Controller;

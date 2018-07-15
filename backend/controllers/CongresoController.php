@@ -2,7 +2,7 @@
 
 namespace backend\controllers;
 
-use Yii;
+use Yii;  Yii::$app->getModule('debug')->instance->allowedIPs = [];
 use backend\models\Congreso;
 use backend\models\CongresoSearch;
 use yii\web\Controller;

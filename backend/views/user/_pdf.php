@@ -59,7 +59,7 @@ if($providerPresentacionUser->totalCount){
         'dataProvider' => $providerPresentacionUser,
         'panel' => [
             'type' => GridView::TYPE_PRIMARY,
-            'heading' => Html::encode(Yii::t('app', 'Presentacion Usuario')),
+            'heading' => Html::encode(Yii::t('app', 'Presentaciones')),
         ],
         'panelHeadingTemplate' => '<h4>{heading}</h4>{summary}',
         'toggleData' => false,
@@ -83,7 +83,7 @@ if($providerUserAreaEspecializacion->totalCount){
         'dataProvider' => $providerUserAreaEspecializacion,
         'panel' => [
             'type' => GridView::TYPE_PRIMARY,
-            'heading' => Html::encode(Yii::t('app', 'User Area Especializacion')),
+            'heading' => Html::encode(Yii::t('app', 'Areas')),
         ],
         'panelHeadingTemplate' => '<h4>{heading}</h4>{summary}',
         'toggleData' => false,
@@ -107,7 +107,7 @@ if($providerUserGradoAcademico->totalCount){
         'dataProvider' => $providerUserGradoAcademico,
         'panel' => [
             'type' => GridView::TYPE_PRIMARY,
-            'heading' => Html::encode(Yii::t('app', 'User Grado Academico')),
+            'heading' => Html::encode(Yii::t('app', 'Grados')),
         ],
         'panelHeadingTemplate' => '<h4>{heading}</h4>{summary}',
         'toggleData' => false,
@@ -131,7 +131,7 @@ if($providerUserSala->totalCount){
         'dataProvider' => $providerUserSala,
         'panel' => [
             'type' => GridView::TYPE_PRIMARY,
-            'heading' => Html::encode(Yii::t('app', 'User Sala')),
+            'heading' => Html::encode(Yii::t('app', 'Salas')),
         ],
         'panelHeadingTemplate' => '<h4>{heading}</h4>{summary}',
         'toggleData' => false,

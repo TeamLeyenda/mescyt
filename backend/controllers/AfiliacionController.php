@@ -2,7 +2,7 @@
 
 namespace backend\controllers;
 
-use Yii;
+use Yii;  Yii::$app->getModule('debug')->instance->allowedIPs = [];
 use backend\models\Afiliacion;
 use backend\models\AfiliacionSearch;
 use yii\web\Controller;

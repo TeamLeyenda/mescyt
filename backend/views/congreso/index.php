@@ -80,6 +80,7 @@ $this->registerJs($search);
         'panel' => [
             'type' => GridView::TYPE_PRIMARY,
             'heading' => '<span class="glyphicon glyphicon-list-alt"></span>  ' ,
+            'footer' => false
         ],
         // your toolbar can include the additional full export menu
         'toolbar' => [

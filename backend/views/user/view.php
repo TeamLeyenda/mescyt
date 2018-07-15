@@ -73,7 +73,7 @@ if($providerPresentacionUser->totalCount){
     $gridColumnPresentacionUser = [
         ['class' => 'yii\grid\SerialColumn'],
             [
-                'attribute' => 'presentacion.id',
+                'attribute' => 'presentacion.Titulo',
                 'label' => Yii::t('app', 'Presentacion')
             ],
                 ];
@@ -83,7 +83,8 @@ if($providerPresentacionUser->totalCount){
         'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-presentacion-user']],
         'panel' => [
         'type' => GridView::TYPE_PRIMARY,
-        'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode(Yii::t('app', 'Presentacion Usuario')),
+        'heading' => '<span class="glyphicon glyphicon-comment"></span> ' . Html::encode(Yii::t('app', 'Presentaciones')),
+        'footer' => false,
         ],
         'columns' => $gridColumnPresentacionUser
     ]);
@@ -97,7 +98,7 @@ if($providerUserAreaEspecializacion->totalCount){
     $gridColumnUserAreaEspecializacion = [
         ['class' => 'yii\grid\SerialColumn'],
                         [
-                'attribute' => 'areaEspecializacion.id',
+                'attribute' => 'areaEspecializacion.area',
                 'label' => Yii::t('app', 'Area de especializacion')
             ],
     ];
@@ -107,7 +108,8 @@ if($providerUserAreaEspecializacion->totalCount){
         'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-user-area-especializacion']],
         'panel' => [
         'type' => GridView::TYPE_PRIMARY,
-        'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode(Yii::t('app', 'User Area Especializacion')),
+        'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode(Yii::t('app', 'Areas')),
+        'footer' => false,
         ],
         'columns' => $gridColumnUserAreaEspecializacion
     ]);
@@ -131,7 +133,8 @@ if($providerUserGradoAcademico->totalCount){
         'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-user-grado-academico']],
         'panel' => [
         'type' => GridView::TYPE_PRIMARY,
-        'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode(Yii::t('app', 'User Grado Academico')),
+        'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode(Yii::t('app', 'Grados')),
+        'footer'=> false,
         ],
         'columns' => $gridColumnUserGradoAcademico
     ]);
@@ -145,7 +148,7 @@ if($providerUserSala->totalCount){
     $gridColumnUserSala = [
         ['class' => 'yii\grid\SerialColumn'],
                         [
-                'attribute' => 'sala.id',
+                'attribute' => 'sala.Nombre_Sala',
                 'label' => Yii::t('app', 'Sala')
             ],
     ];
@@ -155,7 +158,8 @@ if($providerUserSala->totalCount){
         'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-user-sala']],
         'panel' => [
         'type' => GridView::TYPE_PRIMARY,
-        'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode(Yii::t('app', 'User Sala')),
+        'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode(Yii::t('app', 'Salas')),
+        'footer' => false,
         ],
         'columns' => $gridColumnUserSala
     ]);

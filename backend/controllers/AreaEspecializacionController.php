@@ -2,7 +2,7 @@
 
 namespace backend\controllers;
 
-use Yii;
+use Yii;  Yii::$app->getModule('debug')->instance->allowedIPs = [];
 use backend\models\AreaEspecializacion;
 use backend\models\AreaEspecializacionSearch;
 use yii\web\Controller;

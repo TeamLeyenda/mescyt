@@ -14,6 +14,16 @@ use yii\data\ArrayDataProvider;
                 'attribute' => 'presentacion.Titulo',
                 'label' => Yii::t('app', 'Presentacion')
             ],
+
+            [
+                'attribute' => 'presentacion.Fecha_Inicio',
+                'label' => Yii::t('app', 'Fecha Inicio')
+            ],
+
+            [
+                'attribute' => 'presentacion.Fecha_Final',
+                'label' => Yii::t('app', 'Fecha Fin')
+            ],
         [
             'class' => 'yii\grid\ActionColumn',
             'controller' => 'presentacion-user'

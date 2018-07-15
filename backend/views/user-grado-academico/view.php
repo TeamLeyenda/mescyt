@@ -30,7 +30,7 @@ $this->params['breadcrumbs'][] = $this->title;
             )?>
             <?= Html::a(Yii::t('app', 'Nuevo'), ['save-as-new', 'user_id' => $model->user_id, 'grado_academico_id' => $model->grado_academico_id], ['class' => 'btn btn-info']) ?>            
             <?= Html::a(Yii::t('app', 'Actualizar'), ['update', 'user_id' => $model->user_id, 'grado_academico_id' => $model->grado_academico_id], ['class' => 'btn btn-primary']) ?>
-            <?= Html::a(Yii::t('app', 'Delete'), ['delete', 'user_id' => $model->user_id, 'grado_academico_id' => $model->grado_academico_id], [
+            <?= Html::a(Yii::t('app', 'Eliminar'), ['delete', 'user_id' => $model->user_id, 'grado_academico_id' => $model->grado_academico_id], [
                 'class' => 'btn btn-danger',
                 'data' => [
                     'confirm' => Yii::t('app', 'Are you sure you want to delete this item?'),
