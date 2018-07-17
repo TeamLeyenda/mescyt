@@ -63,34 +63,34 @@ use kartik\builder\Form;
     ?>
 
     <?= Form::widget([
-                'model'=>$model,
-                'form'=>$form,
-                'columns'=>2,
-                'attributes'=>[
-                    'afiliacion_id'=>[
-                        'type'=>Form::INPUT_WIDGET, 
-                        'widgetClass'=>'\kartik\widgets\Select2', 
-                        'options'=>['data'=>\yii\helpers\ArrayHelper::map(\backend\models\Afiliacion::find()->orderBy('id')->asArray()->all(), 'id', 'Afiliacion'),
-                            'options' => ['placeholder' => Yii::t('app', 'Elige Afiliacion')],
-                                    'pluginOptions' => [
-                                        'allowClear' => true
-                                    ],
-                        ],
+            'model'=>$model,
+            'form'=>$form,
+            'columns'=>2,
+            'attributes'=>[
+                'afiliacion_id'=>[
+                    'type'=>Form::INPUT_WIDGET, 
+                    'widgetClass'=>'\kartik\widgets\Select2', 
+                    'options'=>['data'=>\yii\helpers\ArrayHelper::map(\backend\models\Afiliacion::find()->orderBy('id')->asArray()->all(), 'id', 'Afiliacion'),
+                        'options' => ['placeholder' => Yii::t('app', 'Elige Afiliacion')],
+                                'pluginOptions' => [
+                                    'allowClear' => true
+                                ],
                     ],
+                ],
 
-                    'tipo_user_id'=>[
-                        'type'=>Form::INPUT_WIDGET, 
-                        'widgetClass'=>'\kartik\widgets\Select2', 
-                        'options'=>['data'=>\yii\helpers\ArrayHelper::map(\backend\models\TipoUser::find()->orderBy('id')->asArray()->all(), 'id', 'Tipo'),
-                            'options' => ['placeholder' => Yii::t('app', 'Elige Tipo')],
-                                    'pluginOptions' => [
-                                        'allowClear' => true
-                                    ],
-                        ],
+                'tipo_user_id'=>[
+                    'type'=>Form::INPUT_WIDGET, 
+                    'widgetClass'=>'\kartik\widgets\Select2', 
+                    'options'=>['data'=>\yii\helpers\ArrayHelper::map(\backend\models\TipoUser::find()->orderBy('id')->asArray()->all(), 'id', 'Tipo'),
+                        'options' => ['placeholder' => Yii::t('app', 'Elige Tipo')],
+                                'pluginOptions' => [
+                                    'allowClear' => true
+                                ],
                     ],
-                    
-                ]
-            ]);
+                ],
+                
+            ]
+        ]);
     ?>
 
     <?= Form::widget([

@@ -8,7 +8,7 @@
     if(Yii::$app->layout == 'homepage'){
         $menus = [
         ['label' => 'Inicio', 'url' => ['/site/index']],
-            ['label' => 'Presentaciones', 'url' => ['/site/conferencia']],
+            ['label' => 'Congresos Pasados', 'url' => ['/site/conferencia']],
             
             ['label' => 'Sign Up', 'url' => ['/site/signup']],
             /*['label' => 'About', 'url' =>'#about','linkOptions'=>['class'=>'page-scroll']],
@@ -18,7 +18,7 @@
     }else{
           $menus = [
           ['label' => 'Inicio', 'url' => ['/site/index']],
-            ['label' => 'Presentaciones', 'url' => ['/site/conferencia']],
+            ['label' => 'Congresos Pasados', 'url' => ['/site/conferencia']],
             
             ['label' => 'Sign Up', 'url' => ['/site/signup']],
             /*['label' => 'About', 'url' =>['index','#'=>'about'],'linkOptions'=>['class'=>'page-scroll']],

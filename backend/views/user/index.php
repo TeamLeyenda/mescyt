@@ -104,6 +104,7 @@ $this->registerJs($search);
         'panel' => [
             'type' => GridView::TYPE_PRIMARY,
             'heading' => '<span class="glyphicon glyphicon-user"></span>  ' ,
+            'footer' => false
         ],
 
         'toolbar' =>  [

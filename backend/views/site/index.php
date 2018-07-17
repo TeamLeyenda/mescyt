@@ -314,8 +314,8 @@ $this->title = '';
                         2=>'Total en ' . $model->congreso->Nombre . '',
                         //4=>GridView::F_AVG,
                         //5=>GridView::F_SUM,
-                        //6=>GridView::F_SUM,
-                        6=>'520',
+                        6=>GridView::F_SUM,
+                        //6=>'520',
                     ],
                     'contentFormats'=>[      // content reformatting for each summary cell
                        // 4=>['format'=>'number', 'decimals'=>2],
@@ -351,19 +351,49 @@ $this->title = '';
         ],
 
         [
+            //'attribute'=>'area_especializacion_id', 
+            'label' => Yii::t('app', 'Participantes'),
+            'value'=>function ($model, $key, $index, $widget) { 
+                return $model->getUsers()->where(['tipo_user_id' => 3])->count();
+                //return $model->users->id;
+                //return $model::find()->count();
+                /*
+                return \backend\models\Presentacion::model()->countByAttributes(array(
+                    'user_id'=> Yii::app()->user->uid
+                ));
+                */
+            },
+            'pageSummary'=>true,
+            /*
+            'filterType'=>GridView::FILTER_SELECT2,
+            'filter'=>ArrayHelper::map(\backend\models\User::find()->orderBy('id')->asArray()->count(), 'id', 'id'), 
+            'filterWidgetOptions'=>[
+                'pluginOptions'=>['allowClear'=>true],
+            ],
+            */
+        ]
+        /*
+        [
             'class'=>'kartik\grid\FormulaColumn',
             'header'=>'Participantes',
-            /*
+            
+            'value'=>function ($model, $key, $index, $widget) { 
+                return $presentacion_user->user->Tipo_user_id;
+            },
+            
+            
             'value'=>function ($model, $key, $index, $widget) { 
                 $p = compact('model', 'key', 'index');
                 return $widget->col(4, $p) * $widget->col(5, $p);
-            },*/
+            },
             'mergeHeader'=>true,
             'width'=>'150px',
             'hAlign'=>'right',
             'format'=>['decimal', 2],
             'pageSummary'=>true
         ],
+        */
+        
 
         /*
         [
@@ -391,7 +421,7 @@ $this->title = '';
         'pjax'=>true,
         'striped'=>true,
         'hover'=>true,
-        'panel'=>['type'=>'primary', 'heading'=>'Congresos actuales y futuros'],
+        'panel'=>['type'=>'primary', 'heading'=>'Congresos Activos'],
         'columns'=> $gridColumn,
             /*
             [

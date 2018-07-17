@@ -1,12 +1,24 @@
     <!-- Portfolio Grid Section -->
-    <section id="portfolio" class="bg-light-gray">
+    <section id="portfolio" class="bg-light-gray" style="background-color: #235288; border-color: #235288">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Portfolio</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                <div class="col-lg-12 text-left">
+                    <h2 class="section-heading" style="color: white">CEICYT 2018</h2>
+                    <p class="section-subheading text-muted" style="color: white">El Congreso Estudiantil de Investigación Científica y Tecnológica (CEICYT) es un espacio para dar a conocer las iniciativas de investigación de estudiantes universitarios de las áreas vinculadas a las ciencias básicas y aplicadas. Es un evento multidisciplinario que tiene por objetivo:</p>
+
+                    <p class="section-subheading text-muted" style="color: white">1. Contribuir al fomento de la cultura de investigación e innovación en la nación, con miras a insertarla en la sociedad del conocimiento.</p>
+
+                    <p class="section-subheading text-muted" style="color: white">2. Motivar a estudiantes a seguir una carrera de investigación.</p>
+
+                    <p class="section-subheading text-muted" style="color: white">3. Servir de foro para difundir la creatividad y el talento de nuestros jóvenes, mediante la exposición pública de sus trabajos de investigación e innovación.</p>
+
                 </div>
             </div>
+
+            <br>
+            <br>
+
+            
             <div class="row">
                 <div class="col-md-4 col-sm-6 portfolio-item">
                     <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
