@@ -9,8 +9,8 @@
     <header>
         <div class="container">
             <div class="intro-text">
-                <div class="intro-heading">¡BIENVENIDOS!</div>
-                <div class="intro-lead-in">¡A CEICYT RD-2018!</div>
+                <div class="intro-heading"></div>
+                <div class="intro-lead-in">¡BIENVENIDO A CEICYT RD-2018!</div>
                 <a href="http://www.mescyt.gob.do" class="page-scroll btn btn-xl" style="background-color: #235288; border-color: #235288">Ir a MESCyT</a>
             </div>
         </div>
