@@ -9,10 +9,8 @@ use yii\web\AssetBundle;
  */
 class AppAsset extends AssetBundle
 {
-  
     public $basePath = '@webroot';
     public $baseUrl = '@web';
-   // public $directoryAsset = '@web';
     public $css = [
         'css/mdb.min.css',
         'css/bootstrap.min.css',
@@ -30,5 +28,4 @@ class AppAsset extends AssetBundle
         'yii\web\YiiAsset',
         'yii\bootstrap\BootstrapAsset',
     ];
-
 }

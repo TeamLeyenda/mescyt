@@ -3,7 +3,7 @@
 <!-- SEGUNDO MENU -->
 <div class="header-sub-footer-menu text-center" >
   <div class="text-center escudo-sub-footer hidden-xs " >
-    <img class="escudo_gris" src="http://wp.soldeva.com/mescyt/wp-content/uploads/2017/11/escudo-gray.png" width="56px">
+    <img class="escudo_gris" src="<?=Yii::$app->request->baseUrl ?>/img/escudo-gray.png" width="56px">
   </div>
   <div id="sub-footer-cont" class="text-center hidden-xs sub-footer-2"   > 
 
