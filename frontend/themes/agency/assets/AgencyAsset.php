@@ -1,15 +1,17 @@
 <?php
+/*
 namespace dixonsatit\agencyTheme\assets;
 
 use yii\web\AssetBundle;
 
 class AgencyAsset extends AssetBundle
 {
-    //public $basePath = '@app/themes/agecents';
-    //public $baseUrl = '@web/themes/agecents';
-    public $sourcePath = '@dixonsatit/agencyTheme/dist';
+    /*
+    public $basePath = '@app/themes/agecents';
+    public $baseUrl = '@web/themes/agecents';
+     
+    public $sourcePath = '@web';
     public $css = [
-
         'css/agency.css',
         '//fonts.googleapis.com/css?family=Montserrat:400,700',
         '//fonts.googleapis.com/css?family=Kaushan+Script',
@@ -33,4 +35,6 @@ class AgencyAsset extends AssetBundle
         'yii\bootstrap\BootstrapPluginAsset',
         'dixonsatit\agencyTheme\assets\FontAwesomeAsset'
     ];
+    
 }
+*/

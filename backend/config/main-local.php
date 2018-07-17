@@ -2,18 +2,9 @@
 
 $config = [
     'components' => [
-        'view' => [
-            'theme' => [
-                'pathMap' => [
-                   '@app/views' => '@backend/themes/admin'
-                   //'@app/views' => '@vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app'
-                   //'@app/views' => '@vendor/dmstr/yii2-adminlte-asset/example-views/testing/app'
-                ],
-            ],
-        ],
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
-            'cookieValidationKey' => 'FTyKSNrg_hUjgsu2TdrwiOW6PeiVrx_W',
+            'cookieValidationKey' => 'Oj9V3HYPTGoodix7h0JJuFgFfN5rbPFx',
         ],
     ],
 ];

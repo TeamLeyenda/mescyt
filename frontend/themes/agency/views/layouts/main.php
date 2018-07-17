@@ -7,8 +7,6 @@
         </div>
 </section>
 
-
 <?= $this->render('_footer.php') ?>
-
 <?php $this->endContent(); ?>
 
