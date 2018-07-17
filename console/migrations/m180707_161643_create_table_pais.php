@@ -13,7 +13,7 @@ class m180707_161643_create_table_pais extends Migration
 
         $this->createTable('{{%pais}}', [
             'id' => $this->primaryKey(),
-            'Pais' => $this->string()->notNull()->defaultValue('100'),
+            'Pais' => $this->string()->notNull()->defaultValue('República Dominicana'),
         ], $tableOptions);
 
     }

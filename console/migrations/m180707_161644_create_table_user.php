@@ -13,13 +13,16 @@ class m180707_161644_create_table_user extends Migration
 
         $this->createTable('{{%user}}', [
             'id' => $this->primaryKey(),
-            'Nombre' => $this->string(),
-            'Apellido' => $this->string(),
+            'Nombre' => $this->string()->notNull(),
+            'Apellido' => $this->string()->notNull(),
             'afiliacion_id' => $this->integer(),
             'tipo_user_id' => $this->integer(),
+            'pais_id' => $this->integer(),
             'username' => $this->string()->notNull()->comment('Usuario'),
             'email' => $this->string(),
             'Telefono' => $this->string(),
+            'Sexo' => "ENUM('Masculino', 'Femenino')",
+            'Fecha_Nacimiento' => $this->date()->notNull(),
             'image' => $this->binary()->comment('perfil'),
             'password_hash' => $this->string()->notNull()->comment('contrasena'),
             'password_reset_token' => $this->string(),
@@ -32,7 +35,8 @@ class m180707_161644_create_table_user extends Migration
         $this->createIndex('idx-user-afiliacion_id', '{{%user}}', 'afiliacion_id');
         $this->createIndex('idx-user-tipo_user_id', '{{%user}}', 'tipo_user_id');
         $this->createIndex('email', '{{%user}}', 'email', true);
-        $this->addForeignKey('fk-user-afiliacion_id', '{{%user}}', 'afiliacion_id', '{{%afiliacion}}', 'id', 'CASCADE', 'RESTRICT');
+        $this->addForeignKey('fk-user-afiliacion_id', '{{%user}}', 'afiliacion_id', '{{%afiliacion}}', 'id', 'SET NULL', 'RESTRICT');
+        $this->addForeignKey('fk-user-pais_id', '{{%user}}', 'pais_id', '{{%pais}}', 'id', 'CASCADE', 'RESTRICT');
         $this->addForeignKey('fk-user-tipo_user_id', '{{%user}}', 'tipo_user_id', '{{%tipo_user}}', 'id', 'CASCADE', 'RESTRICT');
     }
 
