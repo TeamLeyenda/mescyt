@@ -43,6 +43,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <div class="row">
 <?php 
+/*
     $gridColumn = [
         ['attribute' => 'id', 'visible' => false],
         'Tipo',
@@ -51,6 +52,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => $gridColumn
     ]);
+    */
 ?>
     </div>
     
@@ -70,6 +72,17 @@ if($providerUser->totalCount){
             'email:email',
             'Telefono',
             'image',
+            /*
+            [
+                'class' => 'yii\grid\ActionColumn',
+                'template' => '{save-as-new} {view} {update} {delete}',
+                'buttons' => [
+                    'save-as-new' => function ($url) {
+                        return Html::a('<span class="glyphicon glyphicon-copy"></span>', $url, ['title' => 'Nuevo']);
+                    },
+                ],
+            ],
+            */
     ];
     echo Gridview::widget([
         'dataProvider' => $providerUser,
@@ -77,7 +90,8 @@ if($providerUser->totalCount){
         'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-user']],
         'panel' => [
             'type' => GridView::TYPE_PRIMARY,
-            'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode(Yii::t('app', 'User')),
+            'heading' => '<span class="glyphicon glyphicon-user"></span> ' . Html::encode(Yii::t('app', $model->Tipo)),
+            'footer' => false
         ],
         'columns' => $gridColumnUser
     ]);
