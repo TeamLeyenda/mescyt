@@ -1,7 +1,10 @@
     <!-- Services Section -->
+    <br>
+    <br>
     <section id="services" style="background-color: #235288; border-color: #235288">
         <div class="container">
             <div class="row">
+                <br>
                 <div class="col-lg-12 text-left">
                     <h2 class="section-heading" style="color: white">¡CEICYT RD-2018!</h2>
                     <p class="section-subheading text-muted" style="color: white">El Congreso Estudiantil de Investigación Científica y Tecnológica (CEICYT) es un espacio para dar a conocer las iniciativas de investigación de estudiantes universitarios de las áreas vinculadas a las ciencias básicas y aplicadas. Se llevará a cabo los días 9 y 10 de mayo de 2018 en el Campus Santo Tomás de Aquino de la Pontificia Universid- ad Católica Madre y Maestra, (PUCMM), Santo Domingo.</p>

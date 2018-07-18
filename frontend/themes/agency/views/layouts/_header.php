@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" style="background-color: #235288; border-color: #235288">
     <div class="column one">
         <div class="top_bar_left clearfix loading" style="width: 920px;">
             <div class="logo">
