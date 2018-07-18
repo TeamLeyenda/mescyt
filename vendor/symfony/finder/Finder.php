@@ -107,20 +107,17 @@ class Finder implements \IteratorAggregate, \Countable
      *
      *   $finder->depth('> 1') // the Finder will start matching at level 1.
      *   $finder->depth('< 3') // the Finder will descend at most 3 levels of directories below the starting point.
-     *   $finder->depth(['>= 1', '< 3'])
      *
-     * @param string|int|string[]|int[] $levels The depth level expression or an array of depth levels
+     * @param string|int $level The depth level expression
      *
      * @return $this
      *
      * @see DepthRangeFilterIterator
      * @see NumberComparator
      */
-    public function depth($levels)
+    public function depth($level)
     {
-        foreach ((array) $levels as $level) {
-            $this->depths[] = new Comparator\NumberComparator($level);
-        }
+        $this->depths[] = new Comparator\NumberComparator($level);
 
         return $this;
     }
@@ -134,9 +131,8 @@ class Finder implements \IteratorAggregate, \Countable
      *   $finder->date('until 2 days ago');
      *   $finder->date('> now - 2 hours');
      *   $finder->date('>= 2005-10-15');
-     *   $finder->date(['>= 2005-10-15', '<= 2006-05-27']);
      *
-     * @param string|string[] $dates A date range string or an array of date ranges
+     * @param string $date A date range string
      *
      * @return $this
      *
@@ -144,11 +140,9 @@ class Finder implements \IteratorAggregate, \Countable
      * @see DateRangeFilterIterator
      * @see DateComparator
      */
-    public function date($dates)
+    public function date($date)
     {
-        foreach ((array) $dates as $date) {
-            $this->dates[] = new Comparator\DateComparator($date);
-        }
+        $this->dates[] = new Comparator\DateComparator($date);
 
         return $this;
     }
@@ -161,17 +155,16 @@ class Finder implements \IteratorAggregate, \Countable
      * $finder->name('*.php')
      * $finder->name('/\.php$/') // same as above
      * $finder->name('test.php')
-     * $finder->name(['test.py', 'test.php'])
      *
-     * @param string|string[] $patterns A pattern (a regexp, a glob, or a string) or an array of patterns
+     * @param string $pattern A pattern (a regexp, a glob, or a string)
      *
      * @return $this
      *
      * @see FilenameFilterIterator
      */
-    public function name($patterns)
+    public function name($pattern)
     {
-        $this->names = \array_merge($this->names, (array) $patterns);
+        $this->names[] = $pattern;
 
         return $this;
     }
@@ -179,15 +172,15 @@ class Finder implements \IteratorAggregate, \Countable
     /**
      * Adds rules that files must not match.
      *
-     * @param string|string[] $patterns A pattern (a regexp, a glob, or a string) or an array of patterns
+     * @param string $pattern A pattern (a regexp, a glob, or a string)
      *
      * @return $this
      *
      * @see FilenameFilterIterator
      */
-    public function notName($patterns)
+    public function notName($pattern)
     {
-        $this->notNames = \array_merge($this->notNames, (array) $patterns);
+        $this->notNames[] = $pattern;
 
         return $this;
     }
@@ -199,17 +192,16 @@ class Finder implements \IteratorAggregate, \Countable
      *
      * $finder->contains('Lorem ipsum')
      * $finder->contains('/Lorem ipsum/i')
-     * $finder->contains(['dolor', '/ipsum/i'])
      *
-     * @param string|string[] $patterns A pattern (string or regexp) or an array of patterns
+     * @param string $pattern A pattern (string or regexp)
      *
      * @return $this
      *
      * @see FilecontentFilterIterator
      */
-    public function contains($patterns)
+    public function contains($pattern)
     {
-        $this->contains = \array_merge($this->contains, (array) $patterns);
+        $this->contains[] = $pattern;
 
         return $this;
     }
@@ -221,17 +213,16 @@ class Finder implements \IteratorAggregate, \Countable
      *
      * $finder->notContains('Lorem ipsum')
      * $finder->notContains('/Lorem ipsum/i')
-     * $finder->notContains(['lorem', '/dolor/i'])
      *
-     * @param string|string[] $patterns A pattern (string or regexp) or an array of patterns
+     * @param string $pattern A pattern (string or regexp)
      *
      * @return $this
      *
      * @see FilecontentFilterIterator
      */
-    public function notContains($patterns)
+    public function notContains($pattern)
     {
-        $this->notContains = \array_merge($this->notContains, (array) $patterns);
+        $this->notContains[] = $pattern;
 
         return $this;
     }
@@ -243,19 +234,18 @@ class Finder implements \IteratorAggregate, \Countable
      *
      * $finder->path('some/special/dir')
      * $finder->path('/some\/special\/dir/') // same as above
-     * $finder->path(['some dir', 'another/dir'])
      *
      * Use only / as dirname separator.
      *
-     * @param string|string[] $patterns A pattern (a regexp or a string) or an array of patterns
+     * @param string $pattern A pattern (a regexp or a string)
      *
      * @return $this
      *
      * @see FilenameFilterIterator
      */
-    public function path($patterns)
+    public function path($pattern)
     {
-        $this->paths = \array_merge($this->paths, (array) $patterns);
+        $this->paths[] = $pattern;
 
         return $this;
     }
@@ -267,19 +257,18 @@ class Finder implements \IteratorAggregate, \Countable
      *
      * $finder->notPath('some/special/dir')
      * $finder->notPath('/some\/special\/dir/') // same as above
-     * $finder->notPath(['some/file.txt', 'another/file.log'])
      *
      * Use only / as dirname separator.
      *
-     * @param string|string[] $patterns A pattern (a regexp or a string) or an array of patterns
+     * @param string $pattern A pattern (a regexp or a string)
      *
      * @return $this
      *
      * @see FilenameFilterIterator
      */
-    public function notPath($patterns)
+    public function notPath($pattern)
     {
-        $this->notPaths = \array_merge($this->notPaths, (array) $patterns);
+        $this->notPaths[] = $pattern;
 
         return $this;
     }
@@ -290,20 +279,17 @@ class Finder implements \IteratorAggregate, \Countable
      * $finder->size('> 10K');
      * $finder->size('<= 1Ki');
      * $finder->size(4);
-     * $finder->size(['> 10K', '< 20K'])
      *
-     * @param string|int|string[]|int[] $sizes A size range string or an integer or an array of size ranges
+     * @param string|int $size A size range string or an integer
      *
      * @return $this
      *
      * @see SizeRangeFilterIterator
      * @see NumberComparator
      */
-    public function size($sizes)
+    public function size($size)
     {
-        foreach ((array) $sizes as $size) {
-            $this->sizes[] = new Comparator\NumberComparator($size);
-        }
+        $this->sizes[] = new Comparator\NumberComparator($size);
 
         return $this;
     }
