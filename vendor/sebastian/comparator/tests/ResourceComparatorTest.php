@@ -12,7 +12,7 @@ namespace SebastianBergmann\Comparator;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers \SebastianBergmann\Comparator\ResourceComparator<extended>
+ * @covers \SebastianBergmann\Comparator\ResourceComparator
  *
  * @uses \SebastianBergmann\Comparator\Comparator
  * @uses \SebastianBergmann\Comparator\Factory
