@@ -5,7 +5,8 @@
 
    $directoryAsset = Yii::$app->assetManager->getPublishedUrl('@frontend/themes/agency/dist');
    ?>
-   <!-- Header -->
+   
+   <!-- Header
     <header>
         <div class="container" style="background-color: #235288; border-color: #235288">
             <div class="intro-text">
@@ -16,8 +17,8 @@
             </div>
             <br>
         </div>
-
     </header>
+     -->
 
     <?= $this->render('_service.php',['directoryAsset'=>$directoryAsset ]) ?>
     <?= $this->render('_portfolio.php',['directoryAsset'=>$directoryAsset ]) ?>
