@@ -1,8 +1,8 @@
 <?php
-namespace mdm\admin\models\form;
+namespace backend\admin\models\form;
 
 use Yii;
-use mdm\admin\models\User;
+use backend\admin\models\User;
 use yii\base\Model;
 use yii\web\UploadedFile;
 use backend\models\AreaEspecializacion;
@@ -37,13 +37,13 @@ class Signup extends Model
             [['Apellido'], 'string', 'max' => 50],
             ['username', 'filter', 'filter' => 'trim'],
             ['username', 'required'],
-            ['username', 'unique', 'targetClass' => 'mdm\admin\models\User', 'message' => 'Este nombre de usuario ya ha sido tomado.'],
+            ['username', 'unique', 'targetClass' => 'backend\admin\models\User', 'message' => 'Este nombre de usuario ya ha sido tomado.'],
             ['username', 'string', 'min' => 2, 'max' => 255],
 
             ['email', 'filter', 'filter' => 'trim'],
             ['email', 'required'],
             ['email', 'email'],
-            ['email', 'unique', 'targetClass' => 'mdm\admin\models\User', 'message' => 'Este email ya ha sido tomado.'],
+            ['email', 'unique', 'targetClass' => 'backend\admin\models\User', 'message' => 'Este email ya ha sido tomado.'],
 
             ['password', 'required'],
             ['password', 'string', 'min' => 6],

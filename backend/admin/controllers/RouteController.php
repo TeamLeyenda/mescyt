@@ -1,9 +1,9 @@
 <?php
 
-namespace mdm\admin\controllers;
+namespace backend\admin\controllers;
 
 use Yii;
-use mdm\admin\models\Route;
+use backend\admin\models\Route;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 

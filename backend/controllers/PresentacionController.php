@@ -8,6 +8,7 @@ use backend\models\PresentacionSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
 
 /**
  * PresentacionController implements the CRUD actions for Presentacion model.
@@ -81,7 +82,29 @@ class PresentacionController extends Controller
         $model = new Presentacion();
 
         if ($model->loadAll(Yii::$app->request->post()) && $model->saveAll()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+             // get the uploaded file instance. for multiple file uploads
+            // the following data will return an array
+            $image = UploadedFile::getInstance($model, 'image');
+
+            // store the source file name
+            $model->filename = $image->name;
+            $tmp = explode('.', $model->filename);
+            $ext = substr( strrchr($model->filename, '.'), 1);
+            //$ext = end((explode(".", $tmp)));
+
+            // generate a unique file name
+            $model->Archivo = Yii::$app->security->generateRandomString().".{$ext}";
+
+            // the path to save file, you can set an uploadPath
+            // in Yii::$app->params (as used in example below)
+            $path = Yii::$app->basePath . '/uploads/' . $model->Archivo;
+
+            if($model->save()){
+                $image->saveAs($path);
+                return $this->redirect(['view', 'id'=>$model->id]);
+            } else {
+                // error in saving model
+            }
         } else {
             return $this->render('create', [
                 'model' => $model,

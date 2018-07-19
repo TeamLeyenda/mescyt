@@ -1,6 +1,6 @@
 <?php
 
-namespace mdm\admin\components;
+namespace backend\admin\components;
 
 use yii\web\ForbiddenHttpException;
 use yii\base\Module;
@@ -18,7 +18,7 @@ use yii\di\Instance;
  *
  * ```
  * 'as access' => [
- *     'class' => 'mdm\admin\components\AccessControl',
+ *     'class' => 'backend\admin\components\AccessControl',
  *     'allowActions' => ['site/login', 'site/error']
  * ]
  * ```
@@ -84,7 +84,11 @@ class AccessControl extends \yii\base\ActionFilter
     {
         if ($user->getIsGuest()) {
             $user->loginRequired();
-        } else {
+        } /*elseif (Yii::$app->user->identity->tipo_user == 3) {
+            throw new ForbiddenHttpException(Yii::t('yii', 'You are not allowed to perform this action.'));
+        }
+        */
+        else {
             throw new ForbiddenHttpException(Yii::t('yii', 'You are not allowed to perform this action.'));
         }
     }

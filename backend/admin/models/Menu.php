@@ -1,9 +1,9 @@
 <?php
 
-namespace mdm\admin\models;
+namespace backend\admin\models;
 
 use Yii;
-use mdm\admin\components\Configs;
+use backend\admin\components\Configs;
 use yii\db\Query;
 
 /**

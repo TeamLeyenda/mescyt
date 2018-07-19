@@ -17,7 +17,8 @@ use Yii;
  * @property string $Fecha_Inicio
  * @property string $Fecha_Final
  * @property string $Vinculo
- * @property resource $Archivo
+ * @property array $Archivo
+ * @property string $filename
  *
  * @property \backend\models\Sala $sala
  * @property \backend\models\Congreso $congreso
@@ -28,6 +29,11 @@ class Presentacion extends \yii\db\ActiveRecord
 {
     use \mootensai\relation\RelationTrait;
 
+    /**
+    * @var mixed image the attribute for rendering the file input
+    * widget for upload on the form
+    */
+    public $image;
 
     /**
     * This function helps \mootensai\relation\RelationTrait runs faster
@@ -52,7 +58,8 @@ class Presentacion extends \yii\db\ActiveRecord
             [['congreso_id', 'Titulo', 'Fecha_Inicio', 'Fecha_Final'], 'required'],
             [['congreso_id', 'sala_id'], 'integer'],
             [['Fecha_Inicio', 'Fecha_Final'], 'safe'],
-            [['Archivo'], 'file'],
+            [['image'], 'safe'],
+            [['image'], 'file'],
             [['Titulo', 'Area_Tematica'], 'string', 'max' => 100],
             [['Institucion'], 'string', 'max' => 50],
             [['Modalidad_Presentacion'], 'string', 'max' => 20],
@@ -84,7 +91,7 @@ class Presentacion extends \yii\db\ActiveRecord
             'Fecha_Inicio' => Yii::t('app', 'Fecha Inicio'),
             'Fecha_Final' => Yii::t('app', 'Fecha Final'),
             'Vinculo' => Yii::t('app', 'Vinculo'),
-            'Archivo' => Yii::t('app', 'Archivo'),
+            'image' => Yii::t('app', 'Archivo'),
         ];
     }
     

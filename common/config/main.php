@@ -10,14 +10,14 @@ return [
 
     'modules' => [
         'admin' => [
-            'class' => 'mdm\admin\Module',
+            'class' => 'backend\admin\Module',
             //'layout' => 'left-menu', // it can be '@path/to/your/layout'.
             'mainLayout' => '@backend/views/layouts/main.php',
             'controllerMap' => [
                 'assignment' => [
-                    'class' => 'mdm\admin\controllers\AssignmentController',
+                    'class' => 'backend\admin\controllers\AssignmentController',
                     //'userClassName' => 'common\models\User',
-                    'userClassName' => 'mdm\admin\models\User',
+                    'userClassName' => 'backend\admin\models\User',
                     'idField' => 'user_id'
                 ],
                 /*

@@ -1,6 +1,6 @@
 <?php
 
-namespace mdm\admin\components;
+namespace backend\admin\components;
 
 use Yii;
 use yii\caching\Cache;
@@ -30,7 +30,7 @@ use yii\rbac\ManagerInterface;
  * or use [[\Yii::$container]]
  *
  * ```
- * Yii::$container->set('mdm\admin\components\Configs',[
+ * Yii::$container->set('backend\admin\components\Configs',[
  *     'db' => 'customDb',
  *     'menuTable' => 'admin_menu',
  * ]);
@@ -40,7 +40,7 @@ use yii\rbac\ManagerInterface;
  * @since 1.0
  */
 
-class Configs extends \mdm\admin\BaseObject
+class Configs extends \backend\admin\BaseObject
 {
     const CACHE_TAG = 'mdm.admin';
 
