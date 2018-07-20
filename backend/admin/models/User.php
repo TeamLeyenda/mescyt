@@ -23,7 +23,7 @@ use backend\admin\components\Configs;
  * @property string $Telefono
  * @property string $Sexo
  * @property string $Fecha_Nacimiento
- * @property resource $Foto
+ * @property array $Foto
  * @property string $filename
  * @property string $password_hash
  * @property string $password_reset_token

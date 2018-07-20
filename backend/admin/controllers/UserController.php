@@ -17,6 +17,7 @@ use yii\filters\VerbFilter;
 use yii\web\NotFoundHttpException;
 use yii\base\UserException;
 use yii\mail\BaseMailer;
+use yii\web\UploadedFile;
 
 /**
  * User controller
@@ -147,10 +148,42 @@ class UserController extends Controller
     public function actionSignup()
     {
         $model = new Signup();
+        //$perfil = new User();
         if ($model->load(Yii::$app->getRequest()->post())) {
+
+            $image = UploadedFile::getInstance($model, 'image');
+            if (!empty($image->name)) {
+                // store the source file name
+                $model->filename = $image->name;
+                $tmp = explode('.', $model->filename);
+                $ext = substr( strrchr($model->filename, '.'), 1);
+                //$ext = end((explode(".", $tmp)));
+
+                // generate a unique file name
+                $model->Foto = Yii::$app->security->generateRandomString().".{$ext}";
+
+                // the path to save file, you can set an uploadPath
+                // in Yii::$app->params (as used in example below)
+                $path = Yii::$app->basePath . '/perfil/' . $model->Foto;
+
+            }
+
+            if($user = $model->signup() && !empty($image->name)){
+                $image->saveAs($path);
+                return $this->goHome();
+               // return $this->redirect(['view', 'id'=>$model->id]);
+            }
+            elseif($user = $model->signup()){
+                return $this->goHome();
+                //return $this->redirect(['view', 'id'=>$model->id]);
+            } else {
+                // error in saving model
+            }
+            /*
             if ($user = $model->signup()) {
                 return $this->goHome();
             }
+            */
         }
 
         return $this->render('signup', [

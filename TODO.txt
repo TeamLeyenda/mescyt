@@ -1,7 +1,6 @@
-#Subir imagen de usuario al servidor
 #Editar la opcion de actualizacion para que no duplique los datos de insercion de unoAmuchos
 #Mostrar fechas en estilo meridiem(AM/PM)
 #Agregar datos reales en graficas
 #Cambiar a id =4 en common para el frontend
 #PDF Arreglar
-#$model->id resolver
+#Añadir relaciones de muchoAmucho en el registro de usuario

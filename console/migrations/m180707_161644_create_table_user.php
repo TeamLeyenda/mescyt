@@ -21,7 +21,7 @@ class m180707_161644_create_table_user extends Migration
             'username' => $this->string()->notNull()->comment('Usuario'),
             'email' => $this->string(),
             'Telefono' => $this->string(),
-            'Sexo' => "ENUM('Masculino', 'Femenino')",
+            'Sexo' => $this->string()->notNull()->defaultValue('Masculino'),
             'Fecha_Nacimiento' => $this->date()->notNull(),
             'Foto' => $this->binary()->comment('perfil'),
             'filename' => $this->string(),

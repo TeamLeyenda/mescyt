@@ -16,13 +16,18 @@ class Signup extends Model
     public $Nombre;
     public $Apellido;
     public $username;
+    public $Sexo;
     public $area_especializacion_id;
     public $email;
+    public $Fecha_Nacimiento;
     public $password;
     public $tipo_user_id;
     public $afiliacion_id;
+    public $pais_id;
     public $Telefono;
     public $image;
+    public $filename;
+    public $Foto;
 
     /**
      * @inheritdoc
@@ -30,25 +35,20 @@ class Signup extends Model
     public function rules()
     {
         return [
-            [['afiliacion_id', 'tipo_user_id'], 'integer'],
-            ['Nombre', 'required'],
-            [['Nombre'], 'string', 'max' => 50],
-            ['Apellido', 'required'],
-            [['Apellido'], 'string', 'max' => 50],
+            [['afiliacion_id', 'tipo_user_id', 'pais_id'], 'integer'],
+            [['Nombre', 'Apellido', 'username', 'Sexo', 'email', 'Fecha_Nacimiento', 'password'], 'required'],
+            [['Nombre', 'Apellido'], 'string', 'max' => 50],
             ['username', 'filter', 'filter' => 'trim'],
-            ['username', 'required'],
             ['username', 'unique', 'targetClass' => 'backend\admin\models\User', 'message' => 'Este nombre de usuario ya ha sido tomado.'],
             ['username', 'string', 'min' => 2, 'max' => 255],
-
+            [['Sexo'], 'string'],
             ['email', 'filter', 'filter' => 'trim'],
-            ['email', 'required'],
             ['email', 'email'],
             ['email', 'unique', 'targetClass' => 'backend\admin\models\User', 'message' => 'Este email ya ha sido tomado.'],
-
-            ['password', 'required'],
             ['password', 'string', 'min' => 6],
             [['Telefono'], 'string', 'max' => 20],
            // [['image'], 'string', 'max' => 255],
+            [['image', 'Foto', 'filename',], 'safe'],
             [['image'], 'file', 'extensions' => 'png, jpg, gif'],
         ];
     }
@@ -77,8 +77,13 @@ class Signup extends Model
             $user->generateAuthKey();
             $user->tipo_user_id = $this->tipo_user_id;
             $user->afiliacion_id = $this->afiliacion_id;
+            $user->pais_id = $this->pais_id;
             $user->Telefono = $this->Telefono;
-            
+            $user->Sexo = $this->Sexo;
+            $user->Fecha_Nacimiento = $this->Fecha_Nacimiento;
+            //$user->image = $this->image;
+            $user->filename = $this->filename;
+            $user->Foto = $this->Foto;
             /*
             $user->save();
             $area->save();
@@ -87,22 +92,7 @@ class Signup extends Model
             $user->link('areaEspecializacions', $area);
             */
             //$user->link('areaEspecializacions', $areaEspecializacions);
-            //$user->image->file = UploadedFile::getInstance( $image, 'file' );
-            //$user->image = $this->image->saveAs('/backend/perfil/' . $this->image->baseName . '.' . $this->image->extension);
-            /*
-            $tmp = '/backend/perfil/' . array_pop( explode( '/', $user->image->file->tempName ) );
-            $user->image = $tmp;
-            $user->image->file->saveAs( Yii::getAlias( '@webroot' ) . $tmp . '.' . $image->file->extension );
             
-            //$user->image = $this->image;
-
-            if ($model->file = UploadedFile::getInstance($model,'image')) {
-                $model->file->saveAs( '/backend/perfil/'.$image.'.'.$model->file->extension );
-                //save the path in DB..
-                $model->image = 'backend/perfil/'.$image.'.'.$model->file->extension;
-                $model->save();
-            }
-            */
 
             if ($user->save()) {
                 return $user;

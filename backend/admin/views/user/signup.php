@@ -103,14 +103,53 @@ $this->params['breadcrumbs'][] = $this->title;
             ]);
             ?>
 
-                <?= $form->field($model, 'image')->label('Perfil')->widget(FileInput::classname(), [
-                    'options' => ['accept' => 'image/*'],
-                    'pluginOptions'=>[
-                        'allowedFileExtensions'=>['jpg','gif','png'],
-                        'showUpload' => false,
-                        'showCancel' => false,
-                    ],
-                    ]);?>
+            <?= Form::widget([
+                    'model'=>$model,
+                    'form'=>$form,
+                    'columns'=>2,
+                    'attributes'=>[
+
+                        'pais_id'=>[
+                            'label'=> 'Pais', 
+                            'type'=>Form::INPUT_WIDGET, 
+                            'widgetClass'=>'\kartik\widgets\Select2', 
+                            'options'=>['data'=>\yii\helpers\ArrayHelper::map(\backend\models\Pais::find()->orderBy('id')->asArray()->all(), 'id', 'Pais'),
+                                'options' => ['placeholder' => Yii::t('app', 'Elige Pais')],
+                                        'pluginOptions' => [
+                                            'allowClear' => true
+                                        ],
+                            ],
+                        ],
+
+                        'Sexo'=>[
+                            'items'=>['Masculino'=>'Masculino', 'Femenino'=>'Femenino'], 
+                            'type'=>Form::INPUT_DROPDOWN_LIST
+                        ],
+                    ]
+                ]);
+            ?>
+
+        <?= $form->field($model, 'Fecha_Nacimiento')->widget(\kartik\datecontrol\DateControl::classname(), [
+                     'type'=>\kartik\datecontrol\DateControl::FORMAT_DATE,
+                     'ajaxConversion'=>false,
+                     'widgetOptions' => [
+                         'pluginOptions' => [
+                             'autoclose' => true
+                         ]
+                     ]
+            ]); ?>
+
+        <?= $form->field($model, 'image')->label('Perfil')->widget(FileInput::classname(), [
+            'options'=>[
+                'accept'=>'image/*',
+                //'multiple'=>true
+                ],
+            'pluginOptions'=>[
+                    'showUpload' => false,
+                    'showCancel' => false,
+                    'allowedFileExtensions'=>['jpg','gif','png']
+                ]
+            ]);?>
 
                 <div class="form-group">
                     <?= Html::submitButton(Yii::t('rbac-admin', 'Signup'), ['class' => 'btn btn-primary', 'name' => 'signup-button']) ?>
