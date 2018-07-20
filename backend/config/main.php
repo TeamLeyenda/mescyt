@@ -91,7 +91,7 @@ return [
         'user' => [
             //'identityClass' => 'common\models\User',
             //'identityClass' => 'backend\models\User',
-            'identityClass' => 'mdm\admin\models\User',
+            'identityClass' => 'backend\admin\models\User',
             //'loginUrl' => ['admin/user/login'],
             'enableAutoLogin' => true,
             'identityCookie' => ['name' => '_identity-backend', 'httpOnly' => true],

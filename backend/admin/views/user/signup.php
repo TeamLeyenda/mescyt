@@ -8,7 +8,7 @@ use kartik\select2\Select2;
 use backend\models\AreaEspecializacion;
 /* @var $this yii\web\View */
 /* @var $form yii\bootstrap\ActiveForm */
-/* @var $model \mdm\admin\models\form\Signup */
+/* @var $model \backend\admin\models\form\Signup */
 
 $this->title = Yii::t('rbac-admin', 'Signup');
 $this->params['breadcrumbs'][] = $this->title;
@@ -83,14 +83,14 @@ $this->params['breadcrumbs'][] = $this->title;
             ?>
 
 
-             <?= $form->field($userAreaEspecializacion, 'area_especializacion_id')->widget(Select2::classname(), [
+             <?php /*$form->field($userAreaEspecializacion, 'area_especializacion_id')->widget(Select2::classname(), [
                     'data' => \yii\helpers\ArrayHelper::map(AreaEspecializacion::find()->all(), 'id', 'area'),
                     'size' => Select2::MEDIUM,
                     'options' => ['placeholder' => 'Elige area', 'multiple' => true],
                     'pluginOptions' => [
                         'allowClear' => true,
                     ],
-                ]); ?>
+                ]);*/ ?>
 
              <?= Form::widget([
                 'model'=>$model,

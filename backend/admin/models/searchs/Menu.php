@@ -1,14 +1,14 @@
 <?php
 
-namespace mdm\admin\models\searchs;
+namespace backend\admin\models\searchs;
 
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use mdm\admin\models\Menu as MenuModel;
+use backend\admin\models\Menu as MenuModel;
 
 /**
- * Menu represents the model behind the search form about [[\mdm\admin\models\Menu]].
+ * Menu represents the model behind the search form about [[\backend\admin\models\Menu]].
  * 
  * @author Misbahul D Munir <misbahuldmunir@gmail.com>
  * @since 1.0

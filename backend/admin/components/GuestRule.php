@@ -1,6 +1,6 @@
 <?php
 
-namespace mdm\admin\components;
+namespace backend\admin\components;
 
 use yii\rbac\Rule;
 

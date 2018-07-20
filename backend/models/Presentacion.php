@@ -10,6 +10,13 @@ use \backend\models\base\Presentacion as BasePresentacion;
  */
 class Presentacion extends BasePresentacion
 {
+
+    /**
+    * @var mixed image the attribute for rendering the file input
+    * widget for upload on the form
+    */
+    public $image;
+
     /**
      * @inheritdoc
      */
@@ -20,7 +27,8 @@ class Presentacion extends BasePresentacion
             [['congreso_id', 'Titulo', 'Fecha_Inicio', 'Fecha_Final'], 'required'],
             [['congreso_id', 'sala_id'], 'integer'],
             [['Fecha_Inicio', 'Fecha_Final'], 'safe'],
-            [['Archivo'], 'file'],
+            [['image'], 'safe'],
+            [['image'], 'file'],
             [['Titulo', 'Area_Tematica'], 'string', 'max' => 100],
             [['Institucion'], 'string', 'max' => 50],
             [['Modalidad_Presentacion'], 'string', 'max' => 20],

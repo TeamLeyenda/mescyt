@@ -27,7 +27,10 @@ use yii\helpers\Url;
 
 <div class="presentacion-form">
 
-    <?php $form = ActiveForm::begin(['type' => ActiveForm::TYPE_VERTICAL]); ?>
+    <?php $form = ActiveForm::begin([
+        'type' => ActiveForm::TYPE_VERTICAL,
+        //'options'=>['enctype'=>'multipart/form-data']
+        ]); ?>
 
     <?= $form->errorSummary($model); ?>
 
@@ -107,19 +110,17 @@ use yii\helpers\Url;
 
 
     <?= $form->field($model, 'Vinculo')->textInput(['maxlength' => true, 'placeholder' => 'Link']) ?>
-
-    <?= $form->field($model, 'Archivo')->widget(FileInput::classname(), [
-        'options'=>[
-            'multiple'=>true
+    
+    <?= $form->field($model, 'image')->widget(FileInput::classname(), [
+       'options'=>[
+           //'accept'=>'image/*',
+           //'multiple'=>true
         ],
-        'pluginOptions' => [
-            'uploadUrl' => Url::to(['/site/file-upload']),
-            'uploadExtraData' => [
-                'album_id' => 20,
-                'cat_id' => 'Nature'
-            ],
-            'maxFileCount' => 10
-        ]
+       'pluginOptions'=>[
+            'showUpload' => false,
+            'showCancel' => false,
+            //'allowedFileExtensions'=>['jpg','gif','png']
+           ]
         ]);?>
 
     <?php

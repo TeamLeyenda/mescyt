@@ -19,6 +19,7 @@ use yii\helpers\Url;
         <a type="button" class="btn btn-secondary" href="<?= Url::to(['/login'])?>" style="color:white">Patrocinadores</a>
         <a type="button" class="btn btn-secondary" href="<?= Url::to(['/login'])?>" style="color:white">Contactos</a>
         <a type="button" class="btn btn-secondary" href="<?= Url::to(['/login'])?>" style="color:white">login</a>
+        <a type="button" class="btn btn-secondary" href="<?= Url::to(['/login'])?>" style="color:white">Sign Up</a>
     </nav>
     <div class="container"><div class="column one">
     <ul class="breadcrumbs has-link">
