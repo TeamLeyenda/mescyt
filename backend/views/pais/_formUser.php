@@ -34,10 +34,42 @@ echo TabularForm::widget([
             ],
             'columnOptions' => ['width' => '200px']
         ],
+        'tipo_user_id' => [
+            'label' => 'Tipo user',
+            'type' => TabularForm::INPUT_WIDGET,
+            'widgetClass' => \kartik\widgets\Select2::className(),
+            'options' => [
+                'data' => \yii\helpers\ArrayHelper::map(\backend\models\TipoUser::find()->orderBy('Tipo')->asArray()->all(), 'id', 'Tipo'),
+                'options' => ['placeholder' => Yii::t('app', 'Elige Tipo user')],
+            ],
+            'columnOptions' => ['width' => '200px']
+        ],
         'username' => ['type' => TabularForm::INPUT_TEXT],
         'email' => ['type' => TabularForm::INPUT_TEXT],
         'Telefono' => ['type' => TabularForm::INPUT_TEXT],
+        'Sexo' => ['type' => TabularForm::INPUT_DROPDOWN_LIST,
+                    'items' => [ 'Masculino' => 'Masculino', 'Femenino' => 'Femenino', ],
+                    'options' => [
+                        'columnOptions' => ['width' => '185px'],
+                        'options' => ['placeholder' => Yii::t('app', 'Elige Sexo')],
+                    ]
+        ],
+        'Fecha_Nacimiento' => ['type' => TabularForm::INPUT_WIDGET,
+            'widgetClass' => \kartik\datecontrol\DateControl::classname(),
+            'options' => [
+                'type' => \kartik\datecontrol\DateControl::FORMAT_DATE,
+                'saveFormat' => 'php:Y-m-d',
+                'ajaxConversion' => true,
+                'options' => [
+                    'pluginOptions' => [
+                        'placeholder' => Yii::t('app', 'Elige Fecha Nacimiento'),
+                        'autoclose' => true
+                    ]
+                ],
+            ]
+        ],
         'Foto' => ['type' => TabularForm::INPUT_TEXT],
+        'filename' => ['type' => TabularForm::INPUT_TEXT],
         'del' => [
             'type' => 'raw',
             'label' => '',

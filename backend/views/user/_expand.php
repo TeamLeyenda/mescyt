@@ -11,7 +11,7 @@ $items = [
         ]),
     ],
     */
-        [
+    [
         'label' => '<i class="glyphicon glyphicon-comment"></i> '. Html::encode(Yii::t('app', 'Presentaciones')),
         'content' => $this->render('_dataPresentacionUser', [
             'model' => $model,

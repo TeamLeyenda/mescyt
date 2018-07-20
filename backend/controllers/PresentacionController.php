@@ -85,26 +85,31 @@ class PresentacionController extends Controller
              // get the uploaded file instance. for multiple file uploads
             // the following data will return an array
             $image = UploadedFile::getInstance($model, 'image');
+            if (!empty($image->name)) {
+                // store the source file name
+                $model->filename = $image->name;
+                $tmp = explode('.', $model->filename);
+                $ext = substr( strrchr($model->filename, '.'), 1);
+                //$ext = end((explode(".", $tmp)));
 
-            // store the source file name
-            $model->filename = $image->name;
-            $tmp = explode('.', $model->filename);
-            $ext = substr( strrchr($model->filename, '.'), 1);
-            //$ext = end((explode(".", $tmp)));
+                // generate a unique file name
+                $model->Archivo = Yii::$app->security->generateRandomString().".{$ext}";
 
-            // generate a unique file name
-            $model->Archivo = Yii::$app->security->generateRandomString().".{$ext}";
+                // the path to save file, you can set an uploadPath
+                // in Yii::$app->params (as used in example below)
+                $path = Yii::$app->basePath . '/uploads/' . $model->Archivo;
 
-            // the path to save file, you can set an uploadPath
-            // in Yii::$app->params (as used in example below)
-            $path = Yii::$app->basePath . '/uploads/' . $model->Archivo;
-
-            if($model->save()){
+            }
+            if($model->save() && !empty($image->name)){
                 $image->saveAs($path);
+                return $this->redirect(['view', 'id'=>$model->id]);
+            }
+            elseif($model->save()){
                 return $this->redirect(['view', 'id'=>$model->id]);
             } else {
                 // error in saving model
             }
+            
         } else {
             return $this->render('create', [
                 'model' => $model,
@@ -199,7 +204,32 @@ class PresentacionController extends Controller
         }
     
         if ($model->loadAll(Yii::$app->request->post()) && $model->saveAll()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+
+            $image = UploadedFile::getInstance($model, 'image');
+            if (!empty($image->name)) {
+                // store the source file name
+                $model->filename = $image->name;
+                $tmp = explode('.', $model->filename);
+                $ext = substr( strrchr($model->filename, '.'), 1);
+                //$ext = end((explode(".", $tmp)));
+
+                // generate a unique file name
+                $model->Archivo = Yii::$app->security->generateRandomString().".{$ext}";
+
+                // the path to save file, you can set an uploadPath
+                // in Yii::$app->params (as used in example below)
+                $path = Yii::$app->basePath . '/uploads/' . $model->Archivo;
+
+            }
+            if($model->save() && !empty($image->name)){
+                $image->saveAs($path);
+                return $this->redirect(['view', 'id'=>$model->id]);
+            }
+            elseif($model->save()){
+                return $this->redirect(['view', 'id'=>$model->id]);
+            } else {
+                // error in saving model
+            }
         } else {
             return $this->render('saveAsNew', [
                 'model' => $model,

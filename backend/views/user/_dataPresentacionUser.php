@@ -14,7 +14,7 @@ use yii\data\ArrayDataProvider;
                 'attribute' => 'presentacion.Titulo',
                 'label' => Yii::t('app', 'Presentacion')
             ],
-
+            
             [
                 'attribute' => 'presentacion.Fecha_Inicio',
                 'label' => Yii::t('app', 'Fecha Inicio')

@@ -7,10 +7,6 @@
 use yii\helpers\Html;
 use kartik\export\ExportMenu;
 use kartik\grid\GridView;
-use backend\assets\AdminLtePluginAsset;
-use backend\assets\AppAsset;
-AdminLtePluginAsset::register($this);
-AppAsset::register($this);
 
 $this->title = Yii::t('app', 'Usuarios');
 $this->params['breadcrumbs'][] = $this->title;
@@ -22,10 +18,10 @@ $this->registerJs($search);
 ?>
 <div class="user-index">
 
-    
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
+        <?= Html::a(Yii::t('app', 'Añadir Usuario'), ['create'], ['class' => 'btn btn-success']) ?>
         <?= Html::a(Yii::t('app', 'Busqueda avanzada'), '#', ['class' => 'btn btn-info search-button']) ?>
     </p>
     <div class="search-form" style="display:none">
@@ -55,7 +51,8 @@ $this->registerJs($search);
                 'value' => function($model){
                     if ($model->afiliacion)
                     {return $model->afiliacion->Afiliacion;}
-                    else{return NULL;}
+                    else
+                    {return NULL;}
                 },
                 'filterType' => GridView::FILTER_SELECT2,
                 'filter' => \yii\helpers\ArrayHelper::map(\backend\models\Afiliacion::find()->asArray()->all(), 'id', 'Afiliacion'),
@@ -80,10 +77,31 @@ $this->registerJs($search);
                 ],
                 'filterInputOptions' => ['placeholder' => 'Tipo user', 'id' => 'grid-user-search-tipo_user_id']
             ],
+            /*
+        [
+                'attribute' => 'pais_id',
+                'label' => Yii::t('app', 'Pais'),
+                'value' => function($model){
+                    if ($model->pais)
+                    {return $model->pais->Pais;}
+                    else
+                    {return NULL;}
+                },
+                'filterType' => GridView::FILTER_SELECT2,
+                'filter' => \yii\helpers\ArrayHelper::map(\backend\models\Pais::find()->asArray()->all(), 'id', 'Pais'),
+                'filterWidgetOptions' => [
+                    'pluginOptions' => ['allowClear' => true],
+                ],
+                'filterInputOptions' => ['placeholder' => 'Pais', 'id' => 'grid-user-search-pais_id']
+            ],
+            */
         'username',
         'email:email',
         'Telefono',
-        'image',
+        //'Sexo',
+        //'Fecha_Nacimiento',
+        //'Foto',
+        //'filename',
         [
             'class' => 'yii\grid\ActionColumn',
             'template' => '{save-as-new} {view} {update} {delete}',
@@ -112,10 +130,10 @@ $this->registerJs($search);
             '{toggleData}',
         ],
         'export' => [
-            'fontAwesome' => true
+            'fontAwesome' => true        
         ],
         // your toolbar can include the additional full export menu
-        
+
         'toolbar' => [
             '{export}',
             ExportMenu::widget([

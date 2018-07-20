@@ -18,6 +18,13 @@ $items = [
             'row' => $model->provincias,
         ]),
     ],
+            [
+        'label' => '<i class="glyphicon glyphicon-user"></i> '. Html::encode(Yii::t('app', 'Usuarios')),
+        'content' => $this->render('_dataUser', [
+            'model' => $model,
+            'row' => $model->users,
+        ]),
+    ],
     ];
 echo TabsX::widget([
     'items' => $items,

@@ -15,10 +15,17 @@ use yii\data\ArrayDataProvider;
                 'attribute' => 'afiliacion.Afiliacion',
                 'label' => Yii::t('app', 'Afiliacion')
             ],
+        [
+                'attribute' => 'tipoUser.Tipo',
+                'label' => Yii::t('app', 'Tipo')
+            ],
         'username',
         'email:email',
         'Telefono',
-        'Foto',
+        'Sexo',
+        'Fecha_Nacimiento',
+        //'Foto',
+        //'filename',
         [
             'class' => 'yii\grid\ActionColumn',
             'controller' => 'user'

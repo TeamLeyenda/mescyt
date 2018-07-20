@@ -71,7 +71,7 @@ if($providerUser->totalCount){
                         'username',
             'email:email',
             'Telefono',
-            'image',
+            'Foto',
             /*
             [
                 'class' => 'yii\grid\ActionColumn',

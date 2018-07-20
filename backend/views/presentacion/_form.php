@@ -91,18 +91,21 @@ use yii\helpers\Url;
                         'Fecha_Inicio'=>[
                             'type'=>Form::INPUT_WIDGET, 
                             'widgetClass'=>'\kartik\widgets\DateTimePicker', 
-                            'pluginOptions' => [
-                                'autoclose' => true
-                            ]
+                            'options'=>[
+                                'pluginOptions' => [
+                                    'autoclose' => true
+                                ],
+                            ], 
                         ],
 
                         'Fecha_Final'=>[
                             'type'=>Form::INPUT_WIDGET,  
                             'widgetClass'=>'\kartik\widgets\DateTimePicker', 
-                            //'hint'=>'Type and select state',
-                            'pluginOptions' => [
-                                'autoclose' => true
-                            ]
+                            'options'=>[
+                                'pluginOptions' => [
+                                    'autoclose' => true
+                                ],
+                            ], 
                         ],
                     ]
                 ]);

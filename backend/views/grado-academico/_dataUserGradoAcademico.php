@@ -27,7 +27,7 @@ use yii\data\ArrayDataProvider;
         ['attribute' =>'user.email',
         'label' => Yii::t('app', 'Email')
         ],
-        //'image',
+        //'Foto',
         ['attribute' =>'user.Telefono',
         'label' => Yii::t('app', 'Telefono')
         ],

@@ -66,7 +66,7 @@ if($providerUser->totalCount){
             ],
             'username',
             'email:email',
-            'image',
+            'Foto',
             'Nombre',
             'Apellido',
             'Telefono',

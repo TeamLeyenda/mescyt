@@ -20,7 +20,7 @@ use yii\data\ArrayDataProvider;
         'user.Nombre',
         'user.Apellido',
         'user.email:email',
-        //'image',
+        //'Foto',
         'user.Telefono',
         [
             'class' => 'yii\grid\ActionColumn',

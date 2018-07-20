@@ -23,6 +23,7 @@ class m180707_161645_create_table_presentacion extends Migration
             'Fecha_Final' => $this->dateTime()->notNull(),
             'Vinculo' => $this->string(),
             'Archivo' => $this->binary(),
+            'filename' => $this->string(),
         ], $tableOptions);
 
         $this->createIndex('idx-presentacion-sala_id', '{{%presentacion}}', 'sala_id');

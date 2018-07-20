@@ -34,7 +34,7 @@ echo TabularForm::widget([
         ],
         'username' => ['type' => TabularForm::INPUT_TEXT],
         'email' => ['type' => TabularForm::INPUT_TEXT],
-        'image' => ['type' => TabularForm::INPUT_TEXT],
+        'Foto' => ['type' => TabularForm::INPUT_TEXT],
         'Nombre' => ['type' => TabularForm::INPUT_TEXT],
         'Apellido' => ['type' => TabularForm::INPUT_TEXT],
         'Telefono' => ['type' => TabularForm::INPUT_TEXT],
