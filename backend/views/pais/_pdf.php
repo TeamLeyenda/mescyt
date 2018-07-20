@@ -68,7 +68,7 @@ if($providerUser->totalCount){
             ],
         [
                 'attribute' => 'tipoUser.Tipo',
-                'label' => Yii::t('app', 'Tipo User')
+                'label' => Yii::t('app', 'Tipo')
             ],
                 'username',
         'email:email',

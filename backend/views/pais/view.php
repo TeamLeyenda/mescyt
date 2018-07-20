@@ -68,7 +68,8 @@ if($providerProvincia->totalCount){
         'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-provincia']],
         'panel' => [
             'type' => GridView::TYPE_PRIMARY,
-            'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode(Yii::t('app', 'Provincia')),
+            'heading' => '<span class="glyphicon glyphicon-flobe"></span> ' . Html::encode(Yii::t('app', 'Provincia')),
+            'footer' => false,
         ],
         'columns' => $gridColumnProvincia
     ]);
@@ -91,15 +92,15 @@ if($providerUser->totalCount){
             ],
             [
                 'attribute' => 'tipoUser.Tipo',
-                'label' => Yii::t('app', 'Tipo User')
+                'label' => Yii::t('app', 'Tipo')
             ],
                         'username',
             'email:email',
             'Telefono',
-            'Sexo',
-            'Fecha_Nacimiento',
-            'Foto',
-            'filename',
+            //'Sexo',
+            //'Fecha_Nacimiento',
+            //'Foto',
+            //'filename',
     ];
     echo Gridview::widget([
         'dataProvider' => $providerUser,
@@ -107,7 +108,8 @@ if($providerUser->totalCount){
         'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-user']],
         'panel' => [
             'type' => GridView::TYPE_PRIMARY,
-            'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode(Yii::t('app', 'User')),
+            'heading' => '<span class="glyphicon glyphicon-user"></span> ' . Html::encode(Yii::t('app', 'Usuario')),
+            'footer' => false,
         ],
         'columns' => $gridColumnUser
     ]);

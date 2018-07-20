@@ -36,15 +36,16 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'Pais')->textInput(['maxlength' => true, 'placeholder' => 'Pais']) ?>
 
     <?php
+    /*
     $forms = [
         [
-            'label' => '<i class="glyphicon glyphicon-book"></i> ' . Html::encode(Yii::t('app', 'Provincia')),
+            'label' => '<i class="glyphicon glyphicon-globe"></i> ' . Html::encode(Yii::t('app', 'Provincia')),
             'content' => $this->render('_formProvincia', [
                 'row' => \yii\helpers\ArrayHelper::toArray($model->provincias),
             ]),
         ],
         [
-            'label' => '<i class="glyphicon glyphicon-book"></i> ' . Html::encode(Yii::t('app', 'User')),
+            'label' => '<i class="glyphicon glyphicon-user"></i> ' . Html::encode(Yii::t('app', 'User')),
             'content' => $this->render('_formUser', [
                 'row' => \yii\helpers\ArrayHelper::toArray($model->users),
             ]),
@@ -60,6 +61,7 @@ use yii\widgets\ActiveForm;
             'enableCache' => false,
         ],
     ]);
+    */
     ?>
     <div class="form-group">
     <?php if(Yii::$app->controller->action->id != 'save-as-new'): ?>

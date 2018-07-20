@@ -98,45 +98,6 @@ if($providerPresentacionUser->totalCount){
 }
 ?>
 
-    </div>
-    <div class="row">
-        <h4>Afiliacion<?= ' '. Html::encode($this->title) ?></h4>
-    </div>
-    <?php 
-    $gridColumnAfiliacion = [
-        ['attribute' => 'id', 'visible' => false],
-        'Afiliacion',
-    ];
-    echo DetailView::widget([
-        'model' => $model->afiliacion,
-        'attributes' => $gridColumnAfiliacion    ]);
-    ?>
-    <div class="row">
-        <h4>Pais<?= ' '. Html::encode($this->title) ?></h4>
-    </div>
-    <?php 
-    $gridColumnPais = [
-        ['attribute' => 'id', 'visible' => false],
-        'Pais',
-    ];
-    echo DetailView::widget([
-        'model' => $model->pais,
-        'attributes' => $gridColumnPais    ]);
-    ?>
-    <div class="row">
-        <h4>TipoUser<?= ' '. Html::encode($this->title) ?></h4>
-    </div>
-    <?php 
-    $gridColumnTipoUser = [
-        ['attribute' => 'id', 'visible' => false],
-        'Tipo',
-    ];
-    echo DetailView::widget([
-        'model' => $model->tipoUser,
-        'attributes' => $gridColumnTipoUser    ]);
-    ?>
-    
-    <div class="row">
 <?php
 if($providerUserAreaEspecializacion->totalCount){
     $gridColumnUserAreaEspecializacion = [

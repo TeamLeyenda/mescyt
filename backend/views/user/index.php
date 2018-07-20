@@ -18,11 +18,10 @@ $this->registerJs($search);
 ?>
 <div class="user-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a(Yii::t('app', 'Añadir User'), ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a(Yii::t('app', 'Añadir Usuario'), ['create'], ['class' => 'btn btn-success']) ?>
         <?= Html::a(Yii::t('app', 'Busqueda avanzada'), '#', ['class' => 'btn btn-info search-button']) ?>
     </p>
     <div class="search-form" style="display:none">
@@ -78,6 +77,7 @@ $this->registerJs($search);
                 ],
                 'filterInputOptions' => ['placeholder' => 'Tipo user', 'id' => 'grid-user-search-tipo_user_id']
             ],
+            /*
         [
                 'attribute' => 'pais_id',
                 'label' => Yii::t('app', 'Pais'),
@@ -94,6 +94,7 @@ $this->registerJs($search);
                 ],
                 'filterInputOptions' => ['placeholder' => 'Pais', 'id' => 'grid-user-search-pais_id']
             ],
+            */
         'username',
         'email:email',
         'Telefono',

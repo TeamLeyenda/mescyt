@@ -17,10 +17,14 @@ use backend\admin\components\Configs;
  * @property string $Apellido
  * @property integer $afiliacion_id
  * @property integer $tipo_user_id
+ * @property integer $pais_id
  * @property string $username
  * @property string $email
  * @property string $Telefono
- * @property string $image
+ * @property string $Sexo
+ * @property string $Fecha_Nacimiento
+ * @property resource $Foto
+ * @property string $filename
  * @property string $password_hash
  * @property string $password_reset_token
  * @property integer $status
@@ -28,12 +32,17 @@ use backend\admin\components\Configs;
  * @property integer $created_at
  * @property integer $updated_at
  *
+ * @property \backend\models\PresentacionUser[] $presentacionUsers
+ * @property \backend\models\Presentacion[] $presentacions
+ * @property \backend\models\Afiliacion $afiliacion
+ * @property \backend\models\Pais $pais
+ * @property \backend\models\TipoUser $tipoUser
  * @property \backend\models\UserAreaEspecializacion[] $userAreaEspecializacions
  * @property \backend\models\AreaEspecializacion[] $areaEspecializacions
  * @property \backend\models\UserGradoAcademico[] $userGradoAcademicos
  * @property \backend\models\GradoAcademico[] $gradoAcademicos
  * @property \backend\models\UserSala[] $userSalas
- * @property \backend\models\Sala[] $sala
+ * @property \backend\models\Sala[] $salas
  * 
  * @property UserProfile $profile
  */
@@ -202,7 +211,47 @@ class User extends ActiveRecord implements IdentityInterface
         $this->password_reset_token = null;
     }
 
-     /**
+   /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getPresentacionUsers()
+    {
+        return $this->hasMany(\backend\models\PresentacionUser::className(), ['user_id' => 'id']);
+    }
+        
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getPresentacions()
+    {
+        return $this->hasMany(\backend\models\Presentacion::className(), ['id' => 'presentacion_id'])->viaTable('{{%presentacion_user}}', ['user_id' => 'id']);
+    }
+        
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getAfiliacion()
+    {
+        return $this->hasOne(\backend\models\Afiliacion::className(), ['id' => 'afiliacion_id']);
+    }
+        
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getPais()
+    {
+        return $this->hasOne(\backend\models\Pais::className(), ['id' => 'pais_id']);
+    }
+        
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getTipoUser()
+    {
+        return $this->hasOne(\backend\models\TipoUser::className(), ['id' => 'tipo_user_id']);
+    }
+        
+    /**
      * @return \yii\db\ActiveQuery
      */
     public function getUserAreaEspecializacions()
@@ -215,7 +264,39 @@ class User extends ActiveRecord implements IdentityInterface
      */
     public function getAreaEspecializacions()
     {
-        return $this->hasMany(\backend\models\AreaEspecializacion::className(), ['id' => 'area_especializacion_id'])->viaTable('user_area_especializacion', ['user_id' => 'id']);
+        return $this->hasMany(\backend\models\AreaEspecializacion::className(), ['id' => 'area_especializacion_id'])->viaTable('{{%user_area_especializacion}}', ['user_id' => 'id']);
+    }
+        
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getUserGradoAcademicos()
+    {
+        return $this->hasMany(\backend\models\UserGradoAcademico::className(), ['user_id' => 'id']);
+    }
+        
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getGradoAcademicos()
+    {
+        return $this->hasMany(\backend\models\GradoAcademico::className(), ['id' => 'grado_academico_id'])->viaTable('{{%user_grado_academico}}', ['user_id' => 'id']);
+    }
+        
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getUserSalas()
+    {
+        return $this->hasMany(\backend\models\UserSala::className(), ['user_id' => 'id']);
+    }
+        
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getSalas()
+    {
+        return $this->hasMany(\backend\models\Sala::className(), ['id' => 'sala_id'])->viaTable('{{%user_sala}}', ['user_id' => 'id']);
     }
 
     public static function getDb()
