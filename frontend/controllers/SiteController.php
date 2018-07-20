@@ -75,9 +75,9 @@ class SiteController extends Controller
         return $this->render('index');
     }
 
-    public function actionConferencia()
+    public function actioncongresopasado()
     {
-        return $this->render('conferencia');
+        return $this->render('congresopasado');
     }
 
     public function actionEvento()
