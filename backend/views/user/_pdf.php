@@ -31,12 +31,19 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
         [
                 'attribute' => 'tipoUser.Tipo',
-                'label' => Yii::t('app', 'Tipo Usuario')
+                'label' => Yii::t('app', 'Tipo')
+            ],
+        [
+                'attribute' => 'pais.Pais',
+                'label' => Yii::t('app', 'Pais')
             ],
         'username',
         'email:email',
         'Telefono',
-        'image',
+        'Sexo',
+        'Fecha_Nacimiento',
+        //'Foto',
+        //'filename',
     ];
     echo DetailView::widget([
         'model' => $model,

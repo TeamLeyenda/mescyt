@@ -86,7 +86,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'username',
         'email',
         'Telefono',
-        'image',
+        //'Foto',
     ];
     echo DetailView::widget([
         'model' => $model->user,

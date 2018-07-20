@@ -26,7 +26,7 @@ echo TabularForm::widget([
             'type' => TabularForm::INPUT_WIDGET,
             'widgetClass' => \kartik\widgets\Select2::className(),
             'options' => [
-                'data' => \yii\helpers\ArrayHelper::map(\backend\models\GradoAcademico::find()->orderBy('id')->asArray()->all(), 'id', 'Grado'),
+                'data' => \yii\helpers\ArrayHelper::map(\backend\models\GradoAcademico::find()->orderBy('Grado')->asArray()->all(), 'id', 'Grado'),
                 'options' => ['placeholder' => Yii::t('app', 'Elige Grado academico')],
             ],
             'columnOptions' => ['width' => '200px']
@@ -35,7 +35,9 @@ echo TabularForm::widget([
             'type' => 'raw',
             'label' => '',
             'value' => function($model, $key) {
-                return Html::a('<i class="glyphicon glyphicon-trash"></i>', '#', ['title' =>  Yii::t('app', 'Eliminar'), 'onClick' => 'delRowUserGradoAcademico(' . $key . '); return false;', 'id' => 'user-grado-academico-del-btn']);
+                return
+                    Html::hiddenInput('Children[' . $key . '][id]', (!empty($model['id'])) ? $model['id'] : "") .
+                    Html::a('<i class="glyphicon glyphicon-trash"></i>', '#', ['title' =>  Yii::t('app', 'Eliminar'), 'onClick' => 'delRowUserGradoAcademico(' . $key . '); return false;', 'id' => 'user-grado-academico-del-btn']);
             },
         ],
     ],

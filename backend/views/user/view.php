@@ -15,8 +15,8 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <div class="row">
         <div class="col-sm-8">
-            <h2><?= Yii::t('app', 'Usuario')?></h2>
-        </div>
+            <h2><?= Yii::t('app', 'Usuario')?></h2>        
+            </div>
         <div class="col-sm-4" style="margin-top: 15px">
 <?=             
              Html::a('<i class="fa glyphicon glyphicon-hand-up"></i> ' . Yii::t('app', 'PDF'), 
@@ -53,17 +53,24 @@ $this->params['breadcrumbs'][] = $this->title;
         ],
         [
             'attribute' => 'tipoUser.Tipo',
-            'label' => Yii::t('app', 'Tipo Usuario'),
+            'label' => Yii::t('app', 'Tipo'),
+        ],
+        [
+            'attribute' => 'pais.Pais',
+            'label' => Yii::t('app', 'Pais'),
         ],
         'username',
         'email:email',
         'Telefono',
-        'image',
+        'Sexo',
+        'Fecha_Nacimiento',
+        'Foto',
+        //'filename',
     ];
     echo DetailView::widget([
         'model' => $model,
         'attributes' => $gridColumn
-    ]); 
+    ]);
 ?>
     </div>
     
@@ -82,15 +89,52 @@ if($providerPresentacionUser->totalCount){
         'pjax' => true,
         'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-presentacion-user']],
         'panel' => [
-        'type' => GridView::TYPE_PRIMARY,
-        'heading' => '<span class="glyphicon glyphicon-comment"></span> ' . Html::encode(Yii::t('app', 'Presentaciones')),
-        'footer' => false,
+            'type' => GridView::TYPE_PRIMARY,
+            'heading' => '<span class="glyphicon glyphicon-comment"></span> ' . Html::encode(Yii::t('app', 'Presentaciones')),
+            'footer' => false,
         ],
         'columns' => $gridColumnPresentacionUser
     ]);
 }
 ?>
+
     </div>
+    <div class="row">
+        <h4>Afiliacion<?= ' '. Html::encode($this->title) ?></h4>
+    </div>
+    <?php 
+    $gridColumnAfiliacion = [
+        ['attribute' => 'id', 'visible' => false],
+        'Afiliacion',
+    ];
+    echo DetailView::widget([
+        'model' => $model->afiliacion,
+        'attributes' => $gridColumnAfiliacion    ]);
+    ?>
+    <div class="row">
+        <h4>Pais<?= ' '. Html::encode($this->title) ?></h4>
+    </div>
+    <?php 
+    $gridColumnPais = [
+        ['attribute' => 'id', 'visible' => false],
+        'Pais',
+    ];
+    echo DetailView::widget([
+        'model' => $model->pais,
+        'attributes' => $gridColumnPais    ]);
+    ?>
+    <div class="row">
+        <h4>TipoUser<?= ' '. Html::encode($this->title) ?></h4>
+    </div>
+    <?php 
+    $gridColumnTipoUser = [
+        ['attribute' => 'id', 'visible' => false],
+        'Tipo',
+    ];
+    echo DetailView::widget([
+        'model' => $model->tipoUser,
+        'attributes' => $gridColumnTipoUser    ]);
+    ?>
     
     <div class="row">
 <?php
@@ -107,14 +151,15 @@ if($providerUserAreaEspecializacion->totalCount){
         'pjax' => true,
         'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-user-area-especializacion']],
         'panel' => [
-        'type' => GridView::TYPE_PRIMARY,
-        'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode(Yii::t('app', 'Areas')),
-        'footer' => false,
+            'type' => GridView::TYPE_PRIMARY,
+            'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode(Yii::t('app', 'Areas')),
+            'footer' => false,
         ],
         'columns' => $gridColumnUserAreaEspecializacion
     ]);
 }
 ?>
+
     </div>
     
     <div class="row">
@@ -132,9 +177,9 @@ if($providerUserGradoAcademico->totalCount){
         'pjax' => true,
         'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-user-grado-academico']],
         'panel' => [
-        'type' => GridView::TYPE_PRIMARY,
-        'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode(Yii::t('app', 'Grados')),
-        'footer'=> false,
+            'type' => GridView::TYPE_PRIMARY,
+            'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode(Yii::t('app', 'Grados')),
+            'footer'=> false,
         ],
         'columns' => $gridColumnUserGradoAcademico
     ]);
@@ -157,9 +202,9 @@ if($providerUserSala->totalCount){
         'pjax' => true,
         'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-user-sala']],
         'panel' => [
-        'type' => GridView::TYPE_PRIMARY,
-        'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode(Yii::t('app', 'Salas')),
-        'footer' => false,
+            'type' => GridView::TYPE_PRIMARY,
+            'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode(Yii::t('app', 'Salas')),
+            'footer' => false,
         ],
         'columns' => $gridColumnUserSala
     ]);

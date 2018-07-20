@@ -26,7 +26,7 @@ echo TabularForm::widget([
             'type' => TabularForm::INPUT_WIDGET,
             'widgetClass' => \kartik\widgets\Select2::className(),
             'options' => [
-                'data' => \yii\helpers\ArrayHelper::map(\backend\models\AreaEspecializacion::find()->orderBy('id')->asArray()->all(), 'id', 'area'),
+                'data' => \yii\helpers\ArrayHelper::map(\backend\models\AreaEspecializacion::find()->orderBy('area')->asArray()->all(), 'id', 'area'),
                 'options' => ['placeholder' => Yii::t('app', 'Elige Area especializacion')],
             ],
             'columnOptions' => ['width' => '200px']
@@ -35,7 +35,9 @@ echo TabularForm::widget([
             'type' => 'raw',
             'label' => '',
             'value' => function($model, $key) {
-                return Html::a('<i class="glyphicon glyphicon-trash"></i>', '#', ['title' =>  Yii::t('app', 'Eliminar'), 'onClick' => 'delRowUserAreaEspecializacion(' . $key . '); return false;', 'id' => 'user-area-especializacion-del-btn']);
+                return
+                    Html::hiddenInput('Children[' . $key . '][id]', (!empty($model['id'])) ? $model['id'] : "") .
+                    Html::a('<i class="glyphicon glyphicon-trash"></i>', '#', ['title' =>  Yii::t('app', 'Eliminar'), 'onClick' => 'delRowUserAreaEspecializacion(' . $key . '); return false;', 'id' => 'user-area-especializacion-del-btn']);
             },
         ],
     ],

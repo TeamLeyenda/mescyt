@@ -15,6 +15,14 @@ use yii\widgets\ActiveForm;
         'isNewRecord' => ($model->isNewRecord) ? 1 : 0
     ]
 ]);
+\mootensai\components\JsBlock::widget(['viewFile' => '_script', 'pos'=> \yii\web\View::POS_END, 
+    'viewParams' => [
+        'class' => 'User', 
+        'relID' => 'user', 
+        'value' => \yii\helpers\Json::encode($model->users),
+        'isNewRecord' => ($model->isNewRecord) ? 1 : 0
+    ]
+]);
 ?>
 
 <div class="pais-form">
@@ -28,7 +36,6 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'Pais')->textInput(['maxlength' => true, 'placeholder' => 'Pais']) ?>
 
     <?php
-    /*
     $forms = [
         [
             'label' => '<i class="glyphicon glyphicon-book"></i> ' . Html::encode(Yii::t('app', 'Provincia')),
@@ -36,8 +43,13 @@ use yii\widgets\ActiveForm;
                 'row' => \yii\helpers\ArrayHelper::toArray($model->provincias),
             ]),
         ],
+        [
+            'label' => '<i class="glyphicon glyphicon-book"></i> ' . Html::encode(Yii::t('app', 'User')),
+            'content' => $this->render('_formUser', [
+                'row' => \yii\helpers\ArrayHelper::toArray($model->users),
+            ]),
+        ],
     ];
-    
     echo kartik\tabs\TabsX::widget([
         'items' => $forms,
         'position' => kartik\tabs\TabsX::POS_ABOVE,
@@ -48,7 +60,6 @@ use yii\widgets\ActiveForm;
             'enableCache' => false,
         ],
     ]);
-    */
     ?>
     <div class="form-group">
     <?php if(Yii::$app->controller->action->id != 'save-as-new'): ?>

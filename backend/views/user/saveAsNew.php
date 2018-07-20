@@ -15,7 +15,7 @@ $this->params['breadcrumbs'][] = Yii::t('app', 'Nuevo');
 ?>
 <div class="user-create">
 
-    
+
 
     <?= $this->render('_form', [
     'model' => $model,

@@ -2,6 +2,7 @@
 
 namespace backend\models;
 
+use Yii;
 use \backend\models\base\User as BaseUser;
 
 /**
@@ -16,13 +17,14 @@ class User extends BaseUser
     {
         return array_replace_recursive(parent::rules(),
 	    [
-            [['afiliacion_id', 'tipo_user_id', 'status', 'created_at', 'updated_at'], 'integer'],
-            [['username', 'email', 'password_hash', 'auth_key'], 'required'],
-            [['Nombre'], 'string', 'max' => 50],
-            [['Apellido'], 'string', 'max' => 50],
-            [['Telefono'], 'string', 'max' => 20],
+            [['Nombre', 'Apellido', 'username', 'Sexo', 'Fecha_Nacimiento', 'password_hash', 'auth_key'], 'required'],
+            [['afiliacion_id', 'tipo_user_id', 'pais_id', 'status', 'created_at', 'updated_at'], 'integer'],
+            [['Sexo', 'Foto'], 'string'],
+            [['Fecha_Nacimiento'], 'safe'],
+            [['Nombre', 'Apellido'], 'string', 'max' => 50],
             [['username', 'auth_key'], 'string', 'max' => 32],
-            [['email', 'image', 'password_hash', 'password_reset_token'], 'string', 'max' => 255],
+            [['email', 'filename', 'password_hash', 'password_reset_token'], 'string', 'max' => 255],
+            [['Telefono'], 'string', 'max' => 20],
             [['email'], 'unique']
         ]);
     }

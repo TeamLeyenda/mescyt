@@ -53,4 +53,42 @@ if($providerProvincia->totalCount){
 }
 ?>
     </div>
+    
+    <div class="row">
+<?php
+if($providerUser->totalCount){
+    $gridColumnUser = [
+        ['class' => 'yii\grid\SerialColumn'],
+        ['attribute' => 'id', 'visible' => false],
+        'Nombre',
+        'Apellido',
+        [
+                'attribute' => 'afiliacion.Afiliacion',
+                'label' => Yii::t('app', 'Afiliacion')
+            ],
+        [
+                'attribute' => 'tipoUser.Tipo',
+                'label' => Yii::t('app', 'Tipo User')
+            ],
+                'username',
+        'email:email',
+        'Telefono',
+        'Sexo',
+        'Fecha_Nacimiento',
+        //'Foto',
+        //'filename',
+    ];
+    echo Gridview::widget([
+        'dataProvider' => $providerUser,
+        'panel' => [
+            'type' => GridView::TYPE_PRIMARY,
+            'heading' => Html::encode(Yii::t('app', 'Usuario')),
+        ],
+        'panelHeadingTemplate' => '<h4>{heading}</h4>{summary}',
+        'toggleData' => false,
+        'columns' => $gridColumnUser
+    ]);
+}
+?>
+    </div>
 </div>

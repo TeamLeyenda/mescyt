@@ -13,10 +13,14 @@ use yii\behaviors\TimestampBehavior;
  * @property string $Apellido
  * @property integer $afiliacion_id
  * @property integer $tipo_user_id
+ * @property integer $pais_id
  * @property string $username
  * @property string $email
  * @property string $Telefono
- * @property string $image
+ * @property string $Sexo
+ * @property string $Fecha_Nacimiento
+ * @property resource $Foto
+ * @property string $filename
  * @property string $password_hash
  * @property string $password_reset_token
  * @property integer $status
@@ -27,6 +31,7 @@ use yii\behaviors\TimestampBehavior;
  * @property \backend\models\PresentacionUser[] $presentacionUsers
  * @property \backend\models\Presentacion[] $presentacions
  * @property \backend\models\Afiliacion $afiliacion
+ * @property \backend\models\Pais $pais
  * @property \backend\models\TipoUser $tipoUser
  * @property \backend\models\UserAreaEspecializacion[] $userAreaEspecializacions
  * @property \backend\models\AreaEspecializacion[] $areaEspecializacions
@@ -39,23 +44,46 @@ class User extends \yii\db\ActiveRecord
 {
     use \mootensai\relation\RelationTrait;
 
+
+    /**
+    * This function helps \mootensai\relation\RelationTrait runs faster
+    * @return array relation names of this model
+    */
+    public function relationNames()
+    {
+        return [
+            'presentacionUsers',
+            'presentacions',
+            'afiliacion',
+            'pais',
+            'tipoUser',
+            'userAreaEspecializacions',
+            'areaEspecializacions',
+            'userGradoAcademicos',
+            'gradoAcademicos',
+            'userSalas',
+            'salas'
+        ];
+    }
+
     /**
      * @inheritdoc
      */
     public function rules()
     {
         return [
-            [['afiliacion_id', 'tipo_user_id', 'status', 'created_at', 'updated_at'], 'integer'],
-            [['username', 'email', 'password_hash', 'auth_key'], 'required'],
-            [['Nombre'], 'string', 'max' => 50],
-            [['Apellido'], 'string', 'max' => 50],
-            [['Telefono'], 'string', 'max' => 20],
+            [['Nombre', 'Apellido', 'username', 'Sexo', 'Fecha_Nacimiento', 'password_hash', 'auth_key'], 'required'],
+            [['afiliacion_id', 'tipo_user_id', 'pais_id', 'status', 'created_at', 'updated_at'], 'integer'],
+            [['Sexo', 'Foto'], 'string'],
+            [['Fecha_Nacimiento'], 'safe'],
+            [['Nombre', 'Apellido'], 'string', 'max' => 50],
             [['username', 'auth_key'], 'string', 'max' => 32],
-            [['email', 'image', 'password_hash', 'password_reset_token'], 'string', 'max' => 255],
+            [['email', 'filename', 'password_hash', 'password_reset_token'], 'string', 'max' => 255],
+            [['Telefono'], 'string', 'max' => 20],
             [['email'], 'unique']
         ];
     }
-    
+
     /**
      * @inheritdoc
      */
@@ -75,10 +103,14 @@ class User extends \yii\db\ActiveRecord
             'Apellido' => Yii::t('app', 'Apellido'),
             'afiliacion_id' => Yii::t('app', 'Afiliacion'),
             'tipo_user_id' => Yii::t('app', 'Tipo Usuario'),
+            'pais_id' => Yii::t('app', 'Pais'),
             'username' => Yii::t('app', 'Usuario'),
             'email' => Yii::t('app', 'Email'),
             'Telefono' => Yii::t('app', 'Telefono'),
-            'image' => Yii::t('app', 'perfil'),
+            'Sexo' => Yii::t('app', 'Sexo'),
+            'Fecha_Nacimiento' => Yii::t('app', 'Fecha Nacimiento'),
+            'Foto' => Yii::t('app', 'perfil'),
+            'filename' => Yii::t('app', 'Filename'),
             'password_hash' => Yii::t('app', 'contrasena'),
             'password_reset_token' => Yii::t('app', 'Password Reset Token'),
             'status' => Yii::t('app', 'estado'),
@@ -108,6 +140,14 @@ class User extends \yii\db\ActiveRecord
     public function getAfiliacion()
     {
         return $this->hasOne(\backend\models\Afiliacion::className(), ['id' => 'afiliacion_id']);
+    }
+        
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getPais()
+    {
+        return $this->hasOne(\backend\models\Pais::className(), ['id' => 'pais_id']);
     }
         
     /**
@@ -166,10 +206,10 @@ class User extends \yii\db\ActiveRecord
         return $this->hasMany(\backend\models\Sala::className(), ['id' => 'sala_id'])->viaTable('{{%user_sala}}', ['user_id' => 'id']);
     }
     
-/**
+    /**
      * @inheritdoc
      * @return array mixed
-     */ 
+     */
     public function behaviors()
     {
         return [
@@ -181,6 +221,7 @@ class User extends \yii\db\ActiveRecord
             ],
         ];
     }
+
 
     /**
      * @inheritdoc

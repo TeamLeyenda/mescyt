@@ -11,10 +11,24 @@ use Yii;
  * @property string $Pais
  *
  * @property \backend\models\Provincia[] $provincias
+ * @property \backend\models\User[] $users
  */
 class Pais extends \yii\db\ActiveRecord
 {
     use \mootensai\relation\RelationTrait;
+
+
+    /**
+    * This function helps \mootensai\relation\RelationTrait runs faster
+    * @return array relation names of this model
+    */
+    public function relationNames()
+    {
+        return [
+            'provincias',
+            'users'
+        ];
+    }
 
     /**
      * @inheritdoc
@@ -25,7 +39,7 @@ class Pais extends \yii\db\ActiveRecord
             [['Pais'], 'string', 'max' => 255]
         ];
     }
-    
+
     /**
      * @inheritdoc
      */
@@ -52,7 +66,16 @@ class Pais extends \yii\db\ActiveRecord
     {
         return $this->hasMany(\backend\models\Provincia::className(), ['pais_id' => 'id']);
     }
+        
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getUsers()
+    {
+        return $this->hasMany(\backend\models\User::className(), ['pais_id' => 'id']);
+    }
     
+
     /**
      * @inheritdoc
      * @return \backend\models\PaisQuery the active query used by this AR class.

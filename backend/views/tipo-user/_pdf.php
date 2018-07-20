@@ -47,7 +47,7 @@ if($providerUser->totalCount){
                 'username',
         'email:email',
         'Telefono',
-        'image',
+        'Foto',
     ];
     echo Gridview::widget([
         'dataProvider' => $providerUser,

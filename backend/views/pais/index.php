@@ -8,7 +8,7 @@ use yii\helpers\Html;
 use kartik\export\ExportMenu;
 use kartik\grid\GridView;
 
-$this->title = Yii::t('app', 'Pais');
+$this->title = Yii::t('app', 'Paises');
 $this->params['breadcrumbs'][] = $this->title;
 $search = "$('.search-button').click(function(){
 	$('.search-form').toggle(1000);
@@ -18,7 +18,7 @@ $this->registerJs($search);
 ?>
 <div class="pais-index">
 
-    
+
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
@@ -64,7 +64,6 @@ $this->registerJs($search);
         'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-pais']],
         'panel' => [
             'type' => GridView::TYPE_PRIMARY,
-            //'heading' => '<span class="glyphicon glyphicon-book"></span>  ' . Html::encode($this->title),
             'heading' => '<span class="glyphicon glyphicon-globe"></span>  ',
             'footer' => false,
         ],

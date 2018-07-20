@@ -28,7 +28,7 @@ class PaisController extends Controller
                 'rules' => [
                     [
                         'allow' => true,
-                        'actions' => ['index', 'view', 'create', 'update', 'delete', 'pdf', 'save-as-new', 'add-provincia'],
+                        'actions' => ['index', 'view', 'create', 'update', 'delete', 'pdf', 'save-as-new', 'add-provincia', 'add-user'],
                         'roles' => ['@']
                     ],
                     [
@@ -65,9 +65,13 @@ class PaisController extends Controller
         $providerProvincia = new \yii\data\ArrayDataProvider([
             'allModels' => $model->provincias,
         ]);
+        $providerUser = new \yii\data\ArrayDataProvider([
+            'allModels' => $model->users,
+        ]);
         return $this->render('view', [
             'model' => $this->findModel($id),
             'providerProvincia' => $providerProvincia,
+            'providerUser' => $providerUser,
         ]);
     }
 
@@ -136,10 +140,14 @@ class PaisController extends Controller
         $providerProvincia = new \yii\data\ArrayDataProvider([
             'allModels' => $model->provincias,
         ]);
+        $providerUser = new \yii\data\ArrayDataProvider([
+            'allModels' => $model->users,
+        ]);
 
         $content = $this->renderAjax('_pdf', [
             'model' => $model,
             'providerProvincia' => $providerProvincia,
+            'providerUser' => $providerUser,
         ]);
 
         $pdf = new \kartik\mpdf\Pdf([
@@ -165,8 +173,8 @@ class PaisController extends Controller
     * so user don't need to input all field from scratch.
     * If creation is successful, the browser will be redirected to the 'view' page.
     *
-    * @param type $id
-    * @return type
+    * @param mixed $id
+    * @return mixed
     */
     public function actionSaveAsNew($id) {
         $model = new Pais();
@@ -175,7 +183,7 @@ class PaisController extends Controller
             $model = $this->findModel($id);
         }
     
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->loadAll(Yii::$app->request->post()) && $model->saveAll()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('saveAsNew', [
@@ -215,6 +223,26 @@ class PaisController extends Controller
             if((Yii::$app->request->post('isNewRecord') && Yii::$app->request->post('_action') == 'load' && empty($row)) || Yii::$app->request->post('_action') == 'add')
                 $row[] = [];
             return $this->renderAjax('_formProvincia', ['row' => $row]);
+        } else {
+            throw new NotFoundHttpException(Yii::t('app', 'The requested page does not exist.'));
+        }
+    }
+    
+    /**
+    * Action to load a tabular form grid
+    * for User
+    * @author Yohanes Candrajaya <moo.tensai@gmail.com>
+    * @author Jiwantoro Ndaru <jiwanndaru@gmail.com>
+    *
+    * @return mixed
+    */
+    public function actionAddUser()
+    {
+        if (Yii::$app->request->isAjax) {
+            $row = Yii::$app->request->post('User');
+            if((Yii::$app->request->post('isNewRecord') && Yii::$app->request->post('_action') == 'load' && empty($row)) || Yii::$app->request->post('_action') == 'add')
+                $row[] = [];
+            return $this->renderAjax('_formUser', ['row' => $row]);
         } else {
             throw new NotFoundHttpException(Yii::t('app', 'The requested page does not exist.'));
         }

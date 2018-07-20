@@ -15,8 +15,8 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <div class="row">
         <div class="col-sm-8">
-            <h2><?= Yii::t('app', 'Pais')?></h2>
-        </div>
+        <h2><?= Yii::t('app', 'Pais')?></h2>
+                </div>
         <div class="col-sm-4" style="margin-top: 15px">
 <?=             
              Html::a('<i class="fa glyphicon glyphicon-hand-up"></i> ' . Yii::t('app', 'PDF'), 
@@ -50,7 +50,7 @@ $this->params['breadcrumbs'][] = $this->title;
     echo DetailView::widget([
         'model' => $model,
         'attributes' => $gridColumn
-    ]); 
+    ]);
 ?>
     </div>
     
@@ -67,12 +67,52 @@ if($providerProvincia->totalCount){
         'pjax' => true,
         'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-provincia']],
         'panel' => [
-        'type' => GridView::TYPE_PRIMARY,
-        'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode(Yii::t('app', 'Provincia')),
+            'type' => GridView::TYPE_PRIMARY,
+            'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode(Yii::t('app', 'Provincia')),
         ],
         'columns' => $gridColumnProvincia
     ]);
 }
 ?>
+
+    </div>
+    
+    <div class="row">
+<?php
+if($providerUser->totalCount){
+    $gridColumnUser = [
+        ['class' => 'yii\grid\SerialColumn'],
+            ['attribute' => 'id', 'visible' => false],
+            'Nombre',
+            'Apellido',
+            [
+                'attribute' => 'afiliacion.Afiliacion',
+                'label' => Yii::t('app', 'Afiliacion')
+            ],
+            [
+                'attribute' => 'tipoUser.Tipo',
+                'label' => Yii::t('app', 'Tipo User')
+            ],
+                        'username',
+            'email:email',
+            'Telefono',
+            'Sexo',
+            'Fecha_Nacimiento',
+            'Foto',
+            'filename',
+    ];
+    echo Gridview::widget([
+        'dataProvider' => $providerUser,
+        'pjax' => true,
+        'pjaxSettings' => ['options' => ['id' => 'kv-pjax-container-user']],
+        'panel' => [
+            'type' => GridView::TYPE_PRIMARY,
+            'heading' => '<span class="glyphicon glyphicon-book"></span> ' . Html::encode(Yii::t('app', 'User')),
+        ],
+        'columns' => $gridColumnUser
+    ]);
+}
+?>
+
     </div>
 </div>

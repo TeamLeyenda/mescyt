@@ -104,9 +104,52 @@ use kartik\builder\Form;
             ]);
     ?>
 
-    <?= $form->field($model, 'Telefono')->textInput(['maxlength' => true, 'placeholder' => 'Telefono']) ?>
+    <?= Form::widget([
+                'model'=>$model,
+                'form'=>$form,
+                'columns'=>2,
+                'attributes'=>[
+                    'Telefono'=>['type'=>Form::INPUT_TEXT],
+                    'Sexo'=>[
+                        'type'=>Form::INPUT_DROPDOWN_LIST,
+                        'items'=>['Masculino','Femenino'], 
+                    ],
+                ]
+            ]);
+    ?>
 
-    <?= $form->field($model, 'image')->textInput(['maxlength' => true, 'placeholder' => 'Image']) ?>
+    <?= Form::widget([
+                    'model'=>$model,
+                    'form'=>$form,
+                    'columns'=>2,
+                    'attributes'=>[
+                        'Fecha_Nacimiento'=>[
+                            'type'=>Form::INPUT_WIDGET, 
+                            'widgetClass'=>'\kartik\widgets\DatePicker',
+                            'options'=>[
+                                'pluginOptions' => [
+                                    'autoclose' => true
+                                ],
+                            ], 
+                        ],
+
+                        'pais_id'=>[
+                            'type'=>Form::INPUT_WIDGET, 
+                            'widgetClass'=>'\kartik\widgets\Select2', 
+                            'options'=>['data'=>\yii\helpers\ArrayHelper::map(\backend\models\Pais::find()->orderBy('id')->asArray()->all(), 'id', 'Pais'),
+                                'options' => ['placeholder' => Yii::t('app', 'Elige Pais')],
+                                        'pluginOptions' => [
+                                            'allowClear' => true
+                                        ],
+                            ],
+                        ],
+                    ]
+                ]);
+            ?>
+
+    
+    
+    <?= $form->field($model, 'Foto')->textInput(['placeholder' => 'Foto']) ?>
 
     <?php
     $forms = [
