@@ -4,13 +4,9 @@ use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use frontend\assets\AppAsset;
-//use dixonsatit\agencyTheme\assets\AgencyAsset;
-
-/* @var $this \yii\web\View */
-/* @var $content string */
 
 AppAsset::register($this);
-//$directoryAsset = Yii::$app->assetManager->getPublishedUrl('@frontend/themes/agency/dist');
+
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -46,9 +42,7 @@ AppAsset::register($this);
 		      </div>
 <body id="page-top" class="index">
 <?php $this->beginBody() ?>
-
 <?= $content ?>
-
 <?php $this->endBody() ?>
 </body>
 </html>

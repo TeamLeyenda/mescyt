@@ -2,6 +2,12 @@
 use yii\helpers\Url;
 ?>    
     
+    <div class="container"><div class="column one">
+    <ul class="breadcrumbs has-link">
+        <li></li>
+    </ul>
+    </div>
+    </div>
     <nav class="col-lg-12 text-center" style="background-color: #235288; border-color: #235288" >
         <a type="button" class="btn btn-secondary" href="<?= Url::to(['/login'])?>" style="color:white" >Inicio</a>
         <a type="button" class="btn btn-secondary" href="<?= Url::to(['/login'])?>"style="color:white" >Congresos Pasados</a></a>
@@ -14,3 +20,9 @@ use yii\helpers\Url;
         <a type="button" class="btn btn-secondary" href="<?= Url::to(['/login'])?>" style="color:white">Contactos</a>
         <a type="button" class="btn btn-secondary" href="<?= Url::to(['/login'])?>" style="color:white">login</a>
     </nav>
+    <div class="container"><div class="column one">
+    <ul class="breadcrumbs has-link">
+        <li></li>
+    </ul>
+    </div>
+    </div>
