@@ -23,7 +23,7 @@ $this->params['breadcrumbs'][] = $this->title='Registro de Usuario - MESCyT';
  </div>
  <div class="card-body">
     <br>
-    <h4>Por favor, llene todos los campos para registrar a su cuenta.</h4>
+    <h4 style="font-family: arial">Por favor, llene todos los campos para registrar a su cuenta.</h4>
     <br>
 
 

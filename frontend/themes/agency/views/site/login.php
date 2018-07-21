@@ -19,7 +19,7 @@ $this->params['breadcrumbs'][] = $this->title='Inicio de Sesion - MESCyT';
  </div>
     <div class="card-body">
     <br>
-    <h4>Por favor, llene todos los campos para acceder a su cuenta.</h4>
+    <h4 style="font-family: arial">Por favor, llene todos los campos para acceder a su cuenta.</h4>
     <br>
     <div class="row">
         <div class="col-lg-5">
@@ -32,7 +32,7 @@ $this->params['breadcrumbs'][] = $this->title='Inicio de Sesion - MESCyT';
                 <h5><?= $form->field($model, 'rememberMe')->checkbox() ?></h5>
 
                 <div style="color:#999;margin:1em 0">
-                    <h5>If you forgot your password you can <?= Html::a('reset it', ['site/request-password-reset']) ?>.</h5>
+                    <h5 style="font-family: arial">If you forgot your password you can <?= Html::a('reset it', ['site/request-password-reset']) ?>.</h5>
                 </div>
 
                 <div class="form-group">
