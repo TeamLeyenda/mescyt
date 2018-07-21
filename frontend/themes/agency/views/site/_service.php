@@ -13,10 +13,8 @@
                     <p class="section-subheading text-muted" style="color: white">El Congreso Estudiantil de Investigación Científica y Tecnológica (CEICYT) es un espacio para dar a conocer las iniciativas de investigación de estudiantes universitarios de las áreas vinculadas a las ciencias básicas y aplicadas. Se llevará a cabo los días 9 y 10 de mayo de 2018 en el Campus Santo Tomás de Aquino de la Pontificia Universid- ad Católica Madre y Maestra, (PUCMM), Santo Domingo.</p>
                 </div>
             </div>
-
             <br>
             <br>
-
             <div class="row">
                 <div class="col-lg-12 text-left">
                     <h2 class="section-heading" style="color: white">Histórico</h2>
@@ -25,22 +23,11 @@
                     <p class="section-subheading text-muted" style="color: white">Esa iniciativa continuó en el año 2017 con el II CEICYT, como un evento multidisciplinario que siguió contribuyendo con el desarrollo de la investigación entre los jóvenes estudiantes de las diferentes universidades del país en ciencias básicas y aplicadas. El entusiasmo, el trabajo en equipo y el liderazgo del Viceministerio de Ciencia y Tec- nología del MESCYT aseguraron el éxito de los congresos estudiantiles.</p>
 
                     <p class="section-subheading text-muted" style="color: white">Al arribar a su III versión el CEICYT en este año 2018, aquella semilla sembrada en el 2016 ha crecido y madurado ya constituida en un paradigma de dimensión nacional. Durante estos tres años, bajo la dirección de un Comité Organizador integrado por las universidades UASD, UNAPEC, UNPHU, INTEC, PUCMM, UAPA, UNIBE, UNEV, UFHEC, RIADRU y el MESCYT han contribuido a al desarrollo de la ciencia y la innovación buscando insertar a los jóvenes en la sociedad del conocimiento.</p>
-
                 </div>
             </div>
-
             <br>
-            
-
-            
         </div>
-
         <br>
         <br>
         <br>
-        
-
-       
-
-
     </section>

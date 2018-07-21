@@ -1,5 +1,6 @@
   <!--PRE-FOOTER ICONOS 911 FINAL-->
 <div id ="page-footer">
+        <footer>
 	<div class="footer-location">
         <div class="container">
           <div class="row">
@@ -16,20 +17,14 @@
           </div>
         </div>
       </div>
-
       <div class="footer-rights">
         <div class="container">
           <div class="row">
             <div class="col-xs-12 text-center">
-              
               <p class="source-org copyright rights">&copy;2017 Todos los Derechos Reservados, Ministerio de Educación Superior, Ciencia y Tecnología de la República Dominicana.</p>
             </div>
           </div>
         </div>
       </div>
-<!--JESUS -->
-
-
 			</footer>
-
-</div>
+</div>class="active"
