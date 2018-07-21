@@ -38,13 +38,9 @@ $this->params['breadcrumbs'][] = $this->title='Inicio de Sesion - MESCyT';
                 <div class="form-group">
                     <?= Html::submitButton('Login', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
                 </div>
-
-                
-
             <?php ActiveForm::end(); ?>
         </div>
     </div>
     </div>
     </div>
-
 </div>

@@ -16,4 +16,6 @@ use yii\helpers\Url;
         <a type="button" class="btn btn-secondary" href="<?= Url::to(['/login'])?>" style="color:white; font-family: arial">Login</a>
         <a type="button" class="btn btn-secondary" href="<?= Url::to(['/signup'])?>" style="color:white; font-family: arial">Sign Up</a>
     </nav>
+    <div style="height:50pt;">
+    </div>
 
