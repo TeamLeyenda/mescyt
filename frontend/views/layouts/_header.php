@@ -7,7 +7,7 @@ use yii\helpers\Url;
         <a type="button" class="btn btn-secondary" href="<?= Url::to(['/site/contact'])?>" style="color:white; font-family: arial">Sobre CEICYT</a>
         <a type="button" class="btn btn-secondary" href="<?= Url::to(['/Conferencia/view'])?>" style="color:white; font-family: arial">Programa</a>
         <a type="button" class="btn btn-secondary" href="<?= Url::to(['/site/client'])?>" style="color:white; font-family: arial">Inscripción</a>
-        <a type="button" class="btn btn-secondary" href="<?= Url::to(['/login'])?>" style="color:white; font-family: arial">Sometimiento de Trabajo</a>
+        <a type="button" class="btn btn-secondary" href="<?= Url::to(['/site/team'])?>" style="color:white; font-family: arial">Sometimiento de Trabajo</a>
         <a type="button" class="btn btn-secondary" href="<?= Url::to(['/login'])?>" style="color:white; font-family: arial">Comité Organizador</a>
         <a type="button" class="btn btn-secondary" href="<?= Url::to(['/login'])?>" style="color:white; font-family: arial">Contactos</a>
     <?php    if (Yii::$app->user->isGuest) { ?>

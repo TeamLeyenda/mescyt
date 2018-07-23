@@ -76,6 +76,11 @@ class SiteController extends Controller
         return $this->render('client');
     }
 
+    public function actionTeam()
+    {
+        return $this->render('team');
+    }
+
     public function actionIndex()
     {
         return $this->render('index');
