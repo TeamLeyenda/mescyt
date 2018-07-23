@@ -4,7 +4,7 @@ use yii\helpers\Url;
     <nav class="col-lg-12 text-center" style="background-color: #235288; border-color: #235288">
         <a type="button" class="btn btn-secondary" href="<?= Url::to(['/site/index'])?>" style="color:white; font-family: arial">Inicio</a>
         <a type="button" class="btn btn-secondary" href="<?= Url::to(['/site/about'])?>" style="color:white; font-family: arial">Congresos Pasados</a>
-        <a type="button" class="btn btn-secondary" href="<?= Url::to(['/login'])?>" style="color:white; font-family: arial">Sobre CEICYT</a>
+        <a type="button" class="btn btn-secondary" href="<?= Url::to(['/site/contact'])?>" style="color:white; font-family: arial">Sobre CEICYT</a>
         <a type="button" class="btn btn-secondary" href="<?= Url::to(['/Conferencia/view'])?>" style="color:white; font-family: arial">Programa</a>
         <a type="button" class="btn btn-secondary" href="<?= Url::to(['/login'])?>" style="color:white; font-family: arial">Inscripción</a>
         <a type="button" class="btn btn-secondary" href="<?= Url::to(['/login'])?>" style="color:white; font-family: arial">Sometimiento de Trabajo</a>
