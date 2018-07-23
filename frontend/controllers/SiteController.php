@@ -71,6 +71,16 @@ class SiteController extends Controller
      * @return mixed
      */
 
+    public function actionServicio()
+    {
+        return $this->render('servicio');
+    }
+
+    public function actionContacto()
+    {
+        return $this->render('contacto');
+    }
+
     public function actionClient()
     {
         return $this->render('client');

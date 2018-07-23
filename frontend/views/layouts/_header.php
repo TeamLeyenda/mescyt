@@ -8,8 +8,8 @@ use yii\helpers\Url;
         <a type="button" class="btn btn-secondary" href="<?= Url::to(['/Conferencia/view'])?>" style="color:white; font-family: arial">Programa</a>
         <a type="button" class="btn btn-secondary" href="<?= Url::to(['/site/client'])?>" style="color:white; font-family: arial">Inscripción</a>
         <a type="button" class="btn btn-secondary" href="<?= Url::to(['/site/team'])?>" style="color:white; font-family: arial">Sometimiento de Trabajo</a>
-        <a type="button" class="btn btn-secondary" href="<?= Url::to(['/login'])?>" style="color:white; font-family: arial">Comité Organizador</a>
-        <a type="button" class="btn btn-secondary" href="<?= Url::to(['/login'])?>" style="color:white; font-family: arial">Contactos</a>
+        <a type="button" class="btn btn-secondary" href="<?= Url::to(['/site/servicio'])?>" style="color:white; font-family: arial">Comité Organizador</a>
+        <a type="button" class="btn btn-secondary" href="<?= Url::to(['/site/contacto'])?>" style="color:white; font-family: arial">Contactos</a>
     <?php    if (Yii::$app->user->isGuest) { ?>
           <a type="button" class="btn btn-secondary" href="<?= Url::to(['/login'])?>" style="color:white; font-family: arial">Login</a>
           <a type="button" class="btn btn-secondary" href="<?= Url::to(['/signup'])?>" style="color:white; font-family: arial">Sign Up</a>
