@@ -70,6 +70,12 @@ class SiteController extends Controller
      *
      * @return mixed
      */
+
+    public function actionClient()
+    {
+        return $this->render('client');
+    }
+
     public function actionIndex()
     {
         return $this->render('index');

@@ -2,7 +2,7 @@
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
-$this->title = 'Congreso';
+$this->title = 'CEICYT';
 $this->params['breadcrumbs'][] = $this->title;
 Yii::$app->layout='page_header';
 /*echo Yii::$app->formatter->asDateTime(time(), 'short');
@@ -17,6 +17,12 @@ $this->registerJsFile($directoryAsset.'/js/cbpAnimatedHeader.min.js');
     <div class="container">
         <div class="intro-text">
         	
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+
         	<h1 class="col-lg-12 text-left" style="color: blue; font-family: arial">CEICYT 2018</h1>
         	<br>
         	<p class="col-lg-12 text-left" style="color: blue; font-family: arial">
@@ -41,6 +47,12 @@ $this->registerJsFile($directoryAsset.'/js/cbpAnimatedHeader.min.js');
         </div>
     </div>
 </header>
+
+<br>
+<br>
+<br>
+<br>
+<br>
 
 <section class="page" id="about">
 <div class="container">

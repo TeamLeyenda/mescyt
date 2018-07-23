@@ -13,10 +13,16 @@ $directoryAsset = Yii::$app->assetManager->getPublishedUrl('@dixonsatit/agencyTh
 $this->registerJsFile($directoryAsset.'/js/cbpAnimatedHeader.min.js');
 ?>
 
-<header >
+<header>
     <div class="container">
         <div class="intro-text">
         	
+        	<br>
+	        <br>
+	        <br>
+	        <br>
+	        <br>
+
         	<h1 class="col-lg-12 text-left" style="color: blue; font-family: arial">CONFERENCISTA MAGISTRAL</h1>
         	<h1 class="col-lg-12 text-left" style="color: blue; font-family: arial">Sixto J. Incháustegui</h1>
         	<br>
@@ -25,10 +31,18 @@ $this->registerJsFile($directoryAsset.'/js/cbpAnimatedHeader.min.js');
 			</p>
 			
 			<br>
+			<br>
+            <br>
             
         </div>
     </div>
 </header>
+			<br>
+			<br>
+            <br>
+            <br>
+			<br>
+            <br>
 
 <section class="page" id="about">
 <div class="container">
