@@ -1,20 +1,53 @@
 <?php
+
 $config = [
-    'components' => [
-        'view'=>[
-            'theme'=>[
-                'pathMap'=>[
+  'components' => [
+      'request' => [
+          // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
+          'cookieValidationKey' => 'qTdjsxGlswiNVp6wZGHJkpBSaw1osqKf',
+      ],
+  ],
+];
 
-                    '@app/views'=>'@frontend/themes/agency/views',
+if (!YII_ENV_TEST) {
+    // configuration adjustments for 'dev' environment
+    $config['bootstrap'][] = 'debug';
+    $config['modules']['debug'] = [
+        'class' => 'yii\debug\Module',
+    ];
 
-                ]
+    $config['bootstrap'][] = 'gii';
+    $config['modules']['gii'] = [
+        'class' => 'yii\gii\Module',
+    ];
+
+    $config['bootstrap'][] = 'builder';
+    $config['modules']['builder'] = [
+        'class' => 'tunecino\builder\Module',
+        'yiiScript' => dirname(dirname(__DIR__)) . '/yii',
+        'commands' => [
+            [
+                'class' => 'tunecino\builder\generators\migration\Generator'
+            ],
+            // run default app migration scripts if any
+            'yii migrate/up --interactive=0',
+            [
+                'class' => 'tunecino\builder\generators\model\Generator',
+                'defaultAttributes' => [
+                    'ns' => 'frontend\models',
+                    'queryNs' => 'frontend\models',
+                ],
+            ],
+            [
+                'class' => 'tunecino\builder\generators\crud\Generator',
+                'defaultAttributes' => [
+                    'baseViewPath' => '@frontend/views',
+                    'modelNamespace' => 'frontend\models',
+                    'controllerNamespace' => 'frontend\controllers',
+                ],
             ]
         ],
-        'request' => [
-            // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
-            'cookieValidationKey' => 'qTdjsxGlswiNVp6wZGHJkpBSaw1osqKf',
-        ],
-    ],
-];
+    ];
+}
 
 return $config;
