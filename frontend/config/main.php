@@ -16,6 +16,7 @@ return [
             'class' => 'backend\models\FormBuilder',
         ],
     ],
+
     'components' => [
         'request' => [
             'csrfParam' => '_csrf-frontend',
@@ -41,7 +42,6 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-        
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => true,
@@ -49,7 +49,14 @@ return [
                 '<alias:\w+>' => 'site/<alias>',
             ],
         ],
-        
+    /*    'view'=>[
+            'theme'=>[
+                'pathMap'=>[
+                    '@app/views'=>'@frontend/themes/agency/views',
+                ]
+            ]
+        ],*/
+
     ],
     'params' => $params,
 ];
