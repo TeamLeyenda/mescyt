@@ -70,12 +70,33 @@ class SiteController extends Controller
      *
      * @return mixed
      */
+
+    public function actionServicio()
+    {
+        return $this->render('servicio');
+    }
+
+    public function actionContacto()
+    {
+        return $this->render('contacto');
+    }
+
+    public function actionClient()
+    {
+        return $this->render('client');
+    }
+
+    public function actionTeam()
+    {
+        return $this->render('team');
+    }
+
     public function actionIndex()
     {
         return $this->render('index');
     }
 
-    public function actioncongresopasado()
+    public function actionCongresopasado()
     {
         return $this->render('congresopasado');
     }

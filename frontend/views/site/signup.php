@@ -12,10 +12,13 @@ $this->params['breadcrumbs'][] = $this->title='Registro de Usuario - MESCyT';
 ?>
 
 
-
+ 
  <div class="card mb-3 wow fadeIn">
+ 
  <div class="card-header font-weight-bold">
-
+ 
+ 
+ <br>
  <h1><?= Html::encode($this->title) ?></h1>
  </div>
  <div class="card-body">
