@@ -24,7 +24,7 @@ if (!YII_ENV_TEST) {
     $config['bootstrap'][] = 'builder';
     $config['modules']['builder'] = [
         'class' => 'tunecino\builder\Module',
-        'yiiScript' => dirname(dirname(__DIR__)) . '/yii',
+    //    'yiiScript' => dirname(dirname(_DIR_)) . '/yii',
         'commands' => [
             [
                 'class' => 'tunecino\builder\generators\migration\Generator'
@@ -50,15 +50,4 @@ if (!YII_ENV_TEST) {
     ];
 }
 
-<<<<<<< HEAD
-if (YII_ENV_DEV) {
-    $config['bootstrap'][] = 'gii';
-    $config['modules']['gii'] = [
-        'class' => 'yii\gii\Module',
-    ];
-}
-
 return $config;
-=======
-return $config;
->>>>>>> ac5d83a2eafe71c7bbfad4515d41e770448d4ae3

@@ -12,6 +12,8 @@ use common\models\PasswordResetRequestForm;
 use common\models\ResetPasswordForm;
 use common\models\SignupForm;
 use frontend\models\ContactForm;
+use frontend\models\Presentacion;
+use yii\data\ActiveDataProvider;
 
 /**
  * Site controller
@@ -194,6 +196,22 @@ class SiteController extends Controller
 
         return $this->render('signup', [
             'model' => $model,
+        ]);
+    }
+        /**
+     * Conferencia
+     *
+     * @return mixed
+     */
+    public function actionPresentacion()
+    {
+       
+        $dataProvider = new ActiveDataProvider([
+            'query' => Presentacion::find(),
+        ]);
+
+        return $this->render('presentacion', [
+            'dataProvider' => $dataProvider,
         ]);
     }
 
