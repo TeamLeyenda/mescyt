@@ -71,6 +71,3 @@ $this->registerJsFile($directoryAsset.'/js/cbpAnimatedHeader.min.js');
 <br>
 <br>
 
-<section class="page" id="about">
-<div class="container">
-<div class="site-about">
