@@ -14,93 +14,148 @@ $this->registerJsFile($directoryAsset.'/js/cbpAnimatedHeader.min.js');
 ?>
 
 <header >
-    <div class="container">
-        <div class="intro-text">
+    <div class="container" style="background-color: #235288; border-color: #235288">
+        <div class="intro-text" style="background-color: #235288; border-color: #235288">
         	
             <br>
             <br>
             <br>
             <br>
             <br>
+            <br>
+            <br>
+            
 
-        	<h1 class="col-lg-12 text-left" style="color: blue; font-family: arial">Comité Organizador</h1>
+        	<h1 class="col-lg-12 text-left" style="color: white; font-family: arial">Comité Organizador</h1>
         	<br>
-        	<p class="col-lg-12 text-left" style="color: blue; font-family: arial">
+            <br>
+            <br>
+            <br>
+            <br>
+        	<p class="col-lg-12 text-left" style="color: white; font-family: arial">
 				Plácido Gómez, Viceministro de Ciencia y Tecnología, MESCYT.
             </p>
-
-            <p class="col-lg-12 text-left" style="color: blue; font-family: arial">
+            <br>
+            <br>
+            <br>
+            <p class="col-lg-12 text-left" style="color: white; font-family: arial">
                 Carlos Rodríguez, Director de Investigación del Viceministerio de Ciencia y Tecnología, MESCYT.
             </p>
+            <br>
+            <br>
+            <br>
 
-            <p class="col-lg-12 text-left" style="color: blue; font-family: arial">
+            <p class="col-lg-12 text-left" style="color: white; font-family: arial">
                 Katarzyna Grasela, Encargada del Departamento de Capacitación y Divulgación de Ciencia y Tecnología, MESCYT.
             </p>
+            <br>
+            <br>
+            <br>
 
-            <p class="col-lg-12 text-left" style="color: blue; font-family: arial">
+            <p class="col-lg-12 text-left" style="color: white; font-family: arial">
                 José Guillén, Director de Investigación, UNPHU.  
             </p>
+            <br>
+            <br>
+            <br>
 
-            <p class="col-lg-12 text-left" style="color: blue; font-family: arial">
+            <p class="col-lg-12 text-left" style="color: white; font-family: arial">
                 Aldelys Rodríguez, Asistente Académica de la dirección general de investigaciones científicas y tecnológicas, UASD.
             </p>
+            <br>
+            <br>
+            <br>
 
-            <p class="col-lg-12 text-left" style="color: blue; font-family: arial">
+            <p class="col-lg-12 text-left" style="color: white; font-family: arial">
                 Emily Lorenzo, Encargada de Seguimiento a Proyectos y Programas de Investigación, INTEC.
             </p>
+            <br>
+            <br>
+            <br>
 
-            <p class="col-lg-12 text-left" style="color: blue; font-family: arial">
+            <p class="col-lg-12 text-left" style="color: white; font-family: arial">
                 Alfredo Fernández, Director de Promoción y Coordinación de la Investigación, UNAPEC.
             </p>
+            <br>
+            <br>
+            <br>
 
-            <p class="col-lg-12 text-left" style="color: blue; font-family: arial">
+            <p class="col-lg-12 text-left" style="color: white; font-family: arial">
                 Magdalena Cruz, Vicerrectora de Investigación, Innovación y Posgrado (UAPA) y Coordinadora General de la RIADRU.  
             </p>
+            <br>
+            <br>
+            <br>
 
-            <p class="col-lg-12 text-left" style="color: blue; font-family: arial">
+            <p class="col-lg-12 text-left" style="color: white; font-family: arial">
                 Jeanmy Bautista, Coordinadora Administrativa de Proyectos Campus Santo Tomás de Aquino, PUCMM.
             </p>
+            <br>
+            <br>
+            <br>
 
-            <p class="col-lg-12 text-left" style="color: blue; font-family: arial">
+            <p class="col-lg-12 text-left" style="color: white; font-family: arial">
                 Addilsa Núñez, Coordinadora de Divulgación Científica, PUCMM.
             </p>
+            <br>
+            <br>
+            <br>
 
-            <p class="col-lg-12 text-left" style="color: blue; font-family: arial">
+            <p class="col-lg-12 text-left" style="color: white; font-family: arial">
                 Gloria Sánchez, Investigadora, UFHEC.
             </p>
+            <br>
+            <br>
+            <br>
 
-            <p class="col-lg-12 text-left" style="color: blue; font-family: arial">
+            <p class="col-lg-12 text-left" style="color: white; font-family: arial">
                 Yairení López, Investigadora, UNIBE. 
             </p>
+            <br>
+            <br>
+            <br>
 
-            <p class="col-lg-12 text-left" style="color: blue; font-family: arial">
+            <p class="col-lg-12 text-left" style="color: white; font-family: arial">
                 Leandra Tapia, Asesora, MESCyT.
             </p>
+            <br>
+            <br>
+            <br>
 
-            <p class="col-lg-12 text-left" style="color: blue; font-family: arial">
+            <p class="col-lg-12 text-left" style="color: white; font-family: arial">
                 David Maceira, Encargado de la Unidad Formativa de Investigación y Proyectos, UAPA.
             </p>
+            <br>
+            <br>
+            <br>
 
-            <p class="col-lg-12 text-left" style="color: blue; font-family: arial">
+            <p class="col-lg-12 text-left" style="color: white; font-family: arial">
                 César Díaz, Sub-director de Investigaciones Científicas y Tecnológicas, UASD. 
             </p>
 
+
             <br>
 
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            
             
 
-            
-
-
- 
-
-
-			
-			
-			<br>
             
         </div>
+
+        
+
     </div>
+
+
+
 </header>
 
 <br>
