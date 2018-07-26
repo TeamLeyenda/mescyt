@@ -2,7 +2,7 @@
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
-$this->title = 'CEICYT';
+$this->title = 'Congresos Pasados';
 $this->params['breadcrumbs'][] = $this->title;
 Yii::$app->layout='page_header';
 /*echo Yii::$app->formatter->asDateTime(time(), 'short');
@@ -13,55 +13,45 @@ $directoryAsset = Yii::$app->assetManager->getPublishedUrl('@dixonsatit/agencyTh
 $this->registerJsFile($directoryAsset.'/js/cbpAnimatedHeader.min.js');
 ?>
 
-<header >
-    <div class="container">
-        <div class="intro-text">
-        	
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
+<div class="col-lg-12 text-center" style="background-color: #235288; border-color: #235288">
 
-        	<h1 class="col-lg-12 text-left" style="color: blue; font-family: arial">CEICYT 2018</h1>
-        	<br>
-        	<p class="col-lg-12 text-left" style="color: blue; font-family: arial">
-				El Congreso Estudiantil de Investigación Científica y Tecnológica (CEICYT) es un espacio para dar a conocer las iniciativas de investigación de estudiantes universitarios de las áreas vinculadas a las ciencias básicas y aplicadas. Es un evento multidisciplinario que tiene por objetivo:
-            </p>
-            <br>
+    <br>
+    <br>
+    <br>
+    <br>
 
-            <p class="col-lg-12 text-left" style="color: blue; font-family: arial">1. Contribuir al fomento de la cultura de investigación e innovación en la nación, con miras a insertarla en la sociedad del conocimiento.</p>
+    <h1 class="section-subheading text-muted" style="color: white; font-family: arial">CEICYT 2018</h1>
+    <br>
+    
+    <p class="col-lg-12 text-left" style="color: white; font-family: arial">El Congreso Estudiantil de Investigación Científica y Tecnológica (CEICYT) es un espacio para dar a conocer las iniciativas de investigación de estudiantes universitarios de las áreas vinculadas a las ciencias básicas y aplicadas. Es un evento multidisciplinario que tiene por objetivo:</p>
+    <br>
 
-            <p class="col-lg-12 text-left" style="color: blue; font-family: arial">2. Motivar a estudiantes a seguir una carrera de investigación.</p>
+    <p class="col-lg-12 text-left" style="color: white; font-family: arial">1. Contribuir al fomento de la cultura de investigación e innovación en la nación, con miras a insertarla en la sociedad del conocimiento.</p>
+    <br>
 
-            <p class="col-lg-12 text-left" style="color: blue; font-family: arial">3. Servir de foro para difundir la creatividad y el talento de nuestros jóvenes, mediante la exposición pública de sus trabajos de investigación e innovación.</p>
+    <p class="col-lg-12 text-left" style="color: white; font-family: arial">2. Motivar a estudiantes a seguir una carrera de investigación.</p>
+    <br>    
 
+    <p class="col-lg-12 text-left" style="color: white; font-family: arial">3. Servir de foro para difundir la creatividad y el talento de nuestros jóvenes, mediante la exposición pública de sus trabajos de investigación e innovación.</p>
+    <br>      
 
- 
+    
 
-
-			
-			
-			<br>
-            
-        </div>
-    </div>
-</header>
-
-<br>
-<br>
-<br>
-<br>
-<br>
-
-<section class="page" id="about">
-<div class="container">
-<div class="site-about">
+    <div class="col-lg-12 text-center">
+        
+        
 
 
+        <div>
+            <div>
+        
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        
 
-
+</div></div>    </div>
 </div>
-
 </div>
-</section>
