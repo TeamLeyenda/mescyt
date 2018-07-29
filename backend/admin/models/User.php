@@ -299,6 +299,27 @@ class User extends ActiveRecord implements IdentityInterface
         return $this->hasMany(\backend\models\Sala::className(), ['id' => 'sala_id'])->viaTable('{{%user_sala}}', ['user_id' => 'id']);
     }
 
+    /**
+     * fetch stored image file name with complete path 
+     * @return string
+     */
+    public function getImageFile() 
+    {
+        return isset($this->Foto) ? Yii::$app->basePath . '/perfil/' . $this->Foto : null;
+        
+    }
+
+    /**
+     * fetch stored image url
+     * @return string
+     */
+    public function getImageUrl() 
+    {
+        // return a default image placeholder if your source avatar is not found
+        $Foto = isset($this->Foto) ? $this->Foto : 'default_user.jpg';
+        return Yii::$app->basePath . '/perfil/' . $Foto;
+    }
+
     public static function getDb()
     {
         return Configs::userDb();

@@ -65,6 +65,13 @@ $this->params['breadcrumbs'][] = $this->title;
         'Sexo',
         'Fecha_Nacimiento',
         'Foto',
+        /*
+        [
+            'attribute'=>'Foto',
+            'value'=> Yii::$app->basePath . '/perfil/' . $model->Foto,
+            'format' => ['image',['width'=>'100','height'=>'100']],
+         ],
+         */
         //'filename',
     ];
     echo DetailView::widget([

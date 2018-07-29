@@ -9,10 +9,16 @@ use kartik\builder\TabularForm;
 use yii\data\ArrayDataProvider;
 use yii\widgets\Pjax;
 use dosamigos\chartjs\ChartJs;
+use machour\yii2\notifications\models\Notification;
+use backend\models\Presentacion;
 
 /* @var $this yii\web\View */
 
 $this->title = '';
+
+//$presentacion = new Presentacion();
+//Notification::notify(Notification::KEY_MEETING_REMINDER, 6, $presentacion->id);
+
 ?>
 <div class="row">
         <div class="col-md-6">

@@ -4,3 +4,6 @@
 #Cambiar a id =4 en common para el frontend
 #PDF Arreglar
 #Añadir relaciones de muchoAmucho en el registro de usuario
+#Poner Estado en migraciones de presentaciones
+#Notificacione para moderadores para cambiar estados
+#Actualiar migraciones en descripcion de presentaciones y usuarios

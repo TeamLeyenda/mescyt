@@ -527,4 +527,31 @@ return array (
       '@yii/faker' => $vendorDir . '/yiisoft/yii2-faker/src',
     ),
   ),
+  'nerburish/yii2-match-height-view' => 
+  array (
+    'name' => 'nerburish/yii2-match-height-view',
+    'version' => '9999999-dev',
+    'alias' => 
+    array (
+      '@nerburish/matchheight' => $vendorDir . '/nerburish/yii2-match-height-view',
+    ),
+  ),
+  'nerburish/yii2-isotope-view' => 
+  array (
+    'name' => 'nerburish/yii2-isotope-view',
+    'version' => '9999999-dev',
+    'alias' => 
+    array (
+      '@nerburish/isotopeview' => $vendorDir . '/nerburish/yii2-isotope-view',
+    ),
+  ),
+  'circulon/yii2-columnlistview' => 
+  array (
+    'name' => 'circulon/yii2-columnlistview',
+    'version' => '9999999-dev',
+    'alias' => 
+    array (
+      '@circulon/widgets' => $vendorDir . '/circulon/yii2-columnlistview',
+    ),
+  ),
 );
