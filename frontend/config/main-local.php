@@ -24,7 +24,7 @@ if (!YII_ENV_TEST) {
     $config['bootstrap'][] = 'builder';
     $config['modules']['builder'] = [
         'class' => 'tunecino\builder\Module',
-        'yiiScript' => dirname(dirname(__DIR__)) . '/yii',
+    //    'yiiScript' => dirname(dirname(_DIR_)) . '/yii',
         'commands' => [
             [
                 'class' => 'tunecino\builder\generators\migration\Generator'
