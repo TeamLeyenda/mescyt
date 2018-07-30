@@ -5,7 +5,7 @@ $this->title = 'Conferencias';
 $this->params['breadcrumbs'][] = $this->title;
 Yii::$app->layout='page_header';
 ?>
-<<<<<<< HEAD
+
 <div class="section ">
     <div class="section_wrapper clearfix">
 
@@ -158,5 +158,4 @@ Yii::$app->layout='page_header';
 </div>
 </div>
 -->
-=======
->>>>>>> 3284a481e4a4d4c7d9dcf664d1ece672d93ea07e
+
