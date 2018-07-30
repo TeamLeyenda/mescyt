@@ -14,7 +14,13 @@ use yii\helpers\Url;
           <a type="button" class="btn btn-secondary" href="<?= Url::to(['/site/login'])?>" style="color:white; font-family: arial">Login</a>
           <a type="button" class="btn btn-secondary" href="<?= Url::to(['/site/signup'])?>" style="color:white; font-family: arial">Sign Up</a>
     <?php   } else { ?>
-          <a type="button" class="btn btn-secondary" href="<?= Url::to(['/site/logout'])?>" style="color:white; font-family: arial">loggout</a>
+          <a type="button" class="btn btn-secondary" >" style="color:white; font-family: arial"><?php
+             Html::beginForm(['/site/logout'], 'post')
+             Html::submitButton(
+                'Logout (' . Yii::$app->user->identity->username . ')',
+                ['class' => 'btn btn-link logout'])
+             Html::endForm() ?>
+           </a>
           <a type="button" class="btn btn-secondary" href="#" style="color:white; font-family: arial"><?=Yii::$app->user->identity->username?></a>
     <?php }?>
     </nav>
