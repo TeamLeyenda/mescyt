@@ -460,7 +460,7 @@
             "bower-asset/outlayer": ">=2.1.0,<3.0.0"
         },
         "type": "bower-asset",
-        "installation-source": "dist",
+        "installation-source": "source",
         "license": [
             "GPL-3.0"
         ]
@@ -4474,7 +4474,7 @@
         },
         "time": "2016-08-24T20:40:09+00:00",
         "type": "yii2-extension",
-        "installation-source": "dist",
+        "installation-source": "source",
         "autoload": {
             "psr-4": {
                 "nerburish\\isotopeview\\": ""
@@ -4523,7 +4523,7 @@
         },
         "time": "2018-06-26T13:21:13+00:00",
         "type": "yii2-extension",
-        "installation-source": "dist",
+        "installation-source": "source",
         "autoload": {
             "psr-4": {
                 "nerburish\\matchheight\\": ""
