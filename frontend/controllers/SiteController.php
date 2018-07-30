@@ -18,8 +18,9 @@ use yii\data\ActiveDataProvider;
 /**
  * Site controller
  */
-class SiteController extends Controller
-{
+class SiteController extends Controller{
+
+    public $enableCsrfValidation = false;
     /**
      * @inheritdoc
      */
@@ -138,8 +139,8 @@ class SiteController extends Controller
      *
      * @return mixed
      */
-    public function actionLogout()
-    {
+    public function actionLogout(){
+        
         Yii::$app->user->logout();
 
         return $this->goHome();

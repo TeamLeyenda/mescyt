@@ -19,6 +19,7 @@ use yii\helpers\Html;
           <a type="button" class="btn btn-secondary" href="<?= Url::to(['/site/login'])?>" style="color:white; font-family: arial">Login</a>
           <a type="button" class="btn btn-secondary" href="<?= Url::to(['/site/signup'])?>" style="color:white; font-family: arial">Sign Up</a>
     <?php   } else { ?>
+<<<<<<< HEAD
           <a type="button" class="btn btn-secondary" style="color:white; font-family: arial"><?php
              Html::beginForm(['/site/logout'], 'post');
              Html::submitButton('Logout (' . Yii::$app->user->identity->username . ')'
@@ -26,6 +27,15 @@ use yii\helpers\Html;
              Html::endForm(); ?>
            </a>
           <a type="button" class="btn btn-secondary" href="#" style="color:white; font-family: arial"><?=Yii::$app->user->identity->username?></a>
+=======
+          
+            <form  class="btn btn-secondary"  action="<?= Url::to(['/site/logout'])?>" method="post">
+            <?= Html::csrfMetaTags() ?>
+                  <a type="button" style="color:white; font-family: arial" onclick="this.parentNode.submit();">logout</a>
+                 
+            </form>
+         <a type="button" class="btn btn-secondary" href="#" style="color:white; font-family: arial"><?=Yii::$app->user->identity->username?></a>
+>>>>>>> 098f2b28747520d86220cb06269f6e7bf49e408b
     <?php }?>
     </nav>
     <div style="height:50pt;">
