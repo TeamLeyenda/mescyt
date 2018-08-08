@@ -1,7 +1,7 @@
 <?php
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
-$this->title = 'Conferencias';
+$this->title = 'Presentaciones';
 $this->params['breadcrumbs'][] = $this->title;
 Yii::$app->layout='page_header';
 ?>
@@ -30,7 +30,7 @@ Yii::$app->layout='page_header';
                                         <h1 ><a href="#link de la WEB"><strong>'.$presentacion->Titulo.'</strong></a></h1>
                                        <div class="post-excerpt">'.$presentacion->Area_Tematica.'<span class="excerpt-hellip"></span></div>
                                        <div class="post-excerpt"> Fecha de Inicio de La presentación :'.$presentacion->Fecha_Inicio.'<span class="excerpt-hellip"></span></div>
-                                       <div class="post-excerpt">Fecha de Prevista de Finalización de La presentación :'.$presentacion->Fecha_Final.'<span class="excerpt-hellip"></span></div>
+                                       <div class="post-excerpt">Fecha Prevista de Finalización de La presentación :'.$presentacion->Fecha_Final.'<span class="excerpt-hellip"></span></div>
                                        <div class="post-footer">
                                            <div class="button-love"><span class="love-text">Do you like it?</span>
                                            <a href="#" class="mfn-love " data-id="1735"><span class="icons-wrapper"><i class="icon-heart-empty-fa"></i>

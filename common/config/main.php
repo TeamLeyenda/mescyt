@@ -8,6 +8,10 @@ return [
     ],
     'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
 
+    'bootstrap' => [
+        'chiliec\vote\components\VoteBootstrap',
+    ],
+
     'modules' => [
         'admin' => [
             'class' => 'backend\admin\Module',
@@ -88,6 +92,27 @@ return [
             'github' => [
                 'settings' => ['user' => 'GITHUB_USER', 'repo' => 'GITHUB_REPO']
             ],
+        ],
+
+        'vote' => [
+            'class' => 'chiliec\vote\Module',
+            // show messages in popover
+            'popOverEnabled' => true,
+            // global values for all models
+            'allowGuests' => true,
+            // 'allowChangeVote' => true,
+            'models' => [
+                // example declaration of models
+                // \common\models\Post::className(),
+                // 'backend\models\Post',
+                // 2 => 'frontend\models\Story',
+                // 3 => [
+                //     'modelName' => \backend\models\Mail::className(),
+                //     you can rewrite global values for specific model
+                //     'allowGuests' => false,
+                //     'allowChangeVote' => false,
+                // ],
+            ],      
         ],
     ],
 
