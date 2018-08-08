@@ -93,16 +93,9 @@ Yii::$app->layout='page_header';
                     
 
 
-<<<<<<< HEAD
    <p class="col-lg-12 text-left" style="color: black">También fueron reinaugurados los laboratorios de Biotecnología, Control Biológico y de Cría de Depredadores.</p>
 
    <p class="col-lg-12 text-left" style="color: black">Reyes expuso que el equipamiento y reinauguración de  estos laboratorios fue gracias a los aportes realizados por el Ministerio de Educación Superior, Ciencia y Tecnología, a través del Fondo de Ciencia y Te- cnología, conocido por sus siglas FONDOCyT.</p>
-=======
-
-   <p class="col-lg-12 text-left" style="color: white; font-family: arial">También fueron reinaugurados los laboratorios de Biotecnología, Control Biológico y de Cría de Depredadores.</p>
-  
-   <p class="col-lg-12 text-left" style="color: white; font-family: arial">Reyes expuso que el equipamiento y reinauguración de  estos laboratorios fue gracias a los aportes realizados por el Ministerio de Educación Superior, Ciencia y Tecnología, a través del Fondo de Ciencia y Te- cnología, conocido por sus siglas FONDOCyT.</p>   
->>>>>>> 3284a481e4a4d4c7d9dcf664d1ece672d93ea07e
 
    <p class="col-lg-12 text-left" style="color: white; font-family: arial">Con relación a los usos de dichos laboratorios el funcionario de la UASD precisó  que el Laboratorio de Alimentos permitirá que las empresas que procesan alimentos puedan llevar muestras de su producción para ser examinadas y que una vez se realicen los análisis de las mismas certificar la calidad del producto de que se trate.</p>
 

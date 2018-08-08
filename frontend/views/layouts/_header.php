@@ -1,5 +1,6 @@
 <?php
 use yii\helpers\Url;
+use yii\helpers\Html;
 ?>
     <nav class="col-lg-12 text-center" style="background-color: #235288; border-color: #235288">
         <a type="button" class="btn btn-secondary" href="<?= Url::to(['/site/index'])?>" style="color:white; font-family: arial">Inicio</a>
@@ -14,8 +15,13 @@ use yii\helpers\Url;
           <a type="button" class="btn btn-secondary" href="<?= Url::to(['/site/login'])?>" style="color:white; font-family: arial">Login</a>
           <a type="button" class="btn btn-secondary" href="<?= Url::to(['/site/signup'])?>" style="color:white; font-family: arial">Sign Up</a>
     <?php   } else { ?>
-          <a type="button" class="btn btn-secondary" href="<?= Url::to(['/site/logout'])?>" style="color:white; font-family: arial">loggout</a>
-          <a type="button" class="btn btn-secondary" href="#" style="color:white; font-family: arial"><?=Yii::$app->user->identity->username?></a>
+          
+            <form  class="btn btn-secondary"  action="<?= Url::to(['/site/logout'])?>" method="post">
+            <?= Html::csrfMetaTags() ?>
+                  <a type="button" style="color:white; font-family: arial" onclick="this.parentNode.submit();">logout</a>
+                 
+            </form>
+         <a type="button" class="btn btn-secondary" href="#" style="color:white; font-family: arial"><?=Yii::$app->user->identity->username?></a>
     <?php }?>
     </nav>
     <div style="height:50pt;">
