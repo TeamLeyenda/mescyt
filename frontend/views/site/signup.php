@@ -19,11 +19,11 @@ $this->params['breadcrumbs'][] = $this->title='Registro de Usuario - MESCyT';
  
  
  <br>
- <h1><?= Html::encode($this->title) ?></h1>
+ <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?= Html::encode($this->title) ?></h1>
  </div>
  <div class="card-body">
     <br>
-    <h4>Por favor, llene todos los campos para registrar a su cuenta.</h4>
+    <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Por favor, llene todos los campos para registrar a su cuenta.</h4>
     <br>
 
 
@@ -37,6 +37,18 @@ $this->params['breadcrumbs'][] = $this->title='Registro de Usuario - MESCyT';
                 <br>
                 <h5><?= $form->field($model, 'password')->passwordInput() ?></h5>
                 <br>
+                <h5><?= $form->field($model, 'Nombre')->textInput(['autofocus' => true]) ?></h5>
+                <br>
+                <h5><?= $form->field($model, 'Apellido')->textInput(['autofocus' => true]) ?></h5>
+                <br>
+                <h5><?= $form->field($model, 'Telefono')->textInput(['autofocus' => true]) ?></h5>
+                <br>
+
+                <h5><?= $form->field($model, 'Sexo')->textInput(['autofocus' => true]) ?></h5>
+                <br>
+                <br>
+
+
                 <div class="form-group">
                     <?= Html::submitButton('Signup', ['class' => 'btn btn-primary', 'name' => 'signup-button']) ?>
                 </div>

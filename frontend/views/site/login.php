@@ -12,11 +12,11 @@ $this->params['breadcrumbs'][] = $this->title='Inicio de Sesion - MESCyT';
 
  <div class="card mb-3 wow fadeIn">
  <div class="card-header font-weight-bold">
- <h1><?= Html::encode($this->title) ?></h1>
+ <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?= Html::encode($this->title) ?></h1>
  </div>
     <div class="card-body">
     <br>
-    <h4>Por favor, llene todos los campos para acceder a su cuenta.</h4>
+    <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Por favor, llene todos los campos para acceder a su cuenta.</h4>
     <br>
     <div class="row">
         <div class="col-lg-5">
@@ -29,7 +29,7 @@ $this->params['breadcrumbs'][] = $this->title='Inicio de Sesion - MESCyT';
                 <h5><?= $form->field($model, 'rememberMe')->checkbox() ?></h5>
 
                 <div style="color:#999;margin:1em 0">
-                    <h5>If you forgot your password you can <?= Html::a('reset it', ['site/request-password-reset']) ?>.</h5>
+                    <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If you forgot your password you can <?= Html::a('reset it', ['site/request-password-reset']) ?>.</h5>
                 </div>
 
                 <div class="form-group">

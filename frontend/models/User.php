@@ -42,7 +42,7 @@ class User extends \yii\db\ActiveRecord
             [['username'], 'unique'],
             [['email'], 'unique'],
             [['password_reset_token'], 'unique'],
-        ];
+            [['Nombre'], 'string'],
     }
 
     /**
@@ -60,6 +60,7 @@ class User extends \yii\db\ActiveRecord
             'status' => 'Status',
             'created_at' => 'Created At',
             'updated_at' => 'Updated At',
+            'Nombre' => 'Nombre'
         ];
     }
 

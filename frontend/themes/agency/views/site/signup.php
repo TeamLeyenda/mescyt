@@ -29,13 +29,23 @@ $this->params['breadcrumbs'][] = $this->title='Registro de Usuario - MESCyT';
     <div class="row">
         <div class="col-lg-5">
             <?php $form = ActiveForm::begin(['id' => 'form-signup']); ?>
-
+                
+                
+                
                 <h5><?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?></h5>
                 <br>
                 <h5><?= $form->field($model, 'email') ?></h5>
                 <br>
                 <h5><?= $form->field($model, 'password')->passwordInput() ?></h5>
                 <br>
+
+                <h5><?= $form->field($model, 'Nombre')->textInput(['autofocus' => true]) ?></h5>
+                <br>
+
+                <h5><?= $form->field($model, 'Apellido')->textInput(['autofocus' => true]) ?></h5>
+                <br>
+
+
                 <div class="form-group">
                     <?= Html::submitButton('Signup', ['class' => 'btn btn-primary', 'name' => 'signup-button']) ?>
                 </div>
