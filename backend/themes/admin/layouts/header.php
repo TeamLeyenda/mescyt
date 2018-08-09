@@ -237,7 +237,7 @@ $name = Yii::$app->user->identity->username;
                     <ul class="dropdown-menu">
                         <!-- User image -->
                         <li class="user-header">
-                            <img src="<?= Yii::$app->basePath . '/perfil/' . Yii::$app->user->identity->Foto ?>" class="img-circle"
+                            <img src="<?= Yii::$app->request->baseUrl . '/perfil/' . Yii::$app->user->identity->Foto ?>" class="img-circle"
                                  alt="User Image"/>
 
                             <p>
