@@ -18,21 +18,21 @@ $this->registerJsFile($directoryAsset.'/js/cbpAnimatedHeader.min.js');
     <br>
     <br>
     <br>
-    <br>
+    
 
     <h1 class="section-subheading text-muted" style="color: white; font-family: arial">CEICYT 2018</h1>
     <br>
     
-    <p class="col-lg-12 text-left" style="color: white; font-family: arial">El Congreso Estudiantil de Investigación Científica y Tecnológica (CEICYT) es un espacio para dar a conocer las iniciativas de investigación de estudiantes universitarios de las áreas vinculadas a las ciencias básicas y aplicadas. Es un evento multidisciplinario que tiene por objetivo:</p>
+    <p class="col-lg-12 text-left" style="color: white; font-family: arial" align="justify">El Congreso Estudiantil de Investigación Científica y Tecnológica (CEICYT) es un espacio para dar a conocer las iniciativas de investigación de estudiantes universitarios de las áreas vinculadas a las ciencias básicas y aplicadas. Es un evento multidisciplinario que tiene por objetivo:</p>
     <br>
 
-    <p class="col-lg-12 text-left" style="color: white; font-family: arial">1. Contribuir al fomento de la cultura de investigación e innovación en la nación, con miras a insertarla en la sociedad del conocimiento.</p>
+    <p class="col-lg-12 text-left" style="color: white; font-family: arial">&nbsp;&nbsp;&nbsp;&nbsp;1. Contribuir al fomento de la cultura de investigación e innovación en la nación, con miras a insertarla en la sociedad del conocimiento.</p>
     <br>
 
-    <p class="col-lg-12 text-left" style="color: white; font-family: arial">2. Motivar a estudiantes a seguir una carrera de investigación.</p>
+    <p class="col-lg-12 text-left" style="color: white; font-family: arial">&nbsp;&nbsp;&nbsp;&nbsp;2. Motivar a estudiantes a seguir una carrera de investigación.</p>
     <br>    
 
-    <p class="col-lg-12 text-left" style="color: white; font-family: arial">3. Servir de foro para difundir la creatividad y el talento de nuestros jóvenes, mediante la exposición pública de sus trabajos de investigación e innovación.</p>
+    <p class="col-lg-12 text-left" style="color: white; font-family: arial">&nbsp;&nbsp;&nbsp;&nbsp;3. Servir de foro para difundir la creatividad y el talento de nuestros jóvenes, mediante la exposición pública de sus trabajos de investigación e innovación.</p>
     <br>      
 
     
