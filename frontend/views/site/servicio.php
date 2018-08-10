@@ -26,8 +26,8 @@ $this->registerJsFile($directoryAsset.'/js/cbpAnimatedHeader.min.js');
     <h1 class="section-subheading text-muted" style="color: white; font-family: arial">COMITÉ ORGANIZADOR</h1>
     <br>
     <br>
-    <br>
-    <br>
+    
+    
     
     
     <p class="col-lg-12 text-left" style="color: white; font-family: arial">Plácido Gómez, Viceministro de Ciencia y Tecnología, MESCYT.</p>
