@@ -75,7 +75,8 @@ class Signup extends Model
             $user->email = $this->email;
             $user->setPassword($this->password);
             $user->generateAuthKey();
-            $user->tipo_user_id = $this->tipo_user_id;
+            //$user->tipo_user_id = $this->tipo_user_id;
+            $user->tipo_user_id = 1;
             $user->afiliacion_id = $this->afiliacion_id;
             $user->pais_id = $this->pais_id;
             $user->Telefono = $this->Telefono;
@@ -84,20 +85,10 @@ class Signup extends Model
             //$user->image = $this->image;
             $user->filename = $this->filename;
             $user->Foto = $this->Foto;
-            /*
-            $user->save();
-            $area->save();
-            $userArea->save();
-
-            $user->link('areaEspecializacions', $area);
-            */
-            //$user->link('areaEspecializacions', $areaEspecializacions);
-            
+  
 
             if ($user->save()) {
                 return $user;
-                //return $area;
-                //return $userArea;
             }
         }
 

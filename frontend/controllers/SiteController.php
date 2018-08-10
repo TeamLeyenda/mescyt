@@ -188,7 +188,9 @@ class SiteController extends Controller{
     {
         $model =  new \backend\admin\models\form\Signup(); //new SignupForm();
         if ($model->load(Yii::$app->request->post())) {
+
             if ($user = $model->signup()) {
+                //var_dump($user);
                 if (Yii::$app->getUser()->login($user)) {
                     return $this->goHome();
                 }
