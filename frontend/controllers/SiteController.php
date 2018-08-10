@@ -12,7 +12,9 @@ use common\models\PasswordResetRequestForm;
 use common\models\ResetPasswordForm;
 use common\models\SignupForm;
 use frontend\models\ContactForm;
-use frontend\models\Presentacion;
+//use frontend\models\Presentacion;
+use backend\models\Presentacion;
+use backend\models\PresentacionUser;
 use yii\data\ActiveDataProvider;
 
 /**
@@ -216,6 +218,15 @@ class SiteController extends Controller{
         return $this->render('presentacion', [
             'dataProvider' => $dataProvider,
         ]);
+    }
+
+    public function actionAsignar_presentacion($user_id,$presentacion_id)
+    {
+        $model = new PresentacionUser();
+        $model->user_id = $user_id;
+        $model->presentacion_id = $presentacion_id;
+        $model->save();
+
     }
 
     /**
