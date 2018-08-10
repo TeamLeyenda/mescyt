@@ -11,6 +11,7 @@ return [
     'bootstrap' => [
         'chiliec\vote\components\VoteBootstrap',
     ],
+    'language' => 'es-ES', 
 
     'modules' => [
         'admin' => [
@@ -113,6 +114,11 @@ return [
                 //     'allowChangeVote' => false,
                 // ],
             ],      
+        ],
+
+        'datecontrol' => [
+            'class' => '\kartik\datecontrol\Module',
+            // see settings on http://demos.krajee.com/datecontrol#module
         ],
     ],
 
