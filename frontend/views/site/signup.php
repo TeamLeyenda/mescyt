@@ -37,9 +37,6 @@ $this->params['breadcrumbs'][] = $this->title='Registro de Usuario - MESCyT';
                 <br>
                 <h5><?= $form->field($model, 'password')->passwordInput() ?></h5>
                 <br>
-                
-
-
                 <h5><?= $form->field($model, 'Nombre')->textInput(['autofocus' => true]) ?></h5>
                 <br>
                 <h5><?= $form->field($model, 'Apellido')->textInput(['autofocus' => true]) ?></h5>
