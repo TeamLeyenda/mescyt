@@ -18,9 +18,9 @@ $this->registerJsFile($directoryAsset.'/js/cbpAnimatedHeader.min.js');
     <br>
     <br>
     <br>
-    <br>
-    <br>
-    <br>
+    
+    
+    
 
 
     <h1 class="section-subheading text-muted" style="color: white; font-family: arial">COMITÉ ORGANIZADOR</h1>
