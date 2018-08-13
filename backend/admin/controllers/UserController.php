@@ -164,7 +164,7 @@ class UserController extends Controller
 
                 // the path to save file, you can set an uploadPath
                 // in Yii::$app->params (as used in example below)
-                $path = Yii::$app->basePath . '/perfil/' . $model->Foto;
+                $path = Yii::$app->basePath . '/web/perfil/' . $model->Foto;
 
             }
 

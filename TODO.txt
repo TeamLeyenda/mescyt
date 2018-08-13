@@ -1,9 +1,12 @@
 #Editar la opcion de actualizacion para que no duplique los datos de insercion de unoAmuchos
 #Mostrar fechas en estilo meridiem(AM/PM)
 #Agregar datos reales en graficas
-#Cambiar a id =4 en common para el frontend
 #PDF Arreglar
 #Añadir relaciones de muchoAmucho en el registro de usuario
+
+
 #Poner Estado en migraciones de presentaciones
 #Notificacione para moderadores para cambiar estados
-#Actualiar migraciones en descripcion de presentaciones y usuarios
+#Participaciones con la opcion de suscribirse 
+#Recibir notificaciones de cuando comienze la Participaciones
+#Retroalimentacion

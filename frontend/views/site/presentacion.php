@@ -21,7 +21,7 @@ Yii::$app->layout='page_header';
                                <div class="image_frame post-photo-wrapper scale-with-grid image">
                                    <div class="image_wrapper">
                                        <a href="#">
-                                           <div class="mask"></div><img width="960" height="720" src="'.$presentacion->Vinculo.'" class="scale-with-grid wp-post-image" alt=""></a>
+                                           <div class="mask"></div><img width="960" height="720" src="'.'/'.Yii::$app->urlManagerBackend->baseUrl. '/' .$presentacion->Archivo.'" class="scale-with-grid wp-post-image" alt=""></a>
                                    </div>
                                </div>
                                <div class="post-desc-wrapper">

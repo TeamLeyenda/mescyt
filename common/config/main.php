@@ -127,6 +127,16 @@ return [
             'class' => 'yii\rbac\DbManager', // or use 'yii\rbac\PhpManager'
             'defaultRoles' => ['admin', 'moderador', 'presentador','participante'],
         ],
+
+        //can name it whatever you want as it is custom
+        'urlManagerBackend' => [
+            'class' => 'yii\web\urlManager',
+            'baseUrl' => 'mescyt/backend/uploads/',
+            'enablePrettyUrl' => true,
+            'showScriptName' => false,
+        ],
+
+        //Yii::$app->urlManagerBackend->baseUrl;
         
         'cache' => [
             'class' => 'yii\caching\FileCache',
