@@ -126,6 +126,7 @@ use yii\helpers\Url;
            ]
         ]);?>
 
+    <?= $form->field($model, 'Descripcion')->textarea(['rows' => 6]) ?>
     <?php
     $forms = [
         [

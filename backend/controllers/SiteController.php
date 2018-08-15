@@ -62,13 +62,20 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new PresentacionSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-    
-            return $this->render('index', [
-                'searchModel' => $searchModel,
-                'dataProvider' => $dataProvider,
-            ]);
+        if (Yii::$app->user->identity->tipo_user_id >= 3) {
+            Yii::$app->user->logout();
+            return $this->goHome();
+        }else{
+
+            $searchModel = new PresentacionSearch();
+            $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        
+                return $this->render('index', [
+                    'searchModel' => $searchModel,
+                    'dataProvider' => $dataProvider,
+                ]);
+
+        }
 
     }
 
@@ -83,6 +90,19 @@ class SiteController extends Controller
             return $this->goHome();
         }
 
+        /*
+        if (Yii::$app->user->identity->tipo_user_id <= 2) {
+            actionLogout();
+        }
+
+         if (Yii::$app->user->identity->tipo_user_id <= 2) {
+            Yii::$app->user->logout();
+
+            return $this->goHome();
+        }
+        */
+        //(Yii::$app->user->identity->id <= 2)
+
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
             return $this->goBack();
@@ -91,6 +111,7 @@ class SiteController extends Controller
                 'model' => $model,
             ]);
         }
+
     }
 
     /**

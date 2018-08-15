@@ -36,6 +36,12 @@ use kartik\grid\GridView;
         'Fecha_Final',
         'Vinculo',
         'Archivo',
+        //'filename',
+        'Descripcion:ntext',
+        [
+            'attribute' => 'estado.Estado',
+            'label' => Yii::t('app', 'Estado'),
+        ],
     ];
     echo DetailView::widget([
         'model' => $model,

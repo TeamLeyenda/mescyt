@@ -60,7 +60,18 @@ $this->params['breadcrumbs'][] = $this->title;
         'Fecha_Inicio',
         'Fecha_Final',
         'Vinculo',
-        'Archivo',
+        //'Archivo',
+        'filename', 
+        [
+            'attribute'=>'Archivo',
+            'value' =>  Html::a(Html::img(Yii::getAlias('@web').'/uploads/'.$model->Archivo, ['alt'=>'some', 'class'=>'thing', 'height'=>'100px', 'width'=>'100px']), ['site/zoom']),
+            'format' => ['raw'],
+        ],
+        'Descripcion:ntext', 
+        [ 
+            'attribute' => 'estado.id', 
+            'label' => Yii::t('app', 'Estado'), 
+        ],
     ];
     echo DetailView::widget([
         'model' => $model,
@@ -68,6 +79,18 @@ $this->params['breadcrumbs'][] = $this->title;
     ]);
 ?>
     </div>
+        <div class="row"> 
+        <h4>Estado<?= ' '. Html::encode($this->title) ?></h4> 
+    </div> 
+    <?php  
+    $gridColumnEstado = [ 
+        ['attribute' => 'id', 'visible' => false], 
+        'Estado', 
+    ]; 
+    echo DetailView::widget([ 
+        'model' => $model->estado, 
+        'attributes' => $gridColumnEstado   ]); 
+    ?> 
     <div class="row">
         <h4>Sala<?= ' '. Html::encode($this->title) ?></h4>
     </div>

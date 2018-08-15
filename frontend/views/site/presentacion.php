@@ -14,34 +14,34 @@ Yii::$app->layout='page_header';
                   <!--                 -->
                   <?php 
                         
-                        foreach ($dataProvider->getModels() as $presentacion) {
-                           echo '
+                        foreach ($dataProvider->getModels() as $presentacion):?> 
+
                            <div class="post-item isotope-item clearfix author-lencarnacion post-1735 post type-post status-publish format-standard has-post-thumbnail hentry category-noticias">
                                <div class="date_label">July 4, 2018</div>
                                <div class="image_frame post-photo-wrapper scale-with-grid image">
                                    <div class="image_wrapper">
                                        <a href="#">
-                                           <div class="mask"></div><img width="960" height="720" src="'.'/'.Yii::$app->urlManagerBackend->baseUrl. '/' .$presentacion->Archivo.'" class="scale-with-grid wp-post-image" alt=""></a>
+                                           <div class="mask"></div><img width="960" height="720" src="<?= '/' . Yii::$app->urlManagerBackend->baseUrl . '/uploads/' . $presentacion->Archivo?>" class="scale-with-grid wp-post-image" alt=""></a>
                                    </div>
                                </div>
                                <div class="post-desc-wrapper">
                                    <div class="post-desc">
                                        <div class="post-head"></div>
-                                        <h1 ><a href="#link de la WEB"><strong>'.$presentacion->Titulo.'</strong></a></h1>
-                                       <div class="post-excerpt">'.$presentacion->Area_Tematica.'<span class="excerpt-hellip"></span></div>
-                                       <div class="post-excerpt"> Fecha de Inicio de La presentación :'.$presentacion->Fecha_Inicio.'<span class="excerpt-hellip"></span></div>
-                                       <div class="post-excerpt">Fecha Prevista de Finalización de La presentación :'.$presentacion->Fecha_Final.'<span class="excerpt-hellip"></span></div>
+                                        <h1 ><a href="#link de la WEB"><strong><?php echo $presentacion->Titulo;?></strong></a></h1>
+                                       <div class="post-excerpt">Area: <?= $presentacion->Area_Tematica?><span class="excerpt-hellip"></span></div>
+                                       <div class="post-excerpt">Fecha de Inicio de La presentación: <?=$presentacion->Fecha_Inicio?><span class="excerpt-hellip"></span></div>
+                                       <div class="post-excerpt">Fecha Prevista de Finalización de La presentación: <?=$presentacion->Fecha_Final?><span class="excerpt-hellip"></span></div>
                                        <div class="post-footer">
                                            <div class="button-love"><span class="love-text">Do you like it?</span>
                                            <a href="#" class="mfn-love " data-id="1735"><span class="icons-wrapper"><i class="icon-heart-empty-fa"></i>
                                            <i class="icon-heart-fa"></i></span><span class="label">0</span></a></div>
-                                           <div class="post-links"><i class="icon-doc-text"></i> <a href="#" class="post-more">Ver mas</a></div>
+                                           <div class="post-links"><i class="icon-doc-text"></i> <a href="#" onclick="inscribirse(<?= $presentacion->id ?>)" class="post-more">Inscribirse</a></div>
                                        </div>
                                    </div>
                                </div>
-                           </div>';
-                        }
-                  ?>
+                           </div>
+                        
+                    <?php endforeach;?>
                
                 <!--                 -->
 

@@ -50,7 +50,7 @@ $fieldOptions2 = [
 
         <?php ActiveForm::end(); ?>
 
-        <a href="#">No recuerda su contraseña?</a><br>
+        <?= Html::a('No recuerda su contraseña?', ['request-password-reset']) ?>
 
     </div>
     <!-- /.login-box-body -->

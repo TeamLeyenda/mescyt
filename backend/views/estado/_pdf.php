@@ -5,23 +5,38 @@ use yii\widgets\DetailView;
 use kartik\grid\GridView;
 
 /* @var $this yii\web\View */
-/* @var $model backend\models\Presentacion */
+/* @var $model backend\models\Estado */
 
-$this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Presentacions'), 'url' => ['index']];
+$this->title = $model->Estado;
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Estados'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="presentacion-view">
+<div class="estado-view">
 
     <div class="row">
         <div class="col-sm-9">
-            <h2><?= Yii::t('app', 'Presentacion').' '. Html::encode($this->title) ?></h2>
+            <h2><?= Yii::t('app', 'Estado').' '. Html::encode($this->title) ?></h2>
         </div>
     </div>
 
     <div class="row">
 <?php 
     $gridColumn = [
+        ['attribute' => 'id', 'visible' => false],
+        'Estado',
+    ];
+    echo DetailView::widget([
+        'model' => $model,
+        'attributes' => $gridColumn
+    ]); 
+?>
+    </div>
+    
+    <div class="row">
+<?php
+if($providerPresentacion->totalCount){
+    $gridColumnPresentacion = [
+        ['class' => 'yii\grid\SerialColumn'],
         ['attribute' => 'id', 'visible' => false],
         [
                 'attribute' => 'congreso.Nombre',
@@ -39,39 +54,18 @@ $this->params['breadcrumbs'][] = $this->title;
         'Fecha_Final',
         'Vinculo',
         'Archivo',
-        //'filename',
+        'filename',
         'Descripcion:ntext',
-        [
-                'attribute' => 'estado.Estado',
-                'label' => Yii::t('app', 'Estado')
-            ],
-    ];
-    echo DetailView::widget([
-        'model' => $model,
-        'attributes' => $gridColumn
-    ]); 
-?>
-    </div>
-    
-    <div class="row">
-<?php
-if($providerPresentacionUser->totalCount){
-    $gridColumnPresentacionUser = [
-        ['class' => 'yii\grid\SerialColumn'],
-                [
-                'attribute' => 'user.Nombre',
-                'label' => Yii::t('app', 'User')
-            ],
-    ];
+            ];
     echo Gridview::widget([
-        'dataProvider' => $providerPresentacionUser,
+        'dataProvider' => $providerPresentacion,
         'panel' => [
             'type' => GridView::TYPE_PRIMARY,
-            'heading' => Html::encode(Yii::t('app', 'Presentacion User')),
+            'heading' => Html::encode(Yii::t('app', 'Presentacion')),
         ],
         'panelHeadingTemplate' => '<h4>{heading}</h4>{summary}',
         'toggleData' => false,
-        'columns' => $gridColumnPresentacionUser
+        'columns' => $gridColumnPresentacion
     ]);
 }
 ?>

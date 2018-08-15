@@ -4,8 +4,6 @@
 #PDF Arreglar
 #Añadir relaciones de muchoAmucho en el registro de usuario
 
-
-#Poner Estado en migraciones de presentaciones
 #Notificacione para moderadores para cambiar estados
 #Participaciones con la opcion de suscribirse 
 #Recibir notificaciones de cuando comienze la Participaciones

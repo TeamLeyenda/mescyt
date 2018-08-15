@@ -170,11 +170,11 @@ class UserController extends Controller
 
             if($user = $model->signup() && !empty($image->name)){
                 $image->saveAs($path);
-                return $this->goHome();
+                return $this->refresh();
                // return $this->redirect(['view', 'id'=>$model->id]);
             }
             elseif($user = $model->signup()){
-                return $this->goHome();
+                return $this->refresh();
                 //return $this->redirect(['view', 'id'=>$model->id]);
             } else {
                 // error in saving model

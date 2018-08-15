@@ -9,7 +9,7 @@ $name = Yii::$app->user->identity->username;
         <!-- Sidebar user panel -->
         <div class="user-panel">
             <div class="pull-left image">
-                <img src="<?= Yii::$app->request->baseUrl . '/perfil/' . Yii::$app->user->identity->Foto ?>" class="img-circle" alt="User Image"/>
+                <img src="<?= Yii::$app->request->baseUrl . '/perfil/' . Yii::$app->user->identity->Foto ?>" class="img-circle" />
             </div>
             <div class="pull-left info">
                 <p><?php echo $name ?></p>

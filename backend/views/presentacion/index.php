@@ -74,13 +74,28 @@ $this->registerJs($search);
                 'filterInputOptions' => ['placeholder' => 'Sala', 'id' => 'grid-presentacion-search-sala_id']
             ],
         'Titulo',
-        'Institucion',
+        //'Institucion',
         'Area_Tematica',
         'Modalidad_Presentacion',
         'Fecha_Inicio',
         'Fecha_Final',
         //'Vinculo',
         //'Archivo',
+        //'filename',
+       //'Descripcion:ntext',
+       [
+               'attribute' => 'estado_id',
+               'label' => Yii::t('app', 'Estado'),
+               'value' => function($model){                 
+                   return $model->estado->Estado;                 
+               },
+               'filterType' => GridView::FILTER_SELECT2,
+               'filter' => \yii\helpers\ArrayHelper::map(\backend\models\Estado::find()->asArray()->all(), 'id', 'Estado'),
+               'filterWidgetOptions' => [
+                   'pluginOptions' => ['allowClear' => true],
+               ],
+               'filterInputOptions' => ['placeholder' => 'Estado', 'id' => 'grid-presentacion-search-estado_id']
+        ],
         [
             'class' => 'yii\grid\ActionColumn',
             'template' => '{save-as-new} {view} {update} {delete}',

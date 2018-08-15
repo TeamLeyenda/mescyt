@@ -2,18 +2,17 @@
 
 namespace backend\controllers;
 
-use Yii;  Yii::$app->getModule('debug')->instance->allowedIPs = []; 
-use backend\models\Presentacion;
-use backend\models\PresentacionSearch;
+use Yii;
+use backend\models\Estado;
+use backend\models\EstadoSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-use yii\web\UploadedFile;
 
 /**
- * PresentacionController implements the CRUD actions for Presentacion model.
+ * EstadoController implements the CRUD actions for Estado model.
  */
-class PresentacionController extends Controller
+class EstadoController extends Controller
 {
     public function behaviors()
     {
@@ -29,7 +28,7 @@ class PresentacionController extends Controller
                 'rules' => [
                     [
                         'allow' => true,
-                        'actions' => ['index', 'view', 'create', 'update', 'delete', 'pdf', 'save-as-new', 'add-presentacion-user'],
+                        'actions' => ['index', 'view', 'create', 'update', 'delete', 'pdf', 'save-as-new', 'add-presentacion'],
                         'roles' => ['@']
                     ],
                     [
@@ -41,12 +40,12 @@ class PresentacionController extends Controller
     }
 
     /**
-     * Lists all Presentacion models.
+     * Lists all Estado models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new PresentacionSearch();
+        $searchModel = new EstadoSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -56,60 +55,33 @@ class PresentacionController extends Controller
     }
 
     /**
-     * Displays a single Presentacion model.
+     * Displays a single Estado model.
      * @param integer $id
      * @return mixed
      */
     public function actionView($id)
     {
         $model = $this->findModel($id);
-        $providerPresentacionUser = new \yii\data\ArrayDataProvider([
-            'allModels' => $model->presentacionUsers,
+        $providerPresentacion = new \yii\data\ArrayDataProvider([
+            'allModels' => $model->presentacions,
         ]);
         return $this->render('view', [
             'model' => $this->findModel($id),
-            'providerPresentacionUser' => $providerPresentacionUser,
+            'providerPresentacion' => $providerPresentacion,
         ]);
     }
 
     /**
-     * Creates a new Presentacion model.
+     * Creates a new Estado model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Presentacion();
+        $model = new Estado();
 
         if ($model->loadAll(Yii::$app->request->post()) && $model->saveAll()) {
-             // get the uploaded file instance. for multiple file uploads
-            // the following data will return an array
-            $image = UploadedFile::getInstance($model, 'image');
-            if (!empty($image->name)) {
-                // store the source file name
-                $model->filename = $image->name;
-                $tmp = explode('.', $model->filename);
-                $ext = substr( strrchr($model->filename, '.'), 1);
-                //$ext = end((explode(".", $tmp)));
-
-                // generate a unique file name
-                $model->Archivo = Yii::$app->security->generateRandomString().".{$ext}";
-
-                // the path to save file, you can set an uploadPath
-                // in Yii::$app->params (as used in example below)
-                $path = Yii::$app->basePath . '/web/uploads/' . $model->Archivo;
-
-            }
-            if($model->save() && !empty($image->name)){
-                $image->saveAs($path);
-                return $this->redirect(['view', 'id'=>$model->id]);
-            }
-            elseif($model->save()){
-                return $this->redirect(['view', 'id'=>$model->id]);
-            } else {
-                // error in saving model
-            }
-            
+            return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('create', [
                 'model' => $model,
@@ -118,7 +90,7 @@ class PresentacionController extends Controller
     }
 
     /**
-     * Updates an existing Presentacion model.
+     * Updates an existing Estado model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -126,7 +98,7 @@ class PresentacionController extends Controller
     public function actionUpdate($id)
     {
         if (Yii::$app->request->post('_asnew') == '1') {
-            $model = new Presentacion();
+            $model = new Estado();
         }else{
             $model = $this->findModel($id);
         }
@@ -141,7 +113,7 @@ class PresentacionController extends Controller
     }
 
     /**
-     * Deletes an existing Presentacion model.
+     * Deletes an existing Estado model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -155,19 +127,19 @@ class PresentacionController extends Controller
     
     /**
      * 
-     * Export Presentacion information into PDF format.
+     * Export Estado information into PDF format.
      * @param integer $id
      * @return mixed
      */
     public function actionPdf($id) {
         $model = $this->findModel($id);
-        $providerPresentacionUser = new \yii\data\ArrayDataProvider([
-            'allModels' => $model->presentacionUsers,
+        $providerPresentacion = new \yii\data\ArrayDataProvider([
+            'allModels' => $model->presentacions,
         ]);
 
         $content = $this->renderAjax('_pdf', [
             'model' => $model,
-            'providerPresentacionUser' => $providerPresentacionUser,
+            'providerPresentacion' => $providerPresentacion,
         ]);
 
         $pdf = new \kartik\mpdf\Pdf([
@@ -189,7 +161,7 @@ class PresentacionController extends Controller
     }
 
     /**
-    * Creates a new Presentacion model by another data,
+    * Creates a new Estado model by another data,
     * so user don't need to input all field from scratch.
     * If creation is successful, the browser will be redirected to the 'view' page.
     *
@@ -197,39 +169,14 @@ class PresentacionController extends Controller
     * @return mixed
     */
     public function actionSaveAsNew($id) {
-        $model = new Presentacion();
+        $model = new Estado();
 
         if (Yii::$app->request->post('_asnew') != '1') {
             $model = $this->findModel($id);
         }
     
         if ($model->loadAll(Yii::$app->request->post()) && $model->saveAll()) {
-
-            $image = UploadedFile::getInstance($model, 'image');
-            if (!empty($image->name)) {
-                // store the source file name
-                $model->filename = $image->name;
-                $tmp = explode('.', $model->filename);
-                $ext = substr( strrchr($model->filename, '.'), 1);
-                //$ext = end((explode(".", $tmp)));
-
-                // generate a unique file name
-                $model->Archivo = Yii::$app->security->generateRandomString().".{$ext}";
-
-                // the path to save file, you can set an uploadPath
-                // in Yii::$app->params (as used in example below)
-                $path = Yii::$app->basePath . '/uploads/' . $model->Archivo;
-
-            }
-            if($model->save() && !empty($image->name)){
-                $image->saveAs($path);
-                return $this->redirect(['view', 'id'=>$model->id]);
-            }
-            elseif($model->save()){
-                return $this->redirect(['view', 'id'=>$model->id]);
-            } else {
-                // error in saving model
-            }
+            return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('saveAsNew', [
                 'model' => $model,
@@ -238,15 +185,15 @@ class PresentacionController extends Controller
     }
     
     /**
-     * Finds the Presentacion model based on its primary key value.
+     * Finds the Estado model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Presentacion the loaded model
+     * @return Estado the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Presentacion::findOne($id)) !== null) {
+        if (($model = Estado::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException(Yii::t('app', 'The requested page does not exist.'));
@@ -255,19 +202,19 @@ class PresentacionController extends Controller
     
     /**
     * Action to load a tabular form grid
-    * for PresentacionUser
+    * for Presentacion
     * @author Yohanes Candrajaya <moo.tensai@gmail.com>
     * @author Jiwantoro Ndaru <jiwanndaru@gmail.com>
     *
     * @return mixed
     */
-    public function actionAddPresentacionUser()
+    public function actionAddPresentacion()
     {
         if (Yii::$app->request->isAjax) {
-            $row = Yii::$app->request->post('PresentacionUser');
+            $row = Yii::$app->request->post('Presentacion');
             if((Yii::$app->request->post('isNewRecord') && Yii::$app->request->post('_action') == 'load' && empty($row)) || Yii::$app->request->post('_action') == 'add')
                 $row[] = [];
-            return $this->renderAjax('_formPresentacionUser', ['row' => $row]);
+            return $this->renderAjax('_formPresentacion', ['row' => $row]);
         } else {
             throw new NotFoundHttpException(Yii::t('app', 'The requested page does not exist.'));
         }

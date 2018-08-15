@@ -24,7 +24,7 @@ use kartik\builder\Form;
     <?= Form::widget([
                     'model'=>$model,
                     'form'=>$form,
-                    'columns'=>2,
+                    'columns'=>3,
                     'attributes'=>[
                         'congreso_id'=>[
                             'type'=>Form::INPUT_WIDGET, 
@@ -45,6 +45,19 @@ use kartik\builder\Form;
                             'options'=>[
                                 'data'=>\yii\helpers\ArrayHelper::map(\backend\models\Sala::find()->orderBy('id')->asArray()->all(),'id', 'Nombre_Sala'),
                                 'options' => ['placeholder' => Yii::t('app', 'Elige Sala')],
+                                    'pluginOptions' => [
+                                        'allowClear' => true
+                                    ],
+                            ],
+                            //'hint'=>'Type and select state'
+                        ],
+
+                        'estado_id'=>[
+                            'type'=>Form::INPUT_WIDGET, 
+                            'widgetClass'=>'\kartik\widgets\Select2', 
+                            'options'=>[
+                                'data'=>\yii\helpers\ArrayHelper::map(\backend\models\Estado::find()->orderBy('id')->asArray()->all(),'id', 'Estado'),
+                                'options' => ['placeholder' => Yii::t('app', 'Elige Estado')],
                                     'pluginOptions' => [
                                         'allowClear' => true
                                     ],
@@ -100,6 +113,18 @@ use kartik\builder\Form;
     <?php /* echo $form->field($model, 'Vinculo')->textInput(['maxlength' => true, 'placeholder' => 'Vinculo']) */ ?>
 
     <?php /* echo $form->field($model, 'Archivo')->textInput(['placeholder' => 'Archivo']) */ ?>
+
+    <?php /* echo $form->field($model, 'filename')->textInput(['maxlength' => true, 'placeholder' => 'Filename']) */ ?> 
+ 
+    <?php /* echo $form->field($model, 'Descripcion')->textarea(['rows' => 6]) */ ?> 
+
+    <?php /* echo $form->field($model, 'estado_id')->widget(\kartik\widgets\Select2::classname(), [ 
+        'data' => \yii\helpers\ArrayHelper::map(\backend\models\Estado::find()->orderBy('id')->asArray()->all(), 'id', 'Estado'), 
+        'options' => ['placeholder' => Yii::t('app', 'Choose Estado')], 
+        'pluginOptions' => [ 
+            'allowClear' => true 
+        ], 
+    ]); */ ?> 
 
     <div class="form-group">
         <?= Html::submitButton(Yii::t('app', 'Buscar'), ['class' => 'btn btn-primary']) ?>

@@ -19,7 +19,10 @@ use Yii;
  * @property string $Vinculo
  * @property array $Archivo
  * @property string $filename
+ * @property string $Descripcion 
+ * @property integer $estado_id 
  *
+ * @property \backend\models\Estado $estado
  * @property \backend\models\Sala $sala
  * @property \backend\models\Congreso $congreso
  * @property \backend\models\PresentacionUser[] $presentacionUsers
@@ -42,6 +45,7 @@ class Presentacion extends \yii\db\ActiveRecord
     public function relationNames()
     {
         return [
+            'estado',
             'sala',
             'congreso',
             'presentacionUsers',
@@ -56,10 +60,11 @@ class Presentacion extends \yii\db\ActiveRecord
     {
         return [
             [['congreso_id', 'Titulo', 'Fecha_Inicio', 'Fecha_Final'], 'required'],
-            [['congreso_id', 'sala_id'], 'integer'],
+            [['congreso_id', 'sala_id', 'estado_id'], 'integer'],
             [['Fecha_Inicio', 'Fecha_Final'], 'safe'],
             [['image'], 'safe'],
             [['image'], 'file'],
+            [['Descripcion'], 'string'],
             [['Titulo', 'Area_Tematica'], 'string', 'max' => 100],
             [['Institucion'], 'string', 'max' => 50],
             [['Modalidad_Presentacion'], 'string', 'max' => 20],
@@ -92,6 +97,7 @@ class Presentacion extends \yii\db\ActiveRecord
             'Fecha_Final' => Yii::t('app', 'Fecha Final'),
             'Vinculo' => Yii::t('app', 'Vinculo'),
             'image' => Yii::t('app', 'Archivo'),
+            'Descripcion' => Yii::t('app', 'Descripcion'),
         ];
     }
     
@@ -127,7 +133,14 @@ class Presentacion extends \yii\db\ActiveRecord
         return $this->hasMany(\backend\models\User::className(), ['id' => 'user_id'])->viaTable('{{%presentacion_user}}', ['presentacion_id' => 'id']);
     }
     
-
+    /** 
+    * @return \yii\db\ActiveQuery 
+    */ 
+    public function getEstado() 
+    { 
+        return $this->hasOne(\backend\models\Estado::className(), ['id' => 'estado_id']); 
+    } 
+        
     /**
      * @inheritdoc
      * @return \backend\models\PresentacionQuery the active query used by this AR class.

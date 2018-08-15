@@ -25,10 +25,11 @@ class Presentacion extends BasePresentacion
         return array_replace_recursive(parent::rules(),
 	    [
             [['congreso_id', 'Titulo', 'Fecha_Inicio', 'Fecha_Final'], 'required'],
-            [['congreso_id', 'sala_id'], 'integer'],
+            [['congreso_id', 'sala_id', 'estado_id'], 'integer'],
             [['Fecha_Inicio', 'Fecha_Final'], 'safe'],
             [['image'], 'safe'],
             [['image'], 'file'],
+            [['Descripcion'], 'string'],
             [['Titulo', 'Area_Tematica'], 'string', 'max' => 100],
             [['Institucion'], 'string', 'max' => 50],
             [['Modalidad_Presentacion'], 'string', 'max' => 20],

@@ -131,7 +131,7 @@ return [
         //can name it whatever you want as it is custom
         'urlManagerBackend' => [
             'class' => 'yii\web\urlManager',
-            'baseUrl' => 'mescyt/backend/uploads/',
+            'baseUrl' => 'mescyt/backend/web/',
             'enablePrettyUrl' => true,
             'showScriptName' => false,
         ],

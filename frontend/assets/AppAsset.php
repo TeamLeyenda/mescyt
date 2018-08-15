@@ -26,6 +26,7 @@ class AppAsset extends AssetBundle
         'js/popper.min.js',
         'js/bootstrap.min.js',
         'js/mdb.min.js',
+        'js/app.js',
 
     ];
     public $depends = [

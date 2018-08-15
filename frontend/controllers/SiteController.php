@@ -220,12 +220,13 @@ class SiteController extends Controller{
         ]);
     }
 
-    public function actionAsignar_presentacion($user_id,$presentacion_id)
+    public function actionAsignar_presentacion($presentacion_id)
     {
         $model = new PresentacionUser();
-        $model->user_id = $user_id;
+        $model->user_id = Yii::$app->user->identity->id;
         $model->presentacion_id = $presentacion_id;
         $model->save();
+        echo '1';
 
     }
 

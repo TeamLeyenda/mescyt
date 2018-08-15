@@ -18,8 +18,8 @@ use backend\models\Presentacion;
     public function rules()
     {
         return [
-            [['id', 'congreso_id', 'sala_id'], 'integer'],
-            [['Titulo', 'Institucion', 'Area_Tematica', 'Modalidad_Presentacion', 'Fecha_Inicio', 'Fecha_Final', 'Vinculo', 'Archivo'], 'safe'],
+            [['id', 'congreso_id', 'sala_id', 'estado_id'], 'integer'],
+            [['Titulo', 'Institucion', 'Area_Tematica', 'Modalidad_Presentacion', 'Fecha_Inicio', 'Fecha_Final', 'Vinculo', 'Archivo', 'Descripcion'], 'safe'],
         ];
     }
 
@@ -61,6 +61,7 @@ use backend\models\Presentacion;
             'sala_id' => $this->sala_id,
             'Fecha_Inicio' => $this->Fecha_Inicio,
             'Fecha_Final' => $this->Fecha_Final,
+            'estado_id' => $this->estado_id, 
         ]);
 
         $query->andFilterWhere(['like', 'Titulo', $this->Titulo])
@@ -68,7 +69,9 @@ use backend\models\Presentacion;
             ->andFilterWhere(['like', 'Area_Tematica', $this->Area_Tematica])
             ->andFilterWhere(['like', 'Modalidad_Presentacion', $this->Modalidad_Presentacion])
             ->andFilterWhere(['like', 'Vinculo', $this->Vinculo])
-            ->andFilterWhere(['like', 'Archivo', $this->Archivo]);
+            ->andFilterWhere(['like', 'Archivo', $this->Archivo])
+            //->andFilterWhere(['like', 'filename', $this->filename])
+            ->andFilterWhere(['like', 'Descripcion', $this->Descripcion]);
 
         return $dataProvider;
     }
