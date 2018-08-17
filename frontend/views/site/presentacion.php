@@ -1,7 +1,7 @@
 <?php
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
-$this->title = 'Presentaciones';
+$this->title = 'Programa';
 $this->params['breadcrumbs'][] = $this->title;
 Yii::$app->layout='page_header';
 ?>

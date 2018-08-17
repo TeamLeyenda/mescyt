@@ -11,8 +11,8 @@ use kartik\widgets\FileInput;
 use kartik\builder\Form;
 use kartik\select2\Select2;
 
-$this->title = 'Signup';
-$this->params['breadcrumbs'][] = $this->title='Registro de Usuario - MESCyT';
+//$this->title = 'Signup';
+$this->params['breadcrumbs'][] = $this->title='Registro de Usuario';
 ?>
 
 

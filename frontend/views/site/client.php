@@ -2,7 +2,7 @@
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
-$this->title = 'Congresos Pasados';
+$this->title = 'Inscripción';
 $this->params['breadcrumbs'][] = $this->title;
 Yii::$app->layout='page_header';
 /*echo Yii::$app->formatter->asDateTime(time(), 'short');
