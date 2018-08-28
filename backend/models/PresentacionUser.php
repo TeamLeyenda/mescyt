@@ -18,7 +18,8 @@ class PresentacionUser extends BasePresentacionUser
         return array_replace_recursive(parent::rules(),
 	    [
             [['presentacion_id', 'user_id'], 'required'],
-            [['presentacion_id', 'user_id'], 'integer']
+            [['presentacion_id', 'user_id'], 'integer'],
+            [['estado_notificacion'], 'string', 'max' => 4]
         ]);
     }
 	

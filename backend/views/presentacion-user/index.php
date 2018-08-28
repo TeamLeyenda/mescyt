@@ -69,6 +69,7 @@ $this->registerJs($search);
                 ],
                 'filterInputOptions' => ['placeholder' => 'User', 'id' => 'grid-presentacion-user-search-user_id']
             ],
+        'estado_notificacion', 
         [
             'class' => 'yii\grid\ActionColumn',
             'template' => '{save-as-new} {view} {update} {delete}',

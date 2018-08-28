@@ -9,6 +9,7 @@ use Yii;
  *
  * @property integer $presentacion_id
  * @property integer $user_id
+ * @property integer $estado_notificacion
  *
  * @property \backend\models\Presentacion $presentacion
  * @property \backend\models\User $user
@@ -37,7 +38,8 @@ class PresentacionUser extends \yii\db\ActiveRecord
     {
         return [
             [['presentacion_id', 'user_id'], 'required'],
-            [['presentacion_id', 'user_id'], 'integer']
+            [['presentacion_id', 'user_id'], 'integer'],
+            [['estado_notificacion'], 'string', 'max' => 4]
         ];
     }
 
@@ -57,6 +59,7 @@ class PresentacionUser extends \yii\db\ActiveRecord
         return [
             'presentacion_id' => Yii::t('app', 'Presentacion'),
             'user_id' => Yii::t('app', 'Usuario'),
+            'estado_notificacion' => Yii::t('app', 'Notificacion'),
         ];
     }
     

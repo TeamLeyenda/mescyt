@@ -27,6 +27,7 @@ use kartik\grid\GridView;
             'attribute' => 'user.username',
             'label' => Yii::t('app', 'Usuario'),
         ],
+        'estado_notificacion',
     ];
     echo DetailView::widget([
         'model' => $model,

@@ -19,6 +19,7 @@ use backend\models\PresentacionUser;
     {
         return [
             [['presentacion_id', 'user_id'], 'integer'],
+            [['estado_notificacion'], 'safe'],
         ];
     }
 
@@ -58,6 +59,8 @@ use backend\models\PresentacionUser;
             'presentacion_id' => $this->presentacion_id,
             'user_id' => $this->user_id,
         ]);
+
+        $query->andFilterWhere(['like', 'estado_notificacion', $this->estado_notificacion]);
 
         return $dataProvider;
     }

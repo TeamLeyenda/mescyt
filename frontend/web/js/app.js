@@ -10,6 +10,7 @@ function inscribirse(presentacion_id){
         }).done(function( data ) {
             if(data==1)
                 {
+		$('presentacion_ver').html(data);
                 alert("Resgistro realizado");
              //   $(presentacion_id+"regis").css();
                 }

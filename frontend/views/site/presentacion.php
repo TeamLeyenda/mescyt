@@ -4,12 +4,15 @@
 $this->title = 'Presentaciones';
 $this->params['breadcrumbs'][] = $this->title;
 Yii::$app->layout='page_header';
+//$model =  new \backend\admin\models\form\Signup(); 
+use backend\models\PresentacionUser;
 ?>
 
 <div class="section ">
     <div class="section_wrapper clearfix">
 
         <div class="column one column_blog">
+		<div id="presentacion_ver">
             <div class="blog_wrapper isotope_wrapper">
                   <!--                 -->
                   <?php 
@@ -32,10 +35,21 @@ Yii::$app->layout='page_header';
                                        <div class="post-excerpt">Fecha de Inicio de La presentación: <?=$presentacion->Fecha_Inicio?><span class="excerpt-hellip"></span></div>
                                        <div class="post-excerpt">Fecha Prevista de Finalización de La presentación: <?=$presentacion->Fecha_Final?><span class="excerpt-hellip"></span></div>
                                        <div class="post-footer">
+									   <?php
+									    $presentacion_user = PresentacionUser::findAll(['user_id'=>Yii::$app->user->identity->id,'presentacion_id'=>$presentacion->id]);
+										
+									   ?>
+									   <?php if(count($presentacion_user)>0):?>
+									   <a style="color:red" href="">Inscrito</a>
+									   <?php endif;?>
                                            <div class="button-love"><span class="love-text">Do you like it?</span>
                                            <a href="#" class="mfn-love " data-id="1735"><span class="icons-wrapper"><i class="icon-heart-empty-fa"></i>
                                            <i class="icon-heart-fa"></i></span><span class="label">0</span></a></div>
-                                           <div class="post-links"><i class="icon-doc-text"></i> <a href="#" onclick="inscribirse(<?= $presentacion->id ?>)" class="post-more">Inscribirse</a></div>
+                                           <div class="post-links"><i class="icon-doc-text"></i> 
+                                           <?php if(count($presentacion_user)==0):?>
+                                           <a href="#" onclick="inscribirse(<?= $presentacion->id ?>)" class="post-more">Inscribirse</a>
+                                            <?php endif;?>
+                                           </div>
                                        </div>
                                    </div>
                                </div>
@@ -46,6 +60,7 @@ Yii::$app->layout='page_header';
                 <!--                 -->
 
             </div>
+			</div>
         </div>
 
     </div>

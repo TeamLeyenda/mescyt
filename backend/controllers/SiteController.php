@@ -66,15 +66,17 @@ class SiteController extends Controller
             Yii::$app->user->logout();
             return $this->goHome();
         }else{
-
             $searchModel = new PresentacionSearch();
             $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-        
+            if (Yii::$app->user->identity->tipo_user_id == 1) {
                 return $this->render('index', [
                     'searchModel' => $searchModel,
                     'dataProvider' => $dataProvider,
                 ]);
 
+            }else{
+                return $this->redirect(['/sala/index']);
+            }
         }
 
     }

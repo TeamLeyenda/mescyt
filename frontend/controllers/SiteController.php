@@ -219,6 +219,32 @@ class SiteController extends Controller{
             'dataProvider' => $dataProvider,
         ]);
     }
+    public function actionVernotificacion()
+    {
+       // echo "here";
+        //die();
+        $presentacion_user = PresentacionUser::findAll(['user_id'=>Yii::$app->user->identity->id,'estado_notificacion'=>1]);
+       
+        $dataProvider = new ActiveDataProvider([
+            'query' => $presentacion_user,
+        ]);
+
+        return $this->render('notificacion', [
+            'dataProvider' => $dataProvider,
+        ]);
+    }
+	
+    public function actionPresentacionajax()
+    {
+       
+        $dataProvider = new ActiveDataProvider([
+            'query' => Presentacion::find(),
+        ]);
+
+        return $this->renderPartial('presentacion', [
+            'dataProvider' => $dataProvider,
+        ]);
+    }
 
     public function actionAsignar_presentacion($presentacion_id)
     {
@@ -226,10 +252,41 @@ class SiteController extends Controller{
         $model->user_id = Yii::$app->user->identity->id;
         $model->presentacion_id = $presentacion_id;
         $model->save();
-        echo '1';
+		 $dataProvider = new ActiveDataProvider([
+            'query' => Presentacion::find(),
+        ]);
+
+        return $this->renderPartial('presentacion', [
+            'dataProvider' => $dataProvider,
+        ]);
+        //echo '1';
 
     }
 
+    public function actionUpdate($id)
+    {
+        if (Yii::$app->request->post('_asnew') == '1') {
+            $model = new Presentacion();
+        }else{
+            $model = $this->findModel($id);
+            
+        }
+
+        if ($model->loadAll(Yii::$app->request->post()) && $model->saveAll()) {
+             $presentacion_user = PresentacionUser::findAll(['presentacion_id'=>$model->id]);
+             foreach($presentacion_user as $pres){
+                $pres->estado_notificacion=1;
+
+
+             }
+            return $this->redirect(['view', 'id' => $model->id]);
+        } else {
+            return $this->render('update', [
+                'model' => $model,
+            ]);
+        }
+    }
+    
     /**
      * Requests password reset.
      *

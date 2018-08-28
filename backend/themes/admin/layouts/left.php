@@ -37,8 +37,9 @@ $name = Yii::$app->user->identity->username;
                     ['label' => 'Menu administrativo', 'options' => ['class' => 'header']],
                     //['label' => 'Gii', 'icon' => 'file-code-o', 'url' => ['/gii']],
                     ['label' => 'Debug', 'icon' => 'dashboard', 'url' => ['/debug']],
+                    ['label' => 'Tus salas', 'visible' => Yii::$app->user->identity->tipo_user_id == 2, 'icon' => 'cube', 'url' => ['/sala'],],
                     ['label' => 'Login', 'url' => ['site/login'], 'visible' => Yii::$app->user->isGuest],
-                    ['label' => 'Usuarios',
+                    ['label' => 'Usuarios', 'visible' => Yii::$app->user->identity->tipo_user_id == 1,
                                 'icon' => 'users',
                                 'url' => '#',
                                 'items' => [
@@ -50,7 +51,7 @@ $name = Yii::$app->user->identity->username;
                                 ],
                             ],
 
-                            ['label' => 'Programa',
+                            ['label' => 'Programa', 'visible' => Yii::$app->user->identity->tipo_user_id == 1,
                                         'icon' => 'building',
                                         'url' => '#',
                                         'items' => [
@@ -61,7 +62,7 @@ $name = Yii::$app->user->identity->username;
                                         ],
                                     ],
 
-                            ['label' => 'Estudios',
+                            ['label' => 'Estudios', 'visible' => Yii::$app->user->identity->tipo_user_id == 1,
                                         'icon' => 'institution',
                                         'url' => '#',
                                         'items' => [
@@ -70,7 +71,7 @@ $name = Yii::$app->user->identity->username;
                                         ],
                                     ],
                                     
-                            ['label' => 'Ubicacion',
+                            ['label' => 'Ubicacion', 'visible' => Yii::$app->user->identity->tipo_user_id == 1,
                                     'icon' => 'globe',
                                     'url' => '#',
                                     'items' => [
