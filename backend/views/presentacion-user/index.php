@@ -20,11 +20,11 @@ $this->registerJs($search);
 
     
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
-
+<?php /*
     <p>
         <?= Html::a(Yii::t('app', 'Añadir Presentacion Usuario'), ['create'], ['class' => 'btn btn-success']) ?>
         <?= Html::a(Yii::t('app', 'Busqueda avanzada'), '#', ['class' => 'btn btn-info search-button']) ?>
-    </p>
+    </p>*/?>
     <div class="search-form" style="display:none">
         <?=  $this->render('_search', ['model' => $searchModel]); ?>
     </div>
@@ -69,7 +69,8 @@ $this->registerJs($search);
                 ],
                 'filterInputOptions' => ['placeholder' => 'User', 'id' => 'grid-presentacion-user-search-user_id']
             ],
-        'estado_notificacion', 
+      //  'estado_notificacion', 
+        'comentario',
         [
             'class' => 'yii\grid\ActionColumn',
             'template' => '{save-as-new} {view} {update} {delete}',

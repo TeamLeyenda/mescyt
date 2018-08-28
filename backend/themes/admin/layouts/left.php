@@ -79,6 +79,9 @@ $name = Yii::$app->user->identity->username;
                                         ['label' => 'Provincias', 'icon' => 'circle-o', 'url' => ['/provincia'],],
                                     ],
                                 ],
+
+                                ['label' => 'Iniciar presentaciones', 'icon' => 'comments-o', 'url' => ['/presentacion/verpres'],],
+                                ['label' => 'Ver Retroalimentacion', 'icon' => 'comments-o', 'url' => ['/presentacion-user'],],
                                 
                     /*
                     ['label' => 'Administracion',

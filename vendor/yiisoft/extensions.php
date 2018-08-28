@@ -536,22 +536,13 @@ return array (
       '@nerburish/matchheight' => $vendorDir . '/nerburish/yii2-match-height-view',
     ),
   ),
-  'nerburish/yii2-isotope-view' => 
+  'philippfrenzel/yii2fullcalendar' => 
   array (
-    'name' => 'nerburish/yii2-isotope-view',
+    'name' => 'philippfrenzel/yii2fullcalendar',
     'version' => '9999999-dev',
     'alias' => 
     array (
-      '@nerburish/isotopeview' => $vendorDir . '/nerburish/yii2-isotope-view',
-    ),
-  ),
-  'circulon/yii2-columnlistview' => 
-  array (
-    'name' => 'circulon/yii2-columnlistview',
-    'version' => '9999999-dev',
-    'alias' => 
-    array (
-      '@circulon/widgets' => $vendorDir . '/circulon/yii2-columnlistview',
+      '@yii2fullcalendar' => $vendorDir . '/philippfrenzel/yii2fullcalendar',
     ),
   ),
 );

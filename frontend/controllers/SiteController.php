@@ -15,6 +15,8 @@ use frontend\models\ContactForm;
 //use frontend\models\Presentacion;
 use backend\models\Presentacion;
 use backend\models\PresentacionUser;
+use backend\models\Congreso;
+use backend\models\CongresoSearch;
 use yii\data\ActiveDataProvider;
 
 /**
@@ -208,11 +210,11 @@ class SiteController extends Controller{
      *
      * @return mixed
      */
-    public function actionPresentacion()
+    public function actionPresentacion($id)
     {
        
         $dataProvider = new ActiveDataProvider([
-            'query' => Presentacion::find(),
+            'query' => Presentacion::find()->where('congreso_id='.$id),
         ]);
 
         return $this->render('presentacion', [
@@ -223,8 +225,9 @@ class SiteController extends Controller{
     {
        // echo "here";
         //die();
-        $presentacion_user = PresentacionUser::findAll(['user_id'=>Yii::$app->user->identity->id,'estado_notificacion'=>1]);
-       
+        //$presentacion_user = PresentacionUser::findAll(['user_id'=>Yii::$app->user->identity->id,'estado_notificacion'=>1]);
+        $presentacion_user = PresentacionUser::find()->where('user_id='.Yii::$app->user->identity->id.' and estado_notificacion=1');
+
         $dataProvider = new ActiveDataProvider([
             'query' => $presentacion_user,
         ]);
@@ -233,7 +236,21 @@ class SiteController extends Controller{
             'dataProvider' => $dataProvider,
         ]);
     }
-	
+    
+    public function actionComentar()
+    {
+
+        $presentacion_user = PresentacionUser::find()->where('user_id='.Yii::$app->user->identity->id);
+
+        $dataProvider = new ActiveDataProvider([
+            'query' => $presentacion_user,
+        ]);
+
+        return $this->render('comentario', [
+            'dataProvider' => $dataProvider,
+        ]);
+    }
+
     public function actionPresentacionajax()
     {
        
@@ -246,6 +263,40 @@ class SiteController extends Controller{
         ]);
     }
 
+    public function actionGuardarretro($id, $coment)
+    {
+       //$model= PresentacionUser::findbyPK($id);
+       $model= PresentacionUser::findOne($id);
+       //find()->andWhere(['presentacion_id' => $id])->active()->one();
+       $model->comentario = $coment;
+       $model->save();
+       $this->redirect('comentar');
+
+    }
+    public function actionUn_cribirse($presentacion_id)
+    {
+      //  echo "here";die();
+       
+      $user_id= Yii::$app->user->identity->id;
+        /*echo 'DELETE FROM presentacion_user WHERE userid='.$user_id.' and presentacion_id='.$presentacion_id;
+        $connection->createCommand('DELETE FROM presentacion_user WHERE userid='.$user_id.' and presentacion_id='.$presentacion_id)
+        ->execute();
+        */
+        $presentacion_user=PresentacionUser::find()->where("user_id=$user_id and presentacion_id=$presentacion_id")->one();
+        $presentacion_user->delete();
+        $dataProvider = new ActiveDataProvider([
+            'query' => Presentacion::find(),
+        ]);
+
+        return $this->renderPartial('presentacion', [
+            'dataProvider' => $dataProvider,
+        ]);
+    }
+    public function actionCalendar(){
+        $userid = Yii::$app->user->identity->id;
+       $model =PresentacionUser::find()->where("user_id=".$userid);
+       return $this->render('calendar');
+    }
     public function actionAsignar_presentacion($presentacion_id)
     {
         $model = new PresentacionUser();
@@ -285,6 +336,34 @@ class SiteController extends Controller{
                 'model' => $model,
             ]);
         }
+    }
+
+    public function actionView($id)
+    {
+        $model = Presentacion::findOne($id);
+        //$model = $this->findModel($id);
+       $userid= Yii::$app->user->identity->id;
+       $presuser=PresentacionUser::find()->where('user_id='.$userid.' and presentacion_id='.$id)->one();
+       $presuser->estado_notificacion=0;
+       $presuser->save();
+
+        $providerPresentacionUser = new \yii\data\ArrayDataProvider([
+            'allModels' => $model->presentacionUsers,
+        ]);
+        return $this->render('view', [
+            'model' => Presentacion::findOne($id),
+            'providerPresentacionUser' => $providerPresentacionUser,
+        ]);
+    }
+    public function actionCongresos()
+    {
+        $searchModel = new CongresoSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+        return $this->render('vercongreso', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]);
     }
     
     /**

@@ -22,7 +22,7 @@
             "friendsofphp/php-cs-fixer": "^2.0",
             "phpunit/phpunit": "~4.4"
         },
-        "time": "2017-07-26 09:24:16",
+        "time": "2017-07-26T09:24:16+00:00",
         "type": "yii2-extension",
         "extra": {
             "branch-alias": {
@@ -78,7 +78,7 @@
             "bower-asset/jquery": ">=1.9.0 <4.0.0",
             "composer/installers": "1.*"
         },
-        "time": "2018-04-08 13:32:26",
+        "time": "2018-04-08T13:32:26+00:00",
         "type": "template",
         "installation-source": "source",
         "notification-url": "https://packagist.org/downloads/",
@@ -131,7 +131,7 @@
         "suggest": {
             "symfony/yaml": "If you want to parse features, represented in YAML files"
         },
-        "time": "2017-08-30 11:04:43",
+        "time": "2017-08-30T11:04:43+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -185,7 +185,7 @@
             "php": ">=7.1.0",
             "yiisoft/yii2": ">=2.0.15.1 <2.1.0"
         },
-        "time": "2018-07-01 14:26:29",
+        "time": "2018-07-01T14:26:29+00:00",
         "type": "yii2-extension",
         "installation-source": "dist",
         "autoload": {
@@ -327,6 +327,57 @@
         ]
     },
     {
+        "name": "bower-asset/fullcalendar",
+        "version": "v3.9.0",
+        "version_normalized": "3.9.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/fullcalendar/fullcalendar.git",
+            "reference": "3ddb3c8d1461c6b841aed3487ba07d8ba338adb6"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/fullcalendar/fullcalendar/zipball/3ddb3c8d1461c6b841aed3487ba07d8ba338adb6",
+            "reference": "3ddb3c8d1461c6b841aed3487ba07d8ba338adb6",
+            "shasum": null
+        },
+        "require": {
+            "bower-asset/jquery": ">=2,<4.0",
+            "bower-asset/moment": ">=2.20.1,<3.0.0"
+        },
+        "type": "bower-asset",
+        "installation-source": "dist",
+        "license": [
+            "MIT"
+        ]
+    },
+    {
+        "name": "bower-asset/fullcalendar-scheduler",
+        "version": "v1.9.4",
+        "version_normalized": "1.9.4.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/fullcalendar/fullcalendar-scheduler.git",
+            "reference": "6ebc6d1ec1d4cc82481e0c57272b70df80330494"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/fullcalendar/fullcalendar-scheduler/zipball/6ebc6d1ec1d4cc82481e0c57272b70df80330494",
+            "reference": "6ebc6d1ec1d4cc82481e0c57272b70df80330494",
+            "shasum": null
+        },
+        "require": {
+            "bower-asset/fullcalendar": "~3.9.0",
+            "bower-asset/jquery": ">=2,<4.0",
+            "bower-asset/moment": ">=2.20.1,<3.0.0"
+        },
+        "type": "bower-asset",
+        "installation-source": "dist",
+        "license": [
+            "SEE LICENSE IN LICENSE.md"
+        ]
+    },
+    {
         "name": "bower-asset/inputmask",
         "version": "3.3.11",
         "version_normalized": "3.3.11.0",
@@ -351,37 +402,6 @@
         ]
     },
     {
-<<<<<<< HEAD
-        "name": "bower-asset/isotope",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/metafizzy/isotope.git",
-            "reference": "e042f41efceb6f70bcf96043d328088b213079f1"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/metafizzy/isotope/zipball/e042f41efceb6f70bcf96043d328088b213079f1",
-            "reference": "e042f41efceb6f70bcf96043d328088b213079f1",
-            "shasum": null
-        },
-        "require": {
-            "bower-asset/desandro-matches-selector": ">=2.0.0,<3.0.0",
-            "bower-asset/fizzy-ui-utils": ">=2.0.4,<3.0.0",
-            "bower-asset/get-size": ">=2.0.0,<3.0.0",
-            "bower-asset/masonry-layout": ">=4.1.0,<5.0.0",
-            "bower-asset/outlayer": ">=2.1.0,<3.0.0"
-        },
-        "type": "bower-asset",
-        "installation-source": "source",
-        "license": [
-            "GPL-3.0"
-        ]
-    },
-    {
-=======
->>>>>>> 7bcd7132fe053362b9fb2c2bbb08e92a65a16a66
         "name": "bower-asset/jquery",
         "version": "3.2.1",
         "version_normalized": "3.2.1.0",
@@ -419,6 +439,48 @@
         },
         "require": {
             "bower-asset/jquery": ">=1.6"
+        },
+        "type": "bower-asset",
+        "installation-source": "dist",
+        "license": [
+            "MIT"
+        ]
+    },
+    {
+        "name": "bower-asset/matchheight",
+        "version": "0.7.2",
+        "version_normalized": "0.7.2.0",
+        "source": {
+            "type": "git",
+            "url": "git@github.com:liabru/jquery-match-height.git",
+            "reference": "2446ac654f694bc05a1297cbab0b2d875e278bbd"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/liabru/jquery-match-height/zipball/2446ac654f694bc05a1297cbab0b2d875e278bbd",
+            "reference": "2446ac654f694bc05a1297cbab0b2d875e278bbd",
+            "shasum": null
+        },
+        "type": "bower-asset",
+        "installation-source": "dist",
+        "license": [
+            "MIT"
+        ]
+    },
+    {
+        "name": "bower-asset/moment",
+        "version": "2.22.2",
+        "version_normalized": "2.22.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/moment/moment.git",
+            "reference": "2e2a5b35439665d4b0200143d808a7c26d6cd30f"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/moment/moment/zipball/2e2a5b35439665d4b0200143d808a7c26d6cd30f",
+            "reference": "2e2a5b35439665d4b0200143d808a7c26d6cd30f",
+            "shasum": null
         },
         "type": "bower-asset",
         "installation-source": "dist",
@@ -531,7 +593,7 @@
             "facebook/xhprof": "*@dev",
             "phpunit/phpunit": "4.1.*"
         },
-        "time": "2018-06-13 20:42:05",
+        "time": "2018-06-13T20:42:05+00:00",
         "bin": [
             "bin/markdown"
         ],
@@ -588,7 +650,7 @@
         "require": {
             "yiisoft/yii2": "*"
         },
-        "time": "2013-12-10 17:49:58",
+        "time": "2013-12-10T17:49:58+00:00",
         "type": "yii2-extension",
         "installation-source": "dist",
         "autoload": {
@@ -635,7 +697,7 @@
         "require-dev": {
             "yiisoft/yii2-codeception": "^2.0"
         },
-        "time": "2018-05-19 15:24:07",
+        "time": "2018-05-19T15:24:07+00:00",
         "type": "yii2-extension",
         "installation-source": "dist",
         "autoload": {
@@ -716,7 +778,7 @@
             "stecman/symfony-console-completion": "For BASH autocompletion",
             "symfony/phpunit-bridge": "For phpunit-bridge support"
         },
-        "time": "2018-06-26 14:35:46",
+        "time": "2018-06-26T14:35:46+00:00",
         "bin": [
             "codecept"
         ],
@@ -777,7 +839,7 @@
             "codeception/specify": "*",
             "vlucas/phpdotenv": "^2.4"
         },
-        "time": "2018-06-20 20:07:21",
+        "time": "2018-06-20T20:07:21+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -818,7 +880,7 @@
         "require-dev": {
             "phpunit/phpunit": ">=4.8 <8.0"
         },
-        "time": "2018-05-18 14:33:08",
+        "time": "2018-05-18T14:33:08+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -850,7 +912,7 @@
         "require-dev": {
             "phpunit/phpunit": "~4.0"
         },
-        "time": "2017-01-09 10:58:51",
+        "time": "2017-01-09T10:58:51+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -896,7 +958,7 @@
             "composer/composer": "1.0.*@dev",
             "phpunit/phpunit": "^4.8.36"
         },
-        "time": "2017-12-29 09:13:20",
+        "time": "2017-12-29T09:13:20+00:00",
         "type": "composer-plugin",
         "extra": {
             "class": "Composer\\Installers\\Plugin",
@@ -1010,7 +1072,7 @@
         "require": {
             "yiisoft/yii2": "*"
         },
-        "time": "2015-01-27 10:53:51",
+        "time": "2015-01-27T10:53:51+00:00",
         "type": "yii2-extension",
         "installation-source": "dist",
         "autoload": {
@@ -1053,7 +1115,7 @@
             "yiisoft/yii2": ">=2.0.6",
             "yiisoft/yii2-gii": "~2.0"
         },
-        "time": "2016-05-26 03:34:13",
+        "time": "2016-05-26T03:34:13+00:00",
         "type": "yii2-extension",
         "extra": {
             "branch-alias": {
@@ -1101,7 +1163,7 @@
             "bower-asset/fontawesome": "4.3.*",
             "yiisoft/yii2": "*"
         },
-        "time": "2015-07-24 06:28:41",
+        "time": "2015-07-24T06:28:41+00:00",
         "type": "yii2-extension",
         "installation-source": "dist",
         "autoload": {
@@ -1147,7 +1209,7 @@
             "yiisoft/yii2": "2.*",
             "yiisoft/yii2-bootstrap": "~2.0.0"
         },
-        "time": "2018-07-06 08:48:15",
+        "time": "2018-07-06T08:48:15+00:00",
         "type": "yii2-extension",
         "extra": {
             "branch-alias": {
@@ -1213,7 +1275,7 @@
             "phpstan/phpstan-shim": "^0.9.2",
             "phpunit/phpunit": "^7.0"
         },
-        "time": "2018-03-05 09:41:42",
+        "time": "2018-03-05T09:41:42+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1265,7 +1327,7 @@
         "require-dev": {
             "phpunit/phpunit": "^4.5"
         },
-        "time": "2018-05-14 15:49:16",
+        "time": "2018-05-14T15:49:16+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1330,7 +1392,7 @@
         "suggest": {
             "ext-intl": "PHP Internationalization Libraries are required to use the SpoofChecking validation"
         },
-        "time": "2018-04-10 10:11:19",
+        "time": "2018-04-10T10:11:19+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1383,7 +1445,7 @@
         "require-dev": {
             "simpletest/simpletest": "^1.1"
         },
-        "time": "2018-02-23 01:58:20",
+        "time": "2018-02-23T01:58:20+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -1438,7 +1500,7 @@
             "guzzlehttp/guzzle": "Allows for implementation of the Guzzle HTTP client",
             "paragonie/random_compat": "Provides a better CSPRNG option in PHP 5"
         },
-        "time": "2018-07-03 02:25:00",
+        "time": "2018-07-03T02:25:00+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1490,7 +1552,7 @@
             "jekyll": "1.0.2",
             "lessc": "1.4.2"
         },
-        "time": "2016-10-24 15:52:54",
+        "time": "2016-10-24T15:52:54+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1544,7 +1606,7 @@
             "phpunit/phpunit": "^4.8.35 || ^5.7",
             "squizlabs/php_codesniffer": "^1.5"
         },
-        "time": "2018-07-04 06:58:59",
+        "time": "2018-07-04T06:58:59+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1599,7 +1661,7 @@
         "require-dev": {
             "phpunit/phpunit": "~4.0"
         },
-        "time": "2018-06-08 08:55:26",
+        "time": "2018-06-08T08:55:26+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1663,7 +1725,7 @@
         "require-dev": {
             "phpunit/phpunit": "^5.7"
         },
-        "time": "2017-01-28 09:06:19",
+        "time": "2017-01-28T09:06:19+00:00",
         "type": "yii2-extension",
         "installation-source": "dist",
         "autoload": {
@@ -1709,7 +1771,7 @@
             "reference": "28e951101a6db0b121529e1d60f87c60751198d1",
             "shasum": ""
         },
-        "time": "2018-06-23 04:29:20",
+        "time": "2018-06-23T04:29:20+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1764,7 +1826,7 @@
             "reference": "19120d91a4495abd181c7d4cbb69da73537093af",
             "shasum": ""
         },
-        "time": "2017-11-03 07:22:19",
+        "time": "2017-11-03T07:22:19+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1810,7 +1872,7 @@
             "reference": "6eeac8de2aba01ddc24082d3d792ab056a9fcb07",
             "shasum": ""
         },
-        "time": "2017-09-09 08:25:02",
+        "time": "2017-09-09T08:25:02+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1861,7 +1923,7 @@
             "reference": "1349e7f5816a65e89bc227098386aac5b2c89363",
             "shasum": ""
         },
-        "time": "2017-08-01 11:43:55",
+        "time": "2017-08-01T11:43:55+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1910,7 +1972,7 @@
             "reference": "075cabb950ad2e2b317daf424700bf0afdc1f604",
             "shasum": ""
         },
-        "time": "2017-01-08 09:13:05",
+        "time": "2017-01-08T09:13:05+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1967,7 +2029,7 @@
             "kartik-v/yii2-krajee-base": "~1.8",
             "kartik-v/yii2-widget-activeform": "~1.4"
         },
-        "time": "2017-10-19 04:23:23",
+        "time": "2017-10-19T04:23:23+00:00",
         "type": "yii2-extension",
         "extra": {
             "branch-alias": {
@@ -2020,7 +2082,7 @@
             "kartik-v/php-date-formatter": ">1.3",
             "kartik-v/yii2-krajee-base": "~1.7"
         },
-        "time": "2018-01-06 13:08:48",
+        "time": "2018-01-06T13:08:48+00:00",
         "type": "yii2-extension",
         "extra": {
             "branch-alias": {
@@ -2074,7 +2136,7 @@
             "bower-asset/bootstrap3-dialog": "~1.34",
             "kartik-v/yii2-krajee-base": "~1.7"
         },
-        "time": "2018-03-20 02:37:25",
+        "time": "2018-03-20T02:37:25+00:00",
         "type": "yii2-extension",
         "extra": {
             "branch-alias": {
@@ -2130,7 +2192,7 @@
             "kartik-v/yii2-widget-activeform": "~1.4",
             "kartik-v/yii2-widget-select2": "~2.0"
         },
-        "time": "2018-05-28 15:43:14",
+        "time": "2018-05-28T15:43:14+00:00",
         "type": "yii2-extension",
         "extra": {
             "branch-alias": {
@@ -2192,7 +2254,7 @@
             "kartik-v/yii2-mpdf": "~1.0",
             "phpoffice/phpspreadsheet": "~1.0"
         },
-        "time": "2018-02-24 05:10:17",
+        "time": "2018-02-24T05:10:17+00:00",
         "type": "yii2-extension",
         "extra": {
             "branch-alias": {
@@ -2256,7 +2318,7 @@
         "suggest": {
             "kartik-v/yii2-mpdf": "For exporting grids to PDF"
         },
-        "time": "2018-05-03 13:25:56",
+        "time": "2018-05-03T13:25:56+00:00",
         "type": "yii2-extension",
         "extra": {
             "branch-alias": {
@@ -2307,7 +2369,7 @@
         "require": {
             "yiisoft/yii2-bootstrap": "*"
         },
-        "time": "2018-02-22 14:44:35",
+        "time": "2018-02-22T14:44:35+00:00",
         "type": "yii2-extension",
         "extra": {
             "branch-alias": {
@@ -2360,7 +2422,7 @@
         "require": {
             "yiisoft/yii2-bootstrap": "@dev"
         },
-        "time": "2017-09-29 06:18:14",
+        "time": "2017-09-29T06:18:14+00:00",
         "type": "yii2-extension",
         "extra": {
             "branch-alias": {
@@ -2413,7 +2475,7 @@
         "require": {
             "mpdf/mpdf": "~7.0"
         },
-        "time": "2017-07-19 09:51:02",
+        "time": "2017-07-19T09:51:02+00:00",
         "type": "yii2-extension",
         "extra": {
             "branch-alias": {
@@ -2468,7 +2530,7 @@
             "facebook/graph-sdk": "~5.0",
             "kartik-v/yii2-krajee-base": "~1.7"
         },
-        "time": "2018-02-26 17:43:03",
+        "time": "2018-02-26T17:43:03+00:00",
         "type": "yii2-extension",
         "extra": {
             "branch-alias": {
@@ -2522,7 +2584,7 @@
         "require": {
             "kartik-v/yii2-krajee-base": "~1.7"
         },
-        "time": "2015-06-17 17:34:48",
+        "time": "2015-06-17T17:34:48+00:00",
         "type": "yii2-extension",
         "installation-source": "dist",
         "autoload": {
@@ -2572,7 +2634,7 @@
             "kartik-v/bootstrap-tabs-x": "~1.3",
             "kartik-v/yii2-krajee-base": "~1.7"
         },
-        "time": "2017-05-04 12:30:21",
+        "time": "2017-05-04T12:30:21+00:00",
         "type": "yii2-extension",
         "extra": {
             "branch-alias": {
@@ -2628,7 +2690,7 @@
             "kartik-v/yii2-dialog": "~1.0",
             "kartik-v/yii2-widget-activeform": "~1.4"
         },
-        "time": "2018-06-29 05:26:16",
+        "time": "2018-06-29T05:26:16+00:00",
         "type": "yii2-extension",
         "extra": {
             "branch-alias": {
@@ -2685,7 +2747,7 @@
         "require": {
             "kartik-v/yii2-krajee-base": "~1.7"
         },
-        "time": "2018-03-17 05:06:02",
+        "time": "2018-03-17T05:06:02+00:00",
         "type": "yii2-extension",
         "extra": {
             "branch-alias": {
@@ -2739,7 +2801,7 @@
         "require": {
             "kartik-v/yii2-krajee-base": "*"
         },
-        "time": "2018-02-07 11:46:39",
+        "time": "2018-02-07T11:46:39+00:00",
         "type": "yii2-extension",
         "installation-source": "source",
         "autoload": {
@@ -2790,7 +2852,7 @@
         "require": {
             "kartik-v/yii2-krajee-base": "*"
         },
-        "time": "2018-02-07 11:43:46",
+        "time": "2018-02-07T11:43:46+00:00",
         "type": "yii2-extension",
         "extra": {
             "branch-alias": {
@@ -2847,7 +2909,7 @@
         "require": {
             "kartik-v/yii2-krajee-base": "*"
         },
-        "time": "2018-02-07 11:44:04",
+        "time": "2018-02-07T11:44:04+00:00",
         "type": "yii2-extension",
         "extra": {
             "branch-alias": {
@@ -2903,7 +2965,7 @@
         "require": {
             "kartik-v/yii2-krajee-base": "~1.7"
         },
-        "time": "2017-09-06 06:18:08",
+        "time": "2017-09-06T06:18:08+00:00",
         "type": "yii2-extension",
         "extra": {
             "branch-alias": {
@@ -2959,7 +3021,7 @@
         "require": {
             "kartik-v/yii2-krajee-base": "*"
         },
-        "time": "2017-07-18 08:42:00",
+        "time": "2017-07-18T08:42:00+00:00",
         "type": "yii2-extension",
         "installation-source": "source",
         "autoload": {
@@ -3011,7 +3073,7 @@
             "kartik-v/dependent-dropdown": "~1.4",
             "kartik-v/yii2-krajee-base": "~1.7"
         },
-        "time": "2018-03-24 08:46:26",
+        "time": "2018-03-24T08:46:26+00:00",
         "type": "yii2-extension",
         "installation-source": "source",
         "autoload": {
@@ -3062,7 +3124,7 @@
             "kartik-v/bootstrap-fileinput": "~4.4",
             "kartik-v/yii2-krajee-base": "~1.7"
         },
-        "time": "2017-12-06 12:34:31",
+        "time": "2017-12-06T12:34:31+00:00",
         "type": "yii2-extension",
         "extra": {
             "branch-alias": {
@@ -3118,7 +3180,7 @@
         "require": {
             "kartik-v/yii2-krajee-base": "*"
         },
-        "time": "2015-05-03 08:23:04",
+        "time": "2015-05-03T08:23:04+00:00",
         "type": "yii2-extension",
         "installation-source": "source",
         "autoload": {
@@ -3169,7 +3231,7 @@
         "require": {
             "kartik-v/yii2-krajee-base": "*"
         },
-        "time": "2018-02-07 11:43:17",
+        "time": "2018-02-07T11:43:17+00:00",
         "type": "yii2-extension",
         "installation-source": "source",
         "autoload": {
@@ -3221,7 +3283,7 @@
             "kartik-v/bootstrap-star-rating": "*",
             "kartik-v/yii2-krajee-base": "*"
         },
-        "time": "2017-11-18 12:24:51",
+        "time": "2017-11-18T12:24:51+00:00",
         "type": "yii2-extension",
         "extra": {
             "branch-alias": {
@@ -3278,7 +3340,7 @@
         "require": {
             "kartik-v/yii2-krajee-base": "~1.7"
         },
-        "time": "2018-02-24 05:28:25",
+        "time": "2018-02-24T05:28:25+00:00",
         "type": "yii2-extension",
         "extra": {
             "branch-alias": {
@@ -3333,7 +3395,7 @@
         "require": {
             "kartik-v/yii2-krajee-base": "*"
         },
-        "time": "2015-04-21 15:38:40",
+        "time": "2015-04-21T15:38:40+00:00",
         "type": "yii2-extension",
         "installation-source": "source",
         "autoload": {
@@ -3384,7 +3446,7 @@
         "require": {
             "kartik-v/yii2-krajee-base": "~1.7"
         },
-        "time": "2018-02-07 11:45:36",
+        "time": "2018-02-07T11:45:36+00:00",
         "type": "yii2-extension",
         "installation-source": "source",
         "autoload": {
@@ -3434,7 +3496,7 @@
         "require": {
             "kartik-v/yii2-krajee-base": "*"
         },
-        "time": "2018-02-07 11:45:58",
+        "time": "2018-02-07T11:45:58+00:00",
         "type": "yii2-extension",
         "installation-source": "source",
         "autoload": {
@@ -3486,7 +3548,7 @@
         "require": {
             "kartik-v/yii2-krajee-base": "*"
         },
-        "time": "2018-02-07 11:49:20",
+        "time": "2018-02-07T11:49:20+00:00",
         "type": "yii2-extension",
         "extra": {
             "branch-alias": {
@@ -3542,7 +3604,7 @@
         "require": {
             "kartik-v/yii2-krajee-base": "*"
         },
-        "time": "2018-02-07 11:46:17",
+        "time": "2018-02-07T11:46:17+00:00",
         "type": "yii2-extension",
         "installation-source": "source",
         "autoload": {
@@ -3594,7 +3656,7 @@
         "require": {
             "kartik-v/yii2-krajee-base": "~1.8"
         },
-        "time": "2018-07-01 04:08:53",
+        "time": "2018-07-01T04:08:53+00:00",
         "type": "yii2-extension",
         "extra": {
             "branch-alias": {
@@ -3667,7 +3729,7 @@
             "kartik-v/yii2-widget-touchspin": "*",
             "kartik-v/yii2-widget-typeahead": "*"
         },
-        "time": "2015-12-05 10:37:16",
+        "time": "2015-12-05T10:37:16+00:00",
         "type": "yii2-extension",
         "installation-source": "source",
         "autoload": {
@@ -3714,7 +3776,7 @@
             "rmrevin/yii2-fontawesome": "~2.15",
             "yiisoft/yii2": "*"
         },
-        "time": "2017-11-20 09:55:32",
+        "time": "2017-11-20T09:55:32+00:00",
         "type": "yii2-extension",
         "extra": {
             "branch-alias": {
@@ -3770,7 +3832,7 @@
         "suggest": {
             "yiisoft/yii2-bootstrap": "Used when using layout 'left-menu', 'right-menu' or 'top-menu'"
         },
-        "time": "2017-11-18 13:27:11",
+        "time": "2017-11-18T13:27:11+00:00",
         "type": "yii2-extension",
         "extra": {
             "branch-alias": {
@@ -3824,7 +3886,7 @@
         "require": {
             "yiisoft/yii2-bootstrap": "*"
         },
-        "time": "2016-10-24 08:25:19",
+        "time": "2016-10-24T08:25:19+00:00",
         "type": "yii2-extension",
         "installation-source": "dist",
         "autoload": {
@@ -3879,7 +3941,7 @@
             "mootensai/yii2-uuid-behavior": "*",
             "yiisoft/yii2": "*"
         },
-        "time": "2017-09-14 07:34:23",
+        "time": "2017-09-14T07:34:23+00:00",
         "type": "yii2-extension",
         "extra": {
             "bootstrap": "mootensai\\enhancedgii\\Bootstrap"
@@ -3932,7 +3994,7 @@
             "php": ">=5.4.0",
             "yiisoft/yii2": "~2.0"
         },
-        "time": "2015-07-10 13:30:34",
+        "time": "2015-07-10T13:30:34+00:00",
         "type": "yii2-extension",
         "installation-source": "source",
         "autoload": {
@@ -3976,7 +4038,7 @@
         "require": {
             "yiisoft/yii2": "*"
         },
-        "time": "2015-08-15 03:27:57",
+        "time": "2015-08-15T03:27:57+00:00",
         "type": "yii2-extension",
         "installation-source": "source",
         "autoload": {
@@ -4027,7 +4089,7 @@
             "php": ">=5.4.0",
             "yiisoft/yii2": "~2.0"
         },
-        "time": "2017-10-18 04:48:35",
+        "time": "2017-10-18T04:48:35+00:00",
         "type": "yii2-extension",
         "installation-source": "dist",
         "autoload": {
@@ -4078,7 +4140,7 @@
         "require": {
             "php": ">=5.4.0"
         },
-        "time": "2016-03-01 08:50:04",
+        "time": "2016-03-01T08:50:04+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -4152,7 +4214,7 @@
             "ext-xml": "Needed mainly for SVG manipulation",
             "ext-zlib": "Needed for compression of embedded resources, such as fonts"
         },
-        "time": "2018-07-02 14:26:48",
+        "time": "2018-07-02T14:26:48+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -4213,7 +4275,7 @@
             "doctrine/common": "^2.6",
             "phpunit/phpunit": "^7.1"
         },
-        "time": "2018-06-11 23:09:50",
+        "time": "2018-06-11T23:09:50+00:00",
         "type": "library",
         "installation-source": "source",
         "autoload": {
@@ -4235,56 +4297,6 @@
             "duplicate",
             "object",
             "object graph"
-        ]
-    },
-    {
-        "name": "paragonie/random_compat",
-        "version": "v2.0.17",
-        "version_normalized": "2.0.17.0",
-        "source": {
-            "type": "git",
-<<<<<<< HEAD
-            "url": "https://github.com/nerburish/yii2-isotope-view.git",
-            "reference": "7a250481e17804f384d1305d8e3780568356ee0a"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/nerburish/yii2-isotope-view/zipball/7a250481e17804f384d1305d8e3780568356ee0a",
-            "reference": "7a250481e17804f384d1305d8e3780568356ee0a",
-            "shasum": ""
-        },
-        "require": {
-            "bower-asset/isotope": "*",
-            "yiisoft/yii2": "*"
-        },
-        "time": "2016-08-24T20:40:09+00:00",
-        "type": "yii2-extension",
-        "installation-source": "source",
-        "autoload": {
-            "psr-4": {
-                "nerburish\\isotopeview\\": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "nerburish",
-                "email": "nerburish@hotmail.com"
-            }
-        ],
-        "description": "ListView widget improved to use Isotope (http://isotope.metafizzy.co/)",
-        "keywords": [
-            "ListView",
-            "dataprovider",
-            "extension",
-            "isotope",
-            "masonry",
-            "view",
-            "widget",
-            "yii2"
         ]
     },
     {
@@ -4342,8 +4354,6 @@
         "version_normalized": "2.0.17.0",
         "source": {
             "type": "git",
-=======
->>>>>>> 7bcd7132fe053362b9fb2c2bbb08e92a65a16a66
             "url": "https://github.com/paragonie/random_compat.git",
             "reference": "29af24f25bab834fcbb38ad2a69fa93b867e070d"
         },
@@ -4362,7 +4372,7 @@
         "suggest": {
             "ext-libsodium": "Provides a modern crypto API that can be used to generate random bytes."
         },
-        "time": "2018-07-04 16:31:37",
+        "time": "2018-07-04T16:31:37+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -4410,7 +4420,7 @@
             "phar-io/version": "^1.0.1",
             "php": "^5.6 || ^7.0"
         },
-        "time": "2017-03-05 18:14:27",
+        "time": "2017-03-05T18:14:27+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -4464,7 +4474,7 @@
         "require": {
             "php": "^5.6 || ^7.0"
         },
-        "time": "2017-03-05 17:38:23",
+        "time": "2017-03-05T17:38:23+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -4496,6 +4506,58 @@
         "description": "Library for handling version information and constraints"
     },
     {
+        "name": "philippfrenzel/yii2fullcalendar",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/philippfrenzel/yii2fullcalendar.git",
+            "reference": "e43ffc0f471b12b6b1abc40e682086a2f77d7b81"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/philippfrenzel/yii2fullcalendar/zipball/e43ffc0f471b12b6b1abc40e682086a2f77d7b81",
+            "reference": "e43ffc0f471b12b6b1abc40e682086a2f77d7b81",
+            "shasum": ""
+        },
+        "require": {
+            "bower-asset/fullcalendar": "^3.8.1@stable",
+            "bower-asset/fullcalendar-scheduler": "^1.9.4@stable",
+            "yiisoft/yii2": "*",
+            "yiisoft/yii2-jui": "*"
+        },
+        "require-dev": {
+            "codeception/codeception": "*"
+        },
+        "time": "2018-05-13T14:59:04+00:00",
+        "type": "yii2-extension",
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "yii2fullcalendar\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Philipp Frenzel",
+                "email": "philipp@frenzel.net",
+                "homepage": "http://www.frenzel.net/",
+                "role": "Developer"
+            }
+        ],
+        "description": "Yii2 fullcalendar Widgets",
+        "homepage": "http://www.frenzel.net/",
+        "keywords": [
+            "fullcalendar",
+            "widget",
+            "yii2"
+        ]
+    },
+    {
         "name": "phpdocumentor/reflection-common",
         "version": "1.0.1",
         "version_normalized": "1.0.1.0",
@@ -4516,7 +4578,7 @@
         "require-dev": {
             "phpunit/phpunit": "^4.6"
         },
-        "time": "2017-09-11 18:02:19",
+        "time": "2017-09-11T18:02:19+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -4577,7 +4639,7 @@
             "mockery/mockery": "^1.0",
             "phpunit/phpunit": "^6.4"
         },
-        "time": "2017-11-30 07:14:17",
+        "time": "2017-11-30T07:14:17+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -4627,7 +4689,7 @@
             "mockery/mockery": "^0.9.4",
             "phpunit/phpunit": "^5.2||^4.8.24"
         },
-        "time": "2017-07-14 14:27:02",
+        "time": "2017-07-14T14:27:02+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -4699,7 +4761,7 @@
             "mpdf/mpdf": "Option for rendering PDF with PDF Writer",
             "tecnick.com/tcpdf": "Option for rendering PDF with PDF Writer"
         },
-        "time": "2018-06-12 13:40:21",
+        "time": "2018-06-12T13:40:21+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -4756,7 +4818,7 @@
             "reference": "0464787bfa7cd13576c5a1e318709768798bec6a",
             "shasum": ""
         },
-        "time": "2016-04-07 12:29:16",
+        "time": "2016-04-07T12:29:16+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -4807,7 +4869,7 @@
             "phpspec/phpspec": "^2.5|^3.2",
             "phpunit/phpunit": "^4.8.35 || ^5.7 || ^6.5 || ^7.1"
         },
-        "time": "2018-05-09 14:00:54",
+        "time": "2018-05-09T14:00:54+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -4879,7 +4941,7 @@
         "suggest": {
             "ext-xdebug": "^2.6.0"
         },
-        "time": "2018-05-28 11:49:20",
+        "time": "2018-05-28T11:49:20+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -4929,7 +4991,7 @@
         "require": {
             "php": ">=5.3.3"
         },
-        "time": "2017-11-27 13:52:08",
+        "time": "2017-11-27T13:52:08+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -4978,7 +5040,7 @@
         "require": {
             "php": ">=5.3.3"
         },
-        "time": "2015-06-21 13:50:34",
+        "time": "2015-06-21T13:50:34+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -5024,7 +5086,7 @@
         "require-dev": {
             "phpunit/phpunit": "^7.0"
         },
-        "time": "2018-06-04 07:17:52",
+        "time": "2018-06-04T07:17:52+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -5076,7 +5138,7 @@
         "require-dev": {
             "phpunit/phpunit": "^7.0"
         },
-        "time": "2018-06-06 10:32:05",
+        "time": "2018-06-06T10:32:05+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -5152,7 +5214,7 @@
             "ext-xdebug": "*",
             "phpunit/php-invoker": "^2.0"
         },
-        "time": "2018-05-25 12:16:21",
+        "time": "2018-05-25T12:16:21+00:00",
         "bin": [
             "phpunit"
         ],
@@ -5214,7 +5276,7 @@
         "suggest": {
             "ext-soap": "*"
         },
-        "time": "2018-05-29 13:54:20",
+        "time": "2018-05-29T13:54:20+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -5263,7 +5325,7 @@
         "require": {
             "php": ">=5.3.0"
         },
-        "time": "2016-08-06 14:39:51",
+        "time": "2016-08-06T14:39:51+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -5315,7 +5377,7 @@
         "require": {
             "php": ">=5.3.0"
         },
-        "time": "2018-04-03 15:59:15",
+        "time": "2018-04-03T15:59:15+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -5364,7 +5426,7 @@
         "require": {
             "php": ">=5.3.0"
         },
-        "time": "2017-10-23 01:57:42",
+        "time": "2017-10-23T01:57:42+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -5418,7 +5480,7 @@
             "phpunit/phpunit": "~3.7.0",
             "satooshi/php-coveralls": ">=1.0"
         },
-        "time": "2016-02-11 07:05:27",
+        "time": "2016-02-11T07:05:27+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -5458,7 +5520,7 @@
             "php": ">=5.4.0",
             "yiisoft/yii2": "2.0.*"
         },
-        "time": "2017-04-03 14:19:13",
+        "time": "2017-04-03T14:19:13+00:00",
         "type": "yii2-extension",
         "extra": {
             "asset-installer-paths": {
@@ -5513,7 +5575,7 @@
         "require-dev": {
             "phpunit/phpunit": "^5.7 || ^6.0"
         },
-        "time": "2018-05-15 05:52:48",
+        "time": "2018-05-15T05:52:48+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -5562,7 +5624,7 @@
         "require-dev": {
             "phpunit/phpunit": "^7.1"
         },
-        "time": "2018-06-14 16:44:28",
+        "time": "2018-06-14T16:44:28+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -5627,7 +5689,7 @@
             "phpunit/phpunit": "^7.0",
             "symfony/process": "^2 || ^3.3 || ^4"
         },
-        "time": "2018-06-10 07:54:39",
+        "time": "2018-06-10T07:54:39+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -5684,7 +5746,7 @@
         "require-dev": {
             "phpunit/phpunit": "^6.1"
         },
-        "time": "2018-05-15 05:48:40",
+        "time": "2018-05-15T05:48:40+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -5738,7 +5800,7 @@
             "ext-mbstring": "*",
             "phpunit/phpunit": "^6.0"
         },
-        "time": "2018-06-28 14:22:04",
+        "time": "2018-06-28T14:22:04+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -5808,7 +5870,7 @@
         "suggest": {
             "ext-uopz": "*"
         },
-        "time": "2018-05-15 05:52:33",
+        "time": "2018-05-15T05:52:33+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -5860,7 +5922,7 @@
         "require-dev": {
             "phpunit/phpunit": "^6.0"
         },
-        "time": "2018-05-15 05:52:18",
+        "time": "2018-05-15T05:52:18+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -5907,7 +5969,7 @@
         "require-dev": {
             "phpunit/phpunit": "^6.0"
         },
-        "time": "2018-05-15 05:50:44",
+        "time": "2018-05-15T05:50:44+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -5954,7 +6016,7 @@
         "require-dev": {
             "phpunit/phpunit": "^6.0"
         },
-        "time": "2018-05-15 05:52:05",
+        "time": "2018-05-15T05:52:05+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -6006,7 +6068,7 @@
         "require": {
             "php": ">=5.6.0"
         },
-        "time": "2018-05-15 05:53:02",
+        "time": "2018-05-15T05:53:02+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -6050,7 +6112,7 @@
         "require": {
             "php": ">=5.6"
         },
-        "time": "2016-10-03 07:35:21",
+        "time": "2016-10-03T07:35:21+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -6097,7 +6159,7 @@
             "setasign/fpdi-fpdf": "Use this package to automatically evaluate dependencies to FPDF.",
             "setasign/fpdi-tcpdf": "Use this package to automatically evaluate dependencies to TCPDF."
         },
-        "time": "2017-05-11 14:25:49",
+        "time": "2017-05-11T14:25:49+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -6155,7 +6217,7 @@
             "ext-intl": "Needed to support internationalized email addresses",
             "true/punycode": "Needed to support internationalized email addresses, if ext-intl is not installed"
         },
-        "time": "2018-07-04 11:13:39",
+        "time": "2018-07-04T11:13:39+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -6215,7 +6277,7 @@
         "suggest": {
             "symfony/process": ""
         },
-        "time": "2018-06-06 09:59:09",
+        "time": "2018-06-06T09:59:09+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -6285,7 +6347,7 @@
             "symfony/lock": "",
             "symfony/process": ""
         },
-        "time": "2018-07-07 16:01:39",
+        "time": "2018-07-07T16:01:39+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -6336,7 +6398,7 @@
         "require": {
             "php": "^7.1.3"
         },
-        "time": "2018-05-31 10:18:23",
+        "time": "2018-05-31T10:18:23+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -6399,7 +6461,7 @@
         "suggest": {
             "symfony/css-selector": ""
         },
-        "time": "2018-07-05 11:54:37",
+        "time": "2018-07-05T11:54:37+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -6464,7 +6526,7 @@
             "symfony/dependency-injection": "",
             "symfony/http-kernel": ""
         },
-        "time": "2018-05-07 14:51:25",
+        "time": "2018-05-07T14:51:25+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -6515,7 +6577,7 @@
         "require": {
             "php": "^7.1.3"
         },
-        "time": "2018-06-19 21:38:29",
+        "time": "2018-06-19T21:38:29+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -6569,7 +6631,7 @@
         "suggest": {
             "ext-ctype": "For best performance"
         },
-        "time": "2018-05-17 18:32:56",
+        "time": "2018-05-17T18:32:56+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -6629,7 +6691,7 @@
         "suggest": {
             "ext-mbstring": "For best performance"
         },
-        "time": "2018-05-30 15:56:36",
+        "time": "2018-05-30T15:56:36+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -6697,7 +6759,7 @@
         "suggest": {
             "symfony/console": "For validating YAML files using the lint command"
         },
-        "time": "2018-05-31 10:18:23",
+        "time": "2018-05-31T10:18:23+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -6751,7 +6813,7 @@
             "ext-xmlwriter": "*",
             "php": "^7.0"
         },
-        "time": "2017-04-07 12:08:54",
+        "time": "2017-04-07T12:08:54+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -6794,7 +6856,7 @@
             "yiisoft/yii2-bootstrap": "~2.0",
             "yiisoft/yii2-gii": "~2.0.0"
         },
-        "time": "2017-07-26 13:29:33",
+        "time": "2017-07-26T13:29:33+00:00",
         "type": "yii2-extension",
         "extra": {
             "asset-installer-paths": {
@@ -6847,7 +6909,7 @@
             "symfony/dom-crawler": "*",
             "yiisoft/yii2": "*"
         },
-        "time": "2015-02-25 15:31:24",
+        "time": "2015-02-25T15:31:24+00:00",
         "type": "yii2-extension",
         "installation-source": "dist",
         "autoload": {
@@ -6897,7 +6959,7 @@
             "phpunit/phpunit": "^4.6",
             "sebastian/version": "^1.0.1"
         },
-        "time": "2018-05-29 14:25:02",
+        "time": "2018-05-29T14:25:02+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -6945,7 +7007,7 @@
         "require": {
             "yiisoft/yii2": "~2.0.14"
         },
-        "time": "2018-04-09 08:12:49",
+        "time": "2018-04-09T08:12:49+00:00",
         "type": "yii2-extension",
         "extra": {
             "branch-alias": {
@@ -7005,7 +7067,7 @@
             "php": ">=5.4.0",
             "yiisoft/yii2-composer": "~2.0.4"
         },
-        "time": "2018-07-05 18:55:13",
+        "time": "2018-07-05T18:55:13+00:00",
         "bin": [
             "yii"
         ],
@@ -7098,7 +7160,7 @@
             "bower-asset/bootstrap": "3.3.* | 3.2.* | 3.1.*",
             "yiisoft/yii2": "~2.0.6"
         },
-        "time": "2018-05-04 06:55:14",
+        "time": "2018-05-04T06:55:14+00:00",
         "type": "yii2-extension",
         "extra": {
             "branch-alias": {
@@ -7162,7 +7224,7 @@
         "require-dev": {
             "composer/composer": "^1.0"
         },
-        "time": "2018-07-05 15:45:38",
+        "time": "2018-07-05T15:45:38+00:00",
         "type": "composer-plugin",
         "extra": {
             "class": "yii\\composer\\Plugin",
@@ -7216,7 +7278,7 @@
             "yiisoft/yii2": "~2.0.13",
             "yiisoft/yii2-bootstrap": "~2.0.0"
         },
-        "time": "2018-06-25 11:30:12",
+        "time": "2018-06-25T11:30:12+00:00",
         "type": "yii2-extension",
         "extra": {
             "branch-alias": {
@@ -7265,7 +7327,7 @@
             "fzaninotto/faker": "~1.4",
             "yiisoft/yii2": "~2.0.0"
         },
-        "time": "2018-05-04 06:55:41",
+        "time": "2018-05-04T06:55:41+00:00",
         "type": "yii2-extension",
         "extra": {
             "branch-alias": {
@@ -7316,7 +7378,7 @@
             "yiisoft/yii2": "~2.0.14",
             "yiisoft/yii2-bootstrap": "~2.0.0"
         },
-        "time": "2018-06-12 19:29:12",
+        "time": "2018-06-12T19:29:12+00:00",
         "type": "yii2-extension",
         "extra": {
             "branch-alias": {
@@ -7365,7 +7427,7 @@
             "bower-asset/jquery-ui": "~1.12.1",
             "yiisoft/yii2": "~2.0.4"
         },
-        "time": "2018-05-04 06:55:51",
+        "time": "2018-05-04T06:55:51+00:00",
         "type": "yii2-extension",
         "extra": {
             "branch-alias": {
@@ -7425,7 +7487,7 @@
             "swiftmailer/swiftmailer": "~6.0",
             "yiisoft/yii2": "~2.0.4"
         },
-        "time": "2018-04-27 09:50:51",
+        "time": "2018-04-27T09:50:51+00:00",
         "type": "yii2-extension",
         "extra": {
             "branch-alias": {
@@ -7455,351 +7517,6 @@
             "mailer",
             "swift",
             "swiftmailer",
-            "yii2"
-        ]
-    },
-    {
-        "name": "bower-asset/desandro-matches-selector",
-        "version": "v2.0.2",
-        "version_normalized": "2.0.2.0",
-        "source": {
-            "type": "git",
-            "url": "git@github.com:desandro/matches-selector.git",
-            "reference": "42ee1cbab7469454d140bdab04d2ceed9c68b85e"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/desandro/matches-selector/zipball/42ee1cbab7469454d140bdab04d2ceed9c68b85e",
-            "reference": "42ee1cbab7469454d140bdab04d2ceed9c68b85e",
-            "shasum": null
-        },
-        "type": "bower-asset",
-        "installation-source": "dist",
-        "license": [
-            "MIT"
-        ]
-    },
-    {
-        "name": "bower-asset/get-size",
-        "version": "v2.0.3",
-        "version_normalized": "2.0.3.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/desandro/get-size.git",
-            "reference": "6879e7f15b4b6e19ca392b6955edfa8d4aa6f787"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/desandro/get-size/zipball/6879e7f15b4b6e19ca392b6955edfa8d4aa6f787",
-            "reference": "6879e7f15b4b6e19ca392b6955edfa8d4aa6f787",
-            "shasum": null
-        },
-        "type": "bower-asset",
-        "installation-source": "dist",
-        "license": [
-            "MIT"
-        ]
-    },
-    {
-        "name": "bower-asset/fizzy-ui-utils",
-        "version": "v2.0.7",
-        "version_normalized": "2.0.7.0",
-        "source": {
-            "type": "git",
-            "url": "git@github.com:metafizzy/fizzy-ui-utils.git",
-            "reference": "72feb9fc3d6de25696291941121bb3ec2db8221e"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/metafizzy/fizzy-ui-utils/zipball/72feb9fc3d6de25696291941121bb3ec2db8221e",
-            "reference": "72feb9fc3d6de25696291941121bb3ec2db8221e",
-            "shasum": null
-        },
-        "require": {
-            "bower-asset/desandro-matches-selector": ">=2.0.0,<3.0.0"
-        },
-        "type": "bower-asset",
-        "installation-source": "dist",
-        "license": [
-            "MIT"
-        ]
-    },
-    {
-        "name": "bower-asset/ev-emitter",
-        "version": "v1.1.1",
-        "version_normalized": "1.1.1.0",
-        "source": {
-            "type": "git",
-            "url": "git@github.com:metafizzy/ev-emitter.git",
-            "reference": "1baa3a03d8e07f665b0eb797661fcc2b0d2a5736"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/metafizzy/ev-emitter/zipball/1baa3a03d8e07f665b0eb797661fcc2b0d2a5736",
-            "reference": "1baa3a03d8e07f665b0eb797661fcc2b0d2a5736",
-            "shasum": null
-        },
-        "type": "bower-asset",
-        "installation-source": "dist",
-        "license": [
-            "MIT"
-        ]
-    },
-    {
-        "name": "bower-asset/outlayer",
-        "version": "v2.1.1",
-        "version_normalized": "2.1.1.0",
-        "source": {
-            "type": "git",
-            "url": "git@github.com:metafizzy/outlayer.git",
-            "reference": "bf31c5748bf84fcc2c553d1199a6ecaf0ebd9878"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/metafizzy/outlayer/zipball/bf31c5748bf84fcc2c553d1199a6ecaf0ebd9878",
-            "reference": "bf31c5748bf84fcc2c553d1199a6ecaf0ebd9878",
-            "shasum": null
-        },
-        "require": {
-            "bower-asset/ev-emitter": ">=1.0.0,<2.0.0",
-            "bower-asset/fizzy-ui-utils": ">=2.0.0,<3.0.0",
-            "bower-asset/get-size": ">=2.0.2,<3.0.0"
-        },
-        "type": "bower-asset",
-        "installation-source": "dist",
-        "license": [
-            "MIT"
-        ]
-    },
-    {
-        "name": "bower-asset/masonry-layout",
-        "version": "v4.2.2",
-        "version_normalized": "4.2.2.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/desandro/masonry.git",
-            "reference": "3b0883cf4a4a046896719b9cf282ea74be7ffecd"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/desandro/masonry/zipball/3b0883cf4a4a046896719b9cf282ea74be7ffecd",
-            "reference": "3b0883cf4a4a046896719b9cf282ea74be7ffecd",
-            "shasum": null
-        },
-        "require": {
-            "bower-asset/get-size": ">=2.0.2,<3.0.0",
-            "bower-asset/outlayer": ">=2.1.0,<3.0.0"
-        },
-        "type": "bower-asset",
-        "installation-source": "dist",
-        "license": [
-            "MIT"
-        ]
-    },
-    {
-        "name": "circulon/yii2-columnlistview",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/circulon/yii2-columnlistview.git",
-            "reference": "0b890311f46ffe0225f6bb354e5ab9259867ccc2"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/circulon/yii2-columnlistview/zipball/0b890311f46ffe0225f6bb354e5ab9259867ccc2",
-            "reference": "0b890311f46ffe0225f6bb354e5ab9259867ccc2",
-            "shasum": ""
-        },
-        "require": {
-            "yiisoft/yii2": "~2.0.0"
-        },
-        "time": "2016-04-21 09:31:56",
-        "type": "yii2-extension",
-        "extra": {
-            "asset-installer-paths": {
-                "npm-asset-library": "vendor/npm",
-                "bower-asset-library": "vendor/bower"
-            },
-            "branch-alias": {
-                "dev-master": "1.0-dev"
-            }
-        },
-        "installation-source": "source",
-        "autoload": {
-            "psr-4": {
-                "circulon\\widgets\\": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Kieren Eaton",
-                "email": "circledev@gmail.com",
-                "role": "Developer"
-            }
-        ],
-        "description": "Responsive columnar List View for Yii 2.x",
-        "homepage": "https://github.com/circulon/yii2-columnlistview.git",
-        "keywords": [
-            "ListView",
-            "circulon",
-            "column",
-            "columns",
-            "list view",
-            "responsive",
-            "yii",
-            "yii 2",
-            "yii2"
-        ]
-    },
-    {
-        "name": "bower-asset/isotope",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/metafizzy/isotope.git",
-            "reference": "e042f41efceb6f70bcf96043d328088b213079f1"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/metafizzy/isotope/zipball/e042f41efceb6f70bcf96043d328088b213079f1",
-            "reference": "e042f41efceb6f70bcf96043d328088b213079f1",
-            "shasum": null
-        },
-        "require": {
-            "bower-asset/desandro-matches-selector": ">=2.0.0,<3.0.0",
-            "bower-asset/fizzy-ui-utils": ">=2.0.4,<3.0.0",
-            "bower-asset/get-size": ">=2.0.0,<3.0.0",
-            "bower-asset/masonry-layout": ">=4.1.0,<5.0.0",
-            "bower-asset/outlayer": ">=2.1.0,<3.0.0"
-        },
-        "type": "bower-asset",
-        "installation-source": "source",
-        "license": [
-            "GPL-3.0"
-        ]
-    },
-    {
-        "name": "nerburish/yii2-isotope-view",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/nerburish/yii2-isotope-view.git",
-            "reference": "7a250481e17804f384d1305d8e3780568356ee0a"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/nerburish/yii2-isotope-view/zipball/7a250481e17804f384d1305d8e3780568356ee0a",
-            "reference": "7a250481e17804f384d1305d8e3780568356ee0a",
-            "shasum": ""
-        },
-        "require": {
-            "bower-asset/isotope": "*",
-            "yiisoft/yii2": "*"
-        },
-        "time": "2016-08-24 20:40:09",
-        "type": "yii2-extension",
-        "installation-source": "source",
-        "autoload": {
-            "psr-4": {
-                "nerburish\\isotopeview\\": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "nerburish",
-                "email": "nerburish@hotmail.com"
-            }
-        ],
-        "description": "ListView widget improved to use Isotope (http://isotope.metafizzy.co/)",
-        "keywords": [
-            "ListView",
-            "dataprovider",
-            "extension",
-            "isotope",
-            "masonry",
-            "view",
-            "widget",
-            "yii2"
-        ]
-    },
-    {
-        "name": "bower-asset/matchheight",
-        "version": "0.7.2",
-        "version_normalized": "0.7.2.0",
-        "source": {
-            "type": "git",
-            "url": "git@github.com:liabru/jquery-match-height.git",
-            "reference": "2446ac654f694bc05a1297cbab0b2d875e278bbd"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/liabru/jquery-match-height/zipball/2446ac654f694bc05a1297cbab0b2d875e278bbd",
-            "reference": "2446ac654f694bc05a1297cbab0b2d875e278bbd",
-            "shasum": null
-        },
-        "type": "bower-asset",
-        "installation-source": "dist",
-        "license": [
-            "MIT"
-        ]
-    },
-    {
-        "name": "nerburish/yii2-match-height-view",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/nerburish/yii2-match-height-view.git",
-            "reference": "d1cfc50ae579d0f2abcdf7be88e5cd03067a5695"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/nerburish/yii2-match-height-view/zipball/d1cfc50ae579d0f2abcdf7be88e5cd03067a5695",
-            "reference": "d1cfc50ae579d0f2abcdf7be88e5cd03067a5695",
-            "shasum": ""
-        },
-        "require": {
-            "bower-asset/matchheight": "~0.7.0",
-            "yiisoft/yii2": "*"
-        },
-        "time": "2018-06-26 13:21:13",
-        "type": "yii2-extension",
-        "installation-source": "source",
-        "autoload": {
-            "psr-4": {
-                "nerburish\\matchheight\\": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "nerburish",
-                "email": "nerburish@hotmail.com"
-            }
-        ],
-        "description": "ListView widget improved to use Jquery Match Height (https://github.com/liabru/jquery-match-height)",
-        "keywords": [
-            "ListView",
-            "dataprovider",
-            "extension",
-            "macth-height",
-            "masonry",
-            "view",
-            "widget",
             "yii2"
         ]
     }

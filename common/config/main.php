@@ -95,6 +95,10 @@ return [
             ],
         ],
 
+        'gridview' => [
+            'class' => '\kartik\grid\Module',
+        ],
+
         'vote' => [
             'class' => 'chiliec\vote\Module',
             // show messages in popover

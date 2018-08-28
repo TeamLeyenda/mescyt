@@ -360,7 +360,7 @@ $this->title = '';
             //'attribute'=>'area_especializacion_id', 
             'label' => Yii::t('app', 'Participantes'),
             'value'=>function ($model, $key, $index, $widget) { 
-                return $model->getUsers()->where(['tipo_user_id' => 3])->count();
+                return $model->getUsers()->where(['tipo_user_id' => 4])->count();
                 //return $model->users->id;
                 //return $model::find()->count();
                 /*

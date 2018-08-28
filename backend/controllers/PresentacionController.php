@@ -29,7 +29,7 @@ class PresentacionController extends Controller
                 'rules' => [
                     [
                         'allow' => true,
-                        'actions' => ['index', 'view', 'create', 'update', 'delete', 'pdf', 'save-as-new', 'add-presentacion-user'],
+                        'actions' => ['index', 'view', 'create', 'update', 'delete', 'pdf', 'save-as-new', 'add-presentacion-user', 'verpres', 'iniciar', 'finalizar'],
                         'roles' => ['@']
                     ],
                     [
@@ -46,6 +46,7 @@ class PresentacionController extends Controller
      */
     public function actionIndex()
     {
+        
         $searchModel = new PresentacionSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
@@ -54,7 +55,32 @@ class PresentacionController extends Controller
             'dataProvider' => $dataProvider,
         ]);
     }
+    public function actionIniciar($id){
+        $model = $this->findModel($id);
+        $model->Fecha_Inicio_Real= time();
+        $model->saveAll();
+        return $this->redirect(['verpres']);
 
+    }
+
+    public function actionFinalizar($id){
+        $model = $this->findModel($id);
+        $model->Fecha_Final_Real= time();
+        $model->saveAll();
+        return $this->redirect(['verpres']);
+
+    }
+    public function actionVerpres()
+    {
+       // echo "here";die();
+        $searchModel = new PresentacionSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+        return $this->render('indexpres', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]);
+    }
     /**
      * Displays a single Presentacion model.
      * @param integer $id
@@ -139,7 +165,22 @@ class PresentacionController extends Controller
             ]);
         }
     }
+    public function actionUpdatepresent($id)
+    {
+        if (Yii::$app->request->post('_asnew') == '1') {
+            $model = new Presentacion();
+        }else{
+            $model = $this->findModel($id);
+        }
 
+        if ($model->loadAll(Yii::$app->request->post()) && $model->saveAll()) {
+            return $this->redirect(['view', 'id' => $model->id]);
+        } else {
+            return $this->render('update', [
+                'model' => $model,
+            ]);
+        }
+    }
     /**
      * Deletes an existing Presentacion model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
