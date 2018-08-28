@@ -1,7 +1,7 @@
    <?php
 
     Yii::$app->layout='homepage';
-    $this->params['breadcrumbs'][] = $this->title='Inicio - MESCyT';
+    $this->params['breadcrumbs'][] = $this->title='Inicio';
 
    $directoryAsset = Yii::$app->assetManager->getPublishedUrl('@frontend/web');
    ?>

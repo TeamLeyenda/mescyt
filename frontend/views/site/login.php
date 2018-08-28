@@ -7,7 +7,7 @@
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 
-$this->params['breadcrumbs'][] = $this->title='Inicio de Sesion - MESCyT';
+$this->params['breadcrumbs'][] = $this->title='Inicio de Sesión';
 ?>
 
  <div class="card mb-3 wow fadeIn">
