@@ -9,7 +9,7 @@ git     <!-- Services Section -->
         <br>
 
 
-
+        <link rel="shortcut icon" href="https://images2.listindiario.com/imagen/2017/06/06/469/469092/680x460/201706061609514/mescyt-revela-nueva-imagen-institucional.jpeg">
         
         
 

@@ -25,17 +25,17 @@ AppAsset::register($this);
 <div class="container">
 		        <div class="row">       
 		          <div class="repdom visible-xs col-xs-12">
-		             	<a href="https://www.presidencia.gov.do/"><img src="<?=Yii::$app->request->baseUrl ?>/img/escudo-rd.png" alt="Republica Dominicana" class="img-responsive escudoRD" width="100%" height="80%"></a>
+		             	<a> <!--href="https://www.presidencia.gov.do/">--><img src="<?=Yii::$app->request->baseUrl ?>/img/escudo-rd.png" alt="Republica Dominicana" class="img-responsive escudoRD" width="100%" height="80%"></a>
 		          </div>
 		          <!-- MESCyT Logo Section -->
 		          <div class="col-xs-12 col-sm-7 logo-header">
-		            <a href="/"><img src="<?=Yii::$app->request->baseUrl ?>/img/logo.png" alt="MESCyT" class="img-responsive logoImg" width="auto"></a>
+		            <a> <!--href="/">--><img src="<?=Yii::$app->request->baseUrl ?>/img/logo.png" alt="MESCyT" class="img-responsive logoImg" width="auto"></a>
 		          </div>
 		          <!-- /MESCyT Logo Section -->
 		          <!-- Search Section >sm-->
 		          <div class="col-xs-12 col-sm-5 hidden-xs search-controls">
 		            <div class="escudo pull-right">
-		              <a href="https://www.presidencia.gov.do/"><img src="<?=Yii::$app->request->baseUrl ?>/img/escudo-rd.png" alt="Republica Dominicana" class="image-fluid escudoImg" width="200px"></a>
+		              <a> <!--href="https://www.presidencia.gov.do/">--><img src="<?=Yii::$app->request->baseUrl ?>/img/escudo-rd.png" alt="Republica Dominicana" class="image-fluid escudoImg" width="200px"></a>
 		            </div>
 		          </div>
 		          <!-- /Search Section >sm-->
